@@ -1,0 +1,30 @@
+{
+    "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\reconstructed\\adpcm\\20260823T194118474Z_adpcm\\adpcm_reconstructed.exe",
+    "binary_sha256":  "d2d7005f8458b0124b11e0f109078f2fafb5179798e60200d2c65d36a19d2790",
+    "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\reconstructed\\adpcm\\20260823T194118474Z_adpcm\\adpcm_reconstructed.exe",
+    "arguments":  [
+
+                  ],
+    "stdin":  "closed; zero bytes",
+    "stdin_text":  "",
+    "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\tests\\runtime",
+    "environment_delta":  {
+                              "CHSTONE_EVALUATION":  "1"
+                          },
+    "timeout_seconds":  5,
+    "started_utc":  "2026-08-23T19:41:18.9345905+00:00",
+    "finished_utc":  "2026-08-23T19:41:18.9683168+00:00",
+    "duration_ms":  33.726,
+    "timed_out":  false,
+    "crashed":  false,
+    "exit_code":  0,
+    "exit_code_hex":  "0x00000000",
+    "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\adpcm\\20260823T194118474Z_adpcm\\reconstructed\\embedded_vectors\\stdout.bin",
+    "stdout_sha256":  "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "stdout_bytes":  3,
+    "stdout_display":  "0\\r\\n",
+    "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\adpcm\\20260823T194118474Z_adpcm\\reconstructed\\embedded_vectors\\stderr.bin",
+    "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes":  0,
+    "stderr_display":  ""
+}

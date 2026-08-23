@@ -1,0 +1,1 @@
+{"tenant":"north","group_by":"assignee","total":6,"sla_breached":4,"spent_minutes":1046,"groups":[{"key":"vale","count":4,"active":4,"breached":3,"priority_sum":16,"spent":871},{"key":"jules","count":1,"active":1,"breached":1,"priority_sum":5,"spent":74},{"key":"unassigned","count":1,"active":1,"breached":0,"priority_sum":4,"spent":101}]}

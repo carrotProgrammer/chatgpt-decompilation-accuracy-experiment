@@ -1,34 +1,38 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [string]$Source
+    [string]$Source,
+
+    [ValidateSet('adpcm', 'chal', 'portal')]
+    [string]$Sample = 'adpcm'
 )
 
 . (Join-Path $PSScriptRoot 'common.ps1')
 $paths = Get-ExperimentPaths
 $root = $paths.Root
+$config = Get-SampleConfiguration $Sample
 $sourcePath = [IO.Path]::GetFullPath($Source)
 if (-not (Test-Path -LiteralPath $sourcePath -PathType Leaf)) { throw "Recovered C file does not exist: $sourcePath" }
 if ([IO.Path]::GetExtension($sourcePath) -ne '.c') { throw "Recovered source must be a .c file: $sourcePath" }
-if (-not (Test-Path -LiteralPath $paths.Challenge -PathType Leaf)) { throw "Challenge binary missing; run scripts\build_baseline.ps1 first." }
+if (-not (Test-Path -LiteralPath $config.ChallengeBinary -PathType Leaf)) { throw "Challenge binary missing for '$Sample'; run build_baseline --sample $Sample first." }
 
 $safeStem = [IO.Path]::GetFileNameWithoutExtension($sourcePath) -replace '[^A-Za-z0-9._-]', '_'
 $runId = '{0}_{1}' -f ([DateTime]::UtcNow.ToString('yyyyMMddTHHmmssfffZ')), $safeStem
-$runRoot = Join-Path $root ("reports\reconstructed\$runId")
+$sampleReportRoot = Join-Path $root ("reports\reconstructed\{0}" -f $config.Name)
+$runRoot = Join-Path $sampleReportRoot $runId
 $buildDir = Join-Path $runRoot 'build'
-$referenceRunDir = Join-Path $runRoot 'challenge_reference'
-$reconstructedRunDir = Join-Path $runRoot 'reconstructed'
-$binaryDir = Join-Path $root ("bin\reconstructed\$runId")
+$binaryDir = Join-Path $root ("bin\reconstructed\{0}\{1}" -f $config.Name, $runId)
 $object = Join-Path $buildDir 'recovered.o'
 $unstrippedBinary = Join-Path $buildDir 'reconstructed_unstripped.exe'
-$binary = Join-Path $binaryDir 'adpcm_reconstructed.exe'
-New-Item -ItemType Directory -Force -Path $runRoot, $buildDir, $binaryDir | Out-Null
+$binary = Join-Path $binaryDir $config.ReconstructedBinaryName
+New-Item -ItemType Directory -Force -Path $runRoot, $buildDir, $binaryDir, $sampleReportRoot | Out-Null
 
-$compileArgs = @('-std=gnu11', '-O2', '-g0', '-fno-lto', '-ffunction-sections', '-fdata-sections', '-c', $sourcePath, '-o', $object)
-$linkArgs = @('-fno-lto', '-Wl,--gc-sections', $object, '-o', $unstrippedBinary)
+$compileArgs = @("-std=$($config.LanguageStandard)", '-O2', '-g0', '-fno-lto', '-ffunction-sections', '-fdata-sections', '-c', $sourcePath, '-o', $object)
+$linkArgs = @('-fno-lto', '-Wl,--gc-sections', $object) + @($config.LinkLibraries) + @('-o', $unstrippedBinary)
 $stripArgs = @('--strip-all', $binary)
 $report = [ordered]@{
-    schema_version = 1
+    schema_version = 2
+    sample = $config.Name
     run_id = $runId
     generated_utc = [DateTimeOffset]::UtcNow.ToString('o')
     recovered_source = [ordered]@{ path = $sourcePath; sha256 = Get-Sha256 $sourcePath; bytes = (Get-Item $sourcePath).Length; modified_by_evaluator = $false }
@@ -36,8 +40,7 @@ $report = [ordered]@{
     compile = $null
     link = $null
     strip = $null
-    challenge_reference_run = $null
-    reconstructed_run = $null
+    test_cases = @()
     comparisons = $null
     classifications = @()
     overall_status = $null
@@ -47,27 +50,30 @@ $report = [ordered]@{
 function Save-EvaluationReport($Report, [string]$Directory) {
     Write-JsonFile (Join-Path $Directory 'comparison_report.json') $Report
     $classes = if ($Report.classifications.Count -gt 0) { $Report.classifications -join '; ' } else { 'UNCLASSIFIED' }
-    $comparisonLines = ''
-    if ($null -ne $Report.comparisons) {
-        $comparisonLines = @"
-- stdout exact match: $($Report.comparisons.stdout_exact_match)
-- stderr exact match: $($Report.comparisons.stderr_exact_match)
-- exit code exact match: $($Report.comparisons.exit_code_match)
-"@
-    }
+    $caseLines = if ($Report.test_cases.Count -gt 0) {
+        @($Report.test_cases | ForEach-Object {
+            "- $($_.name): stdout=$($_.comparisons.stdout_exact_match), stderr=$($_.comparisons.stderr_exact_match), exit=$($_.comparisons.exit_code_match)"
+        }) -join "`n"
+    } else { '- Tests not run.' }
     $markdown = @"
-# Reconstructed binary comparison report
+# $($config.DisplayName) reconstructed binary comparison report
 
+- Sample: $($Report.sample)
 - Run ID: $($Report.run_id)
 - Recovered source: $($Report.recovered_source.path)
 - Recovered source SHA-256: $($Report.recovered_source.sha256)
 - Source modified by evaluator: False
 - Overall status: **$($Report.overall_status)**
 - Classifications: $classes
-$comparisonLines
-See comparison_report.json and this run directory for complete commands, stdout/stderr, exit code, timeout, and crash details.
+
+## Test cases
+
+$caseLines
+
+See comparison_report.json and this run directory for complete commands, stdin, stdout/stderr, exit code, timeout, and crash details.
 "@
     [IO.File]::WriteAllText((Join-Path $Directory 'comparison_report.md'), $markdown, (New-Object Text.UTF8Encoding($false)))
+    [IO.File]::WriteAllText((Join-Path $sampleReportRoot 'LATEST.txt'), ($Directory + "`n"), (New-Object Text.UTF8Encoding($false)))
     [IO.File]::WriteAllText((Join-Path $root 'reports\reconstructed\LATEST.txt'), ($Directory + "`n"), (New-Object Text.UTF8Encoding($false)))
 }
 
@@ -102,23 +108,51 @@ if ($strip.ExitCode -ne 0) {
 }
 $report.reconstructed_binary = [ordered]@{ path = $binary; sha256 = Get-Sha256 $binary; bytes = (Get-Item $binary).Length }
 
-# Both binaries use this exact runner, cwd, closed stdin, environment delta, timeout, and comparison code.
-$referenceRun = Invoke-BinaryTest $paths.Challenge $referenceRunDir $paths.RuntimeDir 5
-$reconstructedRun = Invoke-BinaryTest $binary $reconstructedRunDir $paths.RuntimeDir 5
-$report.challenge_reference_run = $referenceRun
-$report.reconstructed_run = $reconstructedRun
-
-$stdoutMatch = Test-ExactFileEquality $referenceRun.stdout_path $reconstructedRun.stdout_path
-$stderrMatch = Test-ExactFileEquality $referenceRun.stderr_path $reconstructedRun.stderr_path
-$exitMatch = ($referenceRun.exit_code -eq $reconstructedRun.exit_code) -and ($referenceRun.timed_out -eq $reconstructedRun.timed_out) -and ($referenceRun.crashed -eq $reconstructedRun.crashed)
-$report.comparisons = [ordered]@{ stdout_exact_match = $stdoutMatch; stderr_exact_match = $stderrMatch; exit_code_match = $exitMatch }
+$allStdoutMatch = $true
+$allStderrMatch = $true
+$allExitMatch = $true
+$anyTimeout = $false
+$anyCrash = $false
+$caseResults = @()
+foreach ($test in $config.Tests) {
+    $referenceRunDir = Join-Path $runRoot ("challenge_reference\{0}" -f $test.Name)
+    $reconstructedRunDir = Join-Path $runRoot ("reconstructed\{0}" -f $test.Name)
+    $referenceRun = Invoke-BinaryTest -Binary $config.ChallengeBinary -OutputDirectory $referenceRunDir -RuntimeDirectory $paths.RuntimeDir -TimeoutSeconds $test.TimeoutSeconds -StdinText $test.StdinText -EnvironmentDelta $test.EnvironmentDelta
+    $reconstructedRun = Invoke-BinaryTest -Binary $binary -OutputDirectory $reconstructedRunDir -RuntimeDirectory $paths.RuntimeDir -TimeoutSeconds $test.TimeoutSeconds -StdinText $test.StdinText -EnvironmentDelta $test.EnvironmentDelta
+    $stdoutMatch = Test-ExactFileEquality $referenceRun.stdout_path $reconstructedRun.stdout_path
+    $stderrMatch = Test-ExactFileEquality $referenceRun.stderr_path $reconstructedRun.stderr_path
+    $exitMatch = ($referenceRun.exit_code -eq $reconstructedRun.exit_code) -and
+        ($referenceRun.timed_out -eq $reconstructedRun.timed_out) -and
+        ($referenceRun.crashed -eq $reconstructedRun.crashed)
+    $allStdoutMatch = $allStdoutMatch -and $stdoutMatch
+    $allStderrMatch = $allStderrMatch -and $stderrMatch
+    $allExitMatch = $allExitMatch -and $exitMatch
+    $anyTimeout = $anyTimeout -or $reconstructedRun.timed_out
+    $anyCrash = $anyCrash -or $reconstructedRun.crashed
+    $caseResults += [ordered]@{
+        name = $test.Name
+        description = $test.Description
+        stdin_text = $test.StdinText
+        challenge_reference_run = $referenceRun
+        reconstructed_run = $reconstructedRun
+        comparisons = [ordered]@{ stdout_exact_match = $stdoutMatch; stderr_exact_match = $stderrMatch; exit_code_match = $exitMatch }
+    }
+}
+$report.test_cases = $caseResults
+$report.comparisons = [ordered]@{
+    all_stdout_exact_match = $allStdoutMatch
+    all_stderr_exact_match = $allStderrMatch
+    all_exit_codes_match = $allExitMatch
+    passed_cases = @($caseResults | Where-Object { $_.comparisons.stdout_exact_match -and $_.comparisons.stderr_exact_match -and $_.comparisons.exit_code_match }).Count
+    total_cases = $caseResults.Count
+}
 
 $classes = New-Object Collections.Generic.List[string]
-if ($reconstructedRun.timed_out) { $classes.Add('RUNTIME_TIMEOUT') }
-elseif ($reconstructedRun.crashed) { $classes.Add('RUNTIME_CRASH') }
-if (-not $stdoutMatch) { $classes.Add('STDOUT_MISMATCH') }
-if (-not $stderrMatch) { $classes.Add('STDERR_MISMATCH') }
-if (-not $exitMatch) { $classes.Add('EXIT_CODE_MISMATCH') }
+if ($anyTimeout) { $classes.Add('RUNTIME_TIMEOUT') }
+elseif ($anyCrash) { $classes.Add('RUNTIME_CRASH') }
+if (-not $allStdoutMatch) { $classes.Add('STDOUT_MISMATCH') }
+if (-not $allStderrMatch) { $classes.Add('STDERR_MISMATCH') }
+if (-not $allExitMatch) { $classes.Add('EXIT_CODE_MISMATCH') }
 if ($classes.Count -eq 0) { $classes.Add('ALL_TESTS_PASSED') }
 $report.classifications = @($classes)
 $report.overall_status = if ($classes.Count -eq 1 -and $classes[0] -eq 'ALL_TESTS_PASSED') { 'ALL_TESTS_PASSED' } else { 'TEST_FAILED' }

@@ -1,43 +1,72 @@
-# CHStone ADPCM x86-64 反编译实验
+# ADPCM / Chal / Portal x86-64 反编译实验
 
-本目录只处理 CHStone 的 ADPCM。原始算法与内置测试数据未修改。实验的失败判定只来自返回 C 的实际编译、链接和相同条件功能测试，不使用源码长度或 binary 大小作为判据。
+本目录包含三个相互独立的反编译样本。原有 CHStone ADPCM 和 Chal 样本及测试完整保留；Portal 是本实验原创合成的多租户工单查询后端。评测只依据返回 C 的实际编译、链接和相同条件下的功能测试，不以源码长度或 binary 大小作为判据。
 
-## 一条命令评测
+| 样本 | 正式 challenge | 原始源码 | 功能测试 |
+|---|---|---|---|
+| `adpcm` | `bin\challenge\sample_001.exe` | `source\original\adpcm.c` | CHStone 内置向量 |
+| `chal` | `bin\challenge\sample_002.exe` | `source\original\chal.c` | 4 组固定 FEN + depth 的 perft |
+| `portal` | `bin\challenge\sample_003.exe` | `source\original\ticket_portal.c` | 6 组固定后端查询、权限及错误响应 |
 
-1. 交给 ChatGPT 的正式样本是：`bin\challenge\adpcm_challenge.exe`。
-2. 将 ChatGPT 返回的完整 C 原样保存到：`source\recovered\`，例如 `source\recovered\adpcm_recovered.c`。
-3. 在本目录运行：
+中性 challenge 文件名用于避免向被测模型泄露算法名称。
 
-   ```bat
-   evaluate_recovered --source source\recovered\adpcm_recovered.c
-   ```
+## 构建 challenge 和 golden baseline
 
-4. 命令会自动编译、链接、去符号，同时用完全相同的 runner、参数、关闭的 stdin、工作目录、环境增量、5 秒超时及字节级比较规则运行 challenge 和 reconstructed binary。最终路径会打印到终端，也会写入 `reports\reconstructed\LATEST.txt`；查看对应目录中的 `comparison_report.md` 和 `comparison_report.json`。
-
-评测器不会修改、修复或补全返回的 C。编译和链接是两个独立阶段，完整 stdout/stderr 均保存在每次报告目录的 `build\` 下。
-
-报告分类码对应关系：`CANNOT_COMPILE`（C 无法编译）、`CANNOT_LINK`（可以编译但无法链接）、`RUNTIME_CRASH`（运行崩溃）、`RUNTIME_TIMEOUT`（运行超时）、`STDOUT_MISMATCH`、`STDERR_MISMATCH`、`EXIT_CODE_MISMATCH` 和 `ALL_TESTS_PASSED`（全部测试通过）。一次运行可以同时记录多个不一致项。
-
-## 关键文件
-
-- `source\original\adpcm.c`：固定 commit 的未修改原始文件。
-- `bin\debug\adpcm_debug.exe`：带调试信息的本地检查版本。
-- `bin\challenge\adpcm_challenge.exe`：`-O2`、禁用 LTO、去除调试信息和非必要符号后的正式样本。
-- `bin\reconstructed\`：每次评测生成的 reconstructed binary。
-- `disassembly\adpcm_challenge.asm`：challenge binary 的反汇编。
-- `manifest.json`：仓库 commit、SHA-256、LLVM 版本、目标和完整命令。
-- `reports\baseline\baseline_report.md`：实际执行的原始基线结果。
-- `reports\reconstructed\REPORT_TEMPLATE.md`：报告字段模板。
-- `scripts\common.ps1`：统一、可复用的运行与精确比较逻辑。
-- `scripts\build_baseline.ps1`：可复现 debug/challenge 构建与基线。
-- `scripts\evaluate_recovered.ps1`：自动评测实现。
-
-## 固定环境
-
-使用工作区内的 `llvm-mingw 20260616 UCRT x86_64`，其 Clang/LLVM 版本为 22.1.8，目标为 `x86_64-w64-windows-gnu`。完整版本输出和命令以 `manifest.json` 为准。
-
-重新生成原始构建与基线：
+默认同时构建三个样本：
 
 ```bat
 build_baseline
 ```
+
+也可以只重建一个样本；另一份已存在的 manifest 记录和产物不会被覆盖：
+
+```bat
+build_baseline --sample adpcm
+build_baseline --sample chal
+build_baseline --sample portal
+```
+
+每个样本都会独立生成 debug binary、`-O2`/无 LTO/strip 后的 challenge binary、反汇编和 baseline 报告。每个测试 case 都在独立进程中运行；原 challenge binary 的 stdout、stderr、退出码、超时和崩溃状态构成 golden baseline。
+
+基线报告位于：
+
+- `reports\baseline\adpcm\baseline_report.{md,json}`
+- `reports\baseline\chal\baseline_report.{md,json}`
+- `reports\baseline\portal\baseline_report.{md,json}`
+
+## 评测 recovered C
+
+ADPCM 保持原来的默认调用方式：
+
+```bat
+evaluate_recovered --source source\recovered\adpcm_recovered.c
+```
+
+Chal 通过 `--sample chal` 选择：
+
+```bat
+evaluate_recovered --source source\recovered\chal_recovered.c --sample chal
+```
+
+原创 Portal 样本通过 `--sample portal` 选择：
+
+```bat
+evaluate_recovered --source source\recovered\ticket_portal_recovered.c --sample portal
+```
+
+评测器不会修改、修复或补全 recovered C。编译和链接是两个独立阶段，完整 stdout/stderr 均写入报告目录。两个样本分别输出到：
+
+- `bin\reconstructed\adpcm\<run-id>\adpcm_reconstructed.exe`
+- `bin\reconstructed\chal\<run-id>\chal_reconstructed.exe`
+- `bin\reconstructed\portal\<run-id>\ticket_portal_reconstructed.exe`
+- `reports\reconstructed\adpcm\<run-id>\`
+- `reports\reconstructed\chal\<run-id>\`
+- `reports\reconstructed\portal\<run-id>\`
+
+每个样本有自己的 `LATEST.txt`；根目录的 `reports\reconstructed\LATEST.txt` 仍指向最近一次任意样本的评测，以兼容现有用法。
+
+分类码保持不变：`CANNOT_COMPILE`、`CANNOT_LINK`、`RUNTIME_CRASH`、`RUNTIME_TIMEOUT`、`STDOUT_MISMATCH`、`STDERR_MISMATCH`、`EXIT_CODE_MISMATCH`、`ALL_TESTS_PASSED`。
+
+## 可复现性
+
+`manifest.json` 同时记录三个样本的来源、源文件 SHA-256、完整编译/链接/strip/反汇编命令和产物哈希；Portal 明确标记为本实验原创 synthetic source。工具链为工作区内固定的 `llvm-mingw 20260616 UCRT x86_64`（Clang/LLVM 22.1.8，目标 `x86_64-w64-windows-gnu`）。

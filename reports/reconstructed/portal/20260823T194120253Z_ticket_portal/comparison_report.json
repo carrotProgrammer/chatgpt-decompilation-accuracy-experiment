@@ -1,0 +1,482 @@
+{
+    "schema_version":  2,
+    "sample":  "portal",
+    "run_id":  "20260823T194120253Z_ticket_portal",
+    "generated_utc":  "2026-08-23T19:41:20.2624228+00:00",
+    "recovered_source":  {
+                             "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\source\\original\\ticket_portal.c",
+                             "sha256":  "658127b4451dec4d1df46064860c314dffff7487c67dbc230777f3ab801c134c",
+                             "bytes":  33675,
+                             "modified_by_evaluator":  false
+                         },
+    "compiler":  {
+                     "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe",
+                     "target":  "x86_64-w64-windows-gnu",
+                     "version":  "clang version 22.1.8 (https://github.com/llvm/llvm-project.git ca7933e47d3a3451d81e72ac174dcb5aa28b59d1)\r\nTarget: x86_64-w64-windows-gnu\r\nThread model: posix\r\nInstalledDir: D:/XiangxinLab/adpcm_decompilation_experiment/toolchain/llvm-mingw-20260616-ucrt-x86_64/bin\r\nConfiguration file: D:/XiangxinLab/adpcm_decompilation_experiment/toolchain/llvm-mingw-20260616-ucrt-x86_64/bin/x86_64-w64-windows-gnu.cfg"
+                 },
+    "compile":  {
+                    "Command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe -std=c99 -O2 -g0 -fno-lto -ffunction-sections -fdata-sections -c D:\\XiangxinLab\\adpcm_decompilation_experiment\\source\\original\\ticket_portal.c -o D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\build\\recovered.o",
+                    "ExitCode":  0,
+                    "StartedUtc":  "2026-08-23T19:41:20.3873785+00:00",
+                    "FinishedUtc":  "2026-08-23T19:41:20.6069644+00:00",
+                    "DurationMs":  219.586,
+                    "StdoutPath":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\build\\compile.stdout.txt",
+                    "StderrPath":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\build\\compile.stderr.txt"
+                },
+    "link":  {
+                 "Command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe -fno-lto -Wl,--gc-sections D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\build\\recovered.o -o D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\build\\reconstructed_unstripped.exe",
+                 "ExitCode":  0,
+                 "StartedUtc":  "2026-08-23T19:41:20.6186452+00:00",
+                 "FinishedUtc":  "2026-08-23T19:41:20.6841745+00:00",
+                 "DurationMs":  65.529,
+                 "StdoutPath":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\build\\link.stdout.txt",
+                 "StderrPath":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\build\\link.stderr.txt"
+             },
+    "strip":  {
+                  "Command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\llvm-strip.exe --strip-all D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\ticket_portal_reconstructed.exe",
+                  "ExitCode":  0,
+                  "StartedUtc":  "2026-08-23T19:41:20.6911369+00:00",
+                  "FinishedUtc":  "2026-08-23T19:41:20.7350573+00:00",
+                  "DurationMs":  43.92,
+                  "StdoutPath":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\build\\strip.stdout.txt",
+                  "StderrPath":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\build\\strip.stderr.txt"
+              },
+    "test_cases":  [
+                       {
+                           "name":  "agent_billing_queue",
+                           "description":  "Agent list query with status/tag/priority filters and sorting",
+                           "stdin_text":  "GET /api/tickets?tenant=acme\u0026role=agent\u0026status=open,pending\u0026tag=billing\u0026priority_gte=3\u0026sort=-priority\u0026limit=5\n",
+                           "challenge_reference_run":  {
+                                                           "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe",
+                                                           "binary_sha256":  "98874a57e46d14d1a61f111fd95c861f6fce9ce66ce897f16037593026e51998",
+                                                           "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe",
+                                                           "arguments":  [
+
+                                                                         ],
+                                                           "stdin":  "UTF-8 text supplied, then closed",
+                                                           "stdin_text":  "GET /api/tickets?tenant=acme\u0026role=agent\u0026status=open,pending\u0026tag=billing\u0026priority_gte=3\u0026sort=-priority\u0026limit=5\n",
+                                                           "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\tests\\runtime",
+                                                           "environment_delta":  {
+
+                                                                                 },
+                                                           "timeout_seconds":  5,
+                                                           "started_utc":  "2026-08-23T19:41:20.7678020+00:00",
+                                                           "finished_utc":  "2026-08-23T19:41:20.7887114+00:00",
+                                                           "duration_ms":  20.909,
+                                                           "timed_out":  false,
+                                                           "crashed":  false,
+                                                           "exit_code":  0,
+                                                           "exit_code_hex":  "0x00000000",
+                                                           "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\challenge_reference\\agent_billing_queue\\stdout.bin",
+                                                           "stdout_sha256":  "4b2b199bd8777449c19f1f1b42b1290a461baefc640f01c1f86ecb8cf1507965",
+                                                           "stdout_bytes":  416,
+                                                           "stdout_display":  "{\"tenant\":\"acme\",\"total\":2,\"offset\":0,\"limit\":5,\"items\":[{\"id\":1001,\"status\":\"open\",\"priority\":4,\"assignee\":\"iris\",\"subject\":\"Invoice PDF shows old address\",\"tags\":[\"billing\",\"export\"],\"updated\":20260820,\"sla_breached\":true},{\"id\":1005,\"status\":\"pending\",\"priority\":4,\"assignee\":\"iris\",\"subject\":\"Refund line missing from invoice\",\"tags\":[\"billing\",\"reports\"],\"updated\":20260819,\"sla_breached\":true}],\"returned\":2}\\r\\n",
+                                                           "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\challenge_reference\\agent_billing_queue\\stderr.bin",
+                                                           "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                                                           "stderr_bytes":  0,
+                                                           "stderr_display":  ""
+                                                       },
+                           "reconstructed_run":  {
+                                                     "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\ticket_portal_reconstructed.exe",
+                                                     "binary_sha256":  "f5b26adb28a0f48f2c9c92bf1b111f91edf0e49d79ddd184c36c590499e1c0d7",
+                                                     "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\ticket_portal_reconstructed.exe",
+                                                     "arguments":  [
+
+                                                                   ],
+                                                     "stdin":  "UTF-8 text supplied, then closed",
+                                                     "stdin_text":  "GET /api/tickets?tenant=acme\u0026role=agent\u0026status=open,pending\u0026tag=billing\u0026priority_gte=3\u0026sort=-priority\u0026limit=5\n",
+                                                     "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\tests\\runtime",
+                                                     "environment_delta":  {
+
+                                                                           },
+                                                     "timeout_seconds":  5,
+                                                     "started_utc":  "2026-08-23T19:41:20.8302410+00:00",
+                                                     "finished_utc":  "2026-08-23T19:41:20.8645999+00:00",
+                                                     "duration_ms":  34.359,
+                                                     "timed_out":  false,
+                                                     "crashed":  false,
+                                                     "exit_code":  0,
+                                                     "exit_code_hex":  "0x00000000",
+                                                     "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\reconstructed\\agent_billing_queue\\stdout.bin",
+                                                     "stdout_sha256":  "4b2b199bd8777449c19f1f1b42b1290a461baefc640f01c1f86ecb8cf1507965",
+                                                     "stdout_bytes":  416,
+                                                     "stdout_display":  "{\"tenant\":\"acme\",\"total\":2,\"offset\":0,\"limit\":5,\"items\":[{\"id\":1001,\"status\":\"open\",\"priority\":4,\"assignee\":\"iris\",\"subject\":\"Invoice PDF shows old address\",\"tags\":[\"billing\",\"export\"],\"updated\":20260820,\"sla_breached\":true},{\"id\":1005,\"status\":\"pending\",\"priority\":4,\"assignee\":\"iris\",\"subject\":\"Refund line missing from invoice\",\"tags\":[\"billing\",\"reports\"],\"updated\":20260819,\"sla_breached\":true}],\"returned\":2}\\r\\n",
+                                                     "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\reconstructed\\agent_billing_queue\\stderr.bin",
+                                                     "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                                                     "stderr_bytes":  0,
+                                                     "stderr_display":  ""
+                                                 },
+                           "comparisons":  {
+                                               "stdout_exact_match":  true,
+                                               "stderr_exact_match":  true,
+                                               "exit_code_match":  true
+                                           }
+                       },
+                       {
+                           "name":  "customer_visibility_page",
+                           "description":  "Customer-scoped visibility with stable sort, offset and limit",
+                           "stdin_text":  "GET /api/tickets?tenant=acme\u0026role=customer\u0026actor=maya\u0026status=open,resolved\u0026sort=-updated\u0026offset=1\u0026limit=2\n",
+                           "challenge_reference_run":  {
+                                                           "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe",
+                                                           "binary_sha256":  "98874a57e46d14d1a61f111fd95c861f6fce9ce66ce897f16037593026e51998",
+                                                           "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe",
+                                                           "arguments":  [
+
+                                                                         ],
+                                                           "stdin":  "UTF-8 text supplied, then closed",
+                                                           "stdin_text":  "GET /api/tickets?tenant=acme\u0026role=customer\u0026actor=maya\u0026status=open,resolved\u0026sort=-updated\u0026offset=1\u0026limit=2\n",
+                                                           "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\tests\\runtime",
+                                                           "environment_delta":  {
+
+                                                                                 },
+                                                           "timeout_seconds":  5,
+                                                           "started_utc":  "2026-08-23T19:41:20.8805022+00:00",
+                                                           "finished_utc":  "2026-08-23T19:41:20.8940245+00:00",
+                                                           "duration_ms":  13.522,
+                                                           "timed_out":  false,
+                                                           "crashed":  false,
+                                                           "exit_code":  0,
+                                                           "exit_code_hex":  "0x00000000",
+                                                           "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\challenge_reference\\customer_visibility_page\\stdout.bin",
+                                                           "stdout_sha256":  "e1a6aba1e2e7941dbecbfdb714d53701850e8a6ffd62f6e2a53c1a38ab2cd46e",
+                                                           "stdout_bytes":  417,
+                                                           "stdout_display":  "{\"tenant\":\"acme\",\"total\":4,\"offset\":1,\"limit\":2,\"items\":[{\"id\":1001,\"status\":\"open\",\"priority\":4,\"assignee\":\"iris\",\"subject\":\"Invoice PDF shows old address\",\"tags\":[\"billing\",\"export\"],\"updated\":20260820,\"sla_breached\":true},{\"id\":1003,\"status\":\"resolved\",\"priority\":3,\"assignee\":\"iris\",\"subject\":\"Mobile dashboard totals disagree\",\"tags\":[\"mobile\",\"reports\"],\"updated\":20260818,\"sla_breached\":false}],\"returned\":2}\\r\\n",
+                                                           "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\challenge_reference\\customer_visibility_page\\stderr.bin",
+                                                           "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                                                           "stderr_bytes":  0,
+                                                           "stderr_display":  ""
+                                                       },
+                           "reconstructed_run":  {
+                                                     "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\ticket_portal_reconstructed.exe",
+                                                     "binary_sha256":  "f5b26adb28a0f48f2c9c92bf1b111f91edf0e49d79ddd184c36c590499e1c0d7",
+                                                     "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\ticket_portal_reconstructed.exe",
+                                                     "arguments":  [
+
+                                                                   ],
+                                                     "stdin":  "UTF-8 text supplied, then closed",
+                                                     "stdin_text":  "GET /api/tickets?tenant=acme\u0026role=customer\u0026actor=maya\u0026status=open,resolved\u0026sort=-updated\u0026offset=1\u0026limit=2\n",
+                                                     "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\tests\\runtime",
+                                                     "environment_delta":  {
+
+                                                                           },
+                                                     "timeout_seconds":  5,
+                                                     "started_utc":  "2026-08-23T19:41:20.8980272+00:00",
+                                                     "finished_utc":  "2026-08-23T19:41:20.9136837+00:00",
+                                                     "duration_ms":  15.657,
+                                                     "timed_out":  false,
+                                                     "crashed":  false,
+                                                     "exit_code":  0,
+                                                     "exit_code_hex":  "0x00000000",
+                                                     "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\reconstructed\\customer_visibility_page\\stdout.bin",
+                                                     "stdout_sha256":  "e1a6aba1e2e7941dbecbfdb714d53701850e8a6ffd62f6e2a53c1a38ab2cd46e",
+                                                     "stdout_bytes":  417,
+                                                     "stdout_display":  "{\"tenant\":\"acme\",\"total\":4,\"offset\":1,\"limit\":2,\"items\":[{\"id\":1001,\"status\":\"open\",\"priority\":4,\"assignee\":\"iris\",\"subject\":\"Invoice PDF shows old address\",\"tags\":[\"billing\",\"export\"],\"updated\":20260820,\"sla_breached\":true},{\"id\":1003,\"status\":\"resolved\",\"priority\":3,\"assignee\":\"iris\",\"subject\":\"Mobile dashboard totals disagree\",\"tags\":[\"mobile\",\"reports\"],\"updated\":20260818,\"sla_breached\":false}],\"returned\":2}\\r\\n",
+                                                     "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\reconstructed\\customer_visibility_page\\stderr.bin",
+                                                     "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                                                     "stderr_bytes":  0,
+                                                     "stderr_display":  ""
+                                                 },
+                           "comparisons":  {
+                                               "stdout_exact_match":  true,
+                                               "stderr_exact_match":  true,
+                                               "exit_code_match":  true
+                                           }
+                       },
+                       {
+                           "name":  "manager_assignee_summary",
+                           "description":  "Manager aggregation including internal records",
+                           "stdin_text":  "GET /api/summary?tenant=north\u0026role=manager\u0026include_internal=true\u0026status=open,pending\u0026priority_gte=3\u0026group=assignee\n",
+                           "challenge_reference_run":  {
+                                                           "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe",
+                                                           "binary_sha256":  "98874a57e46d14d1a61f111fd95c861f6fce9ce66ce897f16037593026e51998",
+                                                           "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe",
+                                                           "arguments":  [
+
+                                                                         ],
+                                                           "stdin":  "UTF-8 text supplied, then closed",
+                                                           "stdin_text":  "GET /api/summary?tenant=north\u0026role=manager\u0026include_internal=true\u0026status=open,pending\u0026priority_gte=3\u0026group=assignee\n",
+                                                           "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\tests\\runtime",
+                                                           "environment_delta":  {
+
+                                                                                 },
+                                                           "timeout_seconds":  5,
+                                                           "started_utc":  "2026-08-23T19:41:20.9186846+00:00",
+                                                           "finished_utc":  "2026-08-23T19:41:20.9319275+00:00",
+                                                           "duration_ms":  13.243,
+                                                           "timed_out":  false,
+                                                           "crashed":  false,
+                                                           "exit_code":  0,
+                                                           "exit_code_hex":  "0x00000000",
+                                                           "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\challenge_reference\\manager_assignee_summary\\stdout.bin",
+                                                           "stdout_sha256":  "bc6cdc3cf0696816d91e8f66338b846ddb1880d4105ef4729f0ca50f612767af",
+                                                           "stdout_bytes":  342,
+                                                           "stdout_display":  "{\"tenant\":\"north\",\"group_by\":\"assignee\",\"total\":6,\"sla_breached\":4,\"spent_minutes\":1046,\"groups\":[{\"key\":\"vale\",\"count\":4,\"active\":4,\"breached\":3,\"priority_sum\":16,\"spent\":871},{\"key\":\"jules\",\"count\":1,\"active\":1,\"breached\":1,\"priority_sum\":5,\"spent\":74},{\"key\":\"unassigned\",\"count\":1,\"active\":1,\"breached\":0,\"priority_sum\":4,\"spent\":101}]}\\r\\n",
+                                                           "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\challenge_reference\\manager_assignee_summary\\stderr.bin",
+                                                           "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                                                           "stderr_bytes":  0,
+                                                           "stderr_display":  ""
+                                                       },
+                           "reconstructed_run":  {
+                                                     "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\ticket_portal_reconstructed.exe",
+                                                     "binary_sha256":  "f5b26adb28a0f48f2c9c92bf1b111f91edf0e49d79ddd184c36c590499e1c0d7",
+                                                     "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\ticket_portal_reconstructed.exe",
+                                                     "arguments":  [
+
+                                                                   ],
+                                                     "stdin":  "UTF-8 text supplied, then closed",
+                                                     "stdin_text":  "GET /api/summary?tenant=north\u0026role=manager\u0026include_internal=true\u0026status=open,pending\u0026priority_gte=3\u0026group=assignee\n",
+                                                     "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\tests\\runtime",
+                                                     "environment_delta":  {
+
+                                                                           },
+                                                     "timeout_seconds":  5,
+                                                     "started_utc":  "2026-08-23T19:41:20.9364966+00:00",
+                                                     "finished_utc":  "2026-08-23T19:41:20.9490138+00:00",
+                                                     "duration_ms":  12.517,
+                                                     "timed_out":  false,
+                                                     "crashed":  false,
+                                                     "exit_code":  0,
+                                                     "exit_code_hex":  "0x00000000",
+                                                     "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\reconstructed\\manager_assignee_summary\\stdout.bin",
+                                                     "stdout_sha256":  "bc6cdc3cf0696816d91e8f66338b846ddb1880d4105ef4729f0ca50f612767af",
+                                                     "stdout_bytes":  342,
+                                                     "stdout_display":  "{\"tenant\":\"north\",\"group_by\":\"assignee\",\"total\":6,\"sla_breached\":4,\"spent_minutes\":1046,\"groups\":[{\"key\":\"vale\",\"count\":4,\"active\":4,\"breached\":3,\"priority_sum\":16,\"spent\":871},{\"key\":\"jules\",\"count\":1,\"active\":1,\"breached\":1,\"priority_sum\":5,\"spent\":74},{\"key\":\"unassigned\",\"count\":1,\"active\":1,\"breached\":0,\"priority_sum\":4,\"spent\":101}]}\\r\\n",
+                                                     "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\reconstructed\\manager_assignee_summary\\stderr.bin",
+                                                     "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                                                     "stderr_bytes":  0,
+                                                     "stderr_display":  ""
+                                                 },
+                           "comparisons":  {
+                                               "stdout_exact_match":  true,
+                                               "stderr_exact_match":  true,
+                                               "exit_code_match":  true
+                                           }
+                       },
+                       {
+                           "name":  "manager_internal_detail",
+                           "description":  "Authorized manager detail response with internal metadata",
+                           "stdin_text":  "GET /api/tickets/2008?tenant=north\u0026role=manager\u0026include_internal=true\n",
+                           "challenge_reference_run":  {
+                                                           "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe",
+                                                           "binary_sha256":  "98874a57e46d14d1a61f111fd95c861f6fce9ce66ce897f16037593026e51998",
+                                                           "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe",
+                                                           "arguments":  [
+
+                                                                         ],
+                                                           "stdin":  "UTF-8 text supplied, then closed",
+                                                           "stdin_text":  "GET /api/tickets/2008?tenant=north\u0026role=manager\u0026include_internal=true\n",
+                                                           "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\tests\\runtime",
+                                                           "environment_delta":  {
+
+                                                                                 },
+                                                           "timeout_seconds":  5,
+                                                           "started_utc":  "2026-08-23T19:41:20.9560408+00:00",
+                                                           "finished_utc":  "2026-08-23T19:41:20.9702296+00:00",
+                                                           "duration_ms":  14.189,
+                                                           "timed_out":  false,
+                                                           "crashed":  false,
+                                                           "exit_code":  0,
+                                                           "exit_code_hex":  "0x00000000",
+                                                           "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\challenge_reference\\manager_internal_detail\\stdout.bin",
+                                                           "stdout_sha256":  "307b2d60551337e3fa2168b3c13d57e906ed47feb2686c8e152dbddf5123a2b5",
+                                                           "stdout_bytes":  270,
+                                                           "stdout_display":  "{\"id\":2008,\"tenant\":\"north\",\"customer\":\"theo\",\"assignee\":\"jules\",\"subject\":\"Private dashboard shared publicly\",\"status\":\"pending\",\"priority\":5,\"created\":20260722,\"updated\":20260823,\"tags\":[\"security\",\"reports\"],\"sla_minutes\":60,\"spent_minutes\":74,\"internal_only\":true}\\r\\n",
+                                                           "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\challenge_reference\\manager_internal_detail\\stderr.bin",
+                                                           "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                                                           "stderr_bytes":  0,
+                                                           "stderr_display":  ""
+                                                       },
+                           "reconstructed_run":  {
+                                                     "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\ticket_portal_reconstructed.exe",
+                                                     "binary_sha256":  "f5b26adb28a0f48f2c9c92bf1b111f91edf0e49d79ddd184c36c590499e1c0d7",
+                                                     "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\ticket_portal_reconstructed.exe",
+                                                     "arguments":  [
+
+                                                                   ],
+                                                     "stdin":  "UTF-8 text supplied, then closed",
+                                                     "stdin_text":  "GET /api/tickets/2008?tenant=north\u0026role=manager\u0026include_internal=true\n",
+                                                     "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\tests\\runtime",
+                                                     "environment_delta":  {
+
+                                                                           },
+                                                     "timeout_seconds":  5,
+                                                     "started_utc":  "2026-08-23T19:41:20.9747383+00:00",
+                                                     "finished_utc":  "2026-08-23T19:41:20.9889084+00:00",
+                                                     "duration_ms":  14.17,
+                                                     "timed_out":  false,
+                                                     "crashed":  false,
+                                                     "exit_code":  0,
+                                                     "exit_code_hex":  "0x00000000",
+                                                     "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\reconstructed\\manager_internal_detail\\stdout.bin",
+                                                     "stdout_sha256":  "307b2d60551337e3fa2168b3c13d57e906ed47feb2686c8e152dbddf5123a2b5",
+                                                     "stdout_bytes":  270,
+                                                     "stdout_display":  "{\"id\":2008,\"tenant\":\"north\",\"customer\":\"theo\",\"assignee\":\"jules\",\"subject\":\"Private dashboard shared publicly\",\"status\":\"pending\",\"priority\":5,\"created\":20260722,\"updated\":20260823,\"tags\":[\"security\",\"reports\"],\"sla_minutes\":60,\"spent_minutes\":74,\"internal_only\":true}\\r\\n",
+                                                     "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\reconstructed\\manager_internal_detail\\stderr.bin",
+                                                     "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                                                     "stderr_bytes":  0,
+                                                     "stderr_display":  ""
+                                                 },
+                           "comparisons":  {
+                                               "stdout_exact_match":  true,
+                                               "stderr_exact_match":  true,
+                                               "exit_code_match":  true
+                                           }
+                       },
+                       {
+                           "name":  "customer_forbidden_detail",
+                           "description":  "Internal ticket rejected for its customer actor",
+                           "stdin_text":  "GET /api/tickets/2008?tenant=north\u0026role=customer\u0026actor=theo\n",
+                           "challenge_reference_run":  {
+                                                           "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe",
+                                                           "binary_sha256":  "98874a57e46d14d1a61f111fd95c861f6fce9ce66ce897f16037593026e51998",
+                                                           "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe",
+                                                           "arguments":  [
+
+                                                                         ],
+                                                           "stdin":  "UTF-8 text supplied, then closed",
+                                                           "stdin_text":  "GET /api/tickets/2008?tenant=north\u0026role=customer\u0026actor=theo\n",
+                                                           "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\tests\\runtime",
+                                                           "environment_delta":  {
+
+                                                                                 },
+                                                           "timeout_seconds":  5,
+                                                           "started_utc":  "2026-08-23T19:41:20.9940756+00:00",
+                                                           "finished_utc":  "2026-08-23T19:41:21.0072016+00:00",
+                                                           "duration_ms":  13.126,
+                                                           "timed_out":  false,
+                                                           "crashed":  false,
+                                                           "exit_code":  3,
+                                                           "exit_code_hex":  "0x00000003",
+                                                           "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\challenge_reference\\customer_forbidden_detail\\stdout.bin",
+                                                           "stdout_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                                                           "stdout_bytes":  0,
+                                                           "stdout_display":  "",
+                                                           "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\challenge_reference\\customer_forbidden_detail\\stderr.bin",
+                                                           "stderr_sha256":  "aef15d41893a3ce047ebe644633fb9f61fc47abad60ff7e533eee2cdb0203e3b",
+                                                           "stderr_bytes":  57,
+                                                           "stderr_display":  "error code=forbidden message=ticket 2008 is not visible\\r\\n"
+                                                       },
+                           "reconstructed_run":  {
+                                                     "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\ticket_portal_reconstructed.exe",
+                                                     "binary_sha256":  "f5b26adb28a0f48f2c9c92bf1b111f91edf0e49d79ddd184c36c590499e1c0d7",
+                                                     "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\ticket_portal_reconstructed.exe",
+                                                     "arguments":  [
+
+                                                                   ],
+                                                     "stdin":  "UTF-8 text supplied, then closed",
+                                                     "stdin_text":  "GET /api/tickets/2008?tenant=north\u0026role=customer\u0026actor=theo\n",
+                                                     "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\tests\\runtime",
+                                                     "environment_delta":  {
+
+                                                                           },
+                                                     "timeout_seconds":  5,
+                                                     "started_utc":  "2026-08-23T19:41:21.0117045+00:00",
+                                                     "finished_utc":  "2026-08-23T19:41:21.0262336+00:00",
+                                                     "duration_ms":  14.529,
+                                                     "timed_out":  false,
+                                                     "crashed":  false,
+                                                     "exit_code":  3,
+                                                     "exit_code_hex":  "0x00000003",
+                                                     "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\reconstructed\\customer_forbidden_detail\\stdout.bin",
+                                                     "stdout_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                                                     "stdout_bytes":  0,
+                                                     "stdout_display":  "",
+                                                     "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\reconstructed\\customer_forbidden_detail\\stderr.bin",
+                                                     "stderr_sha256":  "aef15d41893a3ce047ebe644633fb9f61fc47abad60ff7e533eee2cdb0203e3b",
+                                                     "stderr_bytes":  57,
+                                                     "stderr_display":  "error code=forbidden message=ticket 2008 is not visible\\r\\n"
+                                                 },
+                           "comparisons":  {
+                                               "stdout_exact_match":  true,
+                                               "stderr_exact_match":  true,
+                                               "exit_code_match":  true
+                                           }
+                       },
+                       {
+                           "name":  "invalid_sort_validation",
+                           "description":  "Unknown sort field produces deterministic stderr and exit code",
+                           "stdin_text":  "GET /api/tickets?tenant=orbit\u0026role=agent\u0026sort=-urgency\n",
+                           "challenge_reference_run":  {
+                                                           "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe",
+                                                           "binary_sha256":  "98874a57e46d14d1a61f111fd95c861f6fce9ce66ce897f16037593026e51998",
+                                                           "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe",
+                                                           "arguments":  [
+
+                                                                         ],
+                                                           "stdin":  "UTF-8 text supplied, then closed",
+                                                           "stdin_text":  "GET /api/tickets?tenant=orbit\u0026role=agent\u0026sort=-urgency\n",
+                                                           "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\tests\\runtime",
+                                                           "environment_delta":  {
+
+                                                                                 },
+                                                           "timeout_seconds":  5,
+                                                           "started_utc":  "2026-08-23T19:41:21.0308385+00:00",
+                                                           "finished_utc":  "2026-08-23T19:41:21.0450596+00:00",
+                                                           "duration_ms":  14.221,
+                                                           "timed_out":  false,
+                                                           "crashed":  false,
+                                                           "exit_code":  2,
+                                                           "exit_code_hex":  "0x00000002",
+                                                           "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\challenge_reference\\invalid_sort_validation\\stdout.bin",
+                                                           "stdout_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                                                           "stdout_bytes":  0,
+                                                           "stdout_display":  "",
+                                                           "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\challenge_reference\\invalid_sort_validation\\stderr.bin",
+                                                           "stderr_sha256":  "c90774c6f26ea214ed6eed0ff861c36a0ea456fb048b917d40498e40e48f8e06",
+                                                           "stderr_bytes":  45,
+                                                           "stderr_display":  "error code=bad_request message=invalid sort\\r\\n"
+                                                       },
+                           "reconstructed_run":  {
+                                                     "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\ticket_portal_reconstructed.exe",
+                                                     "binary_sha256":  "f5b26adb28a0f48f2c9c92bf1b111f91edf0e49d79ddd184c36c590499e1c0d7",
+                                                     "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\ticket_portal_reconstructed.exe",
+                                                     "arguments":  [
+
+                                                                   ],
+                                                     "stdin":  "UTF-8 text supplied, then closed",
+                                                     "stdin_text":  "GET /api/tickets?tenant=orbit\u0026role=agent\u0026sort=-urgency\n",
+                                                     "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\tests\\runtime",
+                                                     "environment_delta":  {
+
+                                                                           },
+                                                     "timeout_seconds":  5,
+                                                     "started_utc":  "2026-08-23T19:41:21.0510652+00:00",
+                                                     "finished_utc":  "2026-08-23T19:41:21.0657154+00:00",
+                                                     "duration_ms":  14.65,
+                                                     "timed_out":  false,
+                                                     "crashed":  false,
+                                                     "exit_code":  2,
+                                                     "exit_code_hex":  "0x00000002",
+                                                     "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\reconstructed\\invalid_sort_validation\\stdout.bin",
+                                                     "stdout_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                                                     "stdout_bytes":  0,
+                                                     "stdout_display":  "",
+                                                     "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\reconstructed\\invalid_sort_validation\\stderr.bin",
+                                                     "stderr_sha256":  "c90774c6f26ea214ed6eed0ff861c36a0ea456fb048b917d40498e40e48f8e06",
+                                                     "stderr_bytes":  45,
+                                                     "stderr_display":  "error code=bad_request message=invalid sort\\r\\n"
+                                                 },
+                           "comparisons":  {
+                                               "stdout_exact_match":  true,
+                                               "stderr_exact_match":  true,
+                                               "exit_code_match":  true
+                                           }
+                       }
+                   ],
+    "comparisons":  {
+                        "all_stdout_exact_match":  true,
+                        "all_stderr_exact_match":  true,
+                        "all_exit_codes_match":  true,
+                        "passed_cases":  6,
+                        "total_cases":  6
+                    },
+    "classifications":  [
+                            "ALL_TESTS_PASSED"
+                        ],
+    "overall_status":  "ALL_TESTS_PASSED",
+    "reconstructed_binary":  {
+                                 "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\ticket_portal_reconstructed.exe",
+                                 "sha256":  "f5b26adb28a0f48f2c9c92bf1b111f91edf0e49d79ddd184c36c590499e1c0d7",
+                                 "bytes":  33792
+                             }
+}

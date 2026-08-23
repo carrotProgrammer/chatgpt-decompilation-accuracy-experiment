@@ -1,0 +1,11 @@
+D:\XiangxinLab\adpcm_decompilation_experiment\tests\fixtures\cannot_compile.c:1:11: error: expected parameter declarator
+    1 | int main( {
+      |           ^
+D:\XiangxinLab\adpcm_decompilation_experiment\tests\fixtures\cannot_compile.c:1:11: error: expected ')'
+D:\XiangxinLab\adpcm_decompilation_experiment\tests\fixtures\cannot_compile.c:1:9: note: to match this '('
+    1 | int main( {
+      |         ^
+D:\XiangxinLab\adpcm_decompilation_experiment\tests\fixtures\cannot_compile.c:4:1: error: expected function body after function declarator
+    4 | 
+      | ^
+3 errors generated.

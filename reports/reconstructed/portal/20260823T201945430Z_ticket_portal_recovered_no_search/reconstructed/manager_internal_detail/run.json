@@ -1,0 +1,30 @@
+{
+    "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\reconstructed\\portal\\20260823T201945430Z_ticket_portal_recovered_no_search\\ticket_portal_reconstructed.exe",
+    "binary_sha256":  "afd91f6c10a0d22028fa2104addb5978257b5dab76b76b65ba07c656ead7a335",
+    "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\reconstructed\\portal\\20260823T201945430Z_ticket_portal_recovered_no_search\\ticket_portal_reconstructed.exe",
+    "arguments":  [
+
+                  ],
+    "stdin":  "UTF-8 text supplied, then closed",
+    "stdin_text":  "GET /api/tickets/2008?tenant=north\u0026role=manager\u0026include_internal=true\n",
+    "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\tests\\runtime",
+    "environment_delta":  {
+
+                          },
+    "timeout_seconds":  5,
+    "started_utc":  "2026-08-23T20:19:46.1442862+00:00",
+    "finished_utc":  "2026-08-23T20:19:46.1560963+00:00",
+    "duration_ms":  11.81,
+    "timed_out":  false,
+    "crashed":  false,
+    "exit_code":  0,
+    "exit_code_hex":  "0x00000000",
+    "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T201945430Z_ticket_portal_recovered_no_search\\reconstructed\\manager_internal_detail\\stdout.bin",
+    "stdout_sha256":  "26e7858fdeaaf697961fff0dfe0a350aa07e08e122396ad88f6282e911938b62",
+    "stdout_bytes":  224,
+    "stdout_display":  "{\"id\":2008,\"tenant\":\"north\",\"customer\":\"theo\",\"assignee\":\"jules\",\"status\":\"pending\",\"priority\":5,\"created\":20260722,\"updated\":20260823,\"tags\":[\"security\",\"reports\"],\"sla_minutes\":60,\"spent_minutes\":74,\"internal_only\":true}\\r\\n",
+    "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T201945430Z_ticket_portal_recovered_no_search\\reconstructed\\manager_internal_detail\\stderr.bin",
+    "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes":  0,
+    "stderr_display":  ""
+}

@@ -1,0 +1,30 @@
+{
+    "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\reconstructed\\chal\\20260823T192401086Z_chal\\chal_reconstructed.exe",
+    "binary_sha256":  "eede630e5b42a3aa29545d102f8a4a9acb90d5fb7580bfd26a6400512c453ef6",
+    "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\reconstructed\\chal\\20260823T192401086Z_chal\\chal_reconstructed.exe",
+    "arguments":  [
+
+                  ],
+    "stdin":  "UTF-8 text supplied, then closed",
+    "stdin_text":  "position fen r3k2r/Pppp1ppp/1b3nbN/nP6/BBP1P3/q4N2/Pp1P1PPP/R2Q1RK1 w kq - 0 1\nperft 3\nquit\n",
+    "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\tests\\runtime",
+    "environment_delta":  {
+
+                          },
+    "timeout_seconds":  15,
+    "started_utc":  "2026-08-23T19:24:01.8095256+00:00",
+    "finished_utc":  "2026-08-23T19:24:01.8257253+00:00",
+    "duration_ms":  16.2,
+    "timed_out":  false,
+    "crashed":  false,
+    "exit_code":  0,
+    "exit_code_hex":  "0x00000000",
+    "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\chal\\20260823T192401086Z_chal\\reconstructed\\promotion_castling_depth_3\\stdout.bin",
+    "stdout_sha256":  "1f5d84fbb6fd82cea0719c5048cf595d9d0cfea9943059c1b8e98157c16ebc8e",
+    "stdout_bytes":  27,
+    "stdout_display":  "perft depth 3 nodes 29013\\r\\n",
+    "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\chal\\20260823T192401086Z_chal\\reconstructed\\promotion_castling_depth_3\\stderr.bin",
+    "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes":  0,
+    "stderr_display":  ""
+}

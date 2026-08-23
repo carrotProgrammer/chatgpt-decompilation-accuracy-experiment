@@ -1,0 +1,30 @@
+{
+    "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_002.exe",
+    "binary_sha256":  "f516e81033edbc1fc17dce6a7e6fcaae442d1e0638483fea1408443536d6a729",
+    "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_002.exe",
+    "arguments":  [
+
+                  ],
+    "stdin":  "UTF-8 text supplied, then closed",
+    "stdin_text":  "position fen rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1\nperft 4\nquit\n",
+    "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\tests\\runtime",
+    "environment_delta":  {
+
+                          },
+    "timeout_seconds":  15,
+    "started_utc":  "2026-08-23T19:41:11.0276569+00:00",
+    "finished_utc":  "2026-08-23T19:41:11.0648490+00:00",
+    "duration_ms":  37.192,
+    "timed_out":  false,
+    "crashed":  false,
+    "exit_code":  0,
+    "exit_code_hex":  "0x00000000",
+    "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\baseline\\chal\\challenge\\start_position_depth_4\\stdout.bin",
+    "stdout_sha256":  "a7f5a886074fad5b893669df0ec290f5bb5f7fdafa4694a9bdf16d054bd75ca2",
+    "stdout_bytes":  28,
+    "stdout_display":  "perft depth 4 nodes 197281\\r\\n",
+    "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\baseline\\chal\\challenge\\start_position_depth_4\\stderr.bin",
+    "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes":  0,
+    "stderr_display":  ""
+}
