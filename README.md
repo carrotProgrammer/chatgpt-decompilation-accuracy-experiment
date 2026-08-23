@@ -1,6 +1,12 @@
-# ADPCM / Chal / Portal x86-64 反编译实验
+# ChatGPT Binary Decompilation Accuracy Experiment
 
-本目录包含三个相互独立的反编译样本。原有 CHStone ADPCM 和 Chal 样本及测试完整保留；Portal 是本实验原创合成的多租户工单查询后端。评测只依据返回 C 的实际编译、链接和相同条件下的功能测试，不以源码长度或 binary 大小作为判据。
+这是一个可复现的多样本实验框架，用于测量 ChatGPT 从经过优化和 strip 的 x86-64 Windows PE 二进制中重建 C 源码的准确率。实验分别记录允许联网搜索和禁止搜索条件下生成的 recovered C，并通过重新编译及黑盒行为对比，检查其 stdout、stderr、退出码、超时和崩溃状态是否与原 challenge binary 完全一致。
+
+项目当前包含三个具有不同源码先验的样本：经典公开基准 CHStone ADPCM、较少见但仍可检索的 Chal，以及没有公开对应源码的原创 Portal 程序。这样可以观察公开源码可得性与精确恢复能力之间的关系，而不只是判断生成代码能否编译或大致实现相同功能。
+
+![Public source prior and exact-recovery results](docs/decompilation_source_prior_summary.svg)
+
+评测只依据 recovered C 的实际编译、链接和确定性功能测试结果，不以源码长度、命名风格或 reconstructed binary 大小作为准确率判据。
 
 | 样本 | 正式 challenge | 原始源码 | 功能测试 |
 |---|---|---|---|
