@@ -1,6 +1,6 @@
 # ChatGPT Binary Decompilation Accuracy Experiment
 
-[English](README.md) | [简体中文](README.zh-CN.md)
+[English](README.md) | [简体中文](README.zh-CN.md) | [Research notes / 实验研究记录](https://app.notion.com/p/3c5ba3506c39812a9cb3f371f9c76ef1)
 
 A reproducible, multi-sample framework for measuring how accurately ChatGPT reconstructs C source code from optimized and stripped x86-64 Windows PE binaries. The experiment records recovered C produced with web search available and with search blocked, recompiles it without modification, and compares its observable behavior against the original challenge binary.
 
