@@ -1,0 +1,115 @@
+{
+    "schema_version":  1,
+    "run_id":  "20260823T183623094Z_adpcm_recovered",
+    "generated_utc":  "2026-08-23T18:36:23.1006277+00:00",
+    "recovered_source":  {
+                             "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\source\\recovered\\adpcm_recovered.c",
+                             "sha256":  "4ed1ea22496957fea8a67072c54161f58f662c1e5be35b2c7ddd917bbb20eb7e",
+                             "bytes":  12420,
+                             "modified_by_evaluator":  false
+                         },
+    "compiler":  {
+                     "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe",
+                     "target":  "x86_64-w64-windows-gnu",
+                     "version":  "clang version 22.1.8 (https://github.com/llvm/llvm-project.git ca7933e47d3a3451d81e72ac174dcb5aa28b59d1)\r\nTarget: x86_64-w64-windows-gnu\r\nThread model: posix\r\nInstalledDir: D:/XiangxinLab/adpcm_decompilation_experiment/toolchain/llvm-mingw-20260616-ucrt-x86_64/bin\r\nConfiguration file: D:/XiangxinLab/adpcm_decompilation_experiment/toolchain/llvm-mingw-20260616-ucrt-x86_64/bin/x86_64-w64-windows-gnu.cfg"
+                 },
+    "compile":  {
+                    "Command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe -std=gnu11 -O2 -g0 -fno-lto -ffunction-sections -fdata-sections -c D:\\XiangxinLab\\adpcm_decompilation_experiment\\source\\recovered\\adpcm_recovered.c -o D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\20260823T183623094Z_adpcm_recovered\\build\\recovered.o",
+                    "ExitCode":  0,
+                    "StartedUtc":  "2026-08-23T18:36:23.2246544+00:00",
+                    "FinishedUtc":  "2026-08-23T18:36:23.3270631+00:00",
+                    "DurationMs":  102.409,
+                    "StdoutPath":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\20260823T183623094Z_adpcm_recovered\\build\\compile.stdout.txt",
+                    "StderrPath":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\20260823T183623094Z_adpcm_recovered\\build\\compile.stderr.txt"
+                },
+    "link":  {
+                 "Command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe -fno-lto -Wl,--gc-sections D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\20260823T183623094Z_adpcm_recovered\\build\\recovered.o -o D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\20260823T183623094Z_adpcm_recovered\\build\\reconstructed_unstripped.exe",
+                 "ExitCode":  0,
+                 "StartedUtc":  "2026-08-23T18:36:23.3387644+00:00",
+                 "FinishedUtc":  "2026-08-23T18:36:23.3974071+00:00",
+                 "DurationMs":  58.643,
+                 "StdoutPath":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\20260823T183623094Z_adpcm_recovered\\build\\link.stdout.txt",
+                 "StderrPath":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\20260823T183623094Z_adpcm_recovered\\build\\link.stderr.txt"
+             },
+    "strip":  {
+                  "Command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\llvm-strip.exe --strip-all D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\reconstructed\\20260823T183623094Z_adpcm_recovered\\adpcm_reconstructed.exe",
+                  "ExitCode":  0,
+                  "StartedUtc":  "2026-08-23T18:36:23.4029183+00:00",
+                  "FinishedUtc":  "2026-08-23T18:36:23.4431264+00:00",
+                  "DurationMs":  40.208,
+                  "StdoutPath":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\20260823T183623094Z_adpcm_recovered\\build\\strip.stdout.txt",
+                  "StderrPath":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\20260823T183623094Z_adpcm_recovered\\build\\strip.stderr.txt"
+              },
+    "challenge_reference_run":  {
+                                    "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_001.exe",
+                                    "binary_sha256":  "be97c94744c1fdcaa14aaf5901897c46bc253160a210109edd8b05f1a4b846b5",
+                                    "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_001.exe",
+                                    "arguments":  [
+
+                                                  ],
+                                    "stdin":  "closed; zero bytes",
+                                    "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\tests\\runtime",
+                                    "environment_delta":  {
+                                                              "CHSTONE_EVALUATION":  "1"
+                                                          },
+                                    "timeout_seconds":  5,
+                                    "started_utc":  "2026-08-23T18:36:23.4726984+00:00",
+                                    "finished_utc":  "2026-08-23T18:36:23.4912451+00:00",
+                                    "duration_ms":  18.547,
+                                    "timed_out":  false,
+                                    "crashed":  false,
+                                    "exit_code":  0,
+                                    "exit_code_hex":  "0x00000000",
+                                    "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\20260823T183623094Z_adpcm_recovered\\challenge_reference\\stdout.bin",
+                                    "stdout_sha256":  "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+                                    "stdout_bytes":  3,
+                                    "stdout_display":  "0\\r\\n",
+                                    "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\20260823T183623094Z_adpcm_recovered\\challenge_reference\\stderr.bin",
+                                    "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                                    "stderr_bytes":  0,
+                                    "stderr_display":  ""
+                                },
+    "reconstructed_run":  {
+                              "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\reconstructed\\20260823T183623094Z_adpcm_recovered\\adpcm_reconstructed.exe",
+                              "binary_sha256":  "d4260c9773e47a54b07db6f910a0e8d8e063df35afa2322f1d2a7a29b64a3968",
+                              "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\reconstructed\\20260823T183623094Z_adpcm_recovered\\adpcm_reconstructed.exe",
+                              "arguments":  [
+
+                                            ],
+                              "stdin":  "closed; zero bytes",
+                              "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\tests\\runtime",
+                              "environment_delta":  {
+                                                        "CHSTONE_EVALUATION":  "1"
+                                                    },
+                              "timeout_seconds":  5,
+                              "started_utc":  "2026-08-23T18:36:23.5253097+00:00",
+                              "finished_utc":  "2026-08-23T18:36:23.5569882+00:00",
+                              "duration_ms":  31.679,
+                              "timed_out":  false,
+                              "crashed":  false,
+                              "exit_code":  0,
+                              "exit_code_hex":  "0x00000000",
+                              "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\20260823T183623094Z_adpcm_recovered\\reconstructed\\stdout.bin",
+                              "stdout_sha256":  "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+                              "stdout_bytes":  3,
+                              "stdout_display":  "0\\r\\n",
+                              "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\20260823T183623094Z_adpcm_recovered\\reconstructed\\stderr.bin",
+                              "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                              "stderr_bytes":  0,
+                              "stderr_display":  ""
+                          },
+    "comparisons":  {
+                        "stdout_exact_match":  true,
+                        "stderr_exact_match":  true,
+                        "exit_code_match":  true
+                    },
+    "classifications":  [
+                            "ALL_TESTS_PASSED"
+                        ],
+    "overall_status":  "ALL_TESTS_PASSED",
+    "reconstructed_binary":  {
+                                 "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\reconstructed\\20260823T183623094Z_adpcm_recovered\\adpcm_reconstructed.exe",
+                                 "sha256":  "d4260c9773e47a54b07db6f910a0e8d8e063df35afa2322f1d2a7a29b64a3968",
+                                 "bytes":  20992
+                             }
+}

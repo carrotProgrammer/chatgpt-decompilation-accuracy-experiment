@@ -1,18 +1,7 @@
 {
-    "schema_version":  1,
-    "experiment":  "CHStone ADPCM decompilation challenge",
-    "generated_utc":  "2026-08-23T16:31:39.2474092+00:00",
-    "repository":  {
-                       "url":  "https://github.com/ferrandi/CHStone",
-                       "commit_sha":  "2b7e20ffd3365016faf1e4e2b86496a5c95445fb",
-                       "source_path_at_commit":  "adpcm/adpcm.c"
-                   },
-    "source":  {
-                   "pristine_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\source\\original\\adpcm.c",
-                   "sha256":  "2373e31cd6f8a8e9160669bc4edd1b0cfb3ac3f9a3413bbceefbae9309c5063d",
-                   "bytes":  25998,
-                   "modified":  false
-               },
+    "schema_version":  2,
+    "experiment":  "Multi-sample decompilation challenge",
+    "generated_utc":  "2026-08-23T19:41:12.1115594+00:00",
     "toolchain":  {
                       "distribution":  "llvm-mingw 20260616 UCRT x86_64",
                       "llvm_version_output":  "clang version 22.1.8 (https://github.com/llvm/llvm-project.git ca7933e47d3a3451d81e72ac174dcb5aa28b59d1)\r\nTarget: x86_64-w64-windows-gnu\r\nThread model: posix\r\nInstalledDir: D:/XiangxinLab/adpcm_decompilation_experiment/toolchain/llvm-mingw-20260616-ucrt-x86_64/bin\r\nConfiguration file: D:/XiangxinLab/adpcm_decompilation_experiment/toolchain/llvm-mingw-20260616-ucrt-x86_64/bin/x86_64-w64-windows-gnu.cfg",
@@ -21,40 +10,223 @@
                       "host_os":  "Microsoft Windows NT 10.0.26100.0",
                       "lto":  "disabled explicitly with -fno-lto"
                   },
-    "commands":  {
-                     "debug_compile":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe -std=gnu11 -O0 -g -fno-omit-frame-pointer -fno-lto -c D:\\XiangxinLab\\adpcm_decompilation_experiment\\source\\original\\adpcm.c -o D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\adpcm_debug.o",
-                     "debug_link":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe -fno-lto D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\adpcm_debug.o -o D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\debug\\adpcm_debug.exe",
-                     "challenge_compile":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe -std=gnu11 -O2 -g0 -fno-lto -ffunction-sections -fdata-sections -c D:\\XiangxinLab\\adpcm_decompilation_experiment\\source\\original\\adpcm.c -o D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\adpcm_challenge.o",
-                     "challenge_link":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe -fno-lto -Wl,--gc-sections D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\adpcm_challenge.o -o D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\adpcm_challenge_unstripped.exe",
-                     "challenge_strip":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\llvm-strip.exe --strip-all D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\adpcm_challenge.exe",
-                     "challenge_disassemble":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\llvm-objdump.exe -d --print-imm-hex D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\adpcm_challenge.exe"
-                 },
-    "artifacts":  {
-                      "debug_binary":  {
-                                           "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\debug\\adpcm_debug.exe",
-                                           "sha256":  "371ecec9cc435d4f28ee6cdb0462ec0ad793d1b61c5b19d84c8d93aeda56eda5",
-                                           "bytes":  105472,
-                                           "built_from_source_sha256":  "2373e31cd6f8a8e9160669bc4edd1b0cfb3ac3f9a3413bbceefbae9309c5063d",
-                                           "symbols_present":  true
-                                       },
-                      "challenge_unstripped_binary":  {
-                                                          "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\adpcm_challenge_unstripped.exe",
-                                                          "sha256":  "302f1f763c7da3f17106171ccc72d5b6828b4970fbb7a50de47900dddfba3f3d",
-                                                          "bytes":  96768
-                                                      },
-                      "challenge_binary":  {
-                                               "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\adpcm_challenge.exe",
-                                               "sha256":  "50ba5f94298ce5c0269d05cb7767bdceb7a3c32b79a319e0884b7444c0755b98",
-                                               "bytes":  21504,
-                                               "built_from_source_sha256":  "2373e31cd6f8a8e9160669bc4edd1b0cfb3ac3f9a3413bbceefbae9309c5063d",
-                                               "stripped":  true,
-                                               "symbols_present":  false
-                                           },
-                      "challenge_disassembly":  {
-                                                    "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\disassembly\\adpcm_challenge.asm",
-                                                    "sha256":  "a97d1c28546e4538f21355e7f69be1997d8e44391602f8bf0ecf07535cc537c6"
+    "samples":  {
+                    "adpcm":  {
+                                  "display_name":  "CHStone ADPCM",
+                                  "source":  {
+                                                 "pristine_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\source\\original\\adpcm.c",
+                                                 "sha256":  "2373e31cd6f8a8e9160669bc4edd1b0cfb3ac3f9a3413bbceefbae9309c5063d",
+                                                 "bytes":  25998,
+                                                 "modified":  false
+                                             },
+                                  "tests":  [
+                                                {
+                                                    "name":  "embedded_vectors",
+                                                    "description":  "CHStone ADPCM self-contained test vectors",
+                                                    "stdin_text":  "",
+                                                    "timeout_seconds":  5
                                                 }
-                  },
-    "baseline_report":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\baseline\\baseline_report.json",
-    "baseline_passed":  true
+                                            ],
+                                  "commands":  {
+                                                   "debug_compile":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe -std=gnu11 -O0 -g -fno-omit-frame-pointer -fno-lto -c D:\\XiangxinLab\\adpcm_decompilation_experiment\\source\\original\\adpcm.c -o D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\adpcm\\adpcm_debug.o",
+                                                   "debug_link":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe -fno-lto D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\adpcm\\adpcm_debug.o -o D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\debug\\adpcm_debug.exe",
+                                                   "challenge_compile":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe -std=gnu11 -O2 -g0 -fno-lto -ffunction-sections -fdata-sections -c D:\\XiangxinLab\\adpcm_decompilation_experiment\\source\\original\\adpcm.c -o D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\adpcm\\sample_001.o",
+                                                   "challenge_link":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe -fno-lto -Wl,--gc-sections D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\adpcm\\sample_001.o -o D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\adpcm\\sample_001_unstripped.exe",
+                                                   "challenge_strip":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\llvm-strip.exe --strip-all D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_001.exe",
+                                                   "challenge_disassemble":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\llvm-objdump.exe -d --print-imm-hex D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_001.exe"
+                                               },
+                                  "artifacts":  {
+                                                    "debug_binary":  {
+                                                                         "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\debug\\adpcm_debug.exe",
+                                                                         "sha256":  "d900bc14b23a9d306c839cb0a8ee6572a14922635277fd91a08b0bae87ce85ab",
+                                                                         "bytes":  105472,
+                                                                         "symbols_present":  true
+                                                                     },
+                                                    "challenge_unstripped_binary":  {
+                                                                                        "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\adpcm\\sample_001_unstripped.exe",
+                                                                                        "sha256":  "e193f8c9c0cee33ada23ee55361c3be7f52aaea8b02cff0dfc6dad4a441e53af",
+                                                                                        "bytes":  96768
+                                                                                    },
+                                                    "challenge_binary":  {
+                                                                             "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_001.exe",
+                                                                             "sha256":  "7d99cc59717d739b07f85c6b614eb9b4c3c544f17b774527bd49c7ff5de6dde8",
+                                                                             "bytes":  21504,
+                                                                             "stripped":  true,
+                                                                             "symbols_present":  false
+                                                                         },
+                                                    "challenge_disassembly":  {
+                                                                                  "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\disassembly\\sample_001.asm",
+                                                                                  "sha256":  "8f18484b7fc81e802b7cee1b22354423ff318deac432cb30902b4c3bacc2dacb"
+                                                                              }
+                                                },
+                                  "baseline_report":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\baseline\\adpcm\\baseline_report.json",
+                                  "baseline_passed":  true,
+                                  "repository":  {
+                                                     "url":  "https://github.com/ferrandi/CHStone",
+                                                     "commit_sha":  "2b7e20ffd3365016faf1e4e2b86496a5c95445fb",
+                                                     "source_path_at_commit":  "adpcm/adpcm.c"
+                                                 }
+                              },
+                    "chal":  {
+                                 "display_name":  "Chal chess perft",
+                                 "source":  {
+                                                "pristine_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\source\\original\\chal.c",
+                                                "sha256":  "639efd4abcf016043c87e3ac0bdd72c65f8a52a9bf31d5dae8864692a74b4824",
+                                                "bytes":  96091,
+                                                "modified":  false
+                                            },
+                                 "tests":  [
+                                               {
+                                                   "name":  "start_position_depth_4",
+                                                   "description":  "Starting position; depth 4",
+                                                   "stdin_text":  "position fen rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1\nperft 4\nquit\n",
+                                                   "timeout_seconds":  15
+                                               },
+                                               {
+                                                   "name":  "kiwipete_depth_3",
+                                                   "description":  "Kiwipete castling/tactics position; depth 3",
+                                                   "stdin_text":  "position fen r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1\nperft 3\nquit\n",
+                                                   "timeout_seconds":  15
+                                               },
+                                               {
+                                                   "name":  "endgame_en_passant_depth_4",
+                                                   "description":  "Endgame/en-passant position; depth 4",
+                                                   "stdin_text":  "position fen 8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1\nperft 4\nquit\n",
+                                                   "timeout_seconds":  15
+                                               },
+                                               {
+                                                   "name":  "promotion_castling_depth_3",
+                                                   "description":  "Promotion/castling position; depth 3",
+                                                   "stdin_text":  "position fen r3k2r/Pppp1ppp/1b3nbN/nP6/BBP1P3/q4N2/Pp1P1PPP/R2Q1RK1 w kq - 0 1\nperft 3\nquit\n",
+                                                   "timeout_seconds":  15
+                                               }
+                                           ],
+                                 "commands":  {
+                                                  "debug_compile":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe -std=c99 -O0 -g -fno-omit-frame-pointer -fno-lto -c D:\\XiangxinLab\\adpcm_decompilation_experiment\\source\\original\\chal.c -o D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\chal\\chal_debug.o",
+                                                  "debug_link":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe -fno-lto D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\chal\\chal_debug.o -lm -o D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\debug\\chal_debug.exe",
+                                                  "challenge_compile":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe -std=c99 -O2 -g0 -fno-lto -ffunction-sections -fdata-sections -c D:\\XiangxinLab\\adpcm_decompilation_experiment\\source\\original\\chal.c -o D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\chal\\sample_002.o",
+                                                  "challenge_link":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe -fno-lto -Wl,--gc-sections D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\chal\\sample_002.o -lm -o D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\chal\\sample_002_unstripped.exe",
+                                                  "challenge_strip":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\llvm-strip.exe --strip-all D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_002.exe",
+                                                  "challenge_disassemble":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\llvm-objdump.exe -d --print-imm-hex D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_002.exe"
+                                              },
+                                 "artifacts":  {
+                                                   "debug_binary":  {
+                                                                        "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\debug\\chal_debug.exe",
+                                                                        "sha256":  "62bd72477a10b4c386b4606922f5bcecc901fe7b6aabbb6f99451d2632b25921",
+                                                                        "bytes":  152064,
+                                                                        "symbols_present":  true
+                                                                    },
+                                                   "challenge_unstripped_binary":  {
+                                                                                       "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\chal\\sample_002_unstripped.exe",
+                                                                                       "sha256":  "3ab0a19332fb41ede54ada8d87211eb1ad30f4bbccd6901aa21f523f65fa31c8",
+                                                                                       "bytes":  117760
+                                                                                   },
+                                                   "challenge_binary":  {
+                                                                            "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_002.exe",
+                                                                            "sha256":  "f516e81033edbc1fc17dce6a7e6fcaae442d1e0638483fea1408443536d6a729",
+                                                                            "bytes":  38912,
+                                                                            "stripped":  true,
+                                                                            "symbols_present":  false
+                                                                        },
+                                                   "challenge_disassembly":  {
+                                                                                 "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\disassembly\\sample_002.asm",
+                                                                                 "sha256":  "a4bc294c8cb24b43e04c68b81de04ad776536184bce4c312b82c5f1c2df64b67"
+                                                                             }
+                                               },
+                                 "baseline_report":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\baseline\\chal\\baseline_report.json",
+                                 "baseline_passed":  true,
+                                 "repository":  {
+                                                    "url":  "https://github.com/namanthanki/chal",
+                                                    "commit_sha":  "9d0915d70662ec572862cdf5e278b727eb3c4fef",
+                                                    "source_path_at_commit":  "src/chal.c"
+                                                }
+                             },
+                    "portal":  {
+                                   "display_name":  "Synthetic multi-tenant ticket portal",
+                                   "source":  {
+                                                  "pristine_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\source\\original\\ticket_portal.c",
+                                                  "sha256":  "658127b4451dec4d1df46064860c314dffff7487c67dbc230777f3ab801c134c",
+                                                  "bytes":  33675,
+                                                  "modified":  false
+                                              },
+                                   "tests":  [
+                                                 {
+                                                     "name":  "agent_billing_queue",
+                                                     "description":  "Agent list query with status/tag/priority filters and sorting",
+                                                     "stdin_text":  "GET /api/tickets?tenant=acme\u0026role=agent\u0026status=open,pending\u0026tag=billing\u0026priority_gte=3\u0026sort=-priority\u0026limit=5\n",
+                                                     "timeout_seconds":  5
+                                                 },
+                                                 {
+                                                     "name":  "customer_visibility_page",
+                                                     "description":  "Customer-scoped visibility with stable sort, offset and limit",
+                                                     "stdin_text":  "GET /api/tickets?tenant=acme\u0026role=customer\u0026actor=maya\u0026status=open,resolved\u0026sort=-updated\u0026offset=1\u0026limit=2\n",
+                                                     "timeout_seconds":  5
+                                                 },
+                                                 {
+                                                     "name":  "manager_assignee_summary",
+                                                     "description":  "Manager aggregation including internal records",
+                                                     "stdin_text":  "GET /api/summary?tenant=north\u0026role=manager\u0026include_internal=true\u0026status=open,pending\u0026priority_gte=3\u0026group=assignee\n",
+                                                     "timeout_seconds":  5
+                                                 },
+                                                 {
+                                                     "name":  "manager_internal_detail",
+                                                     "description":  "Authorized manager detail response with internal metadata",
+                                                     "stdin_text":  "GET /api/tickets/2008?tenant=north\u0026role=manager\u0026include_internal=true\n",
+                                                     "timeout_seconds":  5
+                                                 },
+                                                 {
+                                                     "name":  "customer_forbidden_detail",
+                                                     "description":  "Internal ticket rejected for its customer actor",
+                                                     "stdin_text":  "GET /api/tickets/2008?tenant=north\u0026role=customer\u0026actor=theo\n",
+                                                     "timeout_seconds":  5
+                                                 },
+                                                 {
+                                                     "name":  "invalid_sort_validation",
+                                                     "description":  "Unknown sort field produces deterministic stderr and exit code",
+                                                     "stdin_text":  "GET /api/tickets?tenant=orbit\u0026role=agent\u0026sort=-urgency\n",
+                                                     "timeout_seconds":  5
+                                                 }
+                                             ],
+                                   "commands":  {
+                                                    "debug_compile":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe -std=c99 -O0 -g -fno-omit-frame-pointer -fno-lto -c D:\\XiangxinLab\\adpcm_decompilation_experiment\\source\\original\\ticket_portal.c -o D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\portal\\portal_debug.o",
+                                                    "debug_link":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe -fno-lto D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\portal\\portal_debug.o -o D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\debug\\ticket_portal_debug.exe",
+                                                    "challenge_compile":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe -std=c99 -O2 -g0 -fno-lto -ffunction-sections -fdata-sections -c D:\\XiangxinLab\\adpcm_decompilation_experiment\\source\\original\\ticket_portal.c -o D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\portal\\sample_003.o",
+                                                    "challenge_link":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe -fno-lto -Wl,--gc-sections D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\portal\\sample_003.o -o D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\portal\\sample_003_unstripped.exe",
+                                                    "challenge_strip":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\llvm-strip.exe --strip-all D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe",
+                                                    "challenge_disassemble":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\llvm-objdump.exe -d --print-imm-hex D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe"
+                                                },
+                                   "artifacts":  {
+                                                     "debug_binary":  {
+                                                                          "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\debug\\ticket_portal_debug.exe",
+                                                                          "sha256":  "316e1ccbb1adb0869f22ee814d0ee73bc64b1f2a2543e37f418353f654adacea",
+                                                                          "bytes":  125440,
+                                                                          "symbols_present":  true
+                                                                      },
+                                                     "challenge_unstripped_binary":  {
+                                                                                         "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\portal\\sample_003_unstripped.exe",
+                                                                                         "sha256":  "b828b68e4ae3c4ee0c6e8ffef7836c54e97721e40ce6a7a877e4035e277e76ec",
+                                                                                         "bytes":  113152
+                                                                                     },
+                                                     "challenge_binary":  {
+                                                                              "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe",
+                                                                              "sha256":  "98874a57e46d14d1a61f111fd95c861f6fce9ce66ce897f16037593026e51998",
+                                                                              "bytes":  33792,
+                                                                              "stripped":  true,
+                                                                              "symbols_present":  false
+                                                                          },
+                                                     "challenge_disassembly":  {
+                                                                                   "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\disassembly\\sample_003.asm",
+                                                                                   "sha256":  "4aebc8a716d5619d1b0c6d209f15789b0ce7094bdea64dca321b12f115d4ccdb"
+                                                                               }
+                                                 },
+                                   "baseline_report":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\baseline\\portal\\baseline_report.json",
+                                   "baseline_passed":  true,
+                                   "origin":  {
+                                                  "type":  "synthetic",
+                                                  "description":  "Original deterministic C99 multi-tenant ticket query gateway synthesized for this experiment",
+                                                  "source_path":  "source/original/ticket_portal.c"
+                                              }
+                               }
+                },
+    "overall_passed":  true
 }

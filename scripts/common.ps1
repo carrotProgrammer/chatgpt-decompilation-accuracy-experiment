@@ -11,7 +11,146 @@ function Get-ExperimentPaths {
         Nm         = Join-Path $toolchain 'bin\llvm-nm.exe'
         Toolchain  = $toolchain
         RuntimeDir = Join-Path $root 'tests\runtime'
-        Challenge  = Join-Path $root 'bin\challenge\adpcm_challenge.exe'
+    }
+}
+
+function Get-SampleConfiguration([string]$Name) {
+    $paths = Get-ExperimentPaths
+    switch ($Name.ToLowerInvariant()) {
+        'adpcm' {
+            return [pscustomobject]@{
+                Name = 'adpcm'
+                DisplayName = 'CHStone ADPCM'
+                NeutralStem = 'sample_001'
+                Source = Join-Path $paths.Root 'source\original\adpcm.c'
+                DebugBinary = Join-Path $paths.Root 'bin\debug\adpcm_debug.exe'
+                ChallengeBinary = Join-Path $paths.Root 'bin\challenge\sample_001.exe'
+                ReconstructedBinaryName = 'adpcm_reconstructed.exe'
+                RepositoryUrl = 'https://github.com/ferrandi/CHStone'
+                UpstreamDirectory = Join-Path $paths.Root 'upstream\CHStone'
+                SourcePathAtCommit = 'adpcm/adpcm.c'
+                LanguageStandard = 'gnu11'
+                LinkLibraries = @()
+                Tests = @(
+                    [pscustomobject]@{
+                        Name = 'embedded_vectors'
+                        Description = 'CHStone ADPCM self-contained test vectors'
+                        StdinText = ''
+                        EnvironmentDelta = @{ CHSTONE_EVALUATION = '1' }
+                        TimeoutSeconds = 5
+                    }
+                )
+            }
+        }
+        'chal' {
+            return [pscustomobject]@{
+                Name = 'chal'
+                DisplayName = 'Chal chess perft'
+                NeutralStem = 'sample_002'
+                Source = Join-Path $paths.Root 'source\original\chal.c'
+                DebugBinary = Join-Path $paths.Root 'bin\debug\chal_debug.exe'
+                ChallengeBinary = Join-Path $paths.Root 'bin\challenge\sample_002.exe'
+                ReconstructedBinaryName = 'chal_reconstructed.exe'
+                RepositoryUrl = 'https://github.com/namanthanki/chal'
+                UpstreamDirectory = Join-Path $paths.Root 'upstream\chal'
+                SourcePathAtCommit = 'src/chal.c'
+                LanguageStandard = 'c99'
+                LinkLibraries = @('-lm')
+                Tests = @(
+                    [pscustomobject]@{
+                        Name = 'start_position_depth_4'
+                        Description = 'Starting position; depth 4'
+                        StdinText = "position fen rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1`nperft 4`nquit`n"
+                        EnvironmentDelta = @{}
+                        TimeoutSeconds = 15
+                    },
+                    [pscustomobject]@{
+                        Name = 'kiwipete_depth_3'
+                        Description = 'Kiwipete castling/tactics position; depth 3'
+                        StdinText = "position fen r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1`nperft 3`nquit`n"
+                        EnvironmentDelta = @{}
+                        TimeoutSeconds = 15
+                    },
+                    [pscustomobject]@{
+                        Name = 'endgame_en_passant_depth_4'
+                        Description = 'Endgame/en-passant position; depth 4'
+                        StdinText = "position fen 8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1`nperft 4`nquit`n"
+                        EnvironmentDelta = @{}
+                        TimeoutSeconds = 15
+                    },
+                    [pscustomobject]@{
+                        Name = 'promotion_castling_depth_3'
+                        Description = 'Promotion/castling position; depth 3'
+                        StdinText = "position fen r3k2r/Pppp1ppp/1b3nbN/nP6/BBP1P3/q4N2/Pp1P1PPP/R2Q1RK1 w kq - 0 1`nperft 3`nquit`n"
+                        EnvironmentDelta = @{}
+                        TimeoutSeconds = 15
+                    }
+                )
+            }
+        }
+        'portal' {
+            return [pscustomobject]@{
+                Name = 'portal'
+                DisplayName = 'Synthetic multi-tenant ticket portal'
+                NeutralStem = 'sample_003'
+                Source = Join-Path $paths.Root 'source\original\ticket_portal.c'
+                DebugBinary = Join-Path $paths.Root 'bin\debug\ticket_portal_debug.exe'
+                ChallengeBinary = Join-Path $paths.Root 'bin\challenge\sample_003.exe'
+                ReconstructedBinaryName = 'ticket_portal_reconstructed.exe'
+                Synthetic = $true
+                SyntheticDescription = 'Original deterministic C99 multi-tenant ticket query gateway synthesized for this experiment'
+                RepositoryUrl = $null
+                UpstreamDirectory = $null
+                SourcePathAtCommit = $null
+                LanguageStandard = 'c99'
+                LinkLibraries = @()
+                Tests = @(
+                    [pscustomobject]@{
+                        Name = 'agent_billing_queue'
+                        Description = 'Agent list query with status/tag/priority filters and sorting'
+                        StdinText = "GET /api/tickets?tenant=acme&role=agent&status=open,pending&tag=billing&priority_gte=3&sort=-priority&limit=5`n"
+                        EnvironmentDelta = @{}
+                        TimeoutSeconds = 5
+                    },
+                    [pscustomobject]@{
+                        Name = 'customer_visibility_page'
+                        Description = 'Customer-scoped visibility with stable sort, offset and limit'
+                        StdinText = "GET /api/tickets?tenant=acme&role=customer&actor=maya&status=open,resolved&sort=-updated&offset=1&limit=2`n"
+                        EnvironmentDelta = @{}
+                        TimeoutSeconds = 5
+                    },
+                    [pscustomobject]@{
+                        Name = 'manager_assignee_summary'
+                        Description = 'Manager aggregation including internal records'
+                        StdinText = "GET /api/summary?tenant=north&role=manager&include_internal=true&status=open,pending&priority_gte=3&group=assignee`n"
+                        EnvironmentDelta = @{}
+                        TimeoutSeconds = 5
+                    },
+                    [pscustomobject]@{
+                        Name = 'manager_internal_detail'
+                        Description = 'Authorized manager detail response with internal metadata'
+                        StdinText = "GET /api/tickets/2008?tenant=north&role=manager&include_internal=true`n"
+                        EnvironmentDelta = @{}
+                        TimeoutSeconds = 5
+                    },
+                    [pscustomobject]@{
+                        Name = 'customer_forbidden_detail'
+                        Description = 'Internal ticket rejected for its customer actor'
+                        StdinText = "GET /api/tickets/2008?tenant=north&role=customer&actor=theo`n"
+                        EnvironmentDelta = @{}
+                        TimeoutSeconds = 5
+                    },
+                    [pscustomobject]@{
+                        Name = 'invalid_sort_validation'
+                        Description = 'Unknown sort field produces deterministic stderr and exit code'
+                        StdinText = "GET /api/tickets?tenant=orbit&role=agent&sort=-urgency`n"
+                        EnvironmentDelta = @{}
+                        TimeoutSeconds = 5
+                    }
+                )
+            }
+        }
+        default { throw "Unknown sample '$Name'. Valid samples: adpcm, chal, portal." }
     }
 }
 
@@ -122,7 +261,10 @@ function Invoke-BinaryTest {
         [Parameter(Mandatory = $true)][string]$Binary,
         [Parameter(Mandatory = $true)][string]$OutputDirectory,
         [Parameter(Mandatory = $true)][string]$RuntimeDirectory,
-        [int]$TimeoutSeconds = 5
+        [int]$TimeoutSeconds = 5,
+        [string]$StdinText = '',
+        [hashtable]$EnvironmentDelta = @{},
+        [string[]]$Arguments = @()
     )
 
     New-Item -ItemType Directory -Force -Path $OutputDirectory, $RuntimeDirectory | Out-Null
@@ -131,14 +273,16 @@ function Invoke-BinaryTest {
 
     $start = New-Object Diagnostics.ProcessStartInfo
     $start.FileName = [IO.Path]::GetFullPath($Binary)
-    $start.Arguments = ''
+    $start.Arguments = (@($Arguments | ForEach-Object { ConvertTo-WindowsCommandLineArgument $_ }) -join ' ')
     $start.WorkingDirectory = [IO.Path]::GetFullPath($RuntimeDirectory)
     $start.UseShellExecute = $false
     $start.CreateNoWindow = $true
     $start.RedirectStandardInput = $true
     $start.RedirectStandardOutput = $true
     $start.RedirectStandardError = $true
-    $start.EnvironmentVariables['CHSTONE_EVALUATION'] = '1'
+    foreach ($key in $EnvironmentDelta.Keys) {
+        $start.EnvironmentVariables[$key] = [string]$EnvironmentDelta[$key]
+    }
 
     $process = New-Object Diagnostics.Process
     $process.StartInfo = $start
@@ -149,6 +293,9 @@ function Invoke-BinaryTest {
     $exitCode = $null
     try {
         [void]$process.Start()
+        if ($StdinText.Length -gt 0) {
+            $process.StandardInput.Write($StdinText)
+        }
         $process.StandardInput.Close()
         $outTask = $process.StandardOutput.BaseStream.CopyToAsync($outFile)
         $errTask = $process.StandardError.BaseStream.CopyToAsync($errFile)
@@ -179,11 +326,12 @@ function Invoke-BinaryTest {
     $result = [ordered]@{
         binary             = [IO.Path]::GetFullPath($Binary)
         binary_sha256      = Get-Sha256 $Binary
-        command            = ConvertTo-WindowsCommandLineArgument ([IO.Path]::GetFullPath($Binary))
-        arguments          = @()
-        stdin              = 'closed; zero bytes'
+        command            = Format-Command ([IO.Path]::GetFullPath($Binary)) $Arguments
+        arguments          = @($Arguments)
+        stdin              = if ($StdinText.Length -eq 0) { 'closed; zero bytes' } else { 'UTF-8 text supplied, then closed' }
+        stdin_text         = $StdinText
         working_directory  = [IO.Path]::GetFullPath($RuntimeDirectory)
-        environment_delta  = @{ CHSTONE_EVALUATION = '1' }
+        environment_delta  = $EnvironmentDelta
         timeout_seconds    = $TimeoutSeconds
         started_utc        = $startedAt.ToString('o')
         finished_utc       = $finishedAt.ToString('o')

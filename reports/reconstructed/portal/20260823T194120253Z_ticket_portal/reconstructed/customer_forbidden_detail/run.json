@@ -1,0 +1,30 @@
+{
+    "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\ticket_portal_reconstructed.exe",
+    "binary_sha256":  "f5b26adb28a0f48f2c9c92bf1b111f91edf0e49d79ddd184c36c590499e1c0d7",
+    "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\ticket_portal_reconstructed.exe",
+    "arguments":  [
+
+                  ],
+    "stdin":  "UTF-8 text supplied, then closed",
+    "stdin_text":  "GET /api/tickets/2008?tenant=north\u0026role=customer\u0026actor=theo\n",
+    "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\tests\\runtime",
+    "environment_delta":  {
+
+                          },
+    "timeout_seconds":  5,
+    "started_utc":  "2026-08-23T19:41:21.0117045+00:00",
+    "finished_utc":  "2026-08-23T19:41:21.0262336+00:00",
+    "duration_ms":  14.529,
+    "timed_out":  false,
+    "crashed":  false,
+    "exit_code":  3,
+    "exit_code_hex":  "0x00000003",
+    "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\reconstructed\\customer_forbidden_detail\\stdout.bin",
+    "stdout_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_bytes":  0,
+    "stdout_display":  "",
+    "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T194120253Z_ticket_portal\\reconstructed\\customer_forbidden_detail\\stderr.bin",
+    "stderr_sha256":  "aef15d41893a3ce047ebe644633fb9f61fc47abad60ff7e533eee2cdb0203e3b",
+    "stderr_bytes":  57,
+    "stderr_display":  "error code=forbidden message=ticket 2008 is not visible\\r\\n"
+}

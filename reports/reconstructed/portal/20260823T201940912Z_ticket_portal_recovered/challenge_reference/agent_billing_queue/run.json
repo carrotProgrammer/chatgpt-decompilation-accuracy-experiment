@@ -1,0 +1,30 @@
+{
+    "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe",
+    "binary_sha256":  "98874a57e46d14d1a61f111fd95c861f6fce9ce66ce897f16037593026e51998",
+    "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe",
+    "arguments":  [
+
+                  ],
+    "stdin":  "UTF-8 text supplied, then closed",
+    "stdin_text":  "GET /api/tickets?tenant=acme\u0026role=agent\u0026status=open,pending\u0026tag=billing\u0026priority_gte=3\u0026sort=-priority\u0026limit=5\n",
+    "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\tests\\runtime",
+    "environment_delta":  {
+
+                          },
+    "timeout_seconds":  5,
+    "started_utc":  "2026-08-23T20:19:41.4375143+00:00",
+    "finished_utc":  "2026-08-23T20:19:41.4587921+00:00",
+    "duration_ms":  21.278,
+    "timed_out":  false,
+    "crashed":  false,
+    "exit_code":  0,
+    "exit_code_hex":  "0x00000000",
+    "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T201940912Z_ticket_portal_recovered\\challenge_reference\\agent_billing_queue\\stdout.bin",
+    "stdout_sha256":  "4b2b199bd8777449c19f1f1b42b1290a461baefc640f01c1f86ecb8cf1507965",
+    "stdout_bytes":  416,
+    "stdout_display":  "{\"tenant\":\"acme\",\"total\":2,\"offset\":0,\"limit\":5,\"items\":[{\"id\":1001,\"status\":\"open\",\"priority\":4,\"assignee\":\"iris\",\"subject\":\"Invoice PDF shows old address\",\"tags\":[\"billing\",\"export\"],\"updated\":20260820,\"sla_breached\":true},{\"id\":1005,\"status\":\"pending\",\"priority\":4,\"assignee\":\"iris\",\"subject\":\"Refund line missing from invoice\",\"tags\":[\"billing\",\"reports\"],\"updated\":20260819,\"sla_breached\":true}],\"returned\":2}\\r\\n",
+    "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\portal\\20260823T201940912Z_ticket_portal_recovered\\challenge_reference\\agent_billing_queue\\stderr.bin",
+    "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes":  0,
+    "stderr_display":  ""
+}
