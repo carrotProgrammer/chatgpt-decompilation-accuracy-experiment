@@ -1,30 +1,48 @@
 # ChatGPT Binary Decompilation Accuracy Experiment
 
-这是一个可复现的多样本实验框架，用于测量 ChatGPT 从经过优化和 strip 的 x86-64 Windows PE 二进制中重建 C 源码的准确率。实验分别记录允许联网搜索和禁止搜索条件下生成的 recovered C，并通过重新编译及黑盒行为对比，检查其 stdout、stderr、退出码、超时和崩溃状态是否与原 challenge binary 完全一致。
+[English](README.md) | [简体中文](README.zh-CN.md)
 
-项目当前包含三个具有不同源码先验的样本：经典公开基准 CHStone ADPCM、较少见但仍可检索的 Chal，以及没有公开对应源码的原创 Portal 程序。这样可以观察公开源码可得性与精确恢复能力之间的关系，而不只是判断生成代码能否编译或大致实现相同功能。
+A reproducible, multi-sample framework for measuring how accurately ChatGPT reconstructs C source code from optimized and stripped x86-64 Windows PE binaries. The experiment records recovered C produced with web search available and with search blocked, recompiles it without modification, and compares its observable behavior against the original challenge binary.
+
+The current benchmark contains three samples with different levels of public source prior: the well-known CHStone ADPCM benchmark, the less common but searchable Chal chess engine, and an original synthetic ticket-portal program with no corresponding public source. This makes it possible to study the relationship between source availability and exact recovery instead of merely checking whether generated code compiles or approximates the original functionality.
 
 ![Public source prior and exact-recovery results](docs/decompilation_source_prior_summary.svg)
 
-评测只依据 recovered C 的实际编译、链接和确定性功能测试结果，不以源码长度、命名风格或 reconstructed binary 大小作为准确率判据。
+Accuracy is determined only by compilation, linking, and deterministic behavioral tests. Source length, naming style, and reconstructed binary size are not scoring criteria.
 
-| 样本 | 正式 challenge | 原始源码 | 功能测试 |
+## Samples
+
+| Sample | Challenge binary | Original source | Deterministic tests |
 |---|---|---|---|
-| `adpcm` | `bin\challenge\sample_001.exe` | `source\original\adpcm.c` | CHStone 内置向量 |
-| `chal` | `bin\challenge\sample_002.exe` | `source\original\chal.c` | 4 组固定 FEN + depth 的 perft |
-| `portal` | `bin\challenge\sample_003.exe` | `source\original\ticket_portal.c` | 6 组固定后端查询、权限及错误响应 |
+| `adpcm` | `bin\challenge\sample_001.exe` | `source\original\adpcm.c` | Embedded CHStone vectors |
+| `chal` | `bin\challenge\sample_002.exe` | `source\original\chal.c` | Four fixed FEN + depth perft cases |
+| `portal` | `bin\challenge\sample_003.exe` | `source\original\ticket_portal.c` | Six fixed queries covering filtering, authorization, aggregation, detail output, and validation |
 
-中性 challenge 文件名用于避免向被测模型泄露算法名称。
+Neutral challenge filenames avoid revealing the algorithm or application name to the model under evaluation.
 
-## 构建 challenge 和 golden baseline
+## Evaluation model
 
-默认同时构建三个样本：
+Each original source is compiled with pinned Clang/LLVM 22.1.8 for `x86_64-w64-windows-gnu` using `-O2`, no LTO, no debug information, function/data sections, dead-section elimination, and `llvm-strip --strip-all`.
+
+For every test case, the framework runs the original challenge binary and records its exact:
+
+- stdout bytes
+- stderr bytes
+- exit code
+- timeout state
+- crash state
+
+These observations form the golden baseline. A recovered source passes only when its reconstructed binary matches the challenge binary on every recorded dimension for every case.
+
+## Build challenges and golden baselines
+
+Build all samples:
 
 ```bat
 build_baseline
 ```
 
-也可以只重建一个样本；另一份已存在的 manifest 记录和产物不会被覆盖：
+Build one sample without overwriting the existing manifest entries and artifacts for the others:
 
 ```bat
 build_baseline --sample adpcm
@@ -32,35 +50,37 @@ build_baseline --sample chal
 build_baseline --sample portal
 ```
 
-每个样本都会独立生成 debug binary、`-O2`/无 LTO/strip 后的 challenge binary、反汇编和 baseline 报告。每个测试 case 都在独立进程中运行；原 challenge binary 的 stdout、stderr、退出码、超时和崩溃状态构成 golden baseline。
+Each sample independently produces a debug binary, an optimized and stripped challenge binary, a disassembly, and a baseline report.
 
-基线报告位于：
+Baseline reports are written to:
 
 - `reports\baseline\adpcm\baseline_report.{md,json}`
 - `reports\baseline\chal\baseline_report.{md,json}`
 - `reports\baseline\portal\baseline_report.{md,json}`
 
-## 评测 recovered C
+## Evaluate recovered C
 
-ADPCM 保持原来的默认调用方式：
+ADPCM remains the default sample for backward compatibility:
 
 ```bat
 evaluate_recovered --source source\recovered\adpcm_recovered.c
 ```
 
-Chal 通过 `--sample chal` 选择：
+Evaluate Chal:
 
 ```bat
 evaluate_recovered --source source\recovered\chal_recovered.c --sample chal
 ```
 
-原创 Portal 样本通过 `--sample portal` 选择：
+Evaluate the synthetic Portal sample:
 
 ```bat
 evaluate_recovered --source source\recovered\ticket_portal_recovered.c --sample portal
 ```
 
-评测器不会修改、修复或补全 recovered C。编译和链接是两个独立阶段，完整 stdout/stderr 均写入报告目录。两个样本分别输出到：
+The evaluator never edits, repairs, or completes the recovered source. Compilation and linking are separate stages, and their complete stdout and stderr are retained in the run report.
+
+Outputs are organized independently by sample:
 
 - `bin\reconstructed\adpcm\<run-id>\adpcm_reconstructed.exe`
 - `bin\reconstructed\chal\<run-id>\chal_reconstructed.exe`
@@ -69,10 +89,10 @@ evaluate_recovered --source source\recovered\ticket_portal_recovered.c --sample 
 - `reports\reconstructed\chal\<run-id>\`
 - `reports\reconstructed\portal\<run-id>\`
 
-每个样本有自己的 `LATEST.txt`；根目录的 `reports\reconstructed\LATEST.txt` 仍指向最近一次任意样本的评测，以兼容现有用法。
+Each sample has its own `LATEST.txt`. The root `reports\reconstructed\LATEST.txt` points to the most recent evaluation across all samples for backward compatibility.
 
-分类码保持不变：`CANNOT_COMPILE`、`CANNOT_LINK`、`RUNTIME_CRASH`、`RUNTIME_TIMEOUT`、`STDOUT_MISMATCH`、`STDERR_MISMATCH`、`EXIT_CODE_MISMATCH`、`ALL_TESTS_PASSED`。
+Possible classifications are `CANNOT_COMPILE`, `CANNOT_LINK`, `RUNTIME_CRASH`, `RUNTIME_TIMEOUT`, `STDOUT_MISMATCH`, `STDERR_MISMATCH`, `EXIT_CODE_MISMATCH`, and `ALL_TESTS_PASSED`.
 
-## 可复现性
+## Reproducibility
 
-`manifest.json` 同时记录三个样本的来源、源文件 SHA-256、完整编译/链接/strip/反汇编命令和产物哈希；Portal 明确标记为本实验原创 synthetic source。工具链为工作区内固定的 `llvm-mingw 20260616 UCRT x86_64`（Clang/LLVM 22.1.8，目标 `x86_64-w64-windows-gnu`）。
+`manifest.json` records each sample's provenance, source SHA-256, complete compile/link/strip/disassembly commands, and artifact hashes. Portal is explicitly identified as an original synthetic source. The pinned toolchain is `llvm-mingw 20260616 UCRT x86_64`, containing Clang/LLVM 22.1.8 and targeting `x86_64-w64-windows-gnu`.
