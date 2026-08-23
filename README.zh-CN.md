@@ -1,6 +1,6 @@
 # ChatGPT 二进制反编译准确率实验
 
-[English](README.md) | [简体中文](README.zh-CN.md)
+[English](README.md) | [简体中文](README.zh-CN.md) | [实验研究记录 / Research notes](https://app.notion.com/p/3c5ba3506c39812a9cb3f371f9c76ef1)
 
 这是一个可复现的多样本实验框架，用于测量 ChatGPT 从经过优化和 strip 的 x86-64 Windows PE 二进制中重建 C 源码的准确率。实验分别记录允许联网搜索和禁止搜索条件下生成的 recovered C，将其不经修改地重新编译，并把可观察行为与原 challenge binary 进行比较。
 
