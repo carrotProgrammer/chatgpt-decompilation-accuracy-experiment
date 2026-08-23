@@ -1,0 +1,60 @@
+{
+    "schema_version":  1,
+    "experiment":  "CHStone ADPCM decompilation challenge",
+    "generated_utc":  "2026-08-23T16:31:39.2474092+00:00",
+    "repository":  {
+                       "url":  "https://github.com/ferrandi/CHStone",
+                       "commit_sha":  "2b7e20ffd3365016faf1e4e2b86496a5c95445fb",
+                       "source_path_at_commit":  "adpcm/adpcm.c"
+                   },
+    "source":  {
+                   "pristine_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\source\\original\\adpcm.c",
+                   "sha256":  "2373e31cd6f8a8e9160669bc4edd1b0cfb3ac3f9a3413bbceefbae9309c5063d",
+                   "bytes":  25998,
+                   "modified":  false
+               },
+    "toolchain":  {
+                      "distribution":  "llvm-mingw 20260616 UCRT x86_64",
+                      "llvm_version_output":  "clang version 22.1.8 (https://github.com/llvm/llvm-project.git ca7933e47d3a3451d81e72ac174dcb5aa28b59d1)\r\nTarget: x86_64-w64-windows-gnu\r\nThread model: posix\r\nInstalledDir: D:/XiangxinLab/adpcm_decompilation_experiment/toolchain/llvm-mingw-20260616-ucrt-x86_64/bin\r\nConfiguration file: D:/XiangxinLab/adpcm_decompilation_experiment/toolchain/llvm-mingw-20260616-ucrt-x86_64/bin/x86_64-w64-windows-gnu.cfg",
+                      "clang_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe",
+                      "target_architecture":  "x86_64-w64-windows-gnu",
+                      "host_os":  "Microsoft Windows NT 10.0.26100.0",
+                      "lto":  "disabled explicitly with -fno-lto"
+                  },
+    "commands":  {
+                     "debug_compile":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe -std=gnu11 -O0 -g -fno-omit-frame-pointer -fno-lto -c D:\\XiangxinLab\\adpcm_decompilation_experiment\\source\\original\\adpcm.c -o D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\adpcm_debug.o",
+                     "debug_link":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe -fno-lto D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\adpcm_debug.o -o D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\debug\\adpcm_debug.exe",
+                     "challenge_compile":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe -std=gnu11 -O2 -g0 -fno-lto -ffunction-sections -fdata-sections -c D:\\XiangxinLab\\adpcm_decompilation_experiment\\source\\original\\adpcm.c -o D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\adpcm_challenge.o",
+                     "challenge_link":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe -fno-lto -Wl,--gc-sections D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\adpcm_challenge.o -o D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\adpcm_challenge_unstripped.exe",
+                     "challenge_strip":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\llvm-strip.exe --strip-all D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\adpcm_challenge.exe",
+                     "challenge_disassemble":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\llvm-objdump.exe -d --print-imm-hex D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\adpcm_challenge.exe"
+                 },
+    "artifacts":  {
+                      "debug_binary":  {
+                                           "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\debug\\adpcm_debug.exe",
+                                           "sha256":  "371ecec9cc435d4f28ee6cdb0462ec0ad793d1b61c5b19d84c8d93aeda56eda5",
+                                           "bytes":  105472,
+                                           "built_from_source_sha256":  "2373e31cd6f8a8e9160669bc4edd1b0cfb3ac3f9a3413bbceefbae9309c5063d",
+                                           "symbols_present":  true
+                                       },
+                      "challenge_unstripped_binary":  {
+                                                          "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\baseline\\adpcm_challenge_unstripped.exe",
+                                                          "sha256":  "302f1f763c7da3f17106171ccc72d5b6828b4970fbb7a50de47900dddfba3f3d",
+                                                          "bytes":  96768
+                                                      },
+                      "challenge_binary":  {
+                                               "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\adpcm_challenge.exe",
+                                               "sha256":  "50ba5f94298ce5c0269d05cb7767bdceb7a3c32b79a319e0884b7444c0755b98",
+                                               "bytes":  21504,
+                                               "built_from_source_sha256":  "2373e31cd6f8a8e9160669bc4edd1b0cfb3ac3f9a3413bbceefbae9309c5063d",
+                                               "stripped":  true,
+                                               "symbols_present":  false
+                                           },
+                      "challenge_disassembly":  {
+                                                    "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\disassembly\\adpcm_challenge.asm",
+                                                    "sha256":  "a97d1c28546e4538f21355e7f69be1997d8e44391602f8bf0ecf07535cc537c6"
+                                                }
+                  },
+    "baseline_report":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\baseline\\baseline_report.json",
+    "baseline_passed":  true
+}

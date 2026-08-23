@@ -1,0 +1,29 @@
+{
+    "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\reconstructed\\20260823T163026719Z_runtime_crash\\adpcm_reconstructed.exe",
+    "binary_sha256":  "f32d7d696691f6f7832e44b5c61f3db964af8a41a62ec4d5771514b9ba558434",
+    "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\reconstructed\\20260823T163026719Z_runtime_crash\\adpcm_reconstructed.exe",
+    "arguments":  [
+
+                  ],
+    "stdin":  "closed; zero bytes",
+    "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\tests\\runtime",
+    "environment_delta":  {
+                              "CHSTONE_EVALUATION":  "1"
+                          },
+    "timeout_seconds":  5,
+    "started_utc":  "2026-08-23T16:30:27.1008299+00:00",
+    "finished_utc":  "2026-08-23T16:30:32.1273042+00:00",
+    "duration_ms":  5026.474,
+    "timed_out":  true,
+    "crashed":  false,
+    "exit_code":  null,
+    "exit_code_hex":  null,
+    "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\20260823T163026719Z_runtime_crash\\reconstructed\\stdout.bin",
+    "stdout_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_bytes":  0,
+    "stdout_display":  "",
+    "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\20260823T163026719Z_runtime_crash\\reconstructed\\stderr.bin",
+    "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes":  0,
+    "stderr_display":  ""
+}

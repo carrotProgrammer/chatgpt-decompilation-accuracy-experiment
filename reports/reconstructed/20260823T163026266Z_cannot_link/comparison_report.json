@@ -1,0 +1,43 @@
+{
+    "schema_version":  1,
+    "run_id":  "20260823T163026266Z_cannot_link",
+    "generated_utc":  "2026-08-23T16:30:26.2716865+00:00",
+    "recovered_source":  {
+                             "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\tests\\fixtures\\cannot_link.c",
+                             "sha256":  "e8dee846fe90620efd9a23bef52f5453848346d7cd026ea2f229e1df6f9e1fc5",
+                             "bytes":  36,
+                             "modified_by_evaluator":  false
+                         },
+    "compiler":  {
+                     "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe",
+                     "target":  "x86_64-w64-windows-gnu",
+                     "version":  "clang version 22.1.8 (https://github.com/llvm/llvm-project.git ca7933e47d3a3451d81e72ac174dcb5aa28b59d1)\r\nTarget: x86_64-w64-windows-gnu\r\nThread model: posix\r\nInstalledDir: D:/XiangxinLab/adpcm_decompilation_experiment/toolchain/llvm-mingw-20260616-ucrt-x86_64/bin\r\nConfiguration file: D:/XiangxinLab/adpcm_decompilation_experiment/toolchain/llvm-mingw-20260616-ucrt-x86_64/bin/x86_64-w64-windows-gnu.cfg"
+                 },
+    "compile":  {
+                    "Command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe -std=gnu11 -O2 -g0 -fno-lto -ffunction-sections -fdata-sections -c D:\\XiangxinLab\\adpcm_decompilation_experiment\\tests\\fixtures\\cannot_link.c -o D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\20260823T163026266Z_cannot_link\\build\\recovered.o",
+                    "ExitCode":  0,
+                    "StartedUtc":  "2026-08-23T16:30:26.3928769+00:00",
+                    "FinishedUtc":  "2026-08-23T16:30:26.4380044+00:00",
+                    "DurationMs":  45.128,
+                    "StdoutPath":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\20260823T163026266Z_cannot_link\\build\\compile.stdout.txt",
+                    "StderrPath":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\20260823T163026266Z_cannot_link\\build\\compile.stderr.txt"
+                },
+    "link":  {
+                 "Command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe -fno-lto -Wl,--gc-sections D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\20260823T163026266Z_cannot_link\\build\\recovered.o -o D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\20260823T163026266Z_cannot_link\\build\\reconstructed_unstripped.exe",
+                 "ExitCode":  1,
+                 "StartedUtc":  "2026-08-23T16:30:26.4496537+00:00",
+                 "FinishedUtc":  "2026-08-23T16:30:26.5029228+00:00",
+                 "DurationMs":  53.269,
+                 "StdoutPath":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\20260823T163026266Z_cannot_link\\build\\link.stdout.txt",
+                 "StderrPath":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\20260823T163026266Z_cannot_link\\build\\link.stderr.txt"
+             },
+    "strip":  null,
+    "challenge_reference_run":  null,
+    "reconstructed_run":  null,
+    "comparisons":  null,
+    "classifications":  [
+                            "CANNOT_LINK"
+                        ],
+    "overall_status":  "CANNOT_LINK",
+    "reconstructed_binary":  null
+}

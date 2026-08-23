@@ -1,0 +1,35 @@
+{
+    "schema_version":  1,
+    "run_id":  "20260823T163025801Z_cannot_compile",
+    "generated_utc":  "2026-08-23T16:30:25.8076419+00:00",
+    "recovered_source":  {
+                             "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\tests\\fixtures\\cannot_compile.c",
+                             "sha256":  "0fc95cd13f5701c8af0c75e5fd84a9ab007683284aa90bd25104e3485ee637a9",
+                             "bytes":  29,
+                             "modified_by_evaluator":  false
+                         },
+    "compiler":  {
+                     "path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe",
+                     "target":  "x86_64-w64-windows-gnu",
+                     "version":  "clang version 22.1.8 (https://github.com/llvm/llvm-project.git ca7933e47d3a3451d81e72ac174dcb5aa28b59d1)\r\nTarget: x86_64-w64-windows-gnu\r\nThread model: posix\r\nInstalledDir: D:/XiangxinLab/adpcm_decompilation_experiment/toolchain/llvm-mingw-20260616-ucrt-x86_64/bin\r\nConfiguration file: D:/XiangxinLab/adpcm_decompilation_experiment/toolchain/llvm-mingw-20260616-ucrt-x86_64/bin/x86_64-w64-windows-gnu.cfg"
+                 },
+    "compile":  {
+                    "Command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\toolchain\\llvm-mingw-20260616-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe -std=gnu11 -O2 -g0 -fno-lto -ffunction-sections -fdata-sections -c D:\\XiangxinLab\\adpcm_decompilation_experiment\\tests\\fixtures\\cannot_compile.c -o D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\20260823T163025801Z_cannot_compile\\build\\recovered.o",
+                    "ExitCode":  1,
+                    "StartedUtc":  "2026-08-23T16:30:25.9315739+00:00",
+                    "FinishedUtc":  "2026-08-23T16:30:25.9699670+00:00",
+                    "DurationMs":  38.393,
+                    "StdoutPath":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\20260823T163025801Z_cannot_compile\\build\\compile.stdout.txt",
+                    "StderrPath":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\reconstructed\\20260823T163025801Z_cannot_compile\\build\\compile.stderr.txt"
+                },
+    "link":  null,
+    "strip":  null,
+    "challenge_reference_run":  null,
+    "reconstructed_run":  null,
+    "comparisons":  null,
+    "classifications":  [
+                            "CANNOT_COMPILE"
+                        ],
+    "overall_status":  "CANNOT_COMPILE",
+    "reconstructed_binary":  null
+}
