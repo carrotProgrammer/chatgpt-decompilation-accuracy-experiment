@@ -14,11 +14,22 @@ Accuracy is determined only by compilation, linking, and deterministic behaviora
 
 | Sample | Challenge binary | Original source | Deterministic tests |
 |---|---|---|---|
-| `adpcm` | `bin\challenge\sample_001.exe` | `source\original\adpcm.c` | Embedded CHStone vectors |
-| `chal` | `bin\challenge\sample_002.exe` | `source\original\chal.c` | Four fixed FEN + depth perft cases |
-| `portal` | `bin\challenge\sample_003.exe` | `source\original\ticket_portal.c` | Six fixed queries covering filtering, authorization, aggregation, detail output, and validation |
+| `adpcm` | `bin\challenge\sample_001.exe` | `source\development\original\adpcm.c` | Embedded CHStone vectors |
+| `chal` | `bin\challenge\sample_002.exe` | `source\development\original\chal.c` | Four fixed FEN + depth perft cases |
+| `portal` | `bin\challenge\sample_003.exe` | `source\development\original\ticket_portal.c` | Six fixed queries covering filtering, authorization, aggregation, detail output, and validation |
 
 Neutral challenge filenames avoid revealing the algorithm or application name to the model under evaluation.
+
+## Dataset separation
+
+The source tree keeps model-development inputs separate from held-out evaluation inputs:
+
+- `source\development\original\`: 3 baseline programs used while developing the workflow.
+- `source\development\{common,uncommon,generated}\`: 15 additional development programs.
+- `source\test\{common,uncommon,generated}\`: 30 held-out test programs.
+- `source\recovered\`: reconstructed outputs; this directory is not part of either input set.
+
+The development set therefore contains 18 programs and the test set contains 30. Their machine-readable definitions are `development_corpus_definitions.json` and `test_corpus_definitions.json`; `corpus_manifest.json` records the set membership of every corpus sample.
 
 ## Evaluation model
 

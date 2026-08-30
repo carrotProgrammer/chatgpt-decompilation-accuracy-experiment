@@ -152,7 +152,7 @@ Machine-readable details and raw stdout/stderr are stored under this directory.
         $sampleManifest['origin'] = [ordered]@{
             type = 'synthetic'
             description = $config.SyntheticDescription
-            source_path = 'source/original/ticket_portal.c'
+            source_path = 'source/development/original/ticket_portal.c'
         }
     } else {
         $commit = (& git -c 'safe.directory=*' -C $config.UpstreamDirectory rev-parse HEAD 2>&1 | Out-String).Trim()

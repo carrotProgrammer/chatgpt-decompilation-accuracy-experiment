@@ -10,7 +10,7 @@ New-Item -ItemType Directory -Force -Path $buildDirectory, $reportDirectory, $ru
 
 $compileArguments = @(
     '-std=c11', '-O2', '-g0', '-fno-lto', '-DSDS_TEST_MAIN',
-    (Join-Path $paths.Root 'source\common\common_004_sds\sds.c'),
+    (Join-Path $paths.Root 'source\development\common\common_004_sds\sds.c'),
     '-o', $binary
 )
 $compile = Invoke-ExternalTool -Executable $paths.Clang -Arguments $compileArguments `

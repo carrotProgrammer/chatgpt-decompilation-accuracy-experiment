@@ -6,8 +6,8 @@ $ErrorActionPreference = 'Stop'
 
 $paths = Get-ExperimentPaths
 $root = $paths.Root
-$definitionsPath = Join-Path $root 'corpus_definitions.json'
-$definitionsRound2Path = Join-Path $root 'corpus_definitions_round2.json'
+$developmentDefinitionsPath = Join-Path $root 'development_corpus_definitions.json'
+$testDefinitionsPath = Join-Path $root 'test_corpus_definitions.json'
 $manifestPath = Join-Path $root 'corpus_manifest.json'
 $reportPath = Join-Path $root 'CORPUS_REPORT.md'
 $reportRoot = Join-Path $root 'reports\corpus'
@@ -132,17 +132,17 @@ function Invoke-LoggedTool {
 function Copy-SmokeFixtures($Sample, [string]$RuntimeDirectory) {
     switch ([string]$Sample.smoke_fixture) {
         'minimp3' {
-            Copy-Item -LiteralPath (Join-Path $root 'source\uncommon\uncommon_002_minimp3\testdata\MEANDR90.mp3') `
+            Copy-Item -LiteralPath (Join-Path $root 'source\development\uncommon\uncommon_002_minimp3\testdata\MEANDR90.mp3') `
                 -Destination (Join-Path $RuntimeDirectory 'MEANDR90.mp3') -Force
         }
         'q3asm' {
-            Get-ChildItem -LiteralPath (Join-Path $root 'source\uncommon\uncommon_005_q3asm\testdata') `
+            Get-ChildItem -LiteralPath (Join-Path $root 'source\development\uncommon\uncommon_005_q3asm\testdata') `
                 -Filter '*.asm' -File | ForEach-Object {
                     Copy-Item -LiteralPath $_.FullName -Destination (Join-Path $RuntimeDirectory $_.Name) -Force
                 }
         }
         'q3vm' {
-            Get-ChildItem -LiteralPath (Join-Path $root 'source\uncommon\uncommon_005_q3asm\testdata') `
+            Get-ChildItem -LiteralPath (Join-Path $root 'source\development\uncommon\uncommon_005_q3asm\testdata') `
                 -Filter '*.asm' -File | ForEach-Object {
                     Copy-Item -LiteralPath $_.FullName -Destination (Join-Path $RuntimeDirectory $_.Name) -Force
                 }
@@ -150,7 +150,7 @@ function Copy-SmokeFixtures($Sample, [string]$RuntimeDirectory) {
     }
 }
 
-foreach ($requiredDefinitions in @($definitionsPath, $definitionsRound2Path)) {
+foreach ($requiredDefinitions in @($developmentDefinitionsPath, $testDefinitionsPath)) {
     if (-not (Test-Path -LiteralPath $requiredDefinitions -PathType Leaf)) {
         throw "Missing corpus definitions: $requiredDefinitions"
     }
@@ -161,20 +161,23 @@ foreach ($requiredTool in @($paths.Clang, $paths.Strip, $paths.Objdump, $paths.N
     }
 }
 
-$definitionsOriginal = Get-Content -LiteralPath $definitionsPath -Raw | ConvertFrom-Json
-$definitionsRound2 = Get-Content -LiteralPath $definitionsRound2Path -Raw | ConvertFrom-Json
-if ($definitionsOriginal.schema_version -ne 1 -or @($definitionsOriginal.samples).Count -ne 15) {
-    throw 'corpus_definitions.json must use schema version 1 and contain exactly 15 first-round samples.'
+$developmentDefinitions = Get-Content -LiteralPath $developmentDefinitionsPath -Raw | ConvertFrom-Json
+$testDefinitions = Get-Content -LiteralPath $testDefinitionsPath -Raw | ConvertFrom-Json
+if ($developmentDefinitions.schema_version -ne 1 -or @($developmentDefinitions.samples).Count -ne 15) {
+    throw 'development_corpus_definitions.json must use schema version 1 and contain exactly 15 corpus samples.'
 }
-if ($definitionsRound2.schema_version -ne 1 -or @($definitionsRound2.samples).Count -ne 30) {
-    throw 'corpus_definitions_round2.json must use schema version 1 and contain exactly 30 second-round samples.'
+if ($testDefinitions.schema_version -ne 1 -or @($testDefinitions.samples).Count -ne 30) {
+    throw 'test_corpus_definitions.json must use schema version 1 and contain exactly 30 test samples.'
 }
 $definitions = [pscustomobject]@{
     schema_version = 1
-    samples = @($definitionsOriginal.samples) + @($definitionsRound2.samples)
+    samples = @($developmentDefinitions.samples) + @($testDefinitions.samples)
 }
 $duplicateIds = @($definitions.samples | Group-Object sample_id | Where-Object { $_.Count -ne 1 })
 if ($duplicateIds.Count -ne 0) { throw 'Corpus sample IDs must be unique across definition files.' }
+$datasetById = @{}
+foreach ($sample in @($developmentDefinitions.samples)) { $datasetById[[string]$sample.sample_id] = 'development' }
+foreach ($sample in @($testDefinitions.samples)) { $datasetById[[string]$sample.sample_id] = 'test' }
 
 New-Item -ItemType Directory -Force -Path $reportRoot, $buildRoot | Out-Null
 $compilerVersionPath = Join-Path $reportRoot 'compiler_version.txt'
@@ -317,6 +320,7 @@ foreach ($sample in $definitions.samples) {
 
     $result = [ordered]@{
         sample_id = $sampleId
+        dataset = [string]$datasetById[$sampleId]
         category = $category
         name = [string]$sample.name
         description = [string]$sample.description
@@ -496,6 +500,12 @@ $manifest = [ordered]@{
     generated_utc = [DateTimeOffset]::UtcNow.ToString('o')
     scope = [ordered]@{
         sample_count = $results.Count
+        dataset_counts = [ordered]@{
+            development = @($results | Where-Object { $_.dataset -eq 'development' }).Count
+            test = @($results | Where-Object { $_.dataset -eq 'test' }).Count
+        }
+        baseline_development_samples = 3
+        total_development_samples = 18
         category_counts = $categoryCounts
         source_only_pipeline = $true
         decompilation_performed = $false
@@ -503,8 +513,8 @@ $manifest = [ordered]@{
         external_api_calls = $false
     }
     definitions = @(
-        [ordered]@{ path = Get-RelativePath $definitionsPath; sha256 = Get-Sha256 $definitionsPath },
-        [ordered]@{ path = Get-RelativePath $definitionsRound2Path; sha256 = Get-Sha256 $definitionsRound2Path }
+        [ordered]@{ dataset = 'development'; path = Get-RelativePath $developmentDefinitionsPath; sha256 = Get-Sha256 $developmentDefinitionsPath },
+        [ordered]@{ dataset = 'test'; path = Get-RelativePath $testDefinitionsPath; sha256 = Get-Sha256 $testDefinitionsPath }
     )
     toolchain = [ordered]@{
         distribution = 'llvm-mingw 20260616 UCRT x86_64'
@@ -521,10 +531,10 @@ $manifest = [ordered]@{
         disassembly = 'llvm-objdump -d --print-imm-hex; raw output only, no decompilation'
     }
     reproduction = [ordered]@{
-        import_external_sources_round1 = 'powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/import_corpus_sources.ps1 -CandidateRoot <verified-clones> -Q3VmTestdataRoot <generated-q3asm-fixtures>'
-        import_external_sources_round2 = 'powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/import_corpus_sources_round2.ps1 -CandidateRoot <verified-clones>'
-        generate_original_sources_round2 = 'powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/generate_original_round2.ps1'
-        generate_definitions_round2 = 'powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/generate_corpus_definitions_round2.ps1'
+        import_development_sources = 'powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/import_development_corpus_sources.ps1 -CandidateRoot <verified-clones> -Q3VmTestdataRoot <generated-q3asm-fixtures>'
+        import_test_sources = 'powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/import_test_corpus_sources.ps1 -CandidateRoot <verified-clones>'
+        generate_test_original_sources = 'powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/generate_test_original_sources.ps1'
+        generate_test_definitions = 'powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/generate_test_corpus_definitions.ps1'
         build_verify_and_document = 'build_corpus.cmd'
         retained_failure_probe = 'powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/probe_sds_upstream_failure.ps1'
     }
@@ -550,19 +560,18 @@ foreach ($result in @($results | Sort-Object -Property @{ Expression = { [string
         "[$($commit.Substring(0, 12))]($repository/tree/$commit)"
     }
     $purpose = ([string]$result.description).Replace('|', '\|')
-    $tableLines += "| $($result.sample_id) | $($result.category) | $($result.name) | $purpose | $originText | $($result.source.totals.effective_code_lines) | $status |"
+    $tableLines += "| $($result.sample_id) | $($result.dataset) | $($result.category) | $($result.name) | $purpose | $originText | $($result.source.totals.effective_code_lines) | $status |"
 }
-$round2Ids = @($definitionsRound2.samples | ForEach-Object { [string]$_.sample_id })
-$round2Results = @($results | Where-Object { $round2Ids -contains $_.sample_id })
-$round2LineValues = @($round2Results | ForEach-Object { [int64]$_.source.totals.effective_code_lines } | Sort-Object)
-$round2BinaryBytes = ($round2Results | ForEach-Object { [int64]$_.build.binary.bytes } | Measure-Object -Sum).Sum
-$round2DisassemblyBytes = ($round2Results | ForEach-Object { [int64]$_.build.disassembly.bytes } | Measure-Object -Sum).Sum
-$round2CategoryLines = @()
+$testResults = @($results | Where-Object { $_.dataset -eq 'test' })
+$testLineValues = @($testResults | ForEach-Object { [int64]$_.source.totals.effective_code_lines } | Sort-Object)
+$testBinaryBytes = ($testResults | ForEach-Object { [int64]$_.build.binary.bytes } | Measure-Object -Sum).Sum
+$testDisassemblyBytes = ($testResults | ForEach-Object { [int64]$_.build.disassembly.bytes } | Measure-Object -Sum).Sum
+$testCategoryLines = @()
 foreach ($category in @('common', 'uncommon', 'generated')) {
-    $categoryResults = @($round2Results | Where-Object { $_.category -eq $category })
+    $categoryResults = @($testResults | Where-Object { $_.category -eq $category })
     $categoryLineValues = @($categoryResults | ForEach-Object { [int64]$_.source.totals.effective_code_lines })
     $categoryBinaryBytes = ($categoryResults | ForEach-Object { [int64]$_.build.binary.bytes } | Measure-Object -Sum).Sum
-    $round2CategoryLines += "| $category | $($categoryResults.Count) | $(($categoryLineValues | Measure-Object -Sum).Sum) | $([math]::Round(($categoryLineValues | Measure-Object -Average).Average, 1)) | $(@($categoryResults | Where-Object { $_.source.totals.within_nominal_target }).Count)/$($categoryResults.Count) | $([math]::Round($categoryBinaryBytes / 1KB, 1)) KiB |"
+    $testCategoryLines += "| $category | $($categoryResults.Count) | $(($categoryLineValues | Measure-Object -Sum).Sum) | $([math]::Round(($categoryLineValues | Measure-Object -Average).Average, 1)) | $(@($categoryResults | Where-Object { $_.source.totals.within_nominal_target }).Count)/$($categoryResults.Count) | $([math]::Round($categoryBinaryBytes / 1KB, 1)) KiB |"
 }
 $deviationLines = @()
 foreach ($result in @($results | Where-Object { -not $_.source.totals.within_nominal_target } | Sort-Object -Property @{ Expression = { [string]$_['sample_id'] } })) {
@@ -596,29 +605,31 @@ Generated UTC: $($manifest.generated_utc)
 
 ## Outcome
 
-- Corpus samples: 45 (15 common open-source, 15 uncommon open-source, and 15 original); together with the 3 pre-existing baseline programs in manifest.json, the repository now contains 48 prepared programs.
+- Development set: 18 programs: 3 baseline originals under source/development/original plus 15 corpus programs under source/development/{common,uncommon,generated}.
+- Test set: 30 held-out corpus programs under source/test/{common,uncommon,generated}.
+- The combined corpus manifest covers the 15 development corpus programs and all 30 test programs; source/recovered is excluded from both sets.
 - Uniform target: Windows x86-64 UCRT, clang 22.1.8, -O2 -fno-lto, with final PE files processed by llvm-strip --strip-all.
 - Final status: $(if ($overallPassed) { '**ALL_CORPUS_TESTS_PASSED**' } else { '**CORPUS_VERIFICATION_FAILED**' }).
 - This stage performs source curation, compilation, smoke testing, and raw disassembly only. It performs no decompilation, creates no recovered C, and makes no external API calls.
 
 ## Samples
 
-| ID | Category | Workload | What it does | Pinned origin | Effective code lines | Status |
-|---|---|---|---|---|---:|---:|
+| ID | Dataset | Category | Workload | What it does | Pinned origin | Effective code lines | Status |
+|---|---|---|---|---|---|---:|---:|
 $($tableLines -join "`n")
 
 Effective code lines are physical lines minus blank and comment-only lines; mixed code/comment lines count as code. Per-file details, SHA-256 hashes, build commands, and raw log paths are in corpus_manifest.json.
 
-## Round 2 statistics (the 30 newly added programs)
+## Test-set statistics (30 held-out programs)
 
-- Result: $(@($round2Results | Where-Object { $_.overall_passed }).Count)/$($round2Results.Count) passed the final unified pipeline.
-- Effective code: $(($round2LineValues | Measure-Object -Sum).Sum) lines total; average $([math]::Round(($round2LineValues | Measure-Object -Average).Average, 1)), median $(($round2LineValues[14] + $round2LineValues[15]) / 2), range $($round2LineValues[0])-$($round2LineValues[-1]).
-- Nominal size range: $(@($round2Results | Where-Object { $_.source.totals.within_nominal_target }).Count)/$($round2Results.Count) are within 1000-2000 effective lines; complete compact or tightly coupled implementations are retained and listed below rather than padded or truncated.
-- Artifacts: $([math]::Round($round2BinaryBytes / 1KB, 1)) KiB of stripped PE files and $([math]::Round($round2DisassemblyBytes / 1MB, 2)) MiB of raw disassembly.
+- Result: $(@($testResults | Where-Object { $_.overall_passed }).Count)/$($testResults.Count) passed the final unified pipeline.
+- Effective code: $(($testLineValues | Measure-Object -Sum).Sum) lines total; average $([math]::Round(($testLineValues | Measure-Object -Average).Average, 1)), median $(($testLineValues[14] + $testLineValues[15]) / 2), range $($testLineValues[0])-$($testLineValues[-1]).
+- Nominal size range: $(@($testResults | Where-Object { $_.source.totals.within_nominal_target }).Count)/$($testResults.Count) are within 1000-2000 effective lines; complete compact or tightly coupled implementations are retained and listed below rather than padded or truncated.
+- Artifacts: $([math]::Round($testBinaryBytes / 1KB, 1)) KiB of stripped PE files and $([math]::Round($testDisassemblyBytes / 1MB, 2)) MiB of raw disassembly.
 
-| New category | Programs | Effective lines | Average | In nominal range | Stripped PE total |
+| Test category | Programs | Effective lines | Average | In nominal range | Stripped PE total |
 |---|---:|---:|---:|---:|---:|
-$($round2CategoryLines -join "`n")
+$($testCategoryLines -join "`n")
 
 ## Size deviations
 
@@ -631,7 +642,7 @@ $($failureLines -join "`n")
 - The upstream SDS test entry point overflowed the default Windows thread stack because of a 1 MiB local array. That real failure was not treated as a pass. The corpus retains unchanged SDS library sources and uses a separate driver without the giant stack object to exercise equivalent core operations. The reproduced STATUS_STACK_OVERFLOW record is reports/corpus/probes/sds_upstream_test_main/probe.json.
 - CHStone Blowfish emits old-style declaration warnings under clang 22. Compilation, linking, PE architecture verification, and its embedded-vector smoke result are recorded as observed.
 - q3asm has only the include-path adaptation needed by the self-contained layout. Its QVM output is then loaded and executed by q3vm.
-- Round-2 selection and porting probes, including rejected license-ambiguous candidates, are summarized in reports/corpus/probes/round2_porting/README.md. These development probes are not represented as final sample passes.
+- Test-set selection and porting probes, including rejected license-ambiguous candidates, are summarized in reports/corpus/probes/round2_porting/README.md. These preparation probes are not represented as final sample passes.
 
 ## Reproduce
 
@@ -641,7 +652,7 @@ To reproduce the retained SDS failure record:
 
     powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts\probe_sds_upstream_failure.ps1
 
-External repositories, commits, upstream paths, licenses, and local adaptations are recorded in corpus_definitions.json, corpus_definitions_round2.json, and corpus_manifest.json. Build stdout/stderr is under reports/corpus/<category>/<sample_id>/build/, with smoke outputs and run metadata in the adjacent smoke/ directory.
+External repositories, commits, upstream paths, licenses, and local adaptations are recorded in development_corpus_definitions.json, test_corpus_definitions.json, and corpus_manifest.json. Build stdout/stderr is under reports/corpus/<category>/<sample_id>/build/, with smoke outputs and run metadata in the adjacent smoke/ directory.
 "@
 [IO.File]::WriteAllText($reportPath, $report, $utf8)
 

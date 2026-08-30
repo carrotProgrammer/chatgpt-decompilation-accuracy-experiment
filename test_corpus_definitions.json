@@ -1,6 +1,6 @@
 {
     "schema_version":  1,
-    "round":  2,
+    "dataset":  "test",
     "samples":  [
                     {
                         "sample_id":  "common_006_cwalk",
@@ -11,7 +11,7 @@
                         "repository_url":  "https://github.com/likle/cwalk",
                         "commit_sha":  "e98d23f68807208952c179b49e4fd1813f31298d",
                         "license":  "MIT",
-                        "license_file":  "source/common/common_006_cwalk/LICENSE.txt",
+                        "license_file":  "source/test/common/common_006_cwalk/LICENSE.txt",
                         "upstream_paths":  [
                                                "src/cwalk.c",
                                                "include/cwalk.h"
@@ -20,16 +20,16 @@
                                               "Added a deterministic Windows-aware path API smoke driver; upstream files are unchanged."
                                           ],
                         "compile_sources":  [
-                                                "source/common/common_006_cwalk/cwalk.c",
-                                                "source/common/common_006_cwalk/cwalk_driver.c"
+                                                "source/test/common/common_006_cwalk/cwalk.c",
+                                                "source/test/common/common_006_cwalk/cwalk_driver.c"
                                             ],
                         "code_files":  [
-                                           "source/common/common_006_cwalk/cwalk.c",
-                                           "source/common/common_006_cwalk/cwalk.h",
-                                           "source/common/common_006_cwalk/cwalk_driver.c"
+                                           "source/test/common/common_006_cwalk/cwalk.c",
+                                           "source/test/common/common_006_cwalk/cwalk.h",
+                                           "source/test/common/common_006_cwalk/cwalk_driver.c"
                                        ],
                         "compile_options":  [
-                                                "-Isource/common/common_006_cwalk"
+                                                "-Isource/test/common/common_006_cwalk"
                                             ],
                         "link_options":  [
 
@@ -49,7 +49,7 @@
                         "repository_url":  "https://github.com/nodejs/http-parser",
                         "commit_sha":  "ec8b5ee63f0e51191ea43bb0c6eac7bfbff3141d",
                         "license":  "MIT",
-                        "license_file":  "source/common/common_007_http_parser/LICENSE.txt",
+                        "license_file":  "source/test/common/common_007_http_parser/LICENSE.txt",
                         "upstream_paths":  [
                                                "http_parser.c",
                                                "http_parser.h"
@@ -58,13 +58,13 @@
                                               "Added a deterministic fragmented-request smoke driver; upstream files are unchanged."
                                           ],
                         "compile_sources":  [
-                                                "source/common/common_007_http_parser/http_parser.c",
-                                                "source/common/common_007_http_parser/http_parser_driver.c"
+                                                "source/test/common/common_007_http_parser/http_parser.c",
+                                                "source/test/common/common_007_http_parser/http_parser_driver.c"
                                             ],
                         "code_files":  [
-                                           "source/common/common_007_http_parser/http_parser.c",
-                                           "source/common/common_007_http_parser/http_parser.h",
-                                           "source/common/common_007_http_parser/http_parser_driver.c"
+                                           "source/test/common/common_007_http_parser/http_parser.c",
+                                           "source/test/common/common_007_http_parser/http_parser.h",
+                                           "source/test/common/common_007_http_parser/http_parser_driver.c"
                                        ],
                         "compile_options":  [
 
@@ -87,7 +87,7 @@
                         "repository_url":  "https://github.com/h2o/picohttpparser",
                         "commit_sha":  "f4d94b48b31e0abae029ebeafcfd9ca0680ede58",
                         "license":  "MIT OR Artistic-1.0-Perl",
-                        "license_file":  "source/common/common_008_picohttpparser/LICENSE.txt",
+                        "license_file":  "source/test/common/common_008_picohttpparser/LICENSE.txt",
                         "upstream_paths":  [
                                                "picohttpparser.c",
                                                "picohttpparser.h",
@@ -97,14 +97,14 @@
                                               "Added a portable deterministic driver and a standalone transcription of the license embedded upstream; upstream implementation is unchanged."
                                           ],
                         "compile_sources":  [
-                                                "source/common/common_008_picohttpparser/picohttpparser.c",
-                                                "source/common/common_008_picohttpparser/picohttpparser_driver.c"
+                                                "source/test/common/common_008_picohttpparser/picohttpparser.c",
+                                                "source/test/common/common_008_picohttpparser/picohttpparser_driver.c"
                                             ],
                         "code_files":  [
-                                           "source/common/common_008_picohttpparser/picohttpparser.c",
-                                           "source/common/common_008_picohttpparser/picohttpparser.h",
-                                           "source/common/common_008_picohttpparser/picohttpparser_driver.c",
-                                           "source/common/common_008_picohttpparser/upstream_test.c"
+                                           "source/test/common/common_008_picohttpparser/picohttpparser.c",
+                                           "source/test/common/common_008_picohttpparser/picohttpparser.h",
+                                           "source/test/common/common_008_picohttpparser/picohttpparser_driver.c",
+                                           "source/test/common/common_008_picohttpparser/upstream_test.c"
                                        ],
                         "compile_options":  [
 
@@ -127,7 +127,7 @@
                         "repository_url":  "https://github.com/cktan/tomlc99",
                         "commit_sha":  "29076dfd095bbbbd50a3c1b2760d29f4b83e74ac",
                         "license":  "MIT",
-                        "license_file":  "source/common/common_009_tomlc99/LICENSE.txt",
+                        "license_file":  "source/test/common/common_009_tomlc99/LICENSE.txt",
                         "upstream_paths":  [
                                                "toml.c",
                                                "toml.h"
@@ -136,13 +136,13 @@
                                               "Added an in-memory deterministic TOML smoke driver; upstream files are unchanged."
                                           ],
                         "compile_sources":  [
-                                                "source/common/common_009_tomlc99/toml.c",
-                                                "source/common/common_009_tomlc99/tomlc99_driver.c"
+                                                "source/test/common/common_009_tomlc99/toml.c",
+                                                "source/test/common/common_009_tomlc99/tomlc99_driver.c"
                                             ],
                         "code_files":  [
-                                           "source/common/common_009_tomlc99/toml.c",
-                                           "source/common/common_009_tomlc99/toml.h",
-                                           "source/common/common_009_tomlc99/tomlc99_driver.c"
+                                           "source/test/common/common_009_tomlc99/toml.c",
+                                           "source/test/common/common_009_tomlc99/toml.h",
+                                           "source/test/common/common_009_tomlc99/tomlc99_driver.c"
                                        ],
                         "compile_options":  [
 
@@ -165,7 +165,7 @@
                         "repository_url":  "https://github.com/sheredom/utf8.h",
                         "commit_sha":  "7e403ccc3f3cb848d061cac352ee26e54f27c934",
                         "license":  "Unlicense",
-                        "license_file":  "source/common/common_010_utf8/LICENSE.txt",
+                        "license_file":  "source/test/common/common_010_utf8/LICENSE.txt",
                         "upstream_paths":  [
                                                "utf8.h"
                                            ],
@@ -173,11 +173,11 @@
                                               "Added a deterministic header-only smoke driver; upstream header is unchanged."
                                           ],
                         "compile_sources":  [
-                                                "source/common/common_010_utf8/utf8_driver.c"
+                                                "source/test/common/common_010_utf8/utf8_driver.c"
                                             ],
                         "code_files":  [
-                                           "source/common/common_010_utf8/utf8.h",
-                                           "source/common/common_010_utf8/utf8_driver.c"
+                                           "source/test/common/common_010_utf8/utf8.h",
+                                           "source/test/common/common_010_utf8/utf8_driver.c"
                                        ],
                         "compile_options":  [
 
@@ -200,7 +200,7 @@
                         "repository_url":  "https://github.com/nothings/stb",
                         "commit_sha":  "2c980bb59875b0d32144a71867fbdebb2f77cd20",
                         "license":  "MIT OR Unlicense",
-                        "license_file":  "source/common/common_011_stb_sprintf/LICENSE.txt",
+                        "license_file":  "source/test/common/common_011_stb_sprintf/LICENSE.txt",
                         "upstream_paths":  [
                                                "stb_sprintf.h"
                                            ],
@@ -208,11 +208,11 @@
                                               "Added a deterministic implementation-and-smoke translation unit; upstream header is unchanged."
                                           ],
                         "compile_sources":  [
-                                                "source/common/common_011_stb_sprintf/stb_sprintf_driver.c"
+                                                "source/test/common/common_011_stb_sprintf/stb_sprintf_driver.c"
                                             ],
                         "code_files":  [
-                                           "source/common/common_011_stb_sprintf/stb_sprintf.h",
-                                           "source/common/common_011_stb_sprintf/stb_sprintf_driver.c"
+                                           "source/test/common/common_011_stb_sprintf/stb_sprintf.h",
+                                           "source/test/common/common_011_stb_sprintf/stb_sprintf_driver.c"
                                        ],
                         "compile_options":  [
 
@@ -235,7 +235,7 @@
                         "repository_url":  "https://github.com/nothings/stb",
                         "commit_sha":  "2c980bb59875b0d32144a71867fbdebb2f77cd20",
                         "license":  "MIT OR Unlicense",
-                        "license_file":  "source/common/common_012_stb_ds/LICENSE.txt",
+                        "license_file":  "source/test/common/common_012_stb_ds/LICENSE.txt",
                         "upstream_paths":  [
                                                "stb_ds.h"
                                            ],
@@ -243,11 +243,11 @@
                                               "Added a deterministic implementation-and-smoke translation unit; upstream header is unchanged."
                                           ],
                         "compile_sources":  [
-                                                "source/common/common_012_stb_ds/stb_ds_driver.c"
+                                                "source/test/common/common_012_stb_ds/stb_ds_driver.c"
                                             ],
                         "code_files":  [
-                                           "source/common/common_012_stb_ds/stb_ds.h",
-                                           "source/common/common_012_stb_ds/stb_ds_driver.c"
+                                           "source/test/common/common_012_stb_ds/stb_ds.h",
+                                           "source/test/common/common_012_stb_ds/stb_ds_driver.c"
                                        ],
                         "compile_options":  [
 
@@ -270,7 +270,7 @@
                         "repository_url":  "https://github.com/tidwall/hashmap.c",
                         "commit_sha":  "3735986914fc1c4e6a9123b406d0970666aa4aec",
                         "license":  "MIT",
-                        "license_file":  "source/common/common_013_hashmap/LICENSE.txt",
+                        "license_file":  "source/test/common/common_013_hashmap/LICENSE.txt",
                         "upstream_paths":  [
                                                "hashmap.c",
                                                "hashmap.h"
@@ -279,13 +279,13 @@
                                               "Added a deterministic integer-record smoke driver; upstream files are unchanged."
                                           ],
                         "compile_sources":  [
-                                                "source/common/common_013_hashmap/hashmap.c",
-                                                "source/common/common_013_hashmap/hashmap_driver.c"
+                                                "source/test/common/common_013_hashmap/hashmap.c",
+                                                "source/test/common/common_013_hashmap/hashmap_driver.c"
                                             ],
                         "code_files":  [
-                                           "source/common/common_013_hashmap/hashmap.c",
-                                           "source/common/common_013_hashmap/hashmap.h",
-                                           "source/common/common_013_hashmap/hashmap_driver.c"
+                                           "source/test/common/common_013_hashmap/hashmap.c",
+                                           "source/test/common/common_013_hashmap/hashmap.h",
+                                           "source/test/common/common_013_hashmap/hashmap_driver.c"
                                        ],
                         "compile_options":  [
 
@@ -308,7 +308,7 @@
                         "repository_url":  "https://github.com/richgel999/miniz",
                         "commit_sha":  "77d0dce8627735138c51770d1799a1ef48f2117d",
                         "license":  "MIT",
-                        "license_file":  "source/common/common_014_miniz_tinfl/LICENSE.txt",
+                        "license_file":  "source/test/common/common_014_miniz_tinfl/LICENSE.txt",
                         "upstream_paths":  [
                                                "miniz_tinfl.c",
                                                "miniz_tinfl.h",
@@ -321,18 +321,18 @@
                                               "Added a deterministic inflate driver and the minimal miniz_export.h generated by the upstream build recipe; implementation files are unchanged."
                                           ],
                         "compile_sources":  [
-                                                "source/common/common_014_miniz_tinfl/miniz_tinfl.c",
-                                                "source/common/common_014_miniz_tinfl/miniz_tinfl_driver.c"
+                                                "source/test/common/common_014_miniz_tinfl/miniz_tinfl.c",
+                                                "source/test/common/common_014_miniz_tinfl/miniz_tinfl_driver.c"
                                             ],
                         "code_files":  [
-                                           "source/common/common_014_miniz_tinfl/miniz.h",
-                                           "source/common/common_014_miniz_tinfl/miniz_common.h",
-                                           "source/common/common_014_miniz_tinfl/miniz_export.h",
-                                           "source/common/common_014_miniz_tinfl/miniz_tdef.h",
-                                           "source/common/common_014_miniz_tinfl/miniz_tinfl.c",
-                                           "source/common/common_014_miniz_tinfl/miniz_tinfl.h",
-                                           "source/common/common_014_miniz_tinfl/miniz_tinfl_driver.c",
-                                           "source/common/common_014_miniz_tinfl/miniz_zip.h"
+                                           "source/test/common/common_014_miniz_tinfl/miniz.h",
+                                           "source/test/common/common_014_miniz_tinfl/miniz_common.h",
+                                           "source/test/common/common_014_miniz_tinfl/miniz_export.h",
+                                           "source/test/common/common_014_miniz_tinfl/miniz_tdef.h",
+                                           "source/test/common/common_014_miniz_tinfl/miniz_tinfl.c",
+                                           "source/test/common/common_014_miniz_tinfl/miniz_tinfl.h",
+                                           "source/test/common/common_014_miniz_tinfl/miniz_tinfl_driver.c",
+                                           "source/test/common/common_014_miniz_tinfl/miniz_zip.h"
                                        ],
                         "compile_options":  [
                                                 "-DMINIZ_NO_DEFLATE_APIS"
@@ -355,7 +355,7 @@
                         "repository_url":  "https://github.com/rgamble/libcsv",
                         "commit_sha":  "b1d5212831842ee5869d99bc208a21837e4037d5",
                         "license":  "LGPL-2.1-or-later",
-                        "license_file":  "source/common/common_015_libcsv/LICENSE.txt",
+                        "license_file":  "source/test/common/common_015_libcsv/LICENSE.txt",
                         "upstream_paths":  [
                                                "libcsv.c",
                                                "csv.h",
@@ -365,13 +365,13 @@
 
                                           ],
                         "compile_sources":  [
-                                                "source/common/common_015_libcsv/libcsv.c",
-                                                "source/common/common_015_libcsv/upstream_test.c"
+                                                "source/test/common/common_015_libcsv/libcsv.c",
+                                                "source/test/common/common_015_libcsv/upstream_test.c"
                                             ],
                         "code_files":  [
-                                           "source/common/common_015_libcsv/csv.h",
-                                           "source/common/common_015_libcsv/libcsv.c",
-                                           "source/common/common_015_libcsv/upstream_test.c"
+                                           "source/test/common/common_015_libcsv/csv.h",
+                                           "source/test/common/common_015_libcsv/libcsv.c",
+                                           "source/test/common/common_015_libcsv/upstream_test.c"
                                        ],
                         "compile_options":  [
 
@@ -394,7 +394,7 @@
                         "repository_url":  "https://github.com/PetteriAimonen/libfixmath",
                         "commit_sha":  "ed9391c33a56078c126e3e7a811a883c8c87daa2",
                         "license":  "MIT",
-                        "license_file":  "source/uncommon/uncommon_006_libfixmath/LICENSE.txt",
+                        "license_file":  "source/test/uncommon/uncommon_006_libfixmath/LICENSE.txt",
                         "upstream_paths":  [
                                                "libfixmath/fix16*.c",
                                                "libfixmath/fix16.h",
@@ -404,24 +404,24 @@
                                               "Added a deterministic fixed-point smoke driver and disabled the optional global cache; upstream files are unchanged."
                                           ],
                         "compile_sources":  [
-                                                "source/uncommon/uncommon_006_libfixmath/fix16.c",
-                                                "source/uncommon/uncommon_006_libfixmath/fix16_exp.c",
-                                                "source/uncommon/uncommon_006_libfixmath/fix16_fft.c",
-                                                "source/uncommon/uncommon_006_libfixmath/fix16_sqrt.c",
-                                                "source/uncommon/uncommon_006_libfixmath/fix16_str.c",
-                                                "source/uncommon/uncommon_006_libfixmath/fix16_trig.c",
-                                                "source/uncommon/uncommon_006_libfixmath/libfixmath_driver.c"
+                                                "source/test/uncommon/uncommon_006_libfixmath/fix16.c",
+                                                "source/test/uncommon/uncommon_006_libfixmath/fix16_exp.c",
+                                                "source/test/uncommon/uncommon_006_libfixmath/fix16_fft.c",
+                                                "source/test/uncommon/uncommon_006_libfixmath/fix16_sqrt.c",
+                                                "source/test/uncommon/uncommon_006_libfixmath/fix16_str.c",
+                                                "source/test/uncommon/uncommon_006_libfixmath/fix16_trig.c",
+                                                "source/test/uncommon/uncommon_006_libfixmath/libfixmath_driver.c"
                                             ],
                         "code_files":  [
-                                           "source/uncommon/uncommon_006_libfixmath/fix16.c",
-                                           "source/uncommon/uncommon_006_libfixmath/fix16.h",
-                                           "source/uncommon/uncommon_006_libfixmath/fix16_exp.c",
-                                           "source/uncommon/uncommon_006_libfixmath/fix16_fft.c",
-                                           "source/uncommon/uncommon_006_libfixmath/fix16_sqrt.c",
-                                           "source/uncommon/uncommon_006_libfixmath/fix16_str.c",
-                                           "source/uncommon/uncommon_006_libfixmath/fix16_trig.c",
-                                           "source/uncommon/uncommon_006_libfixmath/int64.h",
-                                           "source/uncommon/uncommon_006_libfixmath/libfixmath_driver.c"
+                                           "source/test/uncommon/uncommon_006_libfixmath/fix16.c",
+                                           "source/test/uncommon/uncommon_006_libfixmath/fix16.h",
+                                           "source/test/uncommon/uncommon_006_libfixmath/fix16_exp.c",
+                                           "source/test/uncommon/uncommon_006_libfixmath/fix16_fft.c",
+                                           "source/test/uncommon/uncommon_006_libfixmath/fix16_sqrt.c",
+                                           "source/test/uncommon/uncommon_006_libfixmath/fix16_str.c",
+                                           "source/test/uncommon/uncommon_006_libfixmath/fix16_trig.c",
+                                           "source/test/uncommon/uncommon_006_libfixmath/int64.h",
+                                           "source/test/uncommon/uncommon_006_libfixmath/libfixmath_driver.c"
                                        ],
                         "compile_options":  [
                                                 "-DFIXMATH_NO_CACHE"
@@ -444,7 +444,7 @@
                         "repository_url":  "https://github.com/quiet/libcorrect",
                         "commit_sha":  "ee82e6673a806dfdf0a969b975ab36596ecc5401",
                         "license":  "BSD-3-Clause",
-                        "license_file":  "source/uncommon/uncommon_007_libcorrect/LICENSE.txt",
+                        "license_file":  "source/test/uncommon/uncommon_007_libcorrect/LICENSE.txt",
                         "upstream_paths":  [
                                                "include/correct*.h",
                                                "src/convolutional/*.c"
@@ -453,38 +453,38 @@
                                               "Added a deterministic codec smoke driver; upstream implementation and headers are unchanged."
                                           ],
                         "compile_sources":  [
-                                                "source/uncommon/uncommon_007_libcorrect/convolutional/bit.c",
-                                                "source/uncommon/uncommon_007_libcorrect/convolutional/convolutional.c",
-                                                "source/uncommon/uncommon_007_libcorrect/convolutional/decode.c",
-                                                "source/uncommon/uncommon_007_libcorrect/convolutional/encode.c",
-                                                "source/uncommon/uncommon_007_libcorrect/convolutional/error_buffer.c",
-                                                "source/uncommon/uncommon_007_libcorrect/convolutional/history_buffer.c",
-                                                "source/uncommon/uncommon_007_libcorrect/convolutional/lookup.c",
-                                                "source/uncommon/uncommon_007_libcorrect/convolutional/metric.c",
-                                                "source/uncommon/uncommon_007_libcorrect/libcorrect_driver.c"
+                                                "source/test/uncommon/uncommon_007_libcorrect/convolutional/bit.c",
+                                                "source/test/uncommon/uncommon_007_libcorrect/convolutional/convolutional.c",
+                                                "source/test/uncommon/uncommon_007_libcorrect/convolutional/decode.c",
+                                                "source/test/uncommon/uncommon_007_libcorrect/convolutional/encode.c",
+                                                "source/test/uncommon/uncommon_007_libcorrect/convolutional/error_buffer.c",
+                                                "source/test/uncommon/uncommon_007_libcorrect/convolutional/history_buffer.c",
+                                                "source/test/uncommon/uncommon_007_libcorrect/convolutional/lookup.c",
+                                                "source/test/uncommon/uncommon_007_libcorrect/convolutional/metric.c",
+                                                "source/test/uncommon/uncommon_007_libcorrect/libcorrect_driver.c"
                                             ],
                         "code_files":  [
-                                           "source/uncommon/uncommon_007_libcorrect/convolutional/bit.c",
-                                           "source/uncommon/uncommon_007_libcorrect/convolutional/convolutional.c",
-                                           "source/uncommon/uncommon_007_libcorrect/convolutional/decode.c",
-                                           "source/uncommon/uncommon_007_libcorrect/convolutional/encode.c",
-                                           "source/uncommon/uncommon_007_libcorrect/convolutional/error_buffer.c",
-                                           "source/uncommon/uncommon_007_libcorrect/convolutional/history_buffer.c",
-                                           "source/uncommon/uncommon_007_libcorrect/convolutional/lookup.c",
-                                           "source/uncommon/uncommon_007_libcorrect/convolutional/metric.c",
-                                           "source/uncommon/uncommon_007_libcorrect/correct.h",
-                                           "source/uncommon/uncommon_007_libcorrect/correct/convolutional.h",
-                                           "source/uncommon/uncommon_007_libcorrect/correct/convolutional/bit.h",
-                                           "source/uncommon/uncommon_007_libcorrect/correct/convolutional/convolutional.h",
-                                           "source/uncommon/uncommon_007_libcorrect/correct/convolutional/error_buffer.h",
-                                           "source/uncommon/uncommon_007_libcorrect/correct/convolutional/history_buffer.h",
-                                           "source/uncommon/uncommon_007_libcorrect/correct/convolutional/lookup.h",
-                                           "source/uncommon/uncommon_007_libcorrect/correct/convolutional/metric.h",
-                                           "source/uncommon/uncommon_007_libcorrect/correct/portable.h",
-                                           "source/uncommon/uncommon_007_libcorrect/libcorrect_driver.c"
+                                           "source/test/uncommon/uncommon_007_libcorrect/convolutional/bit.c",
+                                           "source/test/uncommon/uncommon_007_libcorrect/convolutional/convolutional.c",
+                                           "source/test/uncommon/uncommon_007_libcorrect/convolutional/decode.c",
+                                           "source/test/uncommon/uncommon_007_libcorrect/convolutional/encode.c",
+                                           "source/test/uncommon/uncommon_007_libcorrect/convolutional/error_buffer.c",
+                                           "source/test/uncommon/uncommon_007_libcorrect/convolutional/history_buffer.c",
+                                           "source/test/uncommon/uncommon_007_libcorrect/convolutional/lookup.c",
+                                           "source/test/uncommon/uncommon_007_libcorrect/convolutional/metric.c",
+                                           "source/test/uncommon/uncommon_007_libcorrect/correct.h",
+                                           "source/test/uncommon/uncommon_007_libcorrect/correct/convolutional.h",
+                                           "source/test/uncommon/uncommon_007_libcorrect/correct/convolutional/bit.h",
+                                           "source/test/uncommon/uncommon_007_libcorrect/correct/convolutional/convolutional.h",
+                                           "source/test/uncommon/uncommon_007_libcorrect/correct/convolutional/error_buffer.h",
+                                           "source/test/uncommon/uncommon_007_libcorrect/correct/convolutional/history_buffer.h",
+                                           "source/test/uncommon/uncommon_007_libcorrect/correct/convolutional/lookup.h",
+                                           "source/test/uncommon/uncommon_007_libcorrect/correct/convolutional/metric.h",
+                                           "source/test/uncommon/uncommon_007_libcorrect/correct/portable.h",
+                                           "source/test/uncommon/uncommon_007_libcorrect/libcorrect_driver.c"
                                        ],
                         "compile_options":  [
-                                                "-Isource/uncommon/uncommon_007_libcorrect"
+                                                "-Isource/test/uncommon/uncommon_007_libcorrect"
                                             ],
                         "link_options":  [
 
@@ -504,7 +504,7 @@
                         "repository_url":  "https://github.com/thisistherk/fast_obj",
                         "commit_sha":  "d620667f10a548dee94dbc8c144bb22f79162176",
                         "license":  "MIT",
-                        "license_file":  "source/uncommon/uncommon_008_fast_obj/LICENSE.txt",
+                        "license_file":  "source/test/uncommon/uncommon_008_fast_obj/LICENSE.txt",
                         "upstream_paths":  [
                                                "fast_obj.c",
                                                "fast_obj.h"
@@ -513,13 +513,13 @@
                                               "Added a deterministic driver that creates and removes its own local OBJ fixture; upstream files are unchanged."
                                           ],
                         "compile_sources":  [
-                                                "source/uncommon/uncommon_008_fast_obj/fast_obj.c",
-                                                "source/uncommon/uncommon_008_fast_obj/fast_obj_driver.c"
+                                                "source/test/uncommon/uncommon_008_fast_obj/fast_obj.c",
+                                                "source/test/uncommon/uncommon_008_fast_obj/fast_obj_driver.c"
                                             ],
                         "code_files":  [
-                                           "source/uncommon/uncommon_008_fast_obj/fast_obj.c",
-                                           "source/uncommon/uncommon_008_fast_obj/fast_obj.h",
-                                           "source/uncommon/uncommon_008_fast_obj/fast_obj_driver.c"
+                                           "source/test/uncommon/uncommon_008_fast_obj/fast_obj.c",
+                                           "source/test/uncommon/uncommon_008_fast_obj/fast_obj.h",
+                                           "source/test/uncommon/uncommon_008_fast_obj/fast_obj_driver.c"
                                        ],
                         "compile_options":  [
 
@@ -542,7 +542,7 @@
                         "repository_url":  "https://github.com/edubart/minicoro",
                         "commit_sha":  "02dad0f8b7cbb12fe6e216ae7a76db15ca55cd7b",
                         "license":  "MIT",
-                        "license_file":  "source/uncommon/uncommon_009_minicoro/LICENSE.txt",
+                        "license_file":  "source/test/uncommon/uncommon_009_minicoro/LICENSE.txt",
                         "upstream_paths":  [
                                                "minicoro.h"
                                            ],
@@ -550,11 +550,11 @@
                                               "Added a deterministic implementation-and-smoke translation unit; upstream header is unchanged."
                                           ],
                         "compile_sources":  [
-                                                "source/uncommon/uncommon_009_minicoro/minicoro_driver.c"
+                                                "source/test/uncommon/uncommon_009_minicoro/minicoro_driver.c"
                                             ],
                         "code_files":  [
-                                           "source/uncommon/uncommon_009_minicoro/minicoro.h",
-                                           "source/uncommon/uncommon_009_minicoro/minicoro_driver.c"
+                                           "source/test/uncommon/uncommon_009_minicoro/minicoro.h",
+                                           "source/test/uncommon/uncommon_009_minicoro/minicoro_driver.c"
                                        ],
                         "compile_options":  [
 
@@ -577,7 +577,7 @@
                         "repository_url":  "https://github.com/LoupVaillant/Monocypher",
                         "commit_sha":  "1830c06d5910fba451cec329c8f30f348fc607db",
                         "license":  "BSD-2-Clause",
-                        "license_file":  "source/uncommon/uncommon_010_monocypher/LICENSE.txt",
+                        "license_file":  "source/test/uncommon/uncommon_010_monocypher/LICENSE.txt",
                         "upstream_paths":  [
                                                "src/monocypher.c",
                                                "src/monocypher.h"
@@ -586,13 +586,13 @@
                                               "Added a deterministic known-input smoke driver; upstream files are unchanged."
                                           ],
                         "compile_sources":  [
-                                                "source/uncommon/uncommon_010_monocypher/monocypher.c",
-                                                "source/uncommon/uncommon_010_monocypher/monocypher_driver.c"
+                                                "source/test/uncommon/uncommon_010_monocypher/monocypher.c",
+                                                "source/test/uncommon/uncommon_010_monocypher/monocypher_driver.c"
                                             ],
                         "code_files":  [
-                                           "source/uncommon/uncommon_010_monocypher/monocypher.c",
-                                           "source/uncommon/uncommon_010_monocypher/monocypher.h",
-                                           "source/uncommon/uncommon_010_monocypher/monocypher_driver.c"
+                                           "source/test/uncommon/uncommon_010_monocypher/monocypher.c",
+                                           "source/test/uncommon/uncommon_010_monocypher/monocypher.h",
+                                           "source/test/uncommon/uncommon_010_monocypher/monocypher_driver.c"
                                        ],
                         "compile_options":  [
 
@@ -615,7 +615,7 @@
                         "repository_url":  "https://github.com/jedisct1/libhydrogen",
                         "commit_sha":  "9819a7cb39678d1e9d31874c238d5b8ce375ff4f",
                         "license":  "ISC",
-                        "license_file":  "source/uncommon/uncommon_011_libhydrogen/LICENSE.txt",
+                        "license_file":  "source/test/uncommon/uncommon_011_libhydrogen/LICENSE.txt",
                         "upstream_paths":  [
                                                "hydrogen.c",
                                                "hydrogen.h",
@@ -625,45 +625,45 @@
                                               "Added a deterministic smoke driver; all imported library and platform headers are unchanged."
                                           ],
                         "compile_sources":  [
-                                                "source/uncommon/uncommon_011_libhydrogen/hydrogen.c",
-                                                "source/uncommon/uncommon_011_libhydrogen/libhydrogen_driver.c"
+                                                "source/test/uncommon/uncommon_011_libhydrogen/hydrogen.c",
+                                                "source/test/uncommon/uncommon_011_libhydrogen/libhydrogen_driver.c"
                                             ],
                         "code_files":  [
-                                           "source/uncommon/uncommon_011_libhydrogen/hydrogen.c",
-                                           "source/uncommon/uncommon_011_libhydrogen/hydrogen.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/common.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/core.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/gimli-core.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/gimli-core/aarch64.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/gimli-core/portable.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/gimli-core/sse2.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/hash.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/hydrogen_p.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/kdf.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/kx.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/pwhash.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/random.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/random/avr.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/random/ch32.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/random/cheriot.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/random/chibios.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/random/esp32.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/random/linux_kernel.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/random/mbed.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/random/nrf52832.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/random/particle.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/random/pico-sdk.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/random/riot.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/random/rtthread.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/random/stm32.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/random/unix.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/random/wasi.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/random/windows.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/random/zephyr.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/secretbox.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/sign.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/impl/x25519.h",
-                                           "source/uncommon/uncommon_011_libhydrogen/libhydrogen_driver.c"
+                                           "source/test/uncommon/uncommon_011_libhydrogen/hydrogen.c",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/hydrogen.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/common.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/core.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/gimli-core.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/gimli-core/aarch64.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/gimli-core/portable.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/gimli-core/sse2.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/hash.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/hydrogen_p.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/kdf.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/kx.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/pwhash.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/random.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/random/avr.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/random/ch32.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/random/cheriot.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/random/chibios.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/random/esp32.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/random/linux_kernel.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/random/mbed.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/random/nrf52832.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/random/particle.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/random/pico-sdk.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/random/riot.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/random/rtthread.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/random/stm32.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/random/unix.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/random/wasi.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/random/windows.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/random/zephyr.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/secretbox.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/sign.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/impl/x25519.h",
+                                           "source/test/uncommon/uncommon_011_libhydrogen/libhydrogen_driver.c"
                                        ],
                         "compile_options":  [
 
@@ -686,7 +686,7 @@
                         "repository_url":  "https://github.com/ctz/cifra",
                         "commit_sha":  "90f763141b7930609f1888e118064df4e836ecc8",
                         "license":  "CC0-1.0",
-                        "license_file":  "source/uncommon/uncommon_012_cifra_sha3/LICENSE.txt",
+                        "license_file":  "source/test/uncommon/uncommon_012_cifra_sha3/LICENSE.txt",
                         "upstream_paths":  [
                                                "src/sha3*",
                                                "src/blockwise*",
@@ -700,30 +700,30 @@
                                               "Added a deterministic standard-vector smoke driver; upstream files are unchanged. GNU C11 is used because upstream MIN macros use typeof statement expressions."
                                           ],
                         "compile_sources":  [
-                                                "source/uncommon/uncommon_012_cifra_sha3/sha3.c",
-                                                "source/uncommon/uncommon_012_cifra_sha3/sha3_shake.c",
-                                                "source/uncommon/uncommon_012_cifra_sha3/blockwise.c",
-                                                "source/uncommon/uncommon_012_cifra_sha3/chash.c",
-                                                "source/uncommon/uncommon_012_cifra_sha3/cifra_sha3_driver.c"
+                                                "source/test/uncommon/uncommon_012_cifra_sha3/sha3.c",
+                                                "source/test/uncommon/uncommon_012_cifra_sha3/sha3_shake.c",
+                                                "source/test/uncommon/uncommon_012_cifra_sha3/blockwise.c",
+                                                "source/test/uncommon/uncommon_012_cifra_sha3/chash.c",
+                                                "source/test/uncommon/uncommon_012_cifra_sha3/cifra_sha3_driver.c"
                                             ],
                         "code_files":  [
-                                           "source/uncommon/uncommon_012_cifra_sha3/bitops.h",
-                                           "source/uncommon/uncommon_012_cifra_sha3/blockwise.c",
-                                           "source/uncommon/uncommon_012_cifra_sha3/blockwise.h",
-                                           "source/uncommon/uncommon_012_cifra_sha3/cf_config.h",
-                                           "source/uncommon/uncommon_012_cifra_sha3/chash.c",
-                                           "source/uncommon/uncommon_012_cifra_sha3/chash.h",
-                                           "source/uncommon/uncommon_012_cifra_sha3/cifra_sha3_driver.c",
-                                           "source/uncommon/uncommon_012_cifra_sha3/handy.h",
-                                           "source/uncommon/uncommon_012_cifra_sha3/sha3.c",
-                                           "source/uncommon/uncommon_012_cifra_sha3/sha3.h",
-                                           "source/uncommon/uncommon_012_cifra_sha3/sha3_shake.c",
-                                           "source/uncommon/uncommon_012_cifra_sha3/sha3_shake.h",
-                                           "source/uncommon/uncommon_012_cifra_sha3/tassert.h"
+                                           "source/test/uncommon/uncommon_012_cifra_sha3/bitops.h",
+                                           "source/test/uncommon/uncommon_012_cifra_sha3/blockwise.c",
+                                           "source/test/uncommon/uncommon_012_cifra_sha3/blockwise.h",
+                                           "source/test/uncommon/uncommon_012_cifra_sha3/cf_config.h",
+                                           "source/test/uncommon/uncommon_012_cifra_sha3/chash.c",
+                                           "source/test/uncommon/uncommon_012_cifra_sha3/chash.h",
+                                           "source/test/uncommon/uncommon_012_cifra_sha3/cifra_sha3_driver.c",
+                                           "source/test/uncommon/uncommon_012_cifra_sha3/handy.h",
+                                           "source/test/uncommon/uncommon_012_cifra_sha3/sha3.c",
+                                           "source/test/uncommon/uncommon_012_cifra_sha3/sha3.h",
+                                           "source/test/uncommon/uncommon_012_cifra_sha3/sha3_shake.c",
+                                           "source/test/uncommon/uncommon_012_cifra_sha3/sha3_shake.h",
+                                           "source/test/uncommon/uncommon_012_cifra_sha3/tassert.h"
                                        ],
                         "compile_options":  [
                                                 "-std=gnu11",
-                                                "-Isource/uncommon/uncommon_012_cifra_sha3"
+                                                "-Isource/test/uncommon/uncommon_012_cifra_sha3"
                                             ],
                         "link_options":  [
 
@@ -743,7 +743,7 @@
                         "repository_url":  "https://github.com/maandree/libzahl",
                         "commit_sha":  "8aa2a900974b100672d1af89a97c1043372a446d",
                         "license":  "ISC",
-                        "license_file":  "source/uncommon/uncommon_013_libzahl/LICENSE.txt",
+                        "license_file":  "source/test/uncommon/uncommon_013_libzahl/LICENSE.txt",
                         "upstream_paths":  [
                                                "zahl.h",
                                                "zahl/*.h",
@@ -753,81 +753,81 @@
                                               "Added a deterministic arithmetic driver. Random and probabilistic-primality modules are excluded because their Unix entropy backends are outside this Windows deterministic workload; all retained upstream files are unchanged."
                                           ],
                         "compile_sources":  [
-                                                "source/uncommon/uncommon_013_libzahl/src/allocator.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/zadd.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/zand.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/zbset.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/zdivmod.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/zerror.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/zfree.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/zgcd.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/zload.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/zlsh.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/zmodmul.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/zmodpow.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/zmodpowu.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/zmodsqr.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/zmul.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/znot.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/zor.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/zperror.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/zpow.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/zpowu.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/zrsh.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/zsets.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/zsetup.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/zsqr.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/zstr.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/zstr_length.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/zsub.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/ztrunc.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/zunsetup.c",
-                                                "source/uncommon/uncommon_013_libzahl/src/zxor.c",
-                                                "source/uncommon/uncommon_013_libzahl/libzahl_driver.c"
+                                                "source/test/uncommon/uncommon_013_libzahl/src/allocator.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/zadd.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/zand.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/zbset.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/zdivmod.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/zerror.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/zfree.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/zgcd.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/zload.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/zlsh.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/zmodmul.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/zmodpow.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/zmodpowu.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/zmodsqr.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/zmul.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/znot.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/zor.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/zperror.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/zpow.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/zpowu.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/zrsh.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/zsets.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/zsetup.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/zsqr.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/zstr.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/zstr_length.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/zsub.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/ztrunc.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/zunsetup.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/src/zxor.c",
+                                                "source/test/uncommon/uncommon_013_libzahl/libzahl_driver.c"
                                             ],
                         "code_files":  [
-                                           "source/uncommon/uncommon_013_libzahl/libzahl_driver.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/allocator.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/internals.h",
-                                           "source/uncommon/uncommon_013_libzahl/src/zadd.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/zand.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/zbset.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/zdivmod.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/zerror.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/zfree.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/zgcd.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/zload.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/zlsh.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/zmodmul.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/zmodpow.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/zmodpowu.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/zmodsqr.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/zmul.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/znot.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/zor.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/zperror.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/zpow.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/zpowu.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/zrsh.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/zsets.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/zsetup.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/zsqr.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/zstr.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/zstr_length.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/zsub.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/ztrunc.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/zunsetup.c",
-                                           "source/uncommon/uncommon_013_libzahl/src/zxor.c",
-                                           "source/uncommon/uncommon_013_libzahl/zahl.h",
-                                           "source/uncommon/uncommon_013_libzahl/zahl/inlines.h",
-                                           "source/uncommon/uncommon_013_libzahl/zahl/internals.h",
-                                           "source/uncommon/uncommon_013_libzahl/zahl/memory.h"
+                                           "source/test/uncommon/uncommon_013_libzahl/libzahl_driver.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/allocator.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/internals.h",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/zadd.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/zand.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/zbset.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/zdivmod.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/zerror.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/zfree.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/zgcd.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/zload.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/zlsh.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/zmodmul.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/zmodpow.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/zmodpowu.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/zmodsqr.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/zmul.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/znot.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/zor.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/zperror.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/zpow.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/zpowu.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/zrsh.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/zsets.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/zsetup.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/zsqr.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/zstr.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/zstr_length.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/zsub.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/ztrunc.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/zunsetup.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/src/zxor.c",
+                                           "source/test/uncommon/uncommon_013_libzahl/zahl.h",
+                                           "source/test/uncommon/uncommon_013_libzahl/zahl/inlines.h",
+                                           "source/test/uncommon/uncommon_013_libzahl/zahl/internals.h",
+                                           "source/test/uncommon/uncommon_013_libzahl/zahl/memory.h"
                                        ],
                         "compile_options":  [
                                                 "-D_DEFAULT_SOURCE",
                                                 "-D_BSD_SOURCE",
                                                 "-D_XOPEN_SOURCE=700",
-                                                "-Isource/uncommon/uncommon_013_libzahl"
+                                                "-Isource/test/uncommon/uncommon_013_libzahl"
                                             ],
                         "link_options":  [
 
@@ -847,7 +847,7 @@
                         "repository_url":  "https://github.com/phoboslab/qoi",
                         "commit_sha":  "97bacc86a9c4abf5a2d452102dc26546c4c670b9",
                         "license":  "MIT",
-                        "license_file":  "source/uncommon/uncommon_014_qoi/LICENSE.txt",
+                        "license_file":  "source/test/uncommon/uncommon_014_qoi/LICENSE.txt",
                         "upstream_paths":  [
                                                "qoi.h"
                                            ],
@@ -855,11 +855,11 @@
                                               "Added a deterministic implementation-and-roundtrip translation unit; upstream header is unchanged."
                                           ],
                         "compile_sources":  [
-                                                "source/uncommon/uncommon_014_qoi/qoi_driver.c"
+                                                "source/test/uncommon/uncommon_014_qoi/qoi_driver.c"
                                             ],
                         "code_files":  [
-                                           "source/uncommon/uncommon_014_qoi/qoi.h",
-                                           "source/uncommon/uncommon_014_qoi/qoi_driver.c"
+                                           "source/test/uncommon/uncommon_014_qoi/qoi.h",
+                                           "source/test/uncommon/uncommon_014_qoi/qoi_driver.c"
                                        ],
                         "compile_options":  [
 
@@ -882,7 +882,7 @@
                         "repository_url":  "https://github.com/marton78/pffft",
                         "commit_sha":  "8c6b35e77624ddef0b3362c546a50b101c379bef",
                         "license":  "BSD-3-Clause",
-                        "license_file":  "source/uncommon/uncommon_015_pffft/LICENSE.txt",
+                        "license_file":  "source/test/uncommon/uncommon_015_pffft/LICENSE.txt",
                         "upstream_paths":  [
                                                "src/pffft.c",
                                                "src/pffft_common.c",
@@ -894,31 +894,31 @@
                                               "Added a deterministic roundtrip driver and selected static-library mode; upstream implementation and SIMD headers are unchanged."
                                           ],
                         "compile_sources":  [
-                                                "source/uncommon/uncommon_015_pffft/pffft.c",
-                                                "source/uncommon/uncommon_015_pffft/pffft_common.c",
-                                                "source/uncommon/uncommon_015_pffft/pffft_driver.c"
+                                                "source/test/uncommon/uncommon_015_pffft/pffft.c",
+                                                "source/test/uncommon/uncommon_015_pffft/pffft_common.c",
+                                                "source/test/uncommon/uncommon_015_pffft/pffft_driver.c"
                                             ],
                         "code_files":  [
-                                           "source/uncommon/uncommon_015_pffft/pffft.c",
-                                           "source/uncommon/uncommon_015_pffft/pffft.h",
-                                           "source/uncommon/uncommon_015_pffft/pffft_common.c",
-                                           "source/uncommon/uncommon_015_pffft/pffft_driver.c",
-                                           "source/uncommon/uncommon_015_pffft/pffft_priv_impl.h",
-                                           "source/uncommon/uncommon_015_pffft/simd/pf_altivec_float.h",
-                                           "source/uncommon/uncommon_015_pffft/simd/pf_avx_double.h",
-                                           "source/uncommon/uncommon_015_pffft/simd/pf_double.h",
-                                           "source/uncommon/uncommon_015_pffft/simd/pf_float.h",
-                                           "source/uncommon/uncommon_015_pffft/simd/pf_neon_double.h",
-                                           "source/uncommon/uncommon_015_pffft/simd/pf_neon_double_from_avx.h",
-                                           "source/uncommon/uncommon_015_pffft/simd/pf_neon_float.h",
-                                           "source/uncommon/uncommon_015_pffft/simd/pf_scalar_double.h",
-                                           "source/uncommon/uncommon_015_pffft/simd/pf_scalar_float.h",
-                                           "source/uncommon/uncommon_015_pffft/simd/pf_sse1_float.h",
-                                           "source/uncommon/uncommon_015_pffft/simd/pf_sse2_double.h"
+                                           "source/test/uncommon/uncommon_015_pffft/pffft.c",
+                                           "source/test/uncommon/uncommon_015_pffft/pffft.h",
+                                           "source/test/uncommon/uncommon_015_pffft/pffft_common.c",
+                                           "source/test/uncommon/uncommon_015_pffft/pffft_driver.c",
+                                           "source/test/uncommon/uncommon_015_pffft/pffft_priv_impl.h",
+                                           "source/test/uncommon/uncommon_015_pffft/simd/pf_altivec_float.h",
+                                           "source/test/uncommon/uncommon_015_pffft/simd/pf_avx_double.h",
+                                           "source/test/uncommon/uncommon_015_pffft/simd/pf_double.h",
+                                           "source/test/uncommon/uncommon_015_pffft/simd/pf_float.h",
+                                           "source/test/uncommon/uncommon_015_pffft/simd/pf_neon_double.h",
+                                           "source/test/uncommon/uncommon_015_pffft/simd/pf_neon_double_from_avx.h",
+                                           "source/test/uncommon/uncommon_015_pffft/simd/pf_neon_float.h",
+                                           "source/test/uncommon/uncommon_015_pffft/simd/pf_scalar_double.h",
+                                           "source/test/uncommon/uncommon_015_pffft/simd/pf_scalar_float.h",
+                                           "source/test/uncommon/uncommon_015_pffft/simd/pf_sse1_float.h",
+                                           "source/test/uncommon/uncommon_015_pffft/simd/pf_sse2_double.h"
                                        ],
                         "compile_options":  [
                                                 "-DPFFFT_STATIC_DEFINE",
-                                                "-Isource/uncommon/uncommon_015_pffft"
+                                                "-Isource/test/uncommon/uncommon_015_pffft"
                                             ],
                         "link_options":  [
                                              "-lm"
@@ -943,13 +943,13 @@
 
                                            ],
                         "local_changes":  [
-                                              "Generated reproducibly by scripts/generate_original_round2.ps1; the checked-in C source is the build input."
+                                              "Generated reproducibly by scripts/generate_test_original_sources.ps1; the checked-in C source is the build input."
                                           ],
                         "compile_sources":  [
-                                                "source/generated/generated_006_telemetry_window.c"
+                                                "source/test/generated/generated_006_telemetry_window.c"
                                             ],
                         "code_files":  [
-                                           "source/generated/generated_006_telemetry_window.c"
+                                           "source/test/generated/generated_006_telemetry_window.c"
                                        ],
                         "compile_options":  [
 
@@ -978,13 +978,13 @@
 
                                            ],
                         "local_changes":  [
-                                              "Generated reproducibly by scripts/generate_original_round2.ps1; the checked-in C source is the build input."
+                                              "Generated reproducibly by scripts/generate_test_original_sources.ps1; the checked-in C source is the build input."
                                           ],
                         "compile_sources":  [
-                                                "source/generated/generated_007_transit_dispatch.c"
+                                                "source/test/generated/generated_007_transit_dispatch.c"
                                             ],
                         "code_files":  [
-                                           "source/generated/generated_007_transit_dispatch.c"
+                                           "source/test/generated/generated_007_transit_dispatch.c"
                                        ],
                         "compile_options":  [
 
@@ -1013,13 +1013,13 @@
 
                                            ],
                         "local_changes":  [
-                                              "Generated reproducibly by scripts/generate_original_round2.ps1; the checked-in C source is the build input."
+                                              "Generated reproducibly by scripts/generate_test_original_sources.ps1; the checked-in C source is the build input."
                                           ],
                         "compile_sources":  [
-                                                "source/generated/generated_008_access_policy.c"
+                                                "source/test/generated/generated_008_access_policy.c"
                                             ],
                         "code_files":  [
-                                           "source/generated/generated_008_access_policy.c"
+                                           "source/test/generated/generated_008_access_policy.c"
                                        ],
                         "compile_options":  [
 
@@ -1048,13 +1048,13 @@
 
                                            ],
                         "local_changes":  [
-                                              "Generated reproducibly by scripts/generate_original_round2.ps1; the checked-in C source is the build input."
+                                              "Generated reproducibly by scripts/generate_test_original_sources.ps1; the checked-in C source is the build input."
                                           ],
                         "compile_sources":  [
-                                                "source/generated/generated_009_spatial_grid.c"
+                                                "source/test/generated/generated_009_spatial_grid.c"
                                             ],
                         "code_files":  [
-                                           "source/generated/generated_009_spatial_grid.c"
+                                           "source/test/generated/generated_009_spatial_grid.c"
                                        ],
                         "compile_options":  [
 
@@ -1083,13 +1083,13 @@
 
                                            ],
                         "local_changes":  [
-                                              "Generated reproducibly by scripts/generate_original_round2.ps1; the checked-in C source is the build input."
+                                              "Generated reproducibly by scripts/generate_test_original_sources.ps1; the checked-in C source is the build input."
                                           ],
                         "compile_sources":  [
-                                                "source/generated/generated_010_package_solver.c"
+                                                "source/test/generated/generated_010_package_solver.c"
                                             ],
                         "code_files":  [
-                                           "source/generated/generated_010_package_solver.c"
+                                           "source/test/generated/generated_010_package_solver.c"
                                        ],
                         "compile_options":  [
 
@@ -1118,13 +1118,13 @@
 
                                            ],
                         "local_changes":  [
-                                              "Generated reproducibly by scripts/generate_original_round2.ps1; the checked-in C source is the build input."
+                                              "Generated reproducibly by scripts/generate_test_original_sources.ps1; the checked-in C source is the build input."
                                           ],
                         "compile_sources":  [
-                                                "source/generated/generated_011_order_matching.c"
+                                                "source/test/generated/generated_011_order_matching.c"
                                             ],
                         "code_files":  [
-                                           "source/generated/generated_011_order_matching.c"
+                                           "source/test/generated/generated_011_order_matching.c"
                                        ],
                         "compile_options":  [
 
@@ -1153,13 +1153,13 @@
 
                                            ],
                         "local_changes":  [
-                                              "Generated reproducibly by scripts/generate_original_round2.ps1; the checked-in C source is the build input."
+                                              "Generated reproducibly by scripts/generate_test_original_sources.ps1; the checked-in C source is the build input."
                                           ],
                         "compile_sources":  [
-                                                "source/generated/generated_012_log_compactor.c"
+                                                "source/test/generated/generated_012_log_compactor.c"
                                             ],
                         "code_files":  [
-                                           "source/generated/generated_012_log_compactor.c"
+                                           "source/test/generated/generated_012_log_compactor.c"
                                        ],
                         "compile_options":  [
 
@@ -1188,13 +1188,13 @@
 
                                            ],
                         "local_changes":  [
-                                              "Generated reproducibly by scripts/generate_original_round2.ps1; the checked-in C source is the build input."
+                                              "Generated reproducibly by scripts/generate_test_original_sources.ps1; the checked-in C source is the build input."
                                           ],
                         "compile_sources":  [
-                                                "source/generated/generated_013_packet_classifier.c"
+                                                "source/test/generated/generated_013_packet_classifier.c"
                                             ],
                         "code_files":  [
-                                           "source/generated/generated_013_packet_classifier.c"
+                                           "source/test/generated/generated_013_packet_classifier.c"
                                        ],
                         "compile_options":  [
 
@@ -1223,13 +1223,13 @@
 
                                            ],
                         "local_changes":  [
-                                              "Generated reproducibly by scripts/generate_original_round2.ps1; the checked-in C source is the build input."
+                                              "Generated reproducibly by scripts/generate_test_original_sources.ps1; the checked-in C source is the build input."
                                           ],
                         "compile_sources":  [
-                                                "source/generated/generated_014_document_index.c"
+                                                "source/test/generated/generated_014_document_index.c"
                                             ],
                         "code_files":  [
-                                           "source/generated/generated_014_document_index.c"
+                                           "source/test/generated/generated_014_document_index.c"
                                        ],
                         "compile_options":  [
 
@@ -1258,13 +1258,13 @@
 
                                            ],
                         "local_changes":  [
-                                              "Generated reproducibly by scripts/generate_original_round2.ps1; the checked-in C source is the build input."
+                                              "Generated reproducibly by scripts/generate_test_original_sources.ps1; the checked-in C source is the build input."
                                           ],
                         "compile_sources":  [
-                                                "source/generated/generated_015_energy_dispatch.c"
+                                                "source/test/generated/generated_015_energy_dispatch.c"
                                             ],
                         "code_files":  [
-                                           "source/generated/generated_015_energy_dispatch.c"
+                                           "source/test/generated/generated_015_energy_dispatch.c"
                                        ],
                         "compile_options":  [
 

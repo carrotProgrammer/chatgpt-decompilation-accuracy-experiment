@@ -2,7 +2,7 @@
  * Original deterministic test program written for this experiment.
  * Domain: versioned log compaction engine.
  * The checked-in workload table is generated reproducibly by
- * scripts/generate_original_round2.ps1.
+ * scripts/generate_test_original_sources.ps1.
  */
 #include <stdio.h>
 #include <stdlib.h>

@@ -1,7 +1,7 @@
 {
     "schema_version":  2,
     "sample":  "portal",
-    "generated_utc":  "2026-08-23T19:41:12.0862581+00:00",
+    "generated_utc":  "2026-08-30T02:15:31.4644384+00:00",
     "golden_source":  "challenge binary stdout, stderr, exit code, timeout and crash state",
     "test_cases":  [
                        {
@@ -10,7 +10,7 @@
                            "stdin_text":  "GET /api/tickets?tenant=acme\u0026role=agent\u0026status=open,pending\u0026tag=billing\u0026priority_gte=3\u0026sort=-priority\u0026limit=5\n",
                            "debug":  {
                                          "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\debug\\ticket_portal_debug.exe",
-                                         "binary_sha256":  "316e1ccbb1adb0869f22ee814d0ee73bc64b1f2a2543e37f418353f654adacea",
+                                         "binary_sha256":  "fc9e61c0e9525c4ce9776d4d181ec8b73809922cdb30813ab33892c633bca998",
                                          "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\debug\\ticket_portal_debug.exe",
                                          "arguments":  [
 
@@ -22,9 +22,9 @@
 
                                                                },
                                          "timeout_seconds":  5,
-                                         "started_utc":  "2026-08-23T19:41:11.8082107+00:00",
-                                         "finished_utc":  "2026-08-23T19:41:11.8559030+00:00",
-                                         "duration_ms":  47.692,
+                                         "started_utc":  "2026-08-30T02:15:31.1058360+00:00",
+                                         "finished_utc":  "2026-08-30T02:15:31.1623358+00:00",
+                                         "duration_ms":  56.5,
                                          "timed_out":  false,
                                          "crashed":  false,
                                          "exit_code":  0,
@@ -40,7 +40,7 @@
                                      },
                            "challenge_after_strip":  {
                                                          "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe",
-                                                         "binary_sha256":  "98874a57e46d14d1a61f111fd95c861f6fce9ce66ce897f16037593026e51998",
+                                                         "binary_sha256":  "147f549bbc9eb039cb3eb06bc60fe1b4d505f2ccd3a90f8e7d3bbfeba8c93858",
                                                          "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe",
                                                          "arguments":  [
 
@@ -52,9 +52,9 @@
 
                                                                                },
                                                          "timeout_seconds":  5,
-                                                         "started_utc":  "2026-08-23T19:41:11.8665093+00:00",
-                                                         "finished_utc":  "2026-08-23T19:41:11.8947458+00:00",
-                                                         "duration_ms":  28.237,
+                                                         "started_utc":  "2026-08-30T02:15:31.1799633+00:00",
+                                                         "finished_utc":  "2026-08-30T02:15:31.2152110+00:00",
+                                                         "duration_ms":  35.248,
                                                          "timed_out":  false,
                                                          "crashed":  false,
                                                          "exit_code":  0,
@@ -77,7 +77,7 @@
                            "stdin_text":  "GET /api/tickets?tenant=acme\u0026role=customer\u0026actor=maya\u0026status=open,resolved\u0026sort=-updated\u0026offset=1\u0026limit=2\n",
                            "debug":  {
                                          "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\debug\\ticket_portal_debug.exe",
-                                         "binary_sha256":  "316e1ccbb1adb0869f22ee814d0ee73bc64b1f2a2543e37f418353f654adacea",
+                                         "binary_sha256":  "fc9e61c0e9525c4ce9776d4d181ec8b73809922cdb30813ab33892c633bca998",
                                          "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\debug\\ticket_portal_debug.exe",
                                          "arguments":  [
 
@@ -89,9 +89,9 @@
 
                                                                },
                                          "timeout_seconds":  5,
-                                         "started_utc":  "2026-08-23T19:41:11.8987466+00:00",
-                                         "finished_utc":  "2026-08-23T19:41:11.9275023+00:00",
-                                         "duration_ms":  28.756,
+                                         "started_utc":  "2026-08-30T02:15:31.2202141+00:00",
+                                         "finished_utc":  "2026-08-30T02:15:31.2543975+00:00",
+                                         "duration_ms":  34.183,
                                          "timed_out":  false,
                                          "crashed":  false,
                                          "exit_code":  0,
@@ -107,7 +107,7 @@
                                      },
                            "challenge_after_strip":  {
                                                          "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe",
-                                                         "binary_sha256":  "98874a57e46d14d1a61f111fd95c861f6fce9ce66ce897f16037593026e51998",
+                                                         "binary_sha256":  "147f549bbc9eb039cb3eb06bc60fe1b4d505f2ccd3a90f8e7d3bbfeba8c93858",
                                                          "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe",
                                                          "arguments":  [
 
@@ -119,9 +119,9 @@
 
                                                                                },
                                                          "timeout_seconds":  5,
-                                                         "started_utc":  "2026-08-23T19:41:11.9430876+00:00",
-                                                         "finished_utc":  "2026-08-23T19:41:11.9554454+00:00",
-                                                         "duration_ms":  12.358,
+                                                         "started_utc":  "2026-08-30T02:15:31.2624213+00:00",
+                                                         "finished_utc":  "2026-08-30T02:15:31.2790047+00:00",
+                                                         "duration_ms":  16.583,
                                                          "timed_out":  false,
                                                          "crashed":  false,
                                                          "exit_code":  0,
@@ -144,7 +144,7 @@
                            "stdin_text":  "GET /api/summary?tenant=north\u0026role=manager\u0026include_internal=true\u0026status=open,pending\u0026priority_gte=3\u0026group=assignee\n",
                            "debug":  {
                                          "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\debug\\ticket_portal_debug.exe",
-                                         "binary_sha256":  "316e1ccbb1adb0869f22ee814d0ee73bc64b1f2a2543e37f418353f654adacea",
+                                         "binary_sha256":  "fc9e61c0e9525c4ce9776d4d181ec8b73809922cdb30813ab33892c633bca998",
                                          "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\debug\\ticket_portal_debug.exe",
                                          "arguments":  [
 
@@ -156,9 +156,9 @@
 
                                                                },
                                          "timeout_seconds":  5,
-                                         "started_utc":  "2026-08-23T19:41:11.9594460+00:00",
-                                         "finished_utc":  "2026-08-23T19:41:11.9715344+00:00",
-                                         "duration_ms":  12.088,
+                                         "started_utc":  "2026-08-30T02:15:31.2820058+00:00",
+                                         "finished_utc":  "2026-08-30T02:15:31.2970742+00:00",
+                                         "duration_ms":  15.068,
                                          "timed_out":  false,
                                          "crashed":  false,
                                          "exit_code":  0,
@@ -174,7 +174,7 @@
                                      },
                            "challenge_after_strip":  {
                                                          "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe",
-                                                         "binary_sha256":  "98874a57e46d14d1a61f111fd95c861f6fce9ce66ce897f16037593026e51998",
+                                                         "binary_sha256":  "147f549bbc9eb039cb3eb06bc60fe1b4d505f2ccd3a90f8e7d3bbfeba8c93858",
                                                          "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe",
                                                          "arguments":  [
 
@@ -186,9 +186,9 @@
 
                                                                                },
                                                          "timeout_seconds":  5,
-                                                         "started_utc":  "2026-08-23T19:41:11.9745400+00:00",
-                                                         "finished_utc":  "2026-08-23T19:41:11.9870466+00:00",
-                                                         "duration_ms":  12.507,
+                                                         "started_utc":  "2026-08-30T02:15:31.3061362+00:00",
+                                                         "finished_utc":  "2026-08-30T02:15:31.3212859+00:00",
+                                                         "duration_ms":  15.15,
                                                          "timed_out":  false,
                                                          "crashed":  false,
                                                          "exit_code":  0,
@@ -211,7 +211,7 @@
                            "stdin_text":  "GET /api/tickets/2008?tenant=north\u0026role=manager\u0026include_internal=true\n",
                            "debug":  {
                                          "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\debug\\ticket_portal_debug.exe",
-                                         "binary_sha256":  "316e1ccbb1adb0869f22ee814d0ee73bc64b1f2a2543e37f418353f654adacea",
+                                         "binary_sha256":  "fc9e61c0e9525c4ce9776d4d181ec8b73809922cdb30813ab33892c633bca998",
                                          "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\debug\\ticket_portal_debug.exe",
                                          "arguments":  [
 
@@ -223,9 +223,9 @@
 
                                                                },
                                          "timeout_seconds":  5,
-                                         "started_utc":  "2026-08-23T19:41:11.9900471+00:00",
-                                         "finished_utc":  "2026-08-23T19:41:12.0032233+00:00",
-                                         "duration_ms":  13.176,
+                                         "started_utc":  "2026-08-30T02:15:31.3252977+00:00",
+                                         "finished_utc":  "2026-08-30T02:15:31.3398639+00:00",
+                                         "duration_ms":  14.566,
                                          "timed_out":  false,
                                          "crashed":  false,
                                          "exit_code":  0,
@@ -241,7 +241,7 @@
                                      },
                            "challenge_after_strip":  {
                                                          "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe",
-                                                         "binary_sha256":  "98874a57e46d14d1a61f111fd95c861f6fce9ce66ce897f16037593026e51998",
+                                                         "binary_sha256":  "147f549bbc9eb039cb3eb06bc60fe1b4d505f2ccd3a90f8e7d3bbfeba8c93858",
                                                          "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe",
                                                          "arguments":  [
 
@@ -253,9 +253,9 @@
 
                                                                                },
                                                          "timeout_seconds":  5,
-                                                         "started_utc":  "2026-08-23T19:41:12.0062245+00:00",
-                                                         "finished_utc":  "2026-08-23T19:41:12.0182419+00:00",
-                                                         "duration_ms":  12.017,
+                                                         "started_utc":  "2026-08-30T02:15:31.3493993+00:00",
+                                                         "finished_utc":  "2026-08-30T02:15:31.3651090+00:00",
+                                                         "duration_ms":  15.71,
                                                          "timed_out":  false,
                                                          "crashed":  false,
                                                          "exit_code":  0,
@@ -278,7 +278,7 @@
                            "stdin_text":  "GET /api/tickets/2008?tenant=north\u0026role=customer\u0026actor=theo\n",
                            "debug":  {
                                          "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\debug\\ticket_portal_debug.exe",
-                                         "binary_sha256":  "316e1ccbb1adb0869f22ee814d0ee73bc64b1f2a2543e37f418353f654adacea",
+                                         "binary_sha256":  "fc9e61c0e9525c4ce9776d4d181ec8b73809922cdb30813ab33892c633bca998",
                                          "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\debug\\ticket_portal_debug.exe",
                                          "arguments":  [
 
@@ -290,9 +290,9 @@
 
                                                                },
                                          "timeout_seconds":  5,
-                                         "started_utc":  "2026-08-23T19:41:12.0217462+00:00",
-                                         "finished_utc":  "2026-08-23T19:41:12.0338544+00:00",
-                                         "duration_ms":  12.108,
+                                         "started_utc":  "2026-08-30T02:15:31.3701120+00:00",
+                                         "finished_utc":  "2026-08-30T02:15:31.3937507+00:00",
+                                         "duration_ms":  23.639,
                                          "timed_out":  false,
                                          "crashed":  false,
                                          "exit_code":  3,
@@ -308,7 +308,7 @@
                                      },
                            "challenge_after_strip":  {
                                                          "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe",
-                                                         "binary_sha256":  "98874a57e46d14d1a61f111fd95c861f6fce9ce66ce897f16037593026e51998",
+                                                         "binary_sha256":  "147f549bbc9eb039cb3eb06bc60fe1b4d505f2ccd3a90f8e7d3bbfeba8c93858",
                                                          "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe",
                                                          "arguments":  [
 
@@ -320,9 +320,9 @@
 
                                                                                },
                                                          "timeout_seconds":  5,
-                                                         "started_utc":  "2026-08-23T19:41:12.0368593+00:00",
-                                                         "finished_utc":  "2026-08-23T19:41:12.0490289+00:00",
-                                                         "duration_ms":  12.17,
+                                                         "started_utc":  "2026-08-30T02:15:31.4007628+00:00",
+                                                         "finished_utc":  "2026-08-30T02:15:31.4160549+00:00",
+                                                         "duration_ms":  15.292,
                                                          "timed_out":  false,
                                                          "crashed":  false,
                                                          "exit_code":  3,
@@ -345,7 +345,7 @@
                            "stdin_text":  "GET /api/tickets?tenant=orbit\u0026role=agent\u0026sort=-urgency\n",
                            "debug":  {
                                          "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\debug\\ticket_portal_debug.exe",
-                                         "binary_sha256":  "316e1ccbb1adb0869f22ee814d0ee73bc64b1f2a2543e37f418353f654adacea",
+                                         "binary_sha256":  "fc9e61c0e9525c4ce9776d4d181ec8b73809922cdb30813ab33892c633bca998",
                                          "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\debug\\ticket_portal_debug.exe",
                                          "arguments":  [
 
@@ -357,9 +357,9 @@
 
                                                                },
                                          "timeout_seconds":  5,
-                                         "started_utc":  "2026-08-23T19:41:12.0525445+00:00",
-                                         "finished_utc":  "2026-08-23T19:41:12.0653189+00:00",
-                                         "duration_ms":  12.774,
+                                         "started_utc":  "2026-08-30T02:15:31.4205645+00:00",
+                                         "finished_utc":  "2026-08-30T02:15:31.4353223+00:00",
+                                         "duration_ms":  14.758,
                                          "timed_out":  false,
                                          "crashed":  false,
                                          "exit_code":  2,
@@ -375,7 +375,7 @@
                                      },
                            "challenge_after_strip":  {
                                                          "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe",
-                                                         "binary_sha256":  "98874a57e46d14d1a61f111fd95c861f6fce9ce66ce897f16037593026e51998",
+                                                         "binary_sha256":  "147f549bbc9eb039cb3eb06bc60fe1b4d505f2ccd3a90f8e7d3bbfeba8c93858",
                                                          "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\challenge\\sample_003.exe",
                                                          "arguments":  [
 
@@ -387,9 +387,9 @@
 
                                                                                },
                                                          "timeout_seconds":  5,
-                                                         "started_utc":  "2026-08-23T19:41:12.0713176+00:00",
-                                                         "finished_utc":  "2026-08-23T19:41:12.0827510+00:00",
-                                                         "duration_ms":  11.433,
+                                                         "started_utc":  "2026-08-30T02:15:31.4428637+00:00",
+                                                         "finished_utc":  "2026-08-30T02:15:31.4599389+00:00",
+                                                         "duration_ms":  17.075,
                                                          "timed_out":  false,
                                                          "crashed":  false,
                                                          "exit_code":  2,

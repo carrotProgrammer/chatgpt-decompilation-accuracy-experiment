@@ -6,7 +6,7 @@ AddressSize: 64bit
 ImageFileHeader {
   Machine: IMAGE_FILE_MACHINE_AMD64 (0x8664)
   SectionCount: 7
-  TimeDateStamp: 2026-08-29 23:51:49 (0x6A937095)
+  TimeDateStamp: 2026-08-30 02:15:47 (0x6A939253)
   PointerToSymbolTable: 0x0
   SymbolCount: 0
   StringTableSize: 0
@@ -52,7 +52,7 @@ ImageOptionalHeader {
   DataDirectory {
     ExportTableRVA: 0x0
     ExportTableSize: 0x0
-    ImportTableRVA: 0x10EF8
+    ImportTableRVA: 0x10F98
     ImportTableSize: 0xDC
     ResourceTableRVA: 0x0
     ResourceTableSize: 0x0
@@ -68,13 +68,13 @@ ImageOptionalHeader {
     ArchitectureSize: 0x0
     GlobalPtrRVA: 0x0
     GlobalPtrSize: 0x0
-    TLSTableRVA: 0x10468
+    TLSTableRVA: 0x10508
     TLSTableSize: 0x28
-    LoadConfigTableRVA: 0x10D40
+    LoadConfigTableRVA: 0x10DE0
     LoadConfigTableSize: 0x138
     BoundImportRVA: 0x0
     BoundImportSize: 0x0
-    IATRVA: 0x11208
+    IATRVA: 0x112A8
     IATSize: 0x230
     DelayImportDescriptorRVA: 0x0
     DelayImportDescriptorSize: 0x0

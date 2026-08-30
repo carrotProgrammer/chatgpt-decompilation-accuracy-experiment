@@ -14,11 +14,22 @@
 
 | 样本 | Challenge binary | 原始源码 | 确定性测试 |
 |---|---|---|---|
-| `adpcm` | `bin\challenge\sample_001.exe` | `source\original\adpcm.c` | CHStone 内置向量 |
-| `chal` | `bin\challenge\sample_002.exe` | `source\original\chal.c` | 4 组固定 FEN + depth 的 perft case |
-| `portal` | `bin\challenge\sample_003.exe` | `source\original\ticket_portal.c` | 6 组固定查询，覆盖过滤、权限、聚合、详情输出和参数校验 |
+| `adpcm` | `bin\challenge\sample_001.exe` | `source\development\original\adpcm.c` | CHStone 内置向量 |
+| `chal` | `bin\challenge\sample_002.exe` | `source\development\original\chal.c` | 4 组固定 FEN + depth 的 perft case |
+| `portal` | `bin\challenge\sample_003.exe` | `source\development\original\ticket_portal.c` | 6 组固定查询，覆盖过滤、权限、聚合、详情输出和参数校验 |
 
 中性 challenge 文件名用于避免向被测模型泄露算法或应用名称。
+
+## 数据集拆分
+
+源码目录将流程开发阶段使用的输入与留出的正式测试输入分开保存：
+
+- `source\development\original\`：开发流程时使用的 3 个基线程序。
+- `source\development\{common,uncommon,generated}\`：另外 15 个开发集程序。
+- `source\test\{common,uncommon,generated}\`：30 个留出的测试集程序。
+- `source\recovered\`：反编译恢复结果，不属于上述任何输入集合。
+
+因此开发集共 18 个程序，测试集共 30 个程序。机器可读定义分别为 `development_corpus_definitions.json` 和 `test_corpus_definitions.json`；`corpus_manifest.json` 会记录每个 corpus 样本的集合归属。
 
 ## 评测模型
 
