@@ -1,0 +1,30 @@
+{
+    "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\common\\common_014_miniz_tinfl.exe",
+    "binary_sha256":  "f4834fb6d2e92686c209874a801031c564616ee5909490ebc8e9948573201527",
+    "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\common\\common_014_miniz_tinfl.exe",
+    "arguments":  [
+
+                  ],
+    "stdin":  "closed; zero bytes",
+    "stdin_text":  "",
+    "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\common\\common_014_miniz_tinfl\\smoke\\runtime",
+    "environment_delta":  {
+
+                          },
+    "timeout_seconds":  15,
+    "started_utc":  "2026-08-29T23:52:04.2164232+00:00",
+    "finished_utc":  "2026-08-29T23:52:04.2467233+00:00",
+    "duration_ms":  30.3,
+    "timed_out":  false,
+    "crashed":  false,
+    "exit_code":  0,
+    "exit_code_hex":  "0x00000000",
+    "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\common\\common_014_miniz_tinfl\\smoke\\run\\stdout.bin",
+    "stdout_sha256":  "2a01c191297a21a8e3018937c882eca92371058a4ff800ed9a4bfd2f9ae9cd68",
+    "stdout_bytes":  55,
+    "stdout_display":  "miniz_tinfl_selftest size=11 hash=d58b3fa7 failures=0\\r\\n",
+    "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\common\\common_014_miniz_tinfl\\smoke\\run\\stderr.bin",
+    "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes":  0,
+    "stderr_display":  ""
+}

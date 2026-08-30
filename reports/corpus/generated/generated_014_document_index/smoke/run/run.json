@@ -1,0 +1,30 @@
+{
+    "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\generated\\generated_014_document_index.exe",
+    "binary_sha256":  "da568f73a0744f1f8181cc9b1fe7f85f4f8c143709d0a83b1b37d49aeb5bdf06",
+    "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\generated\\generated_014_document_index.exe",
+    "arguments":  [
+
+                  ],
+    "stdin":  "closed; zero bytes",
+    "stdin_text":  "",
+    "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\generated\\generated_014_document_index\\smoke\\runtime",
+    "environment_delta":  {
+
+                          },
+    "timeout_seconds":  15,
+    "started_utc":  "2026-08-29T23:52:04.9594797+00:00",
+    "finished_utc":  "2026-08-29T23:52:04.9941698+00:00",
+    "duration_ms":  34.69,
+    "timed_out":  false,
+    "crashed":  false,
+    "exit_code":  0,
+    "exit_code_hex":  "0x00000000",
+    "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\generated\\generated_014_document_index\\smoke\\run\\stdout.bin",
+    "stdout_sha256":  "8db2e65b27997fd21af35e522327e38334a0a7d7c1cf304a844225bcc13130f1",
+    "stdout_bytes":  69,
+    "stdout_display":  "document_index buckets=127 probes=2697 checksum=6eeeb890 failures=0\\r\\n",
+    "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\generated\\generated_014_document_index\\smoke\\run\\stderr.bin",
+    "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes":  0,
+    "stderr_display":  ""
+}

@@ -1,0 +1,30 @@
+{
+    "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\uncommon\\uncommon_003_heatshrink.exe",
+    "binary_sha256":  "3f8330507e8809ed9f9ecfc497909cf3dcab77e08a8da19ffa1e6ffbd52e77d8",
+    "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\uncommon\\uncommon_003_heatshrink.exe",
+    "arguments":  [
+
+                  ],
+    "stdin":  "closed; zero bytes",
+    "stdin_text":  "",
+    "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\uncommon\\uncommon_003_heatshrink\\smoke\\runtime",
+    "environment_delta":  {
+
+                          },
+    "timeout_seconds":  15,
+    "started_utc":  "2026-08-29T23:52:03.6734891+00:00",
+    "finished_utc":  "2026-08-29T23:52:03.7042337+00:00",
+    "duration_ms":  30.745,
+    "timed_out":  false,
+    "crashed":  false,
+    "exit_code":  0,
+    "exit_code_hex":  "0x00000000",
+    "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\uncommon\\uncommon_003_heatshrink\\smoke\\run\\stdout.bin",
+    "stdout_sha256":  "d37a43d05525da88ead2df829e73d536dd19a67a198e352e19640856960c5c4f",
+    "stdout_bytes":  72,
+    "stdout_display":  "heatshrink_selftest failures=0 input=792 encoded=135 checksum=a83f5c95\\r\\n",
+    "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\uncommon\\uncommon_003_heatshrink\\smoke\\run\\stderr.bin",
+    "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes":  0,
+    "stderr_display":  ""
+}

@@ -1,0 +1,30 @@
+{
+    "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\generated\\generated_010_package_solver.exe",
+    "binary_sha256":  "f4f9405d144c211209b7befd35bcb8b6d17e13425d16ee2ab1c05f7cb853e534",
+    "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\generated\\generated_010_package_solver.exe",
+    "arguments":  [
+
+                  ],
+    "stdin":  "closed; zero bytes",
+    "stdin_text":  "",
+    "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\generated\\generated_010_package_solver\\smoke\\runtime",
+    "environment_delta":  {
+
+                          },
+    "timeout_seconds":  15,
+    "started_utc":  "2026-08-29T23:52:04.8028940+00:00",
+    "finished_utc":  "2026-08-29T23:52:04.8366775+00:00",
+    "duration_ms":  33.784,
+    "timed_out":  false,
+    "crashed":  false,
+    "exit_code":  0,
+    "exit_code_hex":  "0x00000000",
+    "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\generated\\generated_010_package_solver\\smoke\\run\\stdout.bin",
+    "stdout_sha256":  "073be1f93d8d54f5d2b09a9a3096d189f4427b1b5240db62e9a8396212ac24db",
+    "stdout_bytes":  74,
+    "stdout_display":  "package_solver reachable=640 distance=21693 checksum=d6d9384a failures=0\\r\\n",
+    "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\generated\\generated_010_package_solver\\smoke\\run\\stderr.bin",
+    "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes":  0,
+    "stderr_display":  ""
+}

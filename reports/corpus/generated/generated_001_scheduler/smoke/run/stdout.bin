@@ -1,0 +1,18 @@
+schedule makespan=41 cost=1766 tardiness=33 score=2817
+  spec         start= 0 finish= 3 slack= 0
+  prototype    start= 3 finish= 8 slack= 4
+  firmware     start= 3 finish=10 slack= 0
+  enclosure    start= 8 finish=12 slack= 2
+  fixtures     start=14 finish=17 slack=-4
+  unit_test    start=10 finish=14 slack= 6
+  integration  start=17 finish=22 slack= 0
+  thermal      start=22 finish=25 slack= 0
+  security     start=10 finish=14 slack=11
+  docs         start=12 finish=16 slack=12
+  pilot        start=25 finish=31 slack= 0
+  audit        start=31 finish=34 slack= 1
+  training     start=34 finish=37 slack=-1
+  packaging    start=31 finish=34 slack= 3
+  release      start=37 finish=39 slack= 0
+  retrospective start=39 finish=41 slack= 2
+analysis critical=32 path=9 improvements=0 peak=5@3 tardy=2 weighted=2777 failures=0 events=32 recovered=46 signature=1098354139 selftest=0

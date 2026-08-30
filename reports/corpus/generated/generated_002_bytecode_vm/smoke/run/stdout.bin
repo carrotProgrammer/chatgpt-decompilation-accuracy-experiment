@@ -1,0 +1,13 @@
+000 push    7
+001 store   0
+002 push    1
+003 store   1
+004 load    0
+005 push    1
+006 le
+007 jnz     17
+008 load    1
+009 load    0
+010 mul
+011 store   1
+vm_selftest instructions=62 folds=2 max_stack=2 steps=212 trace=212 program_hash=792bf775 trace_hash=3755bab2 outputs=5040,21,21,101 failures=0

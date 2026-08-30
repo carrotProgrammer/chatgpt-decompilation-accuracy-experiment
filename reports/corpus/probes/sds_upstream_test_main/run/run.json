@@ -1,0 +1,30 @@
+{
+    "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\corpus\\probes\\sds_upstream_test_main\\sds_upstream_test_main.exe",
+    "binary_sha256":  "70df24eac8686a724ddae6bc9c093e59e7e663b8fdb63d05f003c4d62167f3ea",
+    "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\build\\corpus\\probes\\sds_upstream_test_main\\sds_upstream_test_main.exe",
+    "arguments":  [
+
+                  ],
+    "stdin":  "closed; zero bytes",
+    "stdin_text":  "",
+    "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\probes\\sds_upstream_test_main\\runtime",
+    "environment_delta":  {
+
+                          },
+    "timeout_seconds":  10,
+    "started_utc":  "2026-08-29T17:54:30.7913608+00:00",
+    "finished_utc":  "2026-08-29T17:54:30.9062335+00:00",
+    "duration_ms":  114.873,
+    "timed_out":  false,
+    "crashed":  true,
+    "exit_code":  -1073741571,
+    "exit_code_hex":  "0xC00000FD",
+    "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\probes\\sds_upstream_test_main\\run\\stdout.bin",
+    "stdout_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_bytes":  0,
+    "stdout_display":  "",
+    "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\probes\\sds_upstream_test_main\\run\\stderr.bin",
+    "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes":  0,
+    "stderr_display":  ""
+}

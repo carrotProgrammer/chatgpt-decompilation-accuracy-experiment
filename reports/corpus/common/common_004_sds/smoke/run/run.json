@@ -1,0 +1,30 @@
+{
+    "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\common\\common_004_sds.exe",
+    "binary_sha256":  "37b1815a3aba307e4f1cb6e8658e8fe232f09df397d4969c43210ecb762f275e",
+    "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\common\\common_004_sds.exe",
+    "arguments":  [
+
+                  ],
+    "stdin":  "closed; zero bytes",
+    "stdin_text":  "",
+    "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\common\\common_004_sds\\smoke\\runtime",
+    "environment_delta":  {
+
+                          },
+    "timeout_seconds":  15,
+    "started_utc":  "2026-08-29T23:52:03.4296079+00:00",
+    "finished_utc":  "2026-08-29T23:52:03.4612739+00:00",
+    "duration_ms":  31.666,
+    "timed_out":  false,
+    "crashed":  false,
+    "exit_code":  0,
+    "exit_code_hex":  "0x00000000",
+    "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\common\\common_004_sds\\smoke\\run\\stdout.bin",
+    "stdout_sha256":  "3ce7191d01ed3092badb4e8ff3474b3af07472d43489a80470fc2ff2f4c0fabd",
+    "stdout_bytes":  25,
+    "stdout_display":  "sds_selftest failures=0\\r\\n",
+    "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\common\\common_004_sds\\smoke\\run\\stderr.bin",
+    "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes":  0,
+    "stderr_display":  ""
+}

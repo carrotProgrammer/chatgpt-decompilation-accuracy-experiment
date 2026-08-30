@@ -1,0 +1,1 @@
+pipeline_selftest input=2823 transformed=2846 frame=2886 stuffed=2903 packets=12 shard_size=484 recovered_hash=8d8ca295 input_hash=8d8ca295 unique=249 run=32 adler=ebafcae4 failures=0

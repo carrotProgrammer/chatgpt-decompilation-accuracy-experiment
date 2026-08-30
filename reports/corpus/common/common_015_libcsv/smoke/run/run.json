@@ -1,0 +1,30 @@
+{
+    "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\common\\common_015_libcsv.exe",
+    "binary_sha256":  "a597887f0377b8d6ea8dd8d36877f06402cc7befb1cc6ce8e046bf6e85cf202e",
+    "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\common\\common_015_libcsv.exe",
+    "arguments":  [
+
+                  ],
+    "stdin":  "closed; zero bytes",
+    "stdin_text":  "",
+    "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\common\\common_015_libcsv\\smoke\\runtime",
+    "environment_delta":  {
+
+                          },
+    "timeout_seconds":  15,
+    "started_utc":  "2026-08-29T23:52:04.2517235+00:00",
+    "finished_utc":  "2026-08-29T23:52:04.2813305+00:00",
+    "duration_ms":  29.607,
+    "timed_out":  false,
+    "crashed":  false,
+    "exit_code":  0,
+    "exit_code_hex":  "0x00000000",
+    "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\common\\common_015_libcsv\\smoke\\run\\stdout.bin",
+    "stdout_sha256":  "2cffbe19f6d623d858a1cccbb0566fa84ed64e8edc00d71408108529f8600672",
+    "stdout_bytes":  18,
+    "stdout_display":  "All tests passed\\r\\n",
+    "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\common\\common_015_libcsv\\smoke\\run\\stderr.bin",
+    "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes":  0,
+    "stderr_display":  ""
+}

@@ -1,0 +1,30 @@
+{
+    "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\common\\common_012_stb_ds.exe",
+    "binary_sha256":  "fd893b114a0de241634bfc7bf8c15fd6e65a7f1e8bc227d703f13534d4847180",
+    "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\common\\common_012_stb_ds.exe",
+    "arguments":  [
+
+                  ],
+    "stdin":  "closed; zero bytes",
+    "stdin_text":  "",
+    "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\common\\common_012_stb_ds\\smoke\\runtime",
+    "environment_delta":  {
+
+                          },
+    "timeout_seconds":  15,
+    "started_utc":  "2026-08-29T23:52:04.1468906+00:00",
+    "finished_utc":  "2026-08-29T23:52:04.1779455+00:00",
+    "duration_ms":  31.055,
+    "timed_out":  false,
+    "crashed":  false,
+    "exit_code":  0,
+    "exit_code_hex":  "0x00000000",
+    "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\common\\common_012_stb_ds\\smoke\\run\\stdout.bin",
+    "stdout_sha256":  "40f8f90fc2c425b0c0af7b95ef5b28fe2d77573f17fe9979058ee6371d59e141",
+    "stdout_bytes":  66,
+    "stdout_display":  "stb_ds_selftest array=200 map=120 strings=2 sum=21010 failures=0\\r\\n",
+    "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\common\\common_012_stb_ds\\smoke\\run\\stderr.bin",
+    "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes":  0,
+    "stderr_display":  ""
+}

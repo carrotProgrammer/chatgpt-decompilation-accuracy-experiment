@@ -1,0 +1,16 @@
+	Results       pass:162   fail: 0      0ms
+	Syntax        pass:65   fail: 0      0ms
+	NaNs          pass:55   fail: 0      0ms
+	INFs          pass:50   fail: 0      0ms
+	Variables     pass:36   fail: 0      0ms
+	Functions     pass:4406   fail: 0      0ms
+	Dynamic       pass:44   fail: 0      0ms
+	Closure       pass:17   fail: 0      0ms
+	Optimize      pass:12   fail: 0      0ms
+	Pow           pass:51   fail: 0      0ms
+	Combinatorics pass:40   fail: 0      0ms
+	Logic         pass:130   fail: 0      0ms
+	Depth         pass: 8   fail: 0      0ms
+	Number        pass:5008   fail: 0      2ms
+	Locale        pass: 7   fail: 0      9ms
+ALL TESTS PASSED (10091/10091)

@@ -1,0 +1,30 @@
+{
+    "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\common\\common_007_http_parser.exe",
+    "binary_sha256":  "4e61077b720fc91aacfce666919f1d8c4895686639fbf81be9711b8995787b5d",
+    "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\common\\common_007_http_parser.exe",
+    "arguments":  [
+
+                  ],
+    "stdin":  "closed; zero bytes",
+    "stdin_text":  "",
+    "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\common\\common_007_http_parser\\smoke\\runtime",
+    "environment_delta":  {
+
+                          },
+    "timeout_seconds":  15,
+    "started_utc":  "2026-08-29T23:52:03.9678200+00:00",
+    "finished_utc":  "2026-08-29T23:52:03.9981415+00:00",
+    "duration_ms":  30.322,
+    "timed_out":  false,
+    "crashed":  false,
+    "exit_code":  0,
+    "exit_code_hex":  "0x00000000",
+    "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\common\\common_007_http_parser\\smoke\\run\\stdout.bin",
+    "stdout_sha256":  "f864a1edfc543ef08f3569dd3ad9b67a68c09d5bdd0529a1b1d65da0e7af80c0",
+    "stdout_bytes":  79,
+    "stdout_display":  "http_parser_selftest url=/api/items?q=blue%20box headers=4 body=16 failures=0\\r\\n",
+    "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\common\\common_007_http_parser\\smoke\\run\\stderr.bin",
+    "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes":  0,
+    "stderr_display":  ""
+}

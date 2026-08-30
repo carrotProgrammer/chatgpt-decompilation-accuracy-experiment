@@ -1,0 +1,9 @@
+In file included from D:\XiangxinLab\adpcm_decompilation_experiment\source\uncommon\uncommon_004_blowfish\bf.c:82:
+D:\XiangxinLab\adpcm_decompilation_experiment\source\uncommon\uncommon_004_blowfish/bf_cfb64.c:82:1: warning: a function definition without a prototype is deprecated in all versions of C and is not supported in C23 [-Wdeprecated-non-prototype]
+   82 | BF_cfb64_encrypt (in, out, length, ivec, num, encrypt)
+      | ^
+In file included from D:\XiangxinLab\adpcm_decompilation_experiment\source\uncommon\uncommon_004_blowfish\bf.c:83:
+D:\XiangxinLab\adpcm_decompilation_experiment\source\uncommon\uncommon_004_blowfish/bf_enc.c:82:1: warning: a function definition without a prototype is deprecated in all versions of C and is not supported in C23 [-Wdeprecated-non-prototype]
+   82 | BF_encrypt (data, encrypt)
+      | ^
+2 warnings generated.
