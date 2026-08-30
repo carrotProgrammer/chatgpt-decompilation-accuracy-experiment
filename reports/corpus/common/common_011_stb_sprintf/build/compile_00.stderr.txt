@@ -1,0 +1,8 @@
+D:\XiangxinLab\adpcm_decompilation_experiment\source\common\common_011_stb_sprintf\stb_sprintf_driver.c:54:43: warning: comparison of function 'collect' not equal to a null pointer is always true [-Wtautological-pointer-compare]
+   54 |            sink.used, (void *)(uintptr_t)(collect != NULL), failures);
+      |                                           ^~~~~~~    ~~~~
+D:\XiangxinLab\adpcm_decompilation_experiment\source\common\common_011_stb_sprintf\stb_sprintf_driver.c:54:43: note: prefix with the address-of operator to silence this warning
+   54 |            sink.used, (void *)(uintptr_t)(collect != NULL), failures);
+      |                                           ^
+      |                                           &
+1 warning generated.

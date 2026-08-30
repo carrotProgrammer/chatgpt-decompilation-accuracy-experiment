@@ -1,0 +1,30 @@
+{
+    "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\generated\\generated_003_maze_planner.exe",
+    "binary_sha256":  "0aef57a2e7651c7d03731b064bb568592e57dcfa36f8e51800b912604cd854f8",
+    "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\generated\\generated_003_maze_planner.exe",
+    "arguments":  [
+
+                  ],
+    "stdin":  "closed; zero bytes",
+    "stdin_text":  "",
+    "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\generated\\generated_003_maze_planner\\smoke\\runtime",
+    "environment_delta":  {
+
+                          },
+    "timeout_seconds":  15,
+    "started_utc":  "2026-08-29T23:52:03.8167344+00:00",
+    "finished_utc":  "2026-08-29T23:52:03.8511135+00:00",
+    "duration_ms":  34.379,
+    "timed_out":  false,
+    "crashed":  false,
+    "exit_code":  0,
+    "exit_code_hex":  "0x00000000",
+    "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\generated\\generated_003_maze_planner\\smoke\\run\\stdout.bin",
+    "stdout_sha256":  "15b6b8e5a9b2f4b8b23c450583c7ab1bbeee87a0cd9692673cf084ff2ea76a52",
+    "stdout_bytes":  703,
+    "stdout_display":  "########################\\r\\n#S....#......m....#***G#\\r\\n#*##..#.######.##.#*##.#\\r\\n#**#..#....!...#.#.***w#\\r\\n##*#.#####.###.#.####**#\\r\\n#**#.....#...#.#....#.*#\\r\\n#*#####..###.#.##.#.#.*#\\r\\n#*****#......#....#.#.*#\\r\\n#.###*######.######.#.*#\\r\\n#...#******#........#.*#\\r\\n###.######*##########.*#\\r\\n#...#....#*************#\\r\\n#.###.##.########.####*#\\r\\n#.....##....!...#....#G#\\r\\n########################\\r\\nmaze_selftest size=24x15 goals=2 regions=1 bfs_steps=44 dijkstra_cost=50 dijkstra_expanded=167 astar_expanded=140 multi_cost=56 best_pair_cost=56 turns=16 smoothed=10 energy=944 damage=0 dead_ends=6 junctions=34 clearance=1/169 hazards=12 traffic=2@1,2 overlap=0 maze_hash=866f9745 path_hash=3b0f781e failures=0\\r\\n",
+    "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\generated\\generated_003_maze_planner\\smoke\\run\\stderr.bin",
+    "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes":  0,
+    "stderr_display":  ""
+}

@@ -1,0 +1,30 @@
+{
+    "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\generated\\generated_009_spatial_grid.exe",
+    "binary_sha256":  "84b473c1af100f2ebff7f3ec188ab642915531349eefcbeca0fdef74d15814d7",
+    "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\generated\\generated_009_spatial_grid.exe",
+    "arguments":  [
+
+                  ],
+    "stdin":  "closed; zero bytes",
+    "stdin_text":  "",
+    "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\generated\\generated_009_spatial_grid\\smoke\\runtime",
+    "environment_delta":  {
+
+                          },
+    "timeout_seconds":  15,
+    "started_utc":  "2026-08-29T23:52:04.7630120+00:00",
+    "finished_utc":  "2026-08-29T23:52:04.7988028+00:00",
+    "duration_ms":  35.791,
+    "timed_out":  false,
+    "crashed":  false,
+    "exit_code":  0,
+    "exit_code_hex":  "0x00000000",
+    "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\generated\\generated_009_spatial_grid\\smoke\\run\\stdout.bin",
+    "stdout_sha256":  "adb8b38119901ed2608d8be9bfd8828b833703254ef7e5ed881d802925ec4e25",
+    "stdout_bytes":  67,
+    "stdout_display":  "spatial_grid buckets=126 probes=2638 checksum=36cb483a failures=0\\r\\n",
+    "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\generated\\generated_009_spatial_grid\\smoke\\run\\stderr.bin",
+    "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes":  0,
+    "stderr_display":  ""
+}

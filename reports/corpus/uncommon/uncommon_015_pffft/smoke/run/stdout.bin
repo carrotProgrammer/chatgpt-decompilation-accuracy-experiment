@@ -1,0 +1,1 @@
+pffft_selftest simd=4 max_error=0.00000018 hash=5c7a7947 failures=0

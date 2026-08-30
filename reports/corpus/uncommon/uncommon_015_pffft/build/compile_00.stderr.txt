@@ -1,0 +1,6 @@
+In file included from D:\XiangxinLab\adpcm_decompilation_experiment\source\uncommon\uncommon_015_pffft\pffft.c:98:
+In file included from D:\XiangxinLab\adpcm_decompilation_experiment\source\uncommon\uncommon_015_pffft/simd/pf_float.h:62:
+D:\XiangxinLab\adpcm_decompilation_experiment\source\uncommon\uncommon_015_pffft/simd/pf_sse1_float.h:42:9: warning: D:\XiangxinLab\adpcm_decompilation_experiment\source\uncommon\uncommon_015_pffft/simd/pf_sse1_float.h: SSE1 float macros are defined [-W#pragma-messages]
+   42 | #pragma message( __FILE__ ": SSE1 float macros are defined" )
+      |         ^
+1 warning generated.

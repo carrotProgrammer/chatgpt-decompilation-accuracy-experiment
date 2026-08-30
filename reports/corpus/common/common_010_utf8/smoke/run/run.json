@@ -1,0 +1,30 @@
+{
+    "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\common\\common_010_utf8.exe",
+    "binary_sha256":  "9953aab4ae244f75d9486635671835e813de7d815f2044edeacb080dd9220d27",
+    "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\common\\common_010_utf8.exe",
+    "arguments":  [
+
+                  ],
+    "stdin":  "closed; zero bytes",
+    "stdin_text":  "",
+    "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\common\\common_010_utf8\\smoke\\runtime",
+    "environment_delta":  {
+
+                          },
+    "timeout_seconds":  15,
+    "started_utc":  "2026-08-29T23:52:04.0772529+00:00",
+    "finished_utc":  "2026-08-29T23:52:04.1071524+00:00",
+    "duration_ms":  29.9,
+    "timed_out":  false,
+    "crashed":  false,
+    "exit_code":  0,
+    "exit_code_hex":  "0x00000000",
+    "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\common\\common_010_utf8\\smoke\\run\\stdout.bin",
+    "stdout_sha256":  "727cd811ff22969d03f7756566a87aa1171772868224e0c62813c2b34f53ff8e",
+    "stdout_bytes":  63,
+    "stdout_display":  "utf8_selftest codepoints=15 bytes=24 hash=eb1125bf failures=0\\r\\n",
+    "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\common\\common_010_utf8\\smoke\\run\\stderr.bin",
+    "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes":  0,
+    "stderr_display":  ""
+}

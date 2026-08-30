@@ -1,0 +1,30 @@
+{
+    "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\generated\\generated_001_scheduler.exe",
+    "binary_sha256":  "551c39bc7178712152ed37bdea211958a305f8b3c908c227c1eac18e0a215b21",
+    "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\generated\\generated_001_scheduler.exe",
+    "arguments":  [
+
+                  ],
+    "stdin":  "closed; zero bytes",
+    "stdin_text":  "",
+    "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\generated\\generated_001_scheduler\\smoke\\runtime",
+    "environment_delta":  {
+
+                          },
+    "timeout_seconds":  15,
+    "started_utc":  "2026-08-29T23:52:03.7447452+00:00",
+    "finished_utc":  "2026-08-29T23:52:03.7744941+00:00",
+    "duration_ms":  29.749,
+    "timed_out":  false,
+    "crashed":  false,
+    "exit_code":  0,
+    "exit_code_hex":  "0x00000000",
+    "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\generated\\generated_001_scheduler\\smoke\\run\\stdout.bin",
+    "stdout_sha256":  "fcc4890b3c35c43634654469c696beace184fc5b1d94c8fceade43814e731c4c",
+    "stdout_bytes":  902,
+    "stdout_display":  "schedule makespan=41 cost=1766 tardiness=33 score=2817\\r\\n  spec         start= 0 finish= 3 slack= 0\\r\\n  prototype    start= 3 finish= 8 slack= 4\\r\\n  firmware     start= 3 finish=10 slack= 0\\r\\n  enclosure    start= 8 finish=12 slack= 2\\r\\n  fixtures     start=14 finish=17 slack=-4\\r\\n  unit_test    start=10 finish=14 slack= 6\\r\\n  integration  start=17 finish=22 slack= 0\\r\\n  thermal      start=22 finish=25 slack= 0\\r\\n  security     start=10 finish=14 slack=11\\r\\n  docs         start=12 finish=16 slack=12\\r\\n  pilot        start=25 finish=31 slack= 0\\r\\n  audit        start=31 finish=34 slack= 1\\r\\n  training     start=34 finish=37 slack=-1\\r\\n  packaging    start=31 finish=34 slack= 3\\r\\n  release      start=37 finish=39 slack= 0\\r\\n  retrospective start=39 finish=41 slack= 2\\r\\nanalysis critical=32 path=9 improvements=0 peak=5@3 tardy=2 weighted=2777 failures=0 events=32 recovered=46 signature=1098354139 selftest=0\\r\\n",
+    "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\generated\\generated_001_scheduler\\smoke\\run\\stderr.bin",
+    "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes":  0,
+    "stderr_display":  ""
+}

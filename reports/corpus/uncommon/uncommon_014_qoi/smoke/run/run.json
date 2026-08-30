@@ -1,0 +1,30 @@
+{
+    "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\uncommon\\uncommon_014_qoi.exe",
+    "binary_sha256":  "bb622eefa95ad15976a1115c7315485bc37737f2ed0eea41d12f20ca8071da53",
+    "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\uncommon\\uncommon_014_qoi.exe",
+    "arguments":  [
+
+                  ],
+    "stdin":  "closed; zero bytes",
+    "stdin_text":  "",
+    "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\uncommon\\uncommon_014_qoi\\smoke\\runtime",
+    "environment_delta":  {
+
+                          },
+    "timeout_seconds":  15,
+    "started_utc":  "2026-08-29T23:52:04.5764951+00:00",
+    "finished_utc":  "2026-08-29T23:52:04.6058706+00:00",
+    "duration_ms":  29.376,
+    "timed_out":  false,
+    "crashed":  false,
+    "exit_code":  0,
+    "exit_code_hex":  "0x00000000",
+    "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\uncommon\\uncommon_014_qoi\\smoke\\run\\stdout.bin",
+    "stdout_sha256":  "eb9b0e2729fcdacbd168585b2944ecc379231339ac5b6e733fe9bbdef2e1e516",
+    "stdout_bytes":  60,
+    "stdout_display":  "qoi_selftest rgb=11447 rgba=15378 hash=58db26ed failures=0\\r\\n",
+    "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\uncommon\\uncommon_014_qoi\\smoke\\run\\stderr.bin",
+    "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes":  0,
+    "stderr_display":  ""
+}

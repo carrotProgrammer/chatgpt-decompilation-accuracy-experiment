@@ -1,0 +1,30 @@
+{
+    "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\common\\common_011_stb_sprintf.exe",
+    "binary_sha256":  "d69b4ead770c7a76425835dde8fbebc288821d808324c0a85be33616c0330d43",
+    "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\common\\common_011_stb_sprintf.exe",
+    "arguments":  [
+
+                  ],
+    "stdin":  "closed; zero bytes",
+    "stdin_text":  "",
+    "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\common\\common_011_stb_sprintf\\smoke\\runtime",
+    "environment_delta":  {
+
+                          },
+    "timeout_seconds":  15,
+    "started_utc":  "2026-08-29T23:52:04.1116686+00:00",
+    "finished_utc":  "2026-08-29T23:52:04.1433277+00:00",
+    "duration_ms":  31.659,
+    "timed_out":  false,
+    "crashed":  false,
+    "exit_code":  0,
+    "exit_code_hex":  "0x00000000",
+    "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\common\\common_011_stb_sprintf\\smoke\\run\\stdout.bin",
+    "stdout_sha256":  "b30e4f5ad023aa0a7be21b9c7c962ccfec8da899858ca0a9f694358f72d72355",
+    "stdout_bytes":  73,
+    "stdout_display":  "stb_sprintf_selftest formatted=720 callback=0000000000000001 failures=0\\r\\n",
+    "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\common\\common_011_stb_sprintf\\smoke\\run\\stderr.bin",
+    "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes":  0,
+    "stderr_display":  ""
+}

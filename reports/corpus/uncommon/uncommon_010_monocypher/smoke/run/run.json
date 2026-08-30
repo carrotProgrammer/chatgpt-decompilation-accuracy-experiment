@@ -1,0 +1,30 @@
+{
+    "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\uncommon\\uncommon_010_monocypher.exe",
+    "binary_sha256":  "f7b780b4a3f81b45be26191052eceead911b6636e556c33f04207aca79ba517c",
+    "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\uncommon\\uncommon_010_monocypher.exe",
+    "arguments":  [
+
+                  ],
+    "stdin":  "closed; zero bytes",
+    "stdin_text":  "",
+    "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\uncommon\\uncommon_010_monocypher\\smoke\\runtime",
+    "environment_delta":  {
+
+                          },
+    "timeout_seconds":  15,
+    "started_utc":  "2026-08-29T23:52:04.4317380+00:00",
+    "finished_utc":  "2026-08-29T23:52:04.4620611+00:00",
+    "duration_ms":  30.323,
+    "timed_out":  false,
+    "crashed":  false,
+    "exit_code":  0,
+    "exit_code_hex":  "0x00000000",
+    "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\uncommon\\uncommon_010_monocypher\\smoke\\run\\stdout.bin",
+    "stdout_sha256":  "61652fa3c782634f333f86a350d7ac2fd7e9bc6e6b966b815ddd0de1eaa7fc10",
+    "stdout_bytes":  62,
+    "stdout_display":  "monocypher_selftest hash=ba82bfec cipher=e229ba42 failures=0\\r\\n",
+    "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\uncommon\\uncommon_010_monocypher\\smoke\\run\\stderr.bin",
+    "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes":  0,
+    "stderr_display":  ""
+}

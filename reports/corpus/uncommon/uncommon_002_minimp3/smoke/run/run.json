@@ -1,0 +1,30 @@
+{
+    "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\uncommon\\uncommon_002_minimp3.exe",
+    "binary_sha256":  "9339bcbddbb804fe0995a10a90f5aab25f135b4e9b447da9099cc577cd32f706",
+    "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\uncommon\\uncommon_002_minimp3.exe MEANDR90.mp3",
+    "arguments":  [
+                      "MEANDR90.mp3"
+                  ],
+    "stdin":  "closed; zero bytes",
+    "stdin_text":  "",
+    "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\uncommon\\uncommon_002_minimp3\\smoke\\runtime",
+    "environment_delta":  {
+
+                          },
+    "timeout_seconds":  15,
+    "started_utc":  "2026-08-29T23:52:03.6331736+00:00",
+    "finished_utc":  "2026-08-29T23:52:03.6683720+00:00",
+    "duration_ms":  35.198,
+    "timed_out":  false,
+    "crashed":  false,
+    "exit_code":  0,
+    "exit_code_hex":  "0x00000000",
+    "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\uncommon\\uncommon_002_minimp3\\smoke\\run\\stdout.bin",
+    "stdout_sha256":  "30659c7aa84b59971714128430561249b260e1bfda2572aa229053af4399554b",
+    "stdout_bytes":  88,
+    "stdout_display":  "minimp3_decode frames=8 samples=18432 hz=48000 channels=2 checksum=3289799279741457382\\r\\n",
+    "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\uncommon\\uncommon_002_minimp3\\smoke\\run\\stderr.bin",
+    "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes":  0,
+    "stderr_display":  ""
+}

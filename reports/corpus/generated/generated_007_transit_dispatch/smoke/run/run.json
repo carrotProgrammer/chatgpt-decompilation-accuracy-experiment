@@ -1,0 +1,30 @@
+{
+    "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\generated\\generated_007_transit_dispatch.exe",
+    "binary_sha256":  "460c4e1bd271f8d9643b5b368252699c38d8616a6896057db7121440cb5489a5",
+    "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\generated\\generated_007_transit_dispatch.exe",
+    "arguments":  [
+
+                  ],
+    "stdin":  "closed; zero bytes",
+    "stdin_text":  "",
+    "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\generated\\generated_007_transit_dispatch\\smoke\\runtime",
+    "environment_delta":  {
+
+                          },
+    "timeout_seconds":  15,
+    "started_utc":  "2026-08-29T23:52:04.6818762+00:00",
+    "finished_utc":  "2026-08-29T23:52:04.7171673+00:00",
+    "duration_ms":  35.291,
+    "timed_out":  false,
+    "crashed":  false,
+    "exit_code":  0,
+    "exit_code_hex":  "0x00000000",
+    "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\generated\\generated_007_transit_dispatch\\smoke\\run\\stdout.bin",
+    "stdout_sha256":  "59c3dd090f64b873edc400f48f56bbc9c789ee2527925edf75a7f6cbe0336987",
+    "stdout_bytes":  76,
+    "stdout_display":  "transit_dispatch reachable=640 distance=18134 checksum=8051ea60 failures=0\\r\\n",
+    "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\generated\\generated_007_transit_dispatch\\smoke\\run\\stderr.bin",
+    "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes":  0,
+    "stderr_display":  ""
+}

@@ -1,0 +1,30 @@
+{
+    "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\generated\\generated_011_order_matching.exe",
+    "binary_sha256":  "16d74cdd32863a836b58d3da85171f0b6a542021c3ad4eaeb7031cf57533b6bd",
+    "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\generated\\generated_011_order_matching.exe",
+    "arguments":  [
+
+                  ],
+    "stdin":  "closed; zero bytes",
+    "stdin_text":  "",
+    "working_directory":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\generated\\generated_011_order_matching\\smoke\\runtime",
+    "environment_delta":  {
+
+                          },
+    "timeout_seconds":  15,
+    "started_utc":  "2026-08-29T23:52:04.8410171+00:00",
+    "finished_utc":  "2026-08-29T23:52:04.8749592+00:00",
+    "duration_ms":  33.942,
+    "timed_out":  false,
+    "crashed":  false,
+    "exit_code":  0,
+    "exit_code_hex":  "0x00000000",
+    "stdout_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\generated\\generated_011_order_matching\\smoke\\run\\stdout.bin",
+    "stdout_sha256":  "16438934ca938e82126d280da488a803a08efedc67f954c0712a661f221f82c1",
+    "stdout_bytes":  71,
+    "stdout_display":  "order_matching groups=228 inversions=484 checksum=7a01987d failures=0\\r\\n",
+    "stderr_path":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\reports\\corpus\\generated\\generated_011_order_matching\\smoke\\run\\stderr.bin",
+    "stderr_sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes":  0,
+    "stderr_display":  ""
+}

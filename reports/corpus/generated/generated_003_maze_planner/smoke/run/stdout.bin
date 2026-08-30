@@ -1,0 +1,16 @@
+########################
+#S....#......m....#***G#
+#*##..#.######.##.#*##.#
+#**#..#....!...#.#.***w#
+##*#.#####.###.#.####**#
+#**#.....#...#.#....#.*#
+#*#####..###.#.##.#.#.*#
+#*****#......#....#.#.*#
+#.###*######.######.#.*#
+#...#******#........#.*#
+###.######*##########.*#
+#...#....#*************#
+#.###.##.########.####*#
+#.....##....!...#....#G#
+########################
+maze_selftest size=24x15 goals=2 regions=1 bfs_steps=44 dijkstra_cost=50 dijkstra_expanded=167 astar_expanded=140 multi_cost=56 best_pair_cost=56 turns=16 smoothed=10 energy=944 damage=0 dead_ends=6 junctions=34 clearance=1/169 hazards=12 traffic=2@1,2 overlap=0 maze_hash=866f9745 path_hash=3b0f781e failures=0
