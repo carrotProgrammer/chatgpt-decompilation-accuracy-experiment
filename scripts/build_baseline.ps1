@@ -168,7 +168,7 @@ Machine-readable details and raw stdout/stderr are stored under this directory.
 $allPassed = (@($manifestSamples.GetEnumerator() | Where-Object { -not $_.Value.baseline_passed }).Count -eq 0)
 $manifest = [ordered]@{
     schema_version = 2
-    experiment = 'Multi-sample decompilation challenge'
+    experiment = 'Binary decompilation dataset preparation'
     generated_utc = [DateTimeOffset]::UtcNow.ToString('o')
     toolchain = [ordered]@{
         distribution = 'llvm-mingw 20260616 UCRT x86_64'

@@ -1,8 +1,8 @@
-# ChatGPT 二进制反编译准确率实验
+# 二进制反编译数据集准备
 
 [English](README.md) | [简体中文](README.zh-CN.md) | [实验研究记录 / Research notes](https://app.notion.com/p/3c5ba3506c39812a9cb3f371f9c76ef1)
 
-这是一个可复现的多样本实验框架，用于测量 ChatGPT 从经过优化和 strip 的 x86-64 Windows PE 二进制中重建 C 源码的准确率。实验分别记录允许联网搜索和禁止搜索条件下生成的 recovered C，将其不经修改地重新编译，并把可观察行为与原 challenge binary 进行比较。
+这是一个用于准备和验证 binary-to-C 反编译数据集的可复现项目。它从经过筛选的 C 程序构建优化并 strip 的 challenge binary，保留源码、二进制和测试的来源关系，并通过确定性行为测试评估 recovered C。
 
 当前 benchmark 包含三个具有不同公开源码先验的样本：经典公开基准 CHStone ADPCM、较少见但仍可检索的 Chal 棋类引擎，以及没有对应公开源码的原创合成工单 Portal 程序。这样可以研究源码可得性与精确恢复能力之间的关系，而不只是判断生成代码能否编译或大致实现相同功能。
 
@@ -21,6 +21,10 @@
 中性 challenge 文件名用于避免向被测模型泄露算法或应用名称。
 
 ## 数据集拆分
+
+另有五程序 **Linux x86-64 ELF** 测试集：`head`、`cut`、`cal`、`du`、`split`。
+详见 [Unix 程序测试集说明](source/test/unix_tools/README.md)，源码、binary、assembly 和外部测试由独立的
+`unix_tools_manifest.json` 关联；下述已冻结的 Windows 样本统计保持原样。
 
 源码目录将流程开发阶段使用的输入与留出的正式测试输入分开保存：
 

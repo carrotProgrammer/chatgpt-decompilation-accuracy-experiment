@@ -1,8 +1,8 @@
-# ChatGPT Binary Decompilation Accuracy Experiment
+# Binary Decompilation Dataset Preparation
 
 [English](README.md) | [简体中文](README.zh-CN.md) | [Research notes / 实验研究记录](https://app.notion.com/p/3c5ba3506c39812a9cb3f371f9c76ef1)
 
-A reproducible, multi-sample framework for measuring how accurately ChatGPT reconstructs C source code from optimized and stripped x86-64 Windows PE binaries. The experiment records recovered C produced with web search available and with search blocked, recompiles it without modification, and compares its observable behavior against the original challenge binary.
+A reproducible project for preparing and validating binary-to-C decompilation datasets. It builds optimized and stripped challenge binaries from curated C programs, preserves source/binary/test provenance, and provides deterministic behavioral tests for evaluating recovered C.
 
 The current benchmark contains three samples with different levels of public source prior: the well-known CHStone ADPCM benchmark, the less common but searchable Chal chess engine, and an original synthetic ticket-portal program with no corresponding public source. This makes it possible to study the relationship between source availability and exact recovery instead of merely checking whether generated code compiles or approximates the original functionality.
 
@@ -21,6 +21,11 @@ Accuracy is determined only by compilation, linking, and deterministic behaviora
 Neutral challenge filenames avoid revealing the algorithm or application name to the model under evaluation.
 
 ## Dataset separation
+
+An additional five-program **Linux x86-64 ELF** corpus (`head`, `cut`, `cal`,
+`du`, `split`) is documented in [Unix tools corpus](source/test/unix_tools/README.md).
+Its source, binary, assembly, and external tests have a separate
+`unix_tools_manifest.json`; the frozen Windows corpus counts below are unchanged.
 
 The source tree keeps model-development inputs separate from held-out evaluation inputs:
 
