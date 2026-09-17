@@ -1,6 +1,6 @@
 {
     "binary":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\uncommon\\uncommon_005_q3asm.exe",
-    "binary_sha256":  "dd677ad7e11be2bc013ae37b37a0750f8baa998fea4265bdddcf47cc219ecab3",
+    "binary_sha256":  "be8fff62753388e7bc2dec71f0edbee48e7526439a16376283d834193c49564b",
     "command":  "D:\\XiangxinLab\\adpcm_decompilation_experiment\\bin\\uncommon\\uncommon_005_q3asm.exe -o minimal.qvm g_main.asm bg_lib.asm g_syscalls.asm",
     "arguments":  [
                       "-o",
@@ -16,9 +16,9 @@
 
                           },
     "timeout_seconds":  15,
-    "started_utc":  "2026-08-29T23:52:03.5161500+00:00",
-    "finished_utc":  "2026-08-29T23:52:03.5588361+00:00",
-    "duration_ms":  42.686,
+    "started_utc":  "2026-08-30T02:16:04.7519998+00:00",
+    "finished_utc":  "2026-08-30T02:16:04.8074736+00:00",
+    "duration_ms":  55.474,
     "timed_out":  false,
     "crashed":  false,
     "exit_code":  0,

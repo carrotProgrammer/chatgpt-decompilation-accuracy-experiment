@@ -28,7 +28,7 @@ Disassembly of section .text:
 140001052: 0f 94 c0                    	sete	%al
 140001055: 40 08 e8                    	orb	%bpl, %al
 140001058: 75 2f                       	jne	0x140001089 <.text+0x89>
-14000105a: 48 8b 3d 8f 03 01 00        	movq	0x1038f(%rip), %rdi     # 0x1400113f0
+14000105a: 48 8b 3d 2f 04 01 00        	movq	0x1042f(%rip), %rdi     # 0x140011490
 140001061: 66 66 66 66 66 66 2e 0f 1f 84 00 00 00 00 00	nopw	%cs:(%rax,%rax)
 140001070: b9 e8 03 00 00              	movl	$0x3e8, %ecx            # imm = 0x3E8
 140001075: ff d7                       	callq	*%rdi
@@ -57,7 +57,7 @@ Disassembly of section .text:
 1400010c6: 31 c9                       	xorl	%ecx, %ecx
 1400010c8: ba 02 00 00 00              	movl	$0x2, %edx
 1400010cd: 45 31 c0                    	xorl	%r8d, %r8d
-1400010d0: ff 15 aa fd 00 00           	callq	*0xfdaa(%rip)           # 0x140010e80
+1400010d0: ff 15 4a fe 00 00           	callq	*0xfe4a(%rip)           # 0x140010f20
 1400010d6: 48 8b 35 db 20 01 00        	movq	0x120db(%rip), %rsi     # 0x1400131b8
 1400010dd: e8 5e 46 00 00              	callq	0x140005740 <.text+0x4740>
 1400010e2: 48 89 30                    	movq	%rsi, (%rax)
@@ -200,7 +200,7 @@ Disassembly of section .text:
 14000133c: 4a c7 04 fe 00 00 00 00     	movq	$0x0, (%rsi,%r15,8)
 140001344: 48 89 35 65 1e 01 00        	movq	%rsi, 0x11e65(%rip)     # 0x1400131b0
 14000134b: 48 8d 0d ce 00 00 00        	leaq	0xce(%rip), %rcx        # 0x140001420 <.text+0x420>
-140001352: ff 15 90 00 01 00           	callq	*0x10090(%rip)          # 0x1400113e8
+140001352: ff 15 30 01 01 00           	callq	*0x10130(%rip)          # 0x140011488
 140001358: 48 8b 0d f1 dc 00 00        	movq	0xdcf1(%rip), %rcx      # 0x14000f050
 14000135f: 48 8b 15 f2 dc 00 00        	movq	0xdcf2(%rip), %rdx      # 0x14000f058
 140001366: e8 45 ca 00 00              	callq	0x14000ddb0 <.text+0xcdb0>
@@ -419,10 +419,10 @@ Disassembly of section .text:
 1400016c4: 41 b9 01 00 00 00           	movl	$0x1, %r9d
 1400016ca: b8 06 00 00 00              	movl	$0x6, %eax
 1400016cf: 4c 8d 64 24 70              	leaq	0x70(%rsp), %r12
-1400016d4: 48 8d 3d 41 e5 00 00        	leaq	0xe541(%rip), %rdi      # 0x14000fc1c
+1400016d4: 48 8d 3d c8 e5 00 00        	leaq	0xe5c8(%rip), %rdi      # 0x14000fca3
 1400016db: 4c 8d 7c 24 40              	leaq	0x40(%rsp), %r15
-1400016e0: 4c 8d 35 4c e5 00 00        	leaq	0xe54c(%rip), %r14      # 0x14000fc33
-1400016e7: 4c 8d 2d 03 e5 00 00        	leaq	0xe503(%rip), %r13      # 0x14000fbf1
+1400016e0: 4c 8d 35 d3 e5 00 00        	leaq	0xe5d3(%rip), %r14      # 0x14000fcba
+1400016e7: 4c 8d 2d 8a e5 00 00        	leaq	0xe58a(%rip), %r13      # 0x14000fc78
 1400016ee: 83 f8 09                    	cmpl	$0x9, %eax
 1400016f1: 0f 84 89 00 00 00           	je	0x140001780 <.text+0x780>
 1400016f7: 83 f8 07                    	cmpl	$0x7, %eax
@@ -663,7 +663,7 @@ Disassembly of section .text:
 140001b6b: 4c 89 fa                    	movq	%r15, %rdx
 140001b6e: e8 2d 1f 00 00              	callq	0x140003aa0 <.text+0x2aa0>
 140001b73: 48 85 c0                    	testq	%rax, %rax
-140001b76: 4c 8d 2d 74 e0 00 00        	leaq	0xe074(%rip), %r13      # 0x14000fbf1
+140001b76: 4c 8d 2d fb e0 00 00        	leaq	0xe0fb(%rip), %r13      # 0x14000fc78
 140001b7d: 0f 84 d8 01 00 00           	je	0x140001d5b <.text+0xd5b>
 140001b83: 49 89 c6                    	movq	%rax, %r14
 140001b86: 4c 89 ff                    	movq	%r15, %rdi
@@ -691,7 +691,7 @@ Disassembly of section .text:
 140001bdd: 4d 89 f8                    	movq	%r15, %r8
 140001be0: e8 9b 20 00 00              	callq	0x140003c80 <.text+0x2c80>
 140001be5: 48 85 c0                    	testq	%rax, %rax
-140001be8: 4c 8d 2d 02 e0 00 00        	leaq	0xe002(%rip), %r13      # 0x14000fbf1
+140001be8: 4c 8d 2d 89 e0 00 00        	leaq	0xe089(%rip), %r13      # 0x14000fc78
 140001bef: 0f 84 66 01 00 00           	je	0x140001d5b <.text+0xd5b>
 140001bf5: 48 89 84 24 b0 00 00 00     	movq	%rax, 0xb0(%rsp)
 140001bfd: 83 bc 24 90 00 00 00 08     	cmpl	$0x8, 0x90(%rsp)
@@ -718,7 +718,7 @@ Disassembly of section .text:
 140001c5b: 48 85 c0                    	testq	%rax, %rax
 140001c5e: 0f 84 f7 00 00 00           	je	0x140001d5b <.text+0xd5b>
 140001c64: 49 89 c6                    	movq	%rax, %r14
-140001c67: 48 8d 0d 3a de 00 00        	leaq	0xde3a(%rip), %rcx      # 0x14000faa8
+140001c67: 48 8d 0d b2 de 00 00        	leaq	0xdeb2(%rip), %rcx      # 0x14000fb20
 140001c6e: e8 7d 2c 00 00              	callq	0x1400048f0 <.text+0x38f0>
 140001c73: 49 89 06                    	movq	%rax, (%r14)
 140001c76: 48 85 c0                    	testq	%rax, %rax
@@ -735,24 +735,24 @@ Disassembly of section .text:
 140001cb4: 4c 89 e1                    	movq	%r12, %rcx
 140001cb7: ba 08 00 00 00              	movl	$0x8, %edx
 140001cbc: 41 b8 01 00 00 00           	movl	$0x1, %r8d
-140001cc2: 4c 8d 0d 58 de 00 00        	leaq	0xde58(%rip), %r9       # 0x14000fb21
+140001cc2: 4c 8d 0d d5 de 00 00        	leaq	0xded5(%rip), %r9       # 0x14000fb9e
 140001cc9: e8 82 0d 00 00              	callq	0x140002a50 <.text+0x1a50>
 140001cce: 85 c0                       	testl	%eax, %eax
 140001cd0: 0f 85 85 00 00 00           	jne	0x140001d5b <.text+0xd5b>
 140001cd6: 4c 89 e1                    	movq	%r12, %rcx
 140001cd9: ba 08 00 00 00              	movl	$0x8, %edx
 140001cde: 41 b8 01 00 00 00           	movl	$0x1, %r8d
-140001ce4: 4c 8d 0d 91 de 00 00        	leaq	0xde91(%rip), %r9       # 0x14000fb7c
+140001ce4: 4c 8d 0d 13 df 00 00        	leaq	0xdf13(%rip), %r9       # 0x14000fbfe
 140001ceb: e8 60 0d 00 00              	callq	0x140002a50 <.text+0x1a50>
 140001cf0: 85 c0                       	testl	%eax, %eax
 140001cf2: 75 67                       	jne	0x140001d5b <.text+0xd5b>
 140001cf4: 83 bc 24 90 00 00 00 06     	cmpl	$0x6, 0x90(%rsp)
 140001cfc: 0f 85 94 02 00 00           	jne	0x140001f96 <.text+0xf96>
-140001d02: 48 8d 3d 13 df 00 00        	leaq	0xdf13(%rip), %rdi      # 0x14000fc1c
-140001d09: 4c 8d 35 23 df 00 00        	leaq	0xdf23(%rip), %r14      # 0x14000fc33
+140001d02: 48 8d 3d 9a df 00 00        	leaq	0xdf9a(%rip), %rdi      # 0x14000fca3
+140001d09: 4c 8d 35 aa df 00 00        	leaq	0xdfaa(%rip), %r14      # 0x14000fcba
 140001d10: e9 a6 fa ff ff              	jmp	0x1400017bb <.text+0x7bb>
 140001d15: 89 da                       	movl	%ebx, %edx
-140001d17: 4c 8d 05 6f d4 00 00        	leaq	0xd46f(%rip), %r8       # 0x14000f18d
+140001d17: 4c 8d 05 74 d4 00 00        	leaq	0xd474(%rip), %r8       # 0x14000f192
 140001d1e: 4c 8d 0d cb d3 00 00        	leaq	0xd3cb(%rip), %r9       # 0x14000f0f0
 140001d25: 48 89 f1                    	movq	%rsi, %rcx
 140001d28: e8 53 38 00 00              	callq	0x140005580 <.text+0x4580>
@@ -763,7 +763,7 @@ Disassembly of section .text:
 140001d37: 48 8b 8c 24 80 00 00 00     	movq	0x80(%rsp), %rcx
 140001d3f: 48 63 94 24 88 00 00 00     	movslq	0x88(%rsp), %rdx
 140001d47: 48 89 7c 24 20              	movq	%rdi, 0x20(%rsp)
-140001d4c: 4c 8d 05 a7 d5 00 00        	leaq	0xd5a7(%rip), %r8       # 0x14000f2fa
+140001d4c: 4c 8d 05 bb d5 00 00        	leaq	0xd5bb(%rip), %r8       # 0x14000f30e
 140001d53: 41 89 e9                    	movl	%ebp, %r9d
 140001d56: e8 25 38 00 00              	callq	0x140005580 <.text+0x4580>
 140001d5b: 8b 84 24 b8 00 00 00        	movl	0xb8(%rsp), %eax
@@ -813,83 +813,83 @@ Disassembly of section .text:
 140001dfd: eb a7                       	jmp	0x140001da6 <.text+0xda6>
 140001dff: 48 8b 8c 24 80 00 00 00     	movq	0x80(%rsp), %rcx
 140001e07: 48 63 94 24 88 00 00 00     	movslq	0x88(%rsp), %rdx
-140001e0f: 48 8d 05 4d d3 00 00        	leaq	0xd34d(%rip), %rax      # 0x14000f163
+140001e0f: 48 8d 05 52 d3 00 00        	leaq	0xd352(%rip), %rax      # 0x14000f168
 140001e16: eb 1f                       	jmp	0x140001e37 <.text+0xe37>
 140001e18: 44 8b 8c 24 94 00 00 00     	movl	0x94(%rsp), %r9d
 140001e20: 48 8b 8c 24 80 00 00 00     	movq	0x80(%rsp), %rcx
 140001e28: 48 63 94 24 88 00 00 00     	movslq	0x88(%rsp), %rdx
-140001e30: 48 8d 05 14 d3 00 00        	leaq	0xd314(%rip), %rax      # 0x14000f14b
+140001e30: 48 8d 05 19 d3 00 00        	leaq	0xd319(%rip), %rax      # 0x14000f150
 140001e37: 48 89 44 24 20              	movq	%rax, 0x20(%rsp)
-140001e3c: 4c 8d 05 b7 d4 00 00        	leaq	0xd4b7(%rip), %r8       # 0x14000f2fa
+140001e3c: 4c 8d 05 cb d4 00 00        	leaq	0xd4cb(%rip), %r8       # 0x14000f30e
 140001e43: e9 0e ff ff ff              	jmp	0x140001d56 <.text+0xd56>
 140001e48: 44 8b 0f                    	movl	(%rdi), %r9d
 140001e4b: 48 8b 8c 24 80 00 00 00     	movq	0x80(%rsp), %rcx
 140001e53: 48 63 94 24 88 00 00 00     	movslq	0x88(%rsp), %rdx
-140001e5b: 4c 8d 05 1d d6 00 00        	leaq	0xd61d(%rip), %r8       # 0x14000f47f
+140001e5b: 4c 8d 05 45 d6 00 00        	leaq	0xd645(%rip), %r8       # 0x14000f4a7
 140001e62: e9 ef fe ff ff              	jmp	0x140001d56 <.text+0xd56>
 140001e67: 48 8b 8c 24 80 00 00 00     	movq	0x80(%rsp), %rcx
 140001e6f: 48 63 94 24 88 00 00 00     	movslq	0x88(%rsp), %rdx
-140001e77: 4c 8d 05 ee db 00 00        	leaq	0xdbee(%rip), %r8       # 0x14000fa6c
-140001e7e: 4c 8d 0d cf dd 00 00        	leaq	0xddcf(%rip), %r9       # 0x14000fc54
+140001e77: 4c 8d 05 66 dc 00 00        	leaq	0xdc66(%rip), %r8       # 0x14000fae4
+140001e7e: 4c 8d 0d 56 de 00 00        	leaq	0xde56(%rip), %r9       # 0x14000fcdb
 140001e85: e8 f6 36 00 00              	callq	0x140005580 <.text+0x4580>
 140001e8a: e9 cc fe ff ff              	jmp	0x140001d5b <.text+0xd5b>
 140001e8f: 48 8b 8c 24 80 00 00 00     	movq	0x80(%rsp), %rcx
 140001e97: 48 63 94 24 88 00 00 00     	movslq	0x88(%rsp), %rdx
-140001e9f: 4c 8d 05 e7 d2 00 00        	leaq	0xd2e7(%rip), %r8       # 0x14000f18d
-140001ea6: 4c 8d 0d 5d de 00 00        	leaq	0xde5d(%rip), %r9       # 0x14000fd0a
+140001e9f: 4c 8d 05 ec d2 00 00        	leaq	0xd2ec(%rip), %r8       # 0x14000f192
+140001ea6: 4c 8d 0d ee de 00 00        	leaq	0xdeee(%rip), %r9       # 0x14000fd9b
 140001ead: e8 ce 36 00 00              	callq	0x140005580 <.text+0x4580>
 140001eb2: e9 a4 fe ff ff              	jmp	0x140001d5b <.text+0xd5b>
 140001eb7: 48 8b 8c 24 80 00 00 00     	movq	0x80(%rsp), %rcx
 140001ebf: 48 63 94 24 88 00 00 00     	movslq	0x88(%rsp), %rdx
-140001ec7: 4c 8d 05 9e db 00 00        	leaq	0xdb9e(%rip), %r8       # 0x14000fa6c
-140001ece: 4c 8d 0d da dd 00 00        	leaq	0xddda(%rip), %r9       # 0x14000fcaf
+140001ec7: 4c 8d 05 16 dc 00 00        	leaq	0xdc16(%rip), %r8       # 0x14000fae4
+140001ece: 4c 8d 0d 66 de 00 00        	leaq	0xde66(%rip), %r9       # 0x14000fd3b
 140001ed5: e8 a6 36 00 00              	callq	0x140005580 <.text+0x4580>
 140001eda: e9 7c fe ff ff              	jmp	0x140001d5b <.text+0xd5b>
 140001edf: 49 c7 04 f7 00 00 00 00     	movq	$0x0, (%r15,%rsi,8)
 140001ee7: 48 8b 8c 24 80 00 00 00     	movq	0x80(%rsp), %rcx
 140001eef: 48 63 94 24 88 00 00 00     	movslq	0x88(%rsp), %rdx
-140001ef7: 4c 8d 05 8f d2 00 00        	leaq	0xd28f(%rip), %r8       # 0x14000f18d
-140001efe: 4c 8d 0d 60 de 00 00        	leaq	0xde60(%rip), %r9       # 0x14000fd65
+140001ef7: 4c 8d 05 94 d2 00 00        	leaq	0xd294(%rip), %r8       # 0x14000f192
+140001efe: 4c 8d 0d f6 de 00 00        	leaq	0xdef6(%rip), %r9       # 0x14000fdfb
 140001f05: e8 76 36 00 00              	callq	0x140005580 <.text+0x4580>
 140001f0a: e9 4c fe ff ff              	jmp	0x140001d5b <.text+0xd5b>
 140001f0f: 49 8b 04 f7                 	movq	(%r15,%rsi,8), %rax
 140001f13: 48 c7 00 00 00 00 00        	movq	$0x0, (%rax)
 140001f1a: 48 8b 8c 24 80 00 00 00     	movq	0x80(%rsp), %rcx
 140001f22: 48 63 94 24 88 00 00 00     	movslq	0x88(%rsp), %rdx
-140001f2a: 4c 8d 05 5c d2 00 00        	leaq	0xd25c(%rip), %r8       # 0x14000f18d
-140001f31: 4c 8d 0d 88 de 00 00        	leaq	0xde88(%rip), %r9       # 0x14000fdc0
+140001f2a: 4c 8d 05 61 d2 00 00        	leaq	0xd261(%rip), %r8       # 0x14000f192
+140001f31: 4c 8d 0d 23 df 00 00        	leaq	0xdf23(%rip), %r9       # 0x14000fe5b
 140001f38: e8 43 36 00 00              	callq	0x140005580 <.text+0x4580>
 140001f3d: e9 19 fe ff ff              	jmp	0x140001d5b <.text+0xd5b>
-140001f42: 48 8d 3d f6 dc 00 00        	leaq	0xdcf6(%rip), %rdi      # 0x14000fc3f
+140001f42: 48 8d 3d 7d dd 00 00        	leaq	0xdd7d(%rip), %rdi      # 0x14000fcc6
 140001f49: e9 e9 fd ff ff              	jmp	0x140001d37 <.text+0xd37>
 140001f4e: 44 8b 8c 24 94 00 00 00     	movl	0x94(%rsp), %r9d
 140001f56: 48 8b 8c 24 80 00 00 00     	movq	0x80(%rsp), %rcx
 140001f5e: 48 63 94 24 88 00 00 00     	movslq	0x88(%rsp), %rdx
-140001f66: 48 8d 05 9f db 00 00        	leaq	0xdb9f(%rip), %rax      # 0x14000fb0c
+140001f66: 48 8d 05 1c dc 00 00        	leaq	0xdc1c(%rip), %rax      # 0x14000fb89
 140001f6d: e9 c5 fe ff ff              	jmp	0x140001e37 <.text+0xe37>
 140001f72: 44 8b 8c 24 94 00 00 00     	movl	0x94(%rsp), %r9d
 140001f7a: 48 8b 8c 24 80 00 00 00     	movq	0x80(%rsp), %rcx
 140001f82: 48 63 94 24 88 00 00 00     	movslq	0x88(%rsp), %rdx
-140001f8a: 48 8d 05 85 db 00 00        	leaq	0xdb85(%rip), %rax      # 0x14000fb16
+140001f8a: 48 8d 05 02 dc 00 00        	leaq	0xdc02(%rip), %rax      # 0x14000fb93
 140001f91: e9 a1 fe ff ff              	jmp	0x140001e37 <.text+0xe37>
 140001f96: 44 8b 8c 24 94 00 00 00     	movl	0x94(%rsp), %r9d
 140001f9e: 48 8b 8c 24 80 00 00 00     	movq	0x80(%rsp), %rcx
 140001fa6: 48 63 94 24 88 00 00 00     	movslq	0x88(%rsp), %rdx
-140001fae: 48 8d 05 22 dc 00 00        	leaq	0xdc22(%rip), %rax      # 0x14000fbd7
+140001fae: 48 8d 05 a9 dc 00 00        	leaq	0xdca9(%rip), %rax      # 0x14000fc5e
 140001fb5: e9 7d fe ff ff              	jmp	0x140001e37 <.text+0xe37>
 140001fba: 48 8b 8c 24 80 00 00 00     	movq	0x80(%rsp), %rcx
 140001fc2: 48 63 94 24 88 00 00 00     	movslq	0x88(%rsp), %rdx
-140001fca: 48 8d 05 c8 da 00 00        	leaq	0xdac8(%rip), %rax      # 0x14000fa99
+140001fca: 48 8d 05 40 db 00 00        	leaq	0xdb40(%rip), %rax      # 0x14000fb11
 140001fd1: 48 89 44 24 20              	movq	%rax, 0x20(%rsp)
 140001fd6: e9 71 fd ff ff              	jmp	0x140001d4c <.text+0xd4c>
 140001fdb: 48 8b 8c 24 80 00 00 00     	movq	0x80(%rsp), %rcx
 140001fe3: 48 63 94 24 88 00 00 00     	movslq	0x88(%rsp), %rdx
-140001feb: 4c 8d 05 9b d1 00 00        	leaq	0xd19b(%rip), %r8       # 0x14000f18d
-140001ff2: 4c 8d 0d b8 da 00 00        	leaq	0xdab8(%rip), %r9       # 0x14000fab1
+140001feb: 4c 8d 05 a0 d1 00 00        	leaq	0xd1a0(%rip), %r8       # 0x14000f192
+140001ff2: 4c 8d 0d 30 db 00 00        	leaq	0xdb30(%rip), %r9       # 0x14000fb29
 140001ff9: e8 82 35 00 00              	callq	0x140005580 <.text+0x4580>
 140001ffe: e9 58 fd ff ff              	jmp	0x140001d5b <.text+0xd5b>
-140002003: 48 8d 0d 76 da 00 00        	leaq	0xda76(%rip), %rcx      # 0x14000fa80
-14000200a: 48 8d 15 38 d2 00 00        	leaq	0xd238(%rip), %rdx      # 0x14000f249
+140002003: 48 8d 0d ee da 00 00        	leaq	0xdaee(%rip), %rcx      # 0x14000faf8
+14000200a: 48 8d 15 42 d2 00 00        	leaq	0xd242(%rip), %rdx      # 0x14000f253
 140002011: 41 b8 2c 05 00 00           	movl	$0x52c, %r8d            # imm = 0x52C
 140002017: e8 54 36 00 00              	callq	0x140005670 <.text+0x4670>
 14000201c: cc                          	int3
@@ -962,7 +962,7 @@ Disassembly of section .text:
 14000210a: 48 8b 4f 08                 	movq	0x8(%rdi), %rcx
 14000210e: 48 39 cb                    	cmpq	%rcx, %rbx
 140002111: 73 7d                       	jae	0x140002190 <.text+0x1190>
-140002113: 4c 8d 05 ba de 00 00        	leaq	0xdeba(%rip), %r8       # 0x14000ffd4
+140002113: 4c 8d 05 5a df 00 00        	leaq	0xdf5a(%rip), %r8       # 0x140010074
 14000211a: eb 0c                       	jmp	0x140002128 <.text+0x1128>
 14000211c: 0f 1f 40 00                 	nopl	(%rax)
 140002120: 48 ff c3                    	incq	%rbx
@@ -1010,7 +1010,7 @@ Disassembly of section .text:
 1400021d3: 80 7b 02 27                 	cmpb	$0x27, 0x2(%rbx)
 1400021d7: 0f 85 60 02 00 00           	jne	0x14000243d <.text+0x143d>
 1400021dd: 48 8d 4b 03                 	leaq	0x3(%rbx), %rcx
-1400021e1: 48 8d 15 33 dc 00 00        	leaq	0xdc33(%rip), %rdx      # 0x14000fe1b
+1400021e1: 48 8d 15 d3 dc 00 00        	leaq	0xdcd3(%rip), %rdx      # 0x14000febb
 1400021e8: e8 d3 bc 00 00              	callq	0x14000dec0 <.text+0xcec0>
 1400021ed: 48 85 c0                    	testq	%rax, %rax
 1400021f0: 0f 84 b1 03 00 00           	je	0x1400025a7 <.text+0x15a7>
@@ -1035,12 +1035,12 @@ Disassembly of section .text:
 14000223a: 80 7b 02 22                 	cmpb	$0x22, 0x2(%rbx)
 14000223e: 0f 85 39 02 00 00           	jne	0x14000247d <.text+0x147d>
 140002244: 4c 8d 73 03                 	leaq	0x3(%rbx), %r14
-140002248: 48 8d 15 ec db 00 00        	leaq	0xdbec(%rip), %rdx      # 0x14000fe3b
+140002248: 48 8d 15 8c dc 00 00        	leaq	0xdc8c(%rip), %rdx      # 0x14000fedb
 14000224f: 4c 89 f1                    	movq	%r14, %rcx
 140002252: e8 69 bc 00 00              	callq	0x14000dec0 <.text+0xcec0>
 140002257: 48 85 c0                    	testq	%rax, %rax
 14000225a: 74 24                       	je	0x140002280 <.text+0x1280>
-14000225c: 4c 8d 3d d8 db 00 00        	leaq	0xdbd8(%rip), %r15      # 0x14000fe3b
+14000225c: 4c 8d 3d 78 dc 00 00        	leaq	0xdc78(%rip), %r15      # 0x14000fedb
 140002263: 80 78 ff 5c                 	cmpb	$0x5c, -0x1(%rax)
 140002267: 0f 85 4b 03 00 00           	jne	0x1400025b8 <.text+0x15b8>
 14000226d: 48 ff c0                    	incq	%rax
@@ -1051,7 +1051,7 @@ Disassembly of section .text:
 14000227e: 75 e3                       	jne	0x140002263 <.text+0x1263>
 140002280: 48 8b 4f 10                 	movq	0x10(%rdi), %rcx
 140002284: 48 63 57 18                 	movslq	0x18(%rdi), %rdx
-140002288: 48 8d 05 b0 db 00 00        	leaq	0xdbb0(%rip), %rax      # 0x14000fe3f
+140002288: 48 8d 05 50 dc 00 00        	leaq	0xdc50(%rip), %rax      # 0x14000fedf
 14000228f: e9 d8 02 00 00              	jmp	0x14000256c <.text+0x156c>
 140002294: c7 47 20 05 00 00 00        	movl	$0x5, 0x20(%rdi)
 14000229b: eb 22                       	jmp	0x1400022bf <.text+0x12bf>
@@ -1132,7 +1132,7 @@ Disassembly of section .text:
 140002397: 83 c1 d0                    	addl	$-0x30, %ecx
 14000239a: 83 f9 09                    	cmpl	$0x9, %ecx
 14000239d: 77 28                       	ja	0x1400023c7 <.text+0x13c7>
-14000239f: 48 8d 15 68 db 00 00        	leaq	0xdb68(%rip), %rdx      # 0x14000ff0e
+14000239f: 48 8d 15 08 dc 00 00        	leaq	0xdc08(%rip), %rdx      # 0x14000ffae
 1400023a6: 48 89 d9                    	movq	%rbx, %rcx
 1400023a9: e8 02 bb 00 00              	callq	0x14000deb0 <.text+0xceb0>
 1400023ae: 8d 48 01                    	leal	0x1(%rax), %ecx
@@ -1144,7 +1144,7 @@ Disassembly of section .text:
 1400023c0: 74 f5                       	je	0x1400023b7 <.text+0x13b7>
 1400023c2: e9 45 fe ff ff              	jmp	0x14000220c <.text+0x120c>
 1400023c7: 45 31 ff                    	xorl	%r15d, %r15d
-1400023ca: 4c 8d 35 51 db 00 00        	leaq	0xdb51(%rip), %r14      # 0x14000ff22
+1400023ca: 4c 8d 35 f1 db 00 00        	leaq	0xdbf1(%rip), %r14      # 0x14000ffc2
 1400023d1: eb 16                       	jmp	0x1400023e9 <.text+0x13e9>
 1400023d3: 66 66 66 66 2e 0f 1f 84 00 00 00 00 00      	nopw	%cs:(%rax,%rax)
 1400023e0: 42 0f b6 44 3b 01           	movzbl	0x1(%rbx,%r15), %eax
@@ -1189,12 +1189,12 @@ Disassembly of section .text:
 140002467: 75 e7                       	jne	0x140002450 <.text+0x1450>
 140002469: 48 8b 4f 10                 	movq	0x10(%rdi), %rcx
 14000246d: 48 63 57 18                 	movslq	0x18(%rdi), %rdx
-140002471: 48 8d 05 4d da 00 00        	leaq	0xda4d(%rip), %rax      # 0x14000fec5
+140002471: 48 8d 05 ed da 00 00        	leaq	0xdaed(%rip), %rax      # 0x14000ff65
 140002478: e9 ef 00 00 00              	jmp	0x14000256c <.text+0x156c>
 14000247d: 31 c9                       	xorl	%ecx, %ecx
 14000247f: 41 bc 02 00 00 00           	movl	$0x2, %r12d
-140002485: 4c 8d 35 eb d9 00 00        	leaq	0xd9eb(%rip), %r14      # 0x14000fe77
-14000248c: 4c 8d 3d c8 d9 00 00        	leaq	0xd9c8(%rip), %r15      # 0x14000fe5b
+140002485: 4c 8d 35 8b da 00 00        	leaq	0xda8b(%rip), %r14      # 0x14000ff17
+14000248c: 4c 8d 3d 68 da 00 00        	leaq	0xda68(%rip), %r15      # 0x14000fefb
 140002493: 31 ed                       	xorl	%ebp, %ebp
 140002495: eb 2a                       	jmp	0x1400024c1 <.text+0x14c1>
 140002497: 41 0f be d5                 	movsbl	%r13b, %edx
@@ -1255,9 +1255,9 @@ Disassembly of section .text:
 140002558: e9 53 ff ff ff              	jmp	0x1400024b0 <.text+0x14b0>
 14000255d: 48 8b 4f 10                 	movq	0x10(%rdi), %rcx
 140002561: 48 63 57 18                 	movslq	0x18(%rdi), %rdx
-140002565: 48 8d 05 8f d9 00 00        	leaq	0xd98f(%rip), %rax      # 0x14000fefb
+140002565: 48 8d 05 2f da 00 00        	leaq	0xda2f(%rip), %rax      # 0x14000ff9b
 14000256c: 48 89 44 24 20              	movq	%rax, 0x20(%rsp)
-140002571: 4c 8d 05 82 cd 00 00        	leaq	0xcd82(%rip), %r8       # 0x14000f2fa
+140002571: 4c 8d 05 96 cd 00 00        	leaq	0xcd96(%rip), %r8       # 0x14000f30e
 140002578: 41 89 f1                    	movl	%esi, %r9d
 14000257b: e8 00 30 00 00              	callq	0x140005580 <.text+0x4580>
 140002580: b8 ff ff ff ff              	movl	$0xffffffff, %eax       # imm = 0xFFFFFFFF
@@ -1270,7 +1270,7 @@ Disassembly of section .text:
 1400025a2: e9 27 fd ff ff              	jmp	0x1400022ce <.text+0x12ce>
 1400025a7: 48 8b 4f 10                 	movq	0x10(%rdi), %rcx
 1400025ab: 48 63 57 18                 	movslq	0x18(%rdi), %rdx
-1400025af: 48 8d 05 69 d8 00 00        	leaq	0xd869(%rip), %rax      # 0x14000fe1f
+1400025af: 48 8d 05 09 d9 00 00        	leaq	0xd909(%rip), %rax      # 0x14000febf
 1400025b6: eb b4                       	jmp	0x14000256c <.text+0x156c>
 1400025b8: 41 89 c5                    	movl	%eax, %r13d
 1400025bb: 41 29 dd                    	subl	%ebx, %r13d
@@ -1299,7 +1299,7 @@ Disassembly of section .text:
 14000260a: 74 dc                       	je	0x1400025e8 <.text+0x15e8>
 14000260c: 41 0f be 16                 	movsbl	(%r14), %edx
 140002610: 41 b8 11 00 00 00           	movl	$0x11, %r8d
-140002616: 48 8d 0d 5a d8 00 00        	leaq	0xd85a(%rip), %rcx      # 0x14000fe77
+140002616: 48 8d 0d fa d8 00 00        	leaq	0xd8fa(%rip), %rcx      # 0x14000ff17
 14000261d: e8 0e b8 00 00              	callq	0x14000de30 <.text+0xce30>
 140002622: 48 85 c0                    	testq	%rax, %rax
 140002625: 0f 84 93 00 00 00           	je	0x1400026be <.text+0x16be>
@@ -1309,7 +1309,7 @@ Disassembly of section .text:
 140002636: eb be                       	jmp	0x1400025f6 <.text+0x15f6>
 140002638: 41 0f be 2e                 	movsbl	(%r14), %ebp
 14000263c: 41 b8 08 00 00 00           	movl	$0x8, %r8d
-140002642: 48 8d 0d 12 d8 00 00        	leaq	0xd812(%rip), %rcx      # 0x14000fe5b
+140002642: 48 8d 0d b2 d8 00 00        	leaq	0xd8b2(%rip), %rcx      # 0x14000fefb
 140002649: 89 ea                       	movl	%ebp, %edx
 14000264b: e8 e0 b7 00 00              	callq	0x14000de30 <.text+0xce30>
 140002650: 45 31 e4                    	xorl	%r12d, %r12d
@@ -1328,7 +1328,7 @@ Disassembly of section .text:
 14000267d: 41 bf 04 00 00 00           	movl	$0x4, %r15d
 140002683: e9 6e ff ff ff              	jmp	0x1400025f6 <.text+0x15f6>
 140002688: 4c 89 f1                    	movq	%r14, %rcx
-14000268b: 48 8d 15 d1 d7 00 00        	leaq	0xd7d1(%rip), %rdx      # 0x14000fe63
+14000268b: 48 8d 15 71 d8 00 00        	leaq	0xd871(%rip), %rdx      # 0x14000ff03
 140002692: e8 19 b8 00 00              	callq	0x14000deb0 <.text+0xceb0>
 140002697: 48 89 c1                    	movq	%rax, %rcx
 14000269a: 48 8b 44 24 30              	movq	0x30(%rsp), %rax
@@ -1336,11 +1336,11 @@ Disassembly of section .text:
 1400026a4: 0f 84 4c ff ff ff           	je	0x1400025f6 <.text+0x15f6>
 1400026aa: 48 8b 4f 10                 	movq	0x10(%rdi), %rcx
 1400026ae: 48 63 57 18                 	movslq	0x18(%rdi), %rdx
-1400026b2: 48 8d 05 ae d7 00 00        	leaq	0xd7ae(%rip), %rax      # 0x14000fe67
+1400026b2: 48 8d 05 4e d8 00 00        	leaq	0xd84e(%rip), %rax      # 0x14000ff07
 1400026b9: e9 ae fe ff ff              	jmp	0x14000256c <.text+0x156c>
 1400026be: 48 8b 4f 10                 	movq	0x10(%rdi), %rcx
 1400026c2: 48 63 57 18                 	movslq	0x18(%rdi), %rdx
-1400026c6: 48 8d 05 bb d7 00 00        	leaq	0xd7bb(%rip), %rax      # 0x14000fe88
+1400026c6: 48 8d 05 5b d8 00 00        	leaq	0xd85b(%rip), %rax      # 0x14000ff28
 1400026cd: e9 9a fe ff ff              	jmp	0x14000256c <.text+0x156c>
 1400026d2: c7 47 20 09 00 00 00        	movl	$0x9, 0x20(%rdi)
 1400026d9: 89 77 24                    	movl	%esi, 0x24(%rdi)
@@ -1351,17 +1351,17 @@ Disassembly of section .text:
 1400026ec: 74 28                       	je	0x140002716 <.text+0x1716>
 1400026ee: 48 8b 4f 10                 	movq	0x10(%rdi), %rcx
 1400026f2: 48 63 57 18                 	movslq	0x18(%rdi), %rdx
-1400026f6: 48 8d 05 9b d7 00 00        	leaq	0xd79b(%rip), %rax      # 0x14000fe98
+1400026f6: 48 8d 05 3b d8 00 00        	leaq	0xd83b(%rip), %rax      # 0x14000ff38
 1400026fd: e9 6a fe ff ff              	jmp	0x14000256c <.text+0x156c>
 140002702: 48 8b 4f 10                 	movq	0x10(%rdi), %rcx
 140002706: 48 63 57 18                 	movslq	0x18(%rdi), %rdx
-14000270a: 48 8d 05 c9 d7 00 00        	leaq	0xd7c9(%rip), %rax      # 0x14000feda
+14000270a: 48 8d 05 69 d8 00 00        	leaq	0xd869(%rip), %rax      # 0x14000ff7a
 140002711: e9 56 fe ff ff              	jmp	0x14000256c <.text+0x156c>
 140002716: 45 85 ff                    	testl	%r15d, %r15d
 140002719: 74 14                       	je	0x14000272f <.text+0x172f>
 14000271b: 48 8b 4f 10                 	movq	0x10(%rdi), %rcx
 14000271f: 48 63 57 18                 	movslq	0x18(%rdi), %rdx
-140002723: 48 8d 05 84 d7 00 00        	leaq	0xd784(%rip), %rax      # 0x14000feae
+140002723: 48 8d 05 24 d8 00 00        	leaq	0xd824(%rip), %rax      # 0x14000ff4e
 14000272a: e9 3d fe ff ff              	jmp	0x14000256c <.text+0x156c>
 14000272f: c7 47 20 09 00 00 00        	movl	$0x9, 0x20(%rdi)
 140002736: 89 77 24                    	movl	%esi, 0x24(%rdi)
@@ -1391,9 +1391,9 @@ Disassembly of section .text:
 140002765: 44 8b 49 24                 	movl	0x24(%rcx), %r9d
 140002769: 48 8b 41 10                 	movq	0x10(%rcx), %rax
 14000276d: 48 63 51 18                 	movslq	0x18(%rcx), %rdx
-140002771: 48 8d 0d 2f ca 00 00        	leaq	0xca2f(%rip), %rcx      # 0x14000f1a7
+140002771: 48 8d 0d 34 ca 00 00        	leaq	0xca34(%rip), %rcx      # 0x14000f1ac
 140002778: 48 89 4c 24 20              	movq	%rcx, 0x20(%rsp)
-14000277d: 4c 8d 05 76 cb 00 00        	leaq	0xcb76(%rip), %r8       # 0x14000f2fa
+14000277d: 4c 8d 05 8a cb 00 00        	leaq	0xcb8a(%rip), %r8       # 0x14000f30e
 140002784: 48 89 c1                    	movq	%rax, %rcx
 140002787: e8 f4 2d 00 00              	callq	0x140005580 <.text+0x4580>
 14000278c: e9 df 00 00 00              	jmp	0x140002870 <.text+0x1870>
@@ -1450,8 +1450,8 @@ Disassembly of section .text:
 140002850: eb 1e                       	jmp	0x140002870 <.text+0x1870>
 140002852: 48 8b 41 10                 	movq	0x10(%rcx), %rax
 140002856: 48 63 51 18                 	movslq	0x18(%rcx), %rdx
-14000285a: 4c 8d 05 0b d2 00 00        	leaq	0xd20b(%rip), %r8       # 0x14000fa6c
-140002861: 4c 8d 0d 6b c9 00 00        	leaq	0xc96b(%rip), %r9       # 0x14000f1d3
+14000285a: 4c 8d 05 83 d2 00 00        	leaq	0xd283(%rip), %r8       # 0x14000fae4
+140002861: 4c 8d 0d 70 c9 00 00        	leaq	0xc970(%rip), %r9       # 0x14000f1d8
 140002868: 48 89 c1                    	movq	%rax, %rcx
 14000286b: e8 10 2d 00 00              	callq	0x140005580 <.text+0x4580>
 140002870: b8 ff ff ff ff              	movl	$0xffffffff, %eax       # imm = 0xFFFFFFFF
@@ -1509,9 +1509,9 @@ Disassembly of section .text:
 140002928: 44 8b 48 24                 	movl	0x24(%rax), %r9d
 14000292c: 48 8b 48 10                 	movq	0x10(%rax), %rcx
 140002930: 48 63 50 18                 	movslq	0x18(%rax), %rdx
-140002934: 48 8d 05 f3 c8 00 00        	leaq	0xc8f3(%rip), %rax      # 0x14000f22e
+140002934: 48 8d 05 fd c8 00 00        	leaq	0xc8fd(%rip), %rax      # 0x14000f238
 14000293b: 48 89 44 24 20              	movq	%rax, 0x20(%rsp)
-140002940: 4c 8d 05 b3 c9 00 00        	leaq	0xc9b3(%rip), %r8       # 0x14000f2fa
+140002940: 4c 8d 05 c7 c9 00 00        	leaq	0xc9c7(%rip), %r8       # 0x14000f30e
 140002947: e8 34 2c 00 00              	callq	0x140005580 <.text+0x4580>
 14000294c: e9 1f ff ff ff              	jmp	0x140002870 <.text+0x1870>
 140002951: 48 89 d9                    	movq	%rbx, %rcx
@@ -1559,16 +1559,16 @@ Disassembly of section .text:
 1400029ed: 44 8b 48 24                 	movl	0x24(%rax), %r9d
 1400029f1: 48 8b 48 10                 	movq	0x10(%rax), %rcx
 1400029f5: 48 63 50 18                 	movslq	0x18(%rax), %rdx
-1400029f9: 48 8d 05 63 c7 00 00        	leaq	0xc763(%rip), %rax      # 0x14000f163
+1400029f9: 48 8d 05 68 c7 00 00        	leaq	0xc768(%rip), %rax      # 0x14000f168
 140002a00: e9 36 ff ff ff              	jmp	0x14000293b <.text+0x193b>
 140002a05: 48 c7 47 08 00 00 00 00     	movq	$0x0, 0x8(%rdi)
 140002a0d: 48 8b 4e 10                 	movq	0x10(%rsi), %rcx
 140002a11: 48 63 56 18                 	movslq	0x18(%rsi), %rdx
-140002a15: 4c 8d 05 71 c7 00 00        	leaq	0xc771(%rip), %r8       # 0x14000f18d
-140002a1c: 4c 8d 0d 7c c8 00 00        	leaq	0xc87c(%rip), %r9       # 0x14000f29f
+140002a15: 4c 8d 05 76 c7 00 00        	leaq	0xc776(%rip), %r8       # 0x14000f192
+140002a1c: 4c 8d 0d 8b c8 00 00        	leaq	0xc88b(%rip), %r9       # 0x14000f2ae
 140002a23: e9 43 fe ff ff              	jmp	0x14000286b <.text+0x186b>
-140002a28: 48 8d 0d 09 c8 00 00        	leaq	0xc809(%rip), %rcx      # 0x14000f238
-140002a2f: 48 8d 15 13 c8 00 00        	leaq	0xc813(%rip), %rdx      # 0x14000f249
+140002a28: 48 8d 0d 13 c8 00 00        	leaq	0xc813(%rip), %rcx      # 0x14000f242
+140002a2f: 48 8d 15 1d c8 00 00        	leaq	0xc81d(%rip), %rdx      # 0x14000f253
 140002a36: 41 b8 85 04 00 00           	movl	$0x485, %r8d            # imm = 0x485
 140002a3c: e8 2f 2c 00 00              	callq	0x140005670 <.text+0x4670>
 140002a41: cc                          	int3
@@ -1599,7 +1599,7 @@ Disassembly of section .text:
 140002a6d: c3                          	retq
 140002a6e: 48 8b 41 10                 	movq	0x10(%rcx), %rax
 140002a72: 48 63 51 18                 	movslq	0x18(%rcx), %rdx
-140002a76: 4c 8d 05 ef cf 00 00        	leaq	0xcfef(%rip), %r8       # 0x14000fa6c
+140002a76: 4c 8d 05 67 d0 00 00        	leaq	0xd067(%rip), %r8       # 0x14000fae4
 140002a7d: 48 89 c1                    	movq	%rax, %rcx
 140002a80: e8 fb 2a 00 00              	callq	0x140005580 <.text+0x4580>
 140002a85: b8 ff ff ff ff              	movl	$0xffffffff, %eax       # imm = 0xFFFFFFFF
@@ -2148,7 +2148,7 @@ Disassembly of section .text:
 140003141: 75 4b                       	jne	0x14000318e <.text+0x218e>
 140003143: 41 c6 01 00                 	movb	$0x0, (%r9)
 140003147: 48 89 d7                    	movq	%rdx, %rdi
-14000314a: ff 15 38 e1 00 00           	callq	*0xe138(%rip)           # 0x140011288
+14000314a: ff 15 d8 e1 00 00           	callq	*0xe1d8(%rip)           # 0x140011328
 140003150: c7 00 00 00 00 00           	movl	$0x0, (%rax)
 140003156: 48 8d 4c 24 30              	leaq	0x30(%rsp), %rcx
 14000315b: 48 8d 54 24 28              	leaq	0x28(%rsp), %rdx
@@ -2157,7 +2157,7 @@ Disassembly of section .text:
 140003168: 48 85 ff                    	testq	%rdi, %rdi
 14000316b: 74 03                       	je	0x140003170 <.text+0x2170>
 14000316d: 48 89 07                    	movq	%rax, (%rdi)
-140003170: ff 15 12 e1 00 00           	callq	*0xe112(%rip)           # 0x140011288
+140003170: ff 15 b2 e1 00 00           	callq	*0xe1b2(%rip)           # 0x140011328
 140003176: 48 89 c1                    	movq	%rax, %rcx
 140003179: b8 ff ff ff ff              	movl	$0xffffffff, %eax       # imm = 0xFFFFFFFF
 14000317e: 83 39 00                    	cmpl	$0x0, (%rcx)
@@ -2230,7 +2230,7 @@ Disassembly of section .text:
 140003245: 41 0f be 50 01              	movsbl	0x1(%r8), %edx
 14000324a: 85 d2                       	testl	%edx, %edx
 14000324c: 74 29                       	je	0x140003277 <.text+0x2277>
-14000324e: 48 8d 0d 34 bf 00 00        	leaq	0xbf34(%rip), %rcx      # 0x14000f189
+14000324e: 48 8d 0d 39 bf 00 00        	leaq	0xbf39(%rip), %rcx      # 0x14000f18e
 140003255: 41 b8 04 00 00 00           	movl	$0x4, %r8d
 14000325b: e8 d0 ab 00 00              	callq	0x14000de30 <.text+0xce30>
 140003260: 45 89 f9                    	movl	%r15d, %r9d
@@ -2273,7 +2273,7 @@ Disassembly of section .text:
 1400032e0: 08 d1                       	orb	%dl, %cl
 1400032e2: 75 44                       	jne	0x140003328 <.text+0x2328>
 1400032e4: c6 03 00                    	movb	$0x0, (%rbx)
-1400032e7: ff 15 9b df 00 00           	callq	*0xdf9b(%rip)           # 0x140011288
+1400032e7: ff 15 3b e0 00 00           	callq	*0xe03b(%rip)           # 0x140011328
 1400032ed: c7 00 00 00 00 00           	movl	$0x0, (%rax)
 1400032f3: 48 8d 54 24 20              	leaq	0x20(%rsp), %rdx
 1400032f8: 48 89 f1                    	movq	%rsi, %rcx
@@ -2281,7 +2281,7 @@ Disassembly of section .text:
 140003300: 4d 85 f6                    	testq	%r14, %r14
 140003303: 74 05                       	je	0x14000330a <.text+0x230a>
 140003305: f2 41 0f 11 06              	movsd	%xmm0, (%r14)
-14000330a: ff 15 78 df 00 00           	callq	*0xdf78(%rip)           # 0x140011288
+14000330a: ff 15 18 e0 00 00           	callq	*0xe018(%rip)           # 0x140011328
 140003310: 48 89 c1                    	movq	%rax, %rcx
 140003313: b8 ff ff ff ff              	movl	$0xffffffff, %eax       # imm = 0xFFFFFFFF
 140003318: 83 39 00                    	cmpl	$0x0, (%rcx)
@@ -2430,7 +2430,7 @@ Disassembly of section .text:
 1400034e5: 74 09                       	je	0x1400034f0 <.text+0x24f0>
 1400034e7: 48 89 d9                    	movq	%rbx, %rcx
 1400034ea: ff 15 18 fb 00 00           	callq	*0xfb18(%rip)           # 0x140013008
-1400034f0: 4c 8d 05 3a ca 00 00        	leaq	0xca3a(%rip), %r8       # 0x14000ff31
+1400034f0: 4c 8d 05 da ca 00 00        	leaq	0xcada(%rip), %r8       # 0x14000ffd1
 1400034f7: 31 db                       	xorl	%ebx, %ebx
 1400034f9: 31 c9                       	xorl	%ecx, %ecx
 1400034fb: 31 d2                       	xorl	%edx, %edx
@@ -2450,7 +2450,7 @@ Disassembly of section .text:
 14000352b: 74 09                       	je	0x140003536 <.text+0x2536>
 14000352d: 4c 89 f1                    	movq	%r14, %rcx
 140003530: ff 15 d2 fa 00 00           	callq	*0xfad2(%rip)           # 0x140013008
-140003536: 4c 8d 05 33 bc 00 00        	leaq	0xbc33(%rip), %r8       # 0x14000f170
+140003536: 4c 8d 05 38 bc 00 00        	leaq	0xbc38(%rip), %r8       # 0x14000f175
 14000353d: 31 db                       	xorl	%ebx, %ebx
 14000353f: 31 c9                       	xorl	%ecx, %ecx
 140003541: 31 d2                       	xorl	%edx, %edx
@@ -2533,12 +2533,12 @@ Disassembly of section .text:
 140003639: 83 7c 24 34 00              	cmpl	$0x0, 0x34(%rsp)
 14000363e: 74 77                       	je	0x1400036b7 <.text+0x26b7>
 140003640: 48 89 e9                    	movq	%rbp, %rcx
-140003643: 48 8d 15 19 c8 00 00        	leaq	0xc819(%rip), %rdx      # 0x14000fe63
+140003643: 48 8d 15 b9 c8 00 00        	leaq	0xc8b9(%rip), %rdx      # 0x14000ff03
 14000364a: e8 61 a8 00 00              	callq	0x14000deb0 <.text+0xceb0>
 14000364f: 80 7c 05 00 0a              	cmpb	$0xa, (%rbp,%rax)
 140003654: 75 5e                       	jne	0x1400036b4 <.text+0x26b4>
 140003656: 48 89 e9                    	movq	%rbp, %rcx
-140003659: 48 8d 15 ff c8 00 00        	leaq	0xc8ff(%rip), %rdx      # 0x14000ff5f
+140003659: 48 8d 15 9f c9 00 00        	leaq	0xc99f(%rip), %rdx      # 0x14000ffff
 140003660: e8 4b a8 00 00              	callq	0x14000deb0 <.text+0xceb0>
 140003665: 49 89 c5                    	movq	%rax, %r13
 140003668: 49 01 ed                    	addq	%rbp, %r13
@@ -2571,7 +2571,7 @@ Disassembly of section .text:
 1400036c5: 83 f9 53                    	cmpl	$0x53, %ecx
 1400036c8: 0f 87 a5 01 00 00           	ja	0x140003873 <.text+0x2873>
 1400036ce: 49 83 c4 02                 	addq	$0x2, %r12
-1400036d2: 48 8d 15 cf ca 00 00        	leaq	0xcacf(%rip), %rdx      # 0x1400101a8
+1400036d2: 48 8d 15 6f cb 00 00        	leaq	0xcb6f(%rip), %rdx      # 0x140010248
 1400036d9: 48 63 0c 8a                 	movslq	(%rdx,%rcx,4), %rcx
 1400036dd: 48 01 d1                    	addq	%rdx, %rcx
 1400036e0: ff e1                       	jmpq	*%rcx
@@ -2634,7 +2634,7 @@ Disassembly of section .text:
 1400037a1: c6 04 06 00                 	movb	$0x0, (%rsi,%rax)
 1400037a5: e9 b5 00 00 00              	jmp	0x14000385f <.text+0x285f>
 1400037aa: 8b 94 24 a0 00 00 00        	movl	0xa0(%rsp), %edx
-1400037b1: 4c 8d 05 8d c7 00 00        	leaq	0xc78d(%rip), %r8       # 0x14000ff45
+1400037b1: 4c 8d 05 2d c8 00 00        	leaq	0xc82d(%rip), %r8       # 0x14000ffe5
 1400037b8: 48 8b 4c 24 28              	movq	0x28(%rsp), %rcx
 1400037bd: e8 be 1d 00 00              	callq	0x140005580 <.text+0x4580>
 1400037c2: 48 85 f6                    	testq	%rsi, %rsi
@@ -2647,27 +2647,27 @@ Disassembly of section .text:
 1400037de: 48 89 f9                    	movq	%rdi, %rcx
 1400037e1: ff 15 21 f8 00 00           	callq	*0xf821(%rip)           # 0x140013008
 1400037e7: 8b 94 24 a0 00 00 00        	movl	0xa0(%rsp), %edx
-1400037ee: 4c 8d 05 7b b9 00 00        	leaq	0xb97b(%rip), %r8       # 0x14000f170
+1400037ee: 4c 8d 05 80 b9 00 00        	leaq	0xb980(%rip), %r8       # 0x14000f175
 1400037f5: 48 8b 4c 24 28              	movq	0x28(%rsp), %rcx
 1400037fa: e8 81 1d 00 00              	callq	0x140005580 <.text+0x4580>
 1400037ff: eb 5c                       	jmp	0x14000385d <.text+0x285d>
 140003801: 8b 94 24 a0 00 00 00        	movl	0xa0(%rsp), %edx
 140003808: 89 44 24 20                 	movl	%eax, 0x20(%rsp)
-14000380c: 4c 8d 05 51 c7 00 00        	leaq	0xc751(%rip), %r8       # 0x14000ff64
+14000380c: 4c 8d 05 f1 c7 00 00        	leaq	0xc7f1(%rip), %r8       # 0x140010004
 140003813: 48 8b 4c 24 28              	movq	0x28(%rsp), %rcx
 140003818: e8 63 1d 00 00              	callq	0x140005580 <.text+0x4580>
 14000381d: 48 85 f6                    	testq	%rsi, %rsi
 140003820: 75 a9                       	jne	0x1400037cb <.text+0x27cb>
 140003822: eb 39                       	jmp	0x14000385d <.text+0x285d>
 140003824: 8b 94 24 a0 00 00 00        	movl	0xa0(%rsp), %edx
-14000382b: 4c 8d 05 4b c7 00 00        	leaq	0xc74b(%rip), %r8       # 0x14000ff7d
+14000382b: 4c 8d 05 eb c7 00 00        	leaq	0xc7eb(%rip), %r8       # 0x14001001d
 140003832: eb 84                       	jmp	0x1400037b8 <.text+0x27b8>
 140003834: 48 85 f6                    	testq	%rsi, %rsi
 140003837: 74 09                       	je	0x140003842 <.text+0x2842>
 140003839: 48 89 f1                    	movq	%rsi, %rcx
 14000383c: ff 15 c6 f7 00 00           	callq	*0xf7c6(%rip)           # 0x140013008
 140003842: 8b 94 24 a0 00 00 00        	movl	0xa0(%rsp), %edx
-140003849: 4c 8d 05 e1 c6 00 00        	leaq	0xc6e1(%rip), %r8       # 0x14000ff31
+140003849: 4c 8d 05 81 c7 00 00        	leaq	0xc781(%rip), %r8       # 0x14000ffd1
 140003850: 48 8b 4c 24 28              	movq	0x28(%rsp), %rcx
 140003855: 41 89 f9                    	movl	%edi, %r9d
 140003858: e8 23 1d 00 00              	callq	0x140005580 <.text+0x4580>
@@ -2684,10 +2684,10 @@ Disassembly of section .text:
 140003870: 41 5f                       	popq	%r15
 140003872: c3                          	retq
 140003873: 8b 94 24 a0 00 00 00        	movl	0xa0(%rsp), %edx
-14000387a: 4c 8d 05 38 c7 00 00        	leaq	0xc738(%rip), %r8       # 0x14000ffb9
+14000387a: 4c 8d 05 d8 c7 00 00        	leaq	0xc7d8(%rip), %r8       # 0x140010059
 140003881: eb 90                       	jmp	0x140003813 <.text+0x2813>
 140003883: 8b 94 24 a0 00 00 00        	movl	0xa0(%rsp), %edx
-14000388a: 4c 8d 05 0b c7 00 00        	leaq	0xc70b(%rip), %r8       # 0x14000ff9c
+14000388a: 4c 8d 05 ab c7 00 00        	leaq	0xc7ab(%rip), %r8       # 0x14001003c
 140003891: e9 22 ff ff ff              	jmp	0x1400037b8 <.text+0x27b8>
 140003896: cc                          	int3
 140003897: cc                          	int3
@@ -2812,13 +2812,13 @@ Disassembly of section .text:
 1400039be: 49 8b 7c 24 08              	movq	0x8(%r12), %rdi
 1400039c3: 48 85 ff                    	testq	%rdi, %rdi
 1400039c6: 74 37                       	je	0x1400039ff <.text+0x29ff>
-1400039c8: 48 8d 15 af b7 00 00        	leaq	0xb7af(%rip), %rdx      # 0x14000f17e
+1400039c8: 48 8d 15 b4 b7 00 00        	leaq	0xb7b4(%rip), %rdx      # 0x14000f183
 1400039cf: 48 89 f9                    	movq	%rdi, %rcx
 1400039d2: e8 a9 a4 00 00              	callq	0x14000de80 <.text+0xce80>
 1400039d7: b9 01 00 00 00              	movl	$0x1, %ecx
 1400039dc: 85 c0                       	testl	%eax, %eax
 1400039de: 74 15                       	je	0x1400039f5 <.text+0x29f5>
-1400039e0: 48 8d 15 9c b7 00 00        	leaq	0xb79c(%rip), %rdx      # 0x14000f183
+1400039e0: 48 8d 15 a1 b7 00 00        	leaq	0xb7a1(%rip), %rdx      # 0x14000f188
 1400039e7: 48 89 f9                    	movq	%rdi, %rcx
 1400039ea: e8 91 a4 00 00              	callq	0x14000de80 <.text+0xce80>
 1400039ef: 31 c9                       	xorl	%ecx, %ecx
@@ -2967,12 +2967,12 @@ Disassembly of section .text:
 140003b84: ff 15 7e f4 00 00           	callq	*0xf47e(%rip)           # 0x140013008
 140003b8a: 48 8b 4e 10                 	movq	0x10(%rsi), %rcx
 140003b8e: 48 63 56 18                 	movslq	0x18(%rsi), %rdx
-140003b92: 4c 8d 05 21 b8 00 00        	leaq	0xb821(%rip), %r8       # 0x14000f3ba
+140003b92: 4c 8d 05 3f b8 00 00        	leaq	0xb83f(%rip), %r8       # 0x14000f3d8
 140003b99: e9 98 00 00 00              	jmp	0x140003c36 <.text+0x2c36>
 140003b9e: 85 db                       	testl	%ebx, %ebx
 140003ba0: 74 34                       	je	0x140003bd6 <.text+0x2bd6>
 140003ba2: 45 31 ff                    	xorl	%r15d, %r15d
-140003ba5: 4c 8b 25 3c d7 00 00        	movq	0xd73c(%rip), %r12      # 0x1400112e8
+140003ba5: 4c 8b 25 dc d7 00 00        	movq	0xd7dc(%rip), %r12      # 0x140011388
 140003bac: eb 0a                       	jmp	0x140003bb8 <.text+0x2bb8>
 140003bae: 66 90                       	nop
 140003bb0: 49 ff c7                    	incq	%r15
@@ -3006,20 +3006,20 @@ Disassembly of section .text:
 140003c08: eb 53                       	jmp	0x140003c5d <.text+0x2c5d>
 140003c0a: 48 8b 4e 10                 	movq	0x10(%rsi), %rcx
 140003c0e: 48 63 56 18                 	movslq	0x18(%rsi), %rdx
-140003c12: 4c 8d 05 74 b5 00 00        	leaq	0xb574(%rip), %r8       # 0x14000f18d
-140003c19: 4c 8d 0d e6 b6 00 00        	leaq	0xb6e6(%rip), %r9       # 0x14000f306
+140003c12: 4c 8d 05 79 b5 00 00        	leaq	0xb579(%rip), %r8       # 0x14000f192
+140003c19: 4c 8d 0d fa b6 00 00        	leaq	0xb6fa(%rip), %r9       # 0x14000f31a
 140003c20: eb 34                       	jmp	0x140003c56 <.text+0x2c56>
 140003c22: 48 8b 4e 10                 	movq	0x10(%rsi), %rcx
 140003c26: 48 63 56 18                 	movslq	0x18(%rsi), %rdx
 140003c2a: 4c 89 74 24 20              	movq	%r14, 0x20(%rsp)
-140003c2f: 4c 8d 05 c4 b6 00 00        	leaq	0xb6c4(%rip), %r8       # 0x14000f2fa
+140003c2f: 4c 8d 05 d8 b6 00 00        	leaq	0xb6d8(%rip), %r8       # 0x14000f30e
 140003c36: 41 89 f9                    	movl	%edi, %r9d
 140003c39: e8 42 19 00 00              	callq	0x140005580 <.text+0x4580>
 140003c3e: eb 1b                       	jmp	0x140003c5b <.text+0x2c5b>
 140003c40: 48 8b 4e 10                 	movq	0x10(%rsi), %rcx
 140003c44: 48 63 56 18                 	movslq	0x18(%rsi), %rdx
-140003c48: 4c 8d 05 3e b5 00 00        	leaq	0xb53e(%rip), %r8       # 0x14000f18d
-140003c4f: 4c 8d 0d 0a b7 00 00        	leaq	0xb70a(%rip), %r9       # 0x14000f360
+140003c48: 4c 8d 05 43 b5 00 00        	leaq	0xb543(%rip), %r8       # 0x14000f192
+140003c4f: 4c 8d 0d 23 b7 00 00        	leaq	0xb723(%rip), %r9       # 0x14000f379
 140003c56: e8 25 19 00 00              	callq	0x140005580 <.text+0x4580>
 140003c5b: 31 db                       	xorl	%ebx, %ebx
 140003c5d: 48 89 d8                    	movq	%rbx, %rax
@@ -3087,7 +3087,7 @@ Disassembly of section .text:
 140003d06: 45 8b 4e 04                 	movl	0x4(%r14), %r9d
 140003d0a: 48 8b 4e 10                 	movq	0x10(%rsi), %rcx
 140003d0e: 48 63 56 18                 	movslq	0x18(%rsi), %rdx
-140003d12: 4c 8d 05 66 b7 00 00        	leaq	0xb766(%rip), %r8       # 0x14000f47f
+140003d12: 4c 8d 05 8e b7 00 00        	leaq	0xb78e(%rip), %r8       # 0x14000f4a7
 140003d19: e8 62 18 00 00              	callq	0x140005580 <.text+0x4580>
 140003d1e: e9 d9 00 00 00              	jmp	0x140003dfc <.text+0x2dfc>
 140003d23: 4c 63 67 28                 	movslq	0x28(%rdi), %r12
@@ -3128,16 +3128,16 @@ Disassembly of section .text:
 140003db2: ff 15 50 f2 00 00           	callq	*0xf250(%rip)           # 0x140013008
 140003db8: 48 8b 4e 10                 	movq	0x10(%rsi), %rcx
 140003dbc: 48 63 56 18                 	movslq	0x18(%rsi), %rdx
-140003dc0: 4c 8d 05 c6 b3 00 00        	leaq	0xb3c6(%rip), %r8       # 0x14000f18d
-140003dc7: 4c 8d 0d fd b5 00 00        	leaq	0xb5fd(%rip), %r9       # 0x14000f3cb
+140003dc0: 4c 8d 05 cb b3 00 00        	leaq	0xb3cb(%rip), %r8       # 0x14000f192
+140003dc7: 4c 8d 0d 1b b6 00 00        	leaq	0xb61b(%rip), %r9       # 0x14000f3e9
 140003dce: eb 27                       	jmp	0x140003df7 <.text+0x2df7>
 140003dd0: 4b c7 04 e6 00 00 00 00     	movq	$0x0, (%r14,%r12,8)
 140003dd8: 48 89 d9                    	movq	%rbx, %rcx
 140003ddb: ff 15 27 f2 00 00           	callq	*0xf227(%rip)           # 0x140013008
 140003de1: 48 8b 4e 10                 	movq	0x10(%rsi), %rcx
 140003de5: 48 63 56 18                 	movslq	0x18(%rsi), %rdx
-140003de9: 4c 8d 05 9d b3 00 00        	leaq	0xb39d(%rip), %r8       # 0x14000f18d
-140003df0: 4c 8d 0d 2e b6 00 00        	leaq	0xb62e(%rip), %r9       # 0x14000f425
+140003de9: 4c 8d 05 a2 b3 00 00        	leaq	0xb3a2(%rip), %r8       # 0x14000f192
+140003df0: 4c 8d 0d 51 b6 00 00        	leaq	0xb651(%rip), %r9       # 0x14000f448
 140003df7: e8 84 17 00 00              	callq	0x140005580 <.text+0x4580>
 140003dfc: 31 c0                       	xorl	%eax, %eax
 140003dfe: 48 83 c4 48                 	addq	$0x48, %rsp
@@ -3184,7 +3184,7 @@ Disassembly of section .text:
 140003e75: 45 8b 4e 04                 	movl	0x4(%r14), %r9d
 140003e79: 48 8b 4e 10                 	movq	0x10(%rsi), %rcx
 140003e7d: 48 63 56 18                 	movslq	0x18(%rsi), %rdx
-140003e81: 4c 8d 05 f7 b5 00 00        	leaq	0xb5f7(%rip), %r8       # 0x14000f47f
+140003e81: 4c 8d 05 1f b6 00 00        	leaq	0xb61f(%rip), %r8       # 0x14000f4a7
 140003e88: e8 f3 16 00 00              	callq	0x140005580 <.text+0x4580>
 140003e8d: e9 c9 00 00 00              	jmp	0x140003f5b <.text+0x2f5b>
 140003e92: 4c 63 67 0c                 	movslq	0xc(%rdi), %r12
@@ -3222,16 +3222,16 @@ Disassembly of section .text:
 140003f11: ff 15 f1 f0 00 00           	callq	*0xf0f1(%rip)           # 0x140013008
 140003f17: 48 8b 4e 10                 	movq	0x10(%rsi), %rcx
 140003f1b: 48 63 56 18                 	movslq	0x18(%rsi), %rdx
-140003f1f: 4c 8d 05 67 b2 00 00        	leaq	0xb267(%rip), %r8       # 0x14000f18d
-140003f26: 4c 8d 0d 66 b5 00 00        	leaq	0xb566(%rip), %r9       # 0x14000f493
+140003f1f: 4c 8d 05 6c b2 00 00        	leaq	0xb26c(%rip), %r8       # 0x14000f192
+140003f26: 4c 8d 0d 8e b5 00 00        	leaq	0xb58e(%rip), %r9       # 0x14000f4bb
 140003f2d: eb 27                       	jmp	0x140003f56 <.text+0x2f56>
 140003f2f: 4b c7 04 e6 00 00 00 00     	movq	$0x0, (%r14,%r12,8)
 140003f37: 48 89 d9                    	movq	%rbx, %rcx
 140003f3a: ff 15 c8 f0 00 00           	callq	*0xf0c8(%rip)           # 0x140013008
 140003f40: 48 8b 4e 10                 	movq	0x10(%rsi), %rcx
 140003f44: 48 63 56 18                 	movslq	0x18(%rsi), %rdx
-140003f48: 4c 8d 05 3e b2 00 00        	leaq	0xb23e(%rip), %r8       # 0x14000f18d
-140003f4f: 4c 8d 0d 97 b5 00 00        	leaq	0xb597(%rip), %r9       # 0x14000f4ed
+140003f48: 4c 8d 05 43 b2 00 00        	leaq	0xb243(%rip), %r8       # 0x14000f192
+140003f4f: 4c 8d 0d c4 b5 00 00        	leaq	0xb5c4(%rip), %r9       # 0x14000f51a
 140003f56: e8 25 16 00 00              	callq	0x140005580 <.text+0x4580>
 140003f5b: 31 c0                       	xorl	%eax, %eax
 140003f5d: 48 83 c4 48                 	addq	$0x48, %rsp
@@ -3281,7 +3281,7 @@ Disassembly of section .text:
 140003fda: 45 8b 4f 04                 	movl	0x4(%r15), %r9d
 140003fde: 48 8b 4e 10                 	movq	0x10(%rsi), %rcx
 140003fe2: 48 63 56 18                 	movslq	0x18(%rsi), %rdx
-140003fe6: 4c 8d 05 92 b4 00 00        	leaq	0xb492(%rip), %r8       # 0x14000f47f
+140003fe6: 4c 8d 05 ba b4 00 00        	leaq	0xb4ba(%rip), %r8       # 0x14000f4a7
 140003fed: e8 8e 15 00 00              	callq	0x140005580 <.text+0x4580>
 140003ff2: e9 d3 00 00 00              	jmp	0x1400040ca <.text+0x30ca>
 140003ff7: 4c 63 6f 18                 	movslq	0x18(%rdi), %r13
@@ -3322,16 +3322,16 @@ Disassembly of section .text:
 140004080: ff 15 82 ef 00 00           	callq	*0xef82(%rip)           # 0x140013008
 140004086: 48 8b 4e 10                 	movq	0x10(%rsi), %rcx
 14000408a: 48 63 56 18                 	movslq	0x18(%rsi), %rdx
-14000408e: 4c 8d 05 f8 b0 00 00        	leaq	0xb0f8(%rip), %r8       # 0x14000f18d
-140004095: 4c 8d 0d ab b4 00 00        	leaq	0xb4ab(%rip), %r9       # 0x14000f547
+14000408e: 4c 8d 05 fd b0 00 00        	leaq	0xb0fd(%rip), %r8       # 0x14000f192
+140004095: 4c 8d 0d dd b4 00 00        	leaq	0xb4dd(%rip), %r9       # 0x14000f579
 14000409c: eb 27                       	jmp	0x1400040c5 <.text+0x30c5>
 14000409e: 4b c7 04 ef 00 00 00 00     	movq	$0x0, (%r15,%r13,8)
 1400040a6: 4c 89 f1                    	movq	%r14, %rcx
 1400040a9: ff 15 59 ef 00 00           	callq	*0xef59(%rip)           # 0x140013008
 1400040af: 48 8b 4e 10                 	movq	0x10(%rsi), %rcx
 1400040b3: 48 63 56 18                 	movslq	0x18(%rsi), %rdx
-1400040b7: 4c 8d 05 cf b0 00 00        	leaq	0xb0cf(%rip), %r8       # 0x14000f18d
-1400040be: 4c 8d 0d dc b4 00 00        	leaq	0xb4dc(%rip), %r9       # 0x14000f5a1
+1400040b7: 4c 8d 05 d4 b0 00 00        	leaq	0xb0d4(%rip), %r8       # 0x14000f192
+1400040be: 4c 8d 0d 13 b5 00 00        	leaq	0xb513(%rip), %r9       # 0x14000f5d8
 1400040c5: e8 b6 14 00 00              	callq	0x140005580 <.text+0x4580>
 1400040ca: 31 c0                       	xorl	%eax, %eax
 1400040cc: 48 83 c4 50                 	addq	$0x50, %rsp
@@ -3367,7 +3367,7 @@ Disassembly of section .text:
 140004115: bd ff ff ff ff              	movl	$0xffffffff, %ebp       # imm = 0xFFFFFFFF
 14000411a: 85 c0                       	testl	%eax, %eax
 14000411c: 0f 85 6d 03 00 00           	jne	0x14000448f <.text+0x348f>
-140004122: 4c 8d 25 cf c1 00 00        	leaq	0xc1cf(%rip), %r12      # 0x1400102f8
+140004122: 4c 8d 25 6f c2 00 00        	leaq	0xc26f(%rip), %r12      # 0x140010398
 140004129: 0f 57 f6                    	xorps	%xmm6, %xmm6
 14000412c: 8b 47 20                    	movl	0x20(%rdi), %eax
 14000412f: 83 f8 06                    	cmpl	$0x6, %eax
@@ -3513,16 +3513,16 @@ Disassembly of section .text:
 14000433e: 83 f8 22                    	cmpl	$0x22, %eax
 140004341: 0f 84 a7 00 00 00           	je	0x1400043ee <.text+0x33ee>
 140004347: 83 f8 27                    	cmpl	$0x27, %eax
-14000434a: 4c 8d 25 a7 bf 00 00        	leaq	0xbfa7(%rip), %r12      # 0x1400102f8
+14000434a: 4c 8d 25 47 c0 00 00        	leaq	0xc047(%rip), %r12      # 0x140010398
 140004351: 0f 84 9e 00 00 00           	je	0x1400043f5 <.text+0x33f5>
 140004357: 4c 89 e9                    	movq	%r13, %rcx
-14000435a: 48 8d 15 1d ae 00 00        	leaq	0xae1d(%rip), %rdx      # 0x14000f17e
+14000435a: 48 8d 15 22 ae 00 00        	leaq	0xae22(%rip), %rdx      # 0x14000f183
 140004361: e8 1a 9b 00 00              	callq	0x14000de80 <.text+0xce80>
 140004366: bd 62 00 00 00              	movl	$0x62, %ebp
 14000436b: 85 c0                       	testl	%eax, %eax
 14000436d: 0f 84 82 00 00 00           	je	0x1400043f5 <.text+0x33f5>
 140004373: 4c 89 e9                    	movq	%r13, %rcx
-140004376: 48 8d 15 06 ae 00 00        	leaq	0xae06(%rip), %rdx      # 0x14000f183
+140004376: 48 8d 15 0b ae 00 00        	leaq	0xae0b(%rip), %rdx      # 0x14000f188
 14000437d: e8 fe 9a 00 00              	callq	0x14000de80 <.text+0xce80>
 140004382: 85 c0                       	testl	%eax, %eax
 140004384: 74 6f                       	je	0x1400043f5 <.text+0x33f5>
@@ -3554,7 +3554,7 @@ Disassembly of section .text:
 1400043e4: b8 74 00 00 00              	movl	$0x74, %eax
 1400043e9: 0f 44 e8                    	cmovel	%eax, %ebp
 1400043ec: eb 07                       	jmp	0x1400043f5 <.text+0x33f5>
-1400043ee: 4c 8d 25 03 bf 00 00        	leaq	0xbf03(%rip), %r12      # 0x1400102f8
+1400043ee: 4c 8d 25 a3 bf 00 00        	leaq	0xbfa3(%rip), %r12      # 0x140010398
 1400043f5: 41 89 2e                    	movl	%ebp, (%r14)
 1400043f8: 83 7b 10 01                 	cmpl	$0x1, 0x10(%rbx)
 1400043fc: 74 0a                       	je	0x140004408 <.text+0x3408>
@@ -3594,8 +3594,8 @@ Disassembly of section .text:
 14000446d: eb 86                       	jmp	0x1400043f5 <.text+0x33f5>
 14000446f: 48 8b 4f 10                 	movq	0x10(%rdi), %rcx
 140004473: 48 63 57 18                 	movslq	0x18(%rdi), %rdx
-140004477: 4c 8d 05 ee b5 00 00        	leaq	0xb5ee(%rip), %r8       # 0x14000fa6c
-14000447e: 4c 8d 0d 76 b1 00 00        	leaq	0xb176(%rip), %r9       # 0x14000f5fb
+140004477: 4c 8d 05 66 b6 00 00        	leaq	0xb666(%rip), %r8       # 0x14000fae4
+14000447e: 4c 8d 0d b2 b1 00 00        	leaq	0xb1b2(%rip), %r9       # 0x14000f637
 140004485: e8 f6 10 00 00              	callq	0x140005580 <.text+0x4580>
 14000448a: bd ff ff ff ff              	movl	$0xffffffff, %ebp       # imm = 0xFFFFFFFF
 14000448f: 89 e8                       	movl	%ebp, %eax
@@ -3621,50 +3621,50 @@ Disassembly of section .text:
 1400044c5: eb c8                       	jmp	0x14000448f <.text+0x348f>
 1400044c7: 48 8b 4f 10                 	movq	0x10(%rdi), %rcx
 1400044cb: 48 63 57 18                 	movslq	0x18(%rdi), %rdx
-1400044cf: 4c 8d 05 96 b5 00 00        	leaq	0xb596(%rip), %r8       # 0x14000fa6c
-1400044d6: 4c 8d 0d 8a b2 00 00        	leaq	0xb28a(%rip), %r9       # 0x14000f767
+1400044cf: 4c 8d 05 0e b6 00 00        	leaq	0xb60e(%rip), %r8       # 0x14000fae4
+1400044d6: 4c 8d 0d da b2 00 00        	leaq	0xb2da(%rip), %r9       # 0x14000f7b7
 1400044dd: e8 9e 10 00 00              	callq	0x140005580 <.text+0x4580>
 1400044e2: eb ab                       	jmp	0x14000448f <.text+0x348f>
 1400044e4: 44 8b 4f 24                 	movl	0x24(%rdi), %r9d
 1400044e8: 48 8b 4f 10                 	movq	0x10(%rdi), %rcx
 1400044ec: 48 63 57 18                 	movslq	0x18(%rdi), %rdx
-1400044f0: 48 8d 05 6c ac 00 00        	leaq	0xac6c(%rip), %rax      # 0x14000f163
+1400044f0: 48 8d 05 71 ac 00 00        	leaq	0xac71(%rip), %rax      # 0x14000f168
 1400044f7: 48 89 44 24 20              	movq	%rax, 0x20(%rsp)
-1400044fc: 4c 8d 05 f7 ad 00 00        	leaq	0xadf7(%rip), %r8       # 0x14000f2fa
+1400044fc: 4c 8d 05 0b ae 00 00        	leaq	0xae0b(%rip), %r8       # 0x14000f30e
 140004503: e8 78 10 00 00              	callq	0x140005580 <.text+0x4580>
 140004508: eb 85                       	jmp	0x14000448f <.text+0x348f>
 14000450a: 48 8b 4f 10                 	movq	0x10(%rdi), %rcx
 14000450e: 48 63 57 18                 	movslq	0x18(%rdi), %rdx
-140004512: 4c 8d 05 74 ac 00 00        	leaq	0xac74(%rip), %r8       # 0x14000f18d
-140004519: 4c 8d 0d 56 b3 00 00        	leaq	0xb356(%rip), %r9       # 0x14000f876
+140004512: 4c 8d 05 79 ac 00 00        	leaq	0xac79(%rip), %r8       # 0x14000f192
+140004519: 4c 8d 0d b5 b3 00 00        	leaq	0xb3b5(%rip), %r9       # 0x14000f8d5
 140004520: e8 5b 10 00 00              	callq	0x140005580 <.text+0x4580>
 140004525: e9 65 ff ff ff              	jmp	0x14000448f <.text+0x348f>
 14000452a: 49 c7 46 08 00 00 00 00     	movq	$0x0, 0x8(%r14)
 140004532: 48 8b 4f 10                 	movq	0x10(%rdi), %rcx
 140004536: 48 63 57 18                 	movslq	0x18(%rdi), %rdx
-14000453a: 4c 8d 05 4c ac 00 00        	leaq	0xac4c(%rip), %r8       # 0x14000f18d
-140004541: 4c 8d 0d 69 b1 00 00        	leaq	0xb169(%rip), %r9       # 0x14000f6b1
+14000453a: 4c 8d 05 51 ac 00 00        	leaq	0xac51(%rip), %r8       # 0x14000f192
+140004541: 4c 8d 0d af b1 00 00        	leaq	0xb1af(%rip), %r9       # 0x14000f6f7
 140004548: e9 38 ff ff ff              	jmp	0x140004485 <.text+0x3485>
 14000454d: 48 8b 4f 10                 	movq	0x10(%rdi), %rcx
 140004551: 48 63 57 18                 	movslq	0x18(%rdi), %rdx
-140004555: 4c 8d 05 10 b5 00 00        	leaq	0xb510(%rip), %r8       # 0x14000fa6c
-14000455c: 4c 8d 0d a9 b1 00 00        	leaq	0xb1a9(%rip), %r9       # 0x14000f70c
+140004555: 4c 8d 05 88 b5 00 00        	leaq	0xb588(%rip), %r8       # 0x14000fae4
+14000455c: 4c 8d 0d f4 b1 00 00        	leaq	0xb1f4(%rip), %r9       # 0x14000f757
 140004563: e9 1d ff ff ff              	jmp	0x140004485 <.text+0x3485>
 140004568: 48 8b 4f 10                 	movq	0x10(%rdi), %rcx
 14000456c: 48 63 57 18                 	movslq	0x18(%rdi), %rdx
-140004570: 4c 8d 05 16 ac 00 00        	leaq	0xac16(%rip), %r8       # 0x14000f18d
-140004577: 4c 8d 0d 9e b2 00 00        	leaq	0xb29e(%rip), %r9       # 0x14000f81c
+140004570: 4c 8d 05 1b ac 00 00        	leaq	0xac1b(%rip), %r8       # 0x14000f192
+140004577: 4c 8d 0d f8 b2 00 00        	leaq	0xb2f8(%rip), %r9       # 0x14000f876
 14000457e: e8 fd 0f 00 00              	callq	0x140005580 <.text+0x4580>
 140004583: e9 07 ff ff ff              	jmp	0x14000448f <.text+0x348f>
 140004588: 48 8b 4f 10                 	movq	0x10(%rdi), %rcx
 14000458c: 48 63 57 18                 	movslq	0x18(%rdi), %rdx
-140004590: 48 8d 1d f6 ab 00 00        	leaq	0xabf6(%rip), %rbx      # 0x14000f18d
-140004597: 4c 8d 0d 24 b2 00 00        	leaq	0xb224(%rip), %r9       # 0x14000f7c2
+140004590: 48 8d 1d fb ab 00 00        	leaq	0xabfb(%rip), %rbx      # 0x14000f192
+140004597: 4c 8d 0d 79 b2 00 00        	leaq	0xb279(%rip), %r9       # 0x14000f817
 14000459e: 49 89 d8                    	movq	%rbx, %r8
 1400045a1: e8 da 0f 00 00              	callq	0x140005580 <.text+0x4580>
 1400045a6: 48 8b 4f 10                 	movq	0x10(%rdi), %rcx
 1400045aa: 48 63 57 18                 	movslq	0x18(%rdi), %rdx
-1400045ae: 4c 8d 0d a1 b0 00 00        	leaq	0xb0a1(%rip), %r9       # 0x14000f656
+1400045ae: 4c 8d 0d e2 b0 00 00        	leaq	0xb0e2(%rip), %r9       # 0x14000f697
 1400045b5: 49 89 d8                    	movq	%rbx, %r8
 1400045b8: e9 c8 fe ff ff              	jmp	0x140004485 <.text+0x3485>
 1400045bd: cc                          	int3
@@ -3709,12 +3709,12 @@ Disassembly of section .text:
 14000462a: 44 8b 4e 24                 	movl	0x24(%rsi), %r9d
 14000462e: 48 8b 4e 10                 	movq	0x10(%rsi), %rcx
 140004632: 48 63 56 18                 	movslq	0x18(%rsi), %rdx
-140004636: 48 8d 05 c5 b3 00 00        	leaq	0xb3c5(%rip), %rax      # 0x14000fa02
+140004636: 48 8d 05 38 b4 00 00        	leaq	0xb438(%rip), %rax      # 0x14000fa75
 14000463d: eb 44                       	jmp	0x140004683 <.text+0x3683>
 14000463f: 48 8b 4e 10                 	movq	0x10(%rsi), %rcx
 140004643: 48 63 56 18                 	movslq	0x18(%rsi), %rdx
-140004647: 4c 8d 05 1e b4 00 00        	leaq	0xb41e(%rip), %r8       # 0x14000fa6c
-14000464e: 4c 8d 0d 2f b3 00 00        	leaq	0xb32f(%rip), %r9       # 0x14000f984
+140004647: 4c 8d 05 96 b4 00 00        	leaq	0xb496(%rip), %r8       # 0x14000fae4
+14000464e: 4c 8d 0d 9d b3 00 00        	leaq	0xb39d(%rip), %r9       # 0x14000f9f2
 140004655: e8 26 0f 00 00              	callq	0x140005580 <.text+0x4580>
 14000465a: b8 ff ff ff ff              	movl	$0xffffffff, %eax       # imm = 0xFFFFFFFF
 14000465f: 48 83 c4 28                 	addq	$0x28, %rsp
@@ -3728,9 +3728,9 @@ Disassembly of section .text:
 140004670: 44 8b 4e 24                 	movl	0x24(%rsi), %r9d
 140004674: 48 8b 4e 10                 	movq	0x10(%rsi), %rcx
 140004678: 48 63 56 18                 	movslq	0x18(%rsi), %rdx
-14000467c: 48 8d 05 5b b3 00 00        	leaq	0xb35b(%rip), %rax      # 0x14000f9de
+14000467c: 48 8d 05 ce b3 00 00        	leaq	0xb3ce(%rip), %rax      # 0x14000fa51
 140004683: 48 89 44 24 20              	movq	%rax, 0x20(%rsp)
-140004688: 4c 8d 05 6b ac 00 00        	leaq	0xac6b(%rip), %r8       # 0x14000f2fa
+140004688: 4c 8d 05 7f ac 00 00        	leaq	0xac7f(%rip), %r8       # 0x14000f30e
 14000468f: e8 ec 0e 00 00              	callq	0x140005580 <.text+0x4580>
 140004694: eb c4                       	jmp	0x14000465a <.text+0x365a>
 140004696: 48 89 f1                    	movq	%rsi, %rcx
@@ -3744,8 +3744,8 @@ Disassembly of section .text:
 1400046b2: eb ab                       	jmp	0x14000465f <.text+0x365f>
 1400046b4: 48 8b 4e 10                 	movq	0x10(%rsi), %rcx
 1400046b8: 48 63 56 18                 	movslq	0x18(%rsi), %rdx
-1400046bc: 4c 8d 05 a9 b3 00 00        	leaq	0xb3a9(%rip), %r8       # 0x14000fa6c
-1400046c3: 4c 8d 0d 48 b3 00 00        	leaq	0xb348(%rip), %r9       # 0x14000fa12
+1400046bc: 4c 8d 05 21 b4 00 00        	leaq	0xb421(%rip), %r8       # 0x14000fae4
+1400046c3: 4c 8d 0d bb b3 00 00        	leaq	0xb3bb(%rip), %r9       # 0x14000fa85
 1400046ca: eb 89                       	jmp	0x140004655 <.text+0x3655>
 1400046cc: cc                          	int3
 1400046cd: cc                          	int3
@@ -3910,13 +3910,13 @@ Disassembly of section .text:
 1400048a6: eb 35                       	jmp	0x1400048dd <.text+0x38dd>
 1400048a8: 48 8b 4f 10                 	movq	0x10(%rdi), %rcx
 1400048ac: 48 63 57 18                 	movslq	0x18(%rdi), %rdx
-1400048b0: 4c 8d 05 d6 a8 00 00        	leaq	0xa8d6(%rip), %r8       # 0x14000f18d
-1400048b7: 4c 8d 0d 6c b0 00 00        	leaq	0xb06c(%rip), %r9       # 0x14000f92a
+1400048b0: 4c 8d 05 db a8 00 00        	leaq	0xa8db(%rip), %r8       # 0x14000f192
+1400048b7: 4c 8d 0d d5 b0 00 00        	leaq	0xb0d5(%rip), %r9       # 0x14000f993
 1400048be: eb 16                       	jmp	0x1400048d6 <.text+0x38d6>
 1400048c0: 48 8b 4f 10                 	movq	0x10(%rdi), %rcx
 1400048c4: 48 63 57 18                 	movslq	0x18(%rdi), %rdx
-1400048c8: 4c 8d 05 be a8 00 00        	leaq	0xa8be(%rip), %r8       # 0x14000f18d
-1400048cf: 4c 8d 0d fa af 00 00        	leaq	0xaffa(%rip), %r9       # 0x14000f8d0
+1400048c8: 4c 8d 05 c3 a8 00 00        	leaq	0xa8c3(%rip), %r8       # 0x14000f192
+1400048cf: 4c 8d 0d 5e b0 00 00        	leaq	0xb05e(%rip), %r9       # 0x14000f934
 1400048d6: e8 a5 0c 00 00              	callq	0x140005580 <.text+0x4580>
 1400048db: 31 c0                       	xorl	%eax, %eax
 1400048dd: 0f 28 74 24 20              	movaps	0x20(%rsp), %xmm6
@@ -4036,7 +4036,7 @@ Disassembly of section .text:
 140004a0c: 48 81 ec f8 01 00 00        	subq	$0x1f8, %rsp            # imm = 0x1F8
 140004a13: 48 8d ac 24 80 00 00 00     	leaq	0x80(%rsp), %rbp
 140004a1b: e8 80 04 00 00              	callq	0x140004ea0 <.text+0x3ea0>
-140004a20: 48 8d 15 e9 b8 00 00        	leaq	0xb8e9(%rip), %rdx      # 0x140010310
+140004a20: 48 8d 15 89 b9 00 00        	leaq	0xb989(%rip), %rdx      # 0x1400103b0
 140004a27: 48 8d 75 a0                 	leaq	-0x60(%rbp), %rsi
 140004a2b: 41 b8 be 00 00 00           	movl	$0xbe, %r8d
 140004a31: 48 89 f1                    	movq	%rsi, %rcx
@@ -4048,14 +4048,14 @@ Disassembly of section .text:
 140004a4b: 48 85 c0                    	testq	%rax, %rax
 140004a4e: 74 49                       	je	0x140004a99 <.text+0x3a99>
 140004a50: 48 89 c6                    	movq	%rax, %rsi
-140004a53: 4c 8d 05 85 b9 00 00        	leaq	0xb985(%rip), %r8       # 0x1400103df
+140004a53: 4c 8d 05 25 ba 00 00        	leaq	0xba25(%rip), %r8       # 0x14001047f
 140004a5a: 48 8d 8d 68 01 00 00        	leaq	0x168(%rbp), %rcx
 140004a61: 48 89 c2                    	movq	%rax, %rdx
 140004a64: e8 87 ee ff ff              	callq	0x1400038f0 <.text+0x28f0>
 140004a69: 83 bd 68 01 00 00 00        	cmpl	$0x0, 0x168(%rbp)
 140004a70: 74 4f                       	je	0x140004ac1 <.text+0x3ac1>
 140004a72: 48 8b bd 70 01 00 00        	movq	0x170(%rbp), %rdi
-140004a79: 48 8d 15 65 b9 00 00        	leaq	0xb965(%rip), %rdx      # 0x1400103e5
+140004a79: 48 8d 15 05 ba 00 00        	leaq	0xba05(%rip), %rdx      # 0x140010485
 140004a80: 48 89 f9                    	movq	%rdi, %rcx
 140004a83: e8 f8 93 00 00              	callq	0x14000de80 <.text+0xce80>
 140004a88: 31 db                       	xorl	%ebx, %ebx
@@ -4065,15 +4065,15 @@ Disassembly of section .text:
 140004a92: e8 79 93 00 00              	callq	0x14000de10 <.text+0xce10>
 140004a97: eb 2d                       	jmp	0x140004ac6 <.text+0x3ac6>
 140004a99: b9 02 00 00 00              	movl	$0x2, %ecx
-140004a9e: ff 15 64 c7 00 00           	callq	*0xc764(%rip)           # 0x140011208
-140004aa4: 48 8d 15 23 b9 00 00        	leaq	0xb923(%rip), %rdx      # 0x1400103ce
+140004a9e: ff 15 04 c8 00 00           	callq	*0xc804(%rip)           # 0x1400112a8
+140004aa4: 48 8d 15 c3 b9 00 00        	leaq	0xb9c3(%rip), %rdx      # 0x14001046e
 140004aab: 4c 8d 45 60                 	leaq	0x60(%rbp), %r8
 140004aaf: 48 89 c1                    	movq	%rax, %rcx
 140004ab2: e8 c9 0c 00 00              	callq	0x140005780 <.text+0x4780>
 140004ab7: b8 01 00 00 00              	movl	$0x1, %eax
 140004abc: e9 6a 02 00 00              	jmp	0x140004d2b <.text+0x3d2b>
 140004ac1: bb 01 00 00 00              	movl	$0x1, %ebx
-140004ac6: 4c 8d 05 23 b9 00 00        	leaq	0xb923(%rip), %r8       # 0x1400103f0
+140004ac6: 4c 8d 05 c3 b9 00 00        	leaq	0xb9c3(%rip), %r8       # 0x140010490
 140004acd: 48 8d 8d 68 01 00 00        	leaq	0x168(%rbp), %rcx
 140004ad4: 48 89 f2                    	movq	%rsi, %rdx
 140004ad7: e8 94 ee ff ff              	callq	0x140003970 <.text+0x2970>
@@ -4085,7 +4085,7 @@ Disassembly of section .text:
 140004af3: 08 c8                       	orb	%cl, %al
 140004af5: 0f b6 f8                    	movzbl	%al, %edi
 140004af8: 01 df                       	addl	%ebx, %edi
-140004afa: 4c 8d 05 f7 b8 00 00        	leaq	0xb8f7(%rip), %r8       # 0x1400103f8
+140004afa: 4c 8d 05 97 b9 00 00        	leaq	0xb997(%rip), %r8       # 0x140010498
 140004b01: 48 8d 8d 68 01 00 00        	leaq	0x168(%rbp), %rcx
 140004b08: 48 89 f2                    	movq	%rsi, %rdx
 140004b0b: e8 10 ef ff ff              	callq	0x140003a20 <.text+0x2a20>
@@ -4096,7 +4096,7 @@ Disassembly of section .text:
 140004b25: 08 c1                       	orb	%al, %cl
 140004b27: 44 0f b6 e1                 	movzbl	%cl, %r12d
 140004b2b: 41 01 fc                    	addl	%edi, %r12d
-140004b2e: 48 8d 15 cb b8 00 00        	leaq	0xb8cb(%rip), %rdx      # 0x140010400
+140004b2e: 48 8d 15 6b b9 00 00        	leaq	0xb96b(%rip), %rdx      # 0x1400104a0
 140004b35: 48 89 f1                    	movq	%rsi, %rcx
 140004b38: e8 73 e0 ff ff              	callq	0x140002bb0 <.text+0x1bb0>
 140004b3d: 48 85 c0                    	testq	%rax, %rax
@@ -4140,13 +4140,13 @@ Disassembly of section .text:
 140004bc6: 31 db                       	xorl	%ebx, %ebx
 140004bc8: 48 83 ff 13                 	cmpq	$0x13, %rdi
 140004bcc: 0f 95 c3                    	setne	%bl
-140004bcf: 48 8d 15 32 b8 00 00        	leaq	0xb832(%rip), %rdx      # 0x140010408
+140004bcf: 48 8d 15 d2 b8 00 00        	leaq	0xb8d2(%rip), %rdx      # 0x1400104a8
 140004bd6: 48 89 f1                    	movq	%rsi, %rcx
 140004bd9: e8 22 e0 ff ff              	callq	0x140002c00 <.text+0x1c00>
 140004bde: 49 89 c6                    	movq	%rax, %r14
 140004be1: 48 83 f8 01                 	cmpq	$0x1, %rax
 140004be5: 44 11 e3                    	adcl	%r12d, %ebx
-140004be8: 4c 8d 05 20 b8 00 00        	leaq	0xb820(%rip), %r8       # 0x14001040f
+140004be8: 4c 8d 05 c0 b8 00 00        	leaq	0xb8c0(%rip), %r8       # 0x1400104af
 140004bef: 48 8d 8d 68 01 00 00        	leaq	0x168(%rbp), %rcx
 140004bf6: 48 89 c2                    	movq	%rax, %rdx
 140004bf9: e8 f2 ec ff ff              	callq	0x1400038f0 <.text+0x28f0>
@@ -4155,7 +4155,7 @@ Disassembly of section .text:
 140004c0b: 41 bd 01 00 00 00           	movl	$0x1, %r13d
 140004c11: 74 27                       	je	0x140004c3a <.text+0x3c3a>
 140004c13: 4c 8b bd 70 01 00 00        	movq	0x170(%rbp), %r15
-140004c1a: 48 8d 15 f3 b7 00 00        	leaq	0xb7f3(%rip), %rdx      # 0x140010414
+140004c1a: 48 8d 15 93 b8 00 00        	leaq	0xb893(%rip), %rdx      # 0x1400104b4
 140004c21: 4c 89 f9                    	movq	%r15, %rcx
 140004c24: e8 57 92 00 00              	callq	0x14000de80 <.text+0xce80>
 140004c29: 45 31 ed                    	xorl	%r13d, %r13d
@@ -4163,7 +4163,7 @@ Disassembly of section .text:
 140004c2e: 41 0f 95 c5                 	setne	%r13b
 140004c32: 4c 89 f9                    	movq	%r15, %rcx
 140004c35: e8 d6 91 00 00              	callq	0x14000de10 <.text+0xce10>
-140004c3a: 4c 8d 05 e0 b7 00 00        	leaq	0xb7e0(%rip), %r8       # 0x140010421
+140004c3a: 4c 8d 05 80 b8 00 00        	leaq	0xb880(%rip), %r8       # 0x1400104c1
 140004c41: 48 8d 8d 68 01 00 00        	leaq	0x168(%rbp), %rcx
 140004c48: 4c 89 f2                    	movq	%r14, %rdx
 140004c4b: e8 d0 ed ff ff              	callq	0x140003a20 <.text+0x2a20>
@@ -4175,17 +4175,17 @@ Disassembly of section .text:
 140004c6a: 0f b6 c1                    	movzbl	%cl, %eax
 140004c6d: 44 01 e8                    	addl	%r13d, %eax
 140004c70: 01 c3                       	addl	%eax, %ebx
-140004c72: 48 8d 15 ad b7 00 00        	leaq	0xb7ad(%rip), %rdx      # 0x140010426
+140004c72: 48 8d 15 4d b8 00 00        	leaq	0xb84d(%rip), %rdx      # 0x1400104c6
 140004c79: 4c 89 f1                    	movq	%r14, %rcx
 140004c7c: e8 7f df ff ff              	callq	0x140002c00 <.text+0x1c00>
-140004c81: 4c 8d 05 a2 b7 00 00        	leaq	0xb7a2(%rip), %r8       # 0x14001042a
+140004c81: 4c 8d 05 42 b8 00 00        	leaq	0xb842(%rip), %r8       # 0x1400104ca
 140004c88: 48 8d 8d 68 01 00 00        	leaq	0x168(%rbp), %rcx
 140004c8f: 48 89 c2                    	movq	%rax, %rdx
 140004c92: e8 59 ec ff ff              	callq	0x1400038f0 <.text+0x28f0>
 140004c97: 83 bd 68 01 00 00 00        	cmpl	$0x0, 0x168(%rbp)
 140004c9e: 74 27                       	je	0x140004cc7 <.text+0x3cc7>
 140004ca0: 4c 8b b5 70 01 00 00        	movq	0x170(%rbp), %r14
-140004ca7: 48 8d 15 81 b7 00 00        	leaq	0xb781(%rip), %rdx      # 0x14001042f
+140004ca7: 48 8d 15 21 b8 00 00        	leaq	0xb821(%rip), %rdx      # 0x1400104cf
 140004cae: 4c 89 f1                    	movq	%r14, %rcx
 140004cb1: e8 ca 91 00 00              	callq	0x14000de80 <.text+0xce80>
 140004cb6: 45 31 e4                    	xorl	%r12d, %r12d
@@ -4208,7 +4208,7 @@ Disassembly of section .text:
 140004d08: ff c3                       	incl	%ebx
 140004d0a: 48 89 c1                    	movq	%rax, %rcx
 140004d0d: e8 7e dd ff ff              	callq	0x140002a90 <.text+0x1a90>
-140004d12: 48 8d 0d 1d b7 00 00        	leaq	0xb71d(%rip), %rcx      # 0x140010436
+140004d12: 48 8d 0d bd b7 00 00        	leaq	0xb7bd(%rip), %rcx      # 0x1400104d6
 140004d19: 48 89 fa                    	movq	%rdi, %rdx
 140004d1c: 41 89 d8                    	movl	%ebx, %r8d
 140004d1f: e8 ac 0a 00 00              	callq	0x1400057d0 <.text+0x47d0>
@@ -4229,7 +4229,7 @@ Disassembly of section .text:
 140004d40: 56                          	pushq	%rsi
 140004d41: 57                          	pushq	%rdi
 140004d42: 48 83 ec 28                 	subq	$0x28, %rsp
-140004d46: 48 8b 05 4b b7 00 00        	movq	0xb74b(%rip), %rax      # 0x140010498
+140004d46: 48 8b 05 eb b7 00 00        	movq	0xb7eb(%rip), %rax      # 0x140010538
 140004d4d: 83 38 02                    	cmpl	$0x2, (%rax)
 140004d50: 74 06                       	je	0x140004d58 <.text+0x3d58>
 140004d52: c7 00 02 00 00 00           	movl	$0x2, (%rax)
@@ -4237,8 +4237,8 @@ Disassembly of section .text:
 140004d5b: 74 3c                       	je	0x140004d99 <.text+0x3d99>
 140004d5d: 83 fa 02                    	cmpl	$0x2, %edx
 140004d60: 75 13                       	jne	0x140004d75 <.text+0x3d75>
-140004d62: 48 8d 35 37 c1 00 00        	leaq	0xc137(%rip), %rsi      # 0x140010ea0
-140004d69: 48 8d 3d 30 c1 00 00        	leaq	0xc130(%rip), %rdi      # 0x140010ea0
+140004d62: 48 8d 35 d7 c1 00 00        	leaq	0xc1d7(%rip), %rsi      # 0x140010f40
+140004d69: 48 8d 3d d0 c1 00 00        	leaq	0xc1d0(%rip), %rdi      # 0x140010f40
 140004d70: 48 39 f7                    	cmpq	%rsi, %rdi
 140004d73: 75 14                       	jne	0x140004d89 <.text+0x3d89>
 140004d75: 48 83 c4 28                 	addq	$0x28, %rsp
@@ -4252,7 +4252,7 @@ Disassembly of section .text:
 140004d89: 48 8b 07                    	movq	(%rdi), %rax
 140004d8c: 48 85 c0                    	testq	%rax, %rax
 140004d8f: 74 ef                       	je	0x140004d80 <.text+0x3d80>
-140004d91: ff 15 e9 c0 00 00           	callq	*0xc0e9(%rip)           # 0x140010e80
+140004d91: ff 15 89 c1 00 00           	callq	*0xc189(%rip)           # 0x140010f20
 140004d97: eb e7                       	jmp	0x140004d80 <.text+0x3d80>
 140004d99: ba 01 00 00 00              	movl	$0x1, %edx
 140004d9e: 48 83 c4 28                 	addq	$0x28, %rsp
@@ -4288,7 +4288,7 @@ Disassembly of section .text:
 140004dee: 48 85 c0                    	testq	%rax, %rax
 140004df1: 74 2e                       	je	0x140004e21 <.text+0x3e21>
 140004df3: 66 66 66 66 2e 0f 1f 84 00 00 00 00 00      	nopw	%cs:(%rax,%rax)
-140004e00: ff 15 7a c0 00 00           	callq	*0xc07a(%rip)           # 0x140010e80
+140004e00: ff 15 1a c1 00 00           	callq	*0xc11a(%rip)           # 0x140010f20
 140004e06: 48 8b 05 0b e2 00 00        	movq	0xe20b(%rip), %rax      # 0x140013018
 140004e0d: 48 8d 48 08                 	leaq	0x8(%rax), %rcx
 140004e11: 48 89 0d 00 e2 00 00        	movq	%rcx, 0xe200(%rip)      # 0x140013018
@@ -4301,7 +4301,7 @@ Disassembly of section .text:
 140004e30: 56                          	pushq	%rsi
 140004e31: 57                          	pushq	%rdi
 140004e32: 48 83 ec 28                 	subq	$0x28, %rsp
-140004e36: 48 8b 35 63 b6 00 00        	movq	0xb663(%rip), %rsi      # 0x1400104a0
+140004e36: 48 8b 35 03 b7 00 00        	movq	0xb703(%rip), %rsi      # 0x140010540
 140004e3d: 8b 06                       	movl	(%rsi), %eax
 140004e3f: 83 f8 ff                    	cmpl	$-0x1, %eax
 140004e42: 75 18                       	jne	0x140004e5c <.text+0x3e5c>
@@ -4317,7 +4317,7 @@ Disassembly of section .text:
 140004e62: 48 ff cf                    	decq	%rdi
 140004e65: 66 66 2e 0f 1f 84 00 00 00 00 00    	nopw	%cs:(%rax,%rax)
 140004e70: 48 8b 44 fe 08              	movq	0x8(%rsi,%rdi,8), %rax
-140004e75: ff 15 05 c0 00 00           	callq	*0xc005(%rip)           # 0x140010e80
+140004e75: ff 15 a5 c0 00 00           	callq	*0xc0a5(%rip)           # 0x140010f20
 140004e7b: 89 f8                       	movl	%edi, %eax
 140004e7d: 48 ff cf                    	decq	%rdi
 140004e80: 85 c0                       	testl	%eax, %eax
@@ -4338,7 +4338,7 @@ Disassembly of section .text:
 140004eb4: 5e                          	popq	%rsi
 140004eb5: c3                          	retq
 140004eb6: c6 05 17 e3 00 00 01        	movb	$0x1, 0xe317(%rip)      # 0x1400131d4
-140004ebd: 48 8b 35 dc b5 00 00        	movq	0xb5dc(%rip), %rsi      # 0x1400104a0
+140004ebd: 48 8b 35 7c b6 00 00        	movq	0xb67c(%rip), %rsi      # 0x140010540
 140004ec4: 8b 06                       	movl	(%rsi), %eax
 140004ec6: 83 f8 ff                    	cmpl	$-0x1, %eax
 140004ec9: 75 11                       	jne	0x140004edc <.text+0x3edc>
@@ -4353,7 +4353,7 @@ Disassembly of section .text:
 140004ee2: 48 ff cf                    	decq	%rdi
 140004ee5: 66 66 2e 0f 1f 84 00 00 00 00 00    	nopw	%cs:(%rax,%rax)
 140004ef0: 48 8b 44 fe 08              	movq	0x8(%rsi,%rdi,8), %rax
-140004ef5: ff 15 85 bf 00 00           	callq	*0xbf85(%rip)           # 0x140010e80
+140004ef5: ff 15 25 c0 00 00           	callq	*0xc025(%rip)           # 0x140010f20
 140004efb: 89 f8                       	movl	%edi, %eax
 140004efd: 48 ff cf                    	decq	%rdi
 140004f00: 85 c0                       	testl	%eax, %eax
@@ -4418,7 +4418,7 @@ Disassembly of section .text:
 140004f95: f2 0f 11 5c 24 38           	movsd	%xmm3, 0x38(%rsp)
 140004f9b: f2 0f 11 44 24 40           	movsd	%xmm0, 0x40(%rsp)
 140004fa1: 48 8d 4c 24 20              	leaq	0x20(%rsp), %rcx
-140004fa6: ff 15 d4 be 00 00           	callq	*0xbed4(%rip)           # 0x140010e80
+140004fa6: ff 15 74 bf 00 00           	callq	*0xbf74(%rip)           # 0x140010f20
 140004fac: 90                          	nop
 140004fad: 48 83 c4 48                 	addq	$0x48, %rsp
 140004fb1: c3                          	retq
@@ -4453,11 +4453,11 @@ Disassembly of section .text:
 140004fed: 83 f8 05                    	cmpl	$0x5, %eax
 140004ff0: 77 12                       	ja	0x140005004 <.text+0x4004>
 140004ff2: 89 c0                       	movl	%eax, %eax
-140004ff4: 48 8d 0d c1 b5 00 00        	leaq	0xb5c1(%rip), %rcx      # 0x1400105bc
+140004ff4: 48 8d 0d 61 b6 00 00        	leaq	0xb661(%rip), %rcx      # 0x14001065c
 140004ffb: 48 63 3c 81                 	movslq	(%rcx,%rax,4), %rdi
 140004fff: 48 01 cf                    	addq	%rcx, %rdi
 140005002: eb 07                       	jmp	0x14000500b <.text+0x400b>
-140005004: 48 8d 3d 76 b5 00 00        	leaq	0xb576(%rip), %rdi      # 0x140010581
+140005004: 48 8d 3d 16 b6 00 00        	leaq	0xb616(%rip), %rdi      # 0x140010621
 14000500b: b9 02 00 00 00              	movl	$0x2, %ecx
 140005010: e8 1b 8d 00 00              	callq	0x14000dd30 <.text+0xcd30>
 140005015: 4c 8b 4e 08                 	movq	0x8(%rsi), %r9
@@ -4465,7 +4465,7 @@ Disassembly of section .text:
 14000501d: f2 0f 10 4e 20              	movsd	0x20(%rsi), %xmm1
 140005022: f2 0f 11 4c 24 30           	movsd	%xmm1, 0x30(%rsp)
 140005028: 0f 11 44 24 20              	movups	%xmm0, 0x20(%rsp)
-14000502d: 48 8d 15 5b b5 00 00        	leaq	0xb55b(%rip), %rdx      # 0x14001058f
+14000502d: 48 8d 15 fb b5 00 00        	leaq	0xb5fb(%rip), %rdx      # 0x14001062f
 140005034: 48 89 c1                    	movq	%rax, %rcx
 140005037: 49 89 f8                    	movq	%rdi, %r8
 14000503a: e8 41 07 00 00              	callq	0x140005780 <.text+0x4780>
@@ -4507,23 +4507,23 @@ Disassembly of section .text:
 1400050a0: 48 89 e0                    	movq	%rsp, %rax
 1400050a3: 48 89 05 66 e1 00 00        	movq	%rax, 0xe166(%rip)      # 0x140013210
 1400050aa: c7 05 64 e1 00 00 00 00 00 00       	movl	$0x0, 0xe164(%rip) # 0x140013218
-1400050b4: 48 8b 3d 95 b6 00 00        	movq	0xb695(%rip), %rdi      # 0x140010750
+1400050b4: 48 8b 3d 35 b7 00 00        	movq	0xb735(%rip), %rdi      # 0x1400107f0
 1400050bb: 48 89 f8                    	movq	%rdi, %rax
-1400050be: 48 2b 05 93 b6 00 00        	subq	0xb693(%rip), %rax      # 0x140010758
+1400050be: 48 2b 05 33 b7 00 00        	subq	0xb733(%rip), %rax      # 0x1400107f8
 1400050c5: 48 83 f8 07                 	cmpq	$0x7, %rax
 1400050c9: 0f 8e 10 01 00 00           	jle	0x1400051df <.text+0x41df>
-1400050cf: 48 8b 1d 82 b6 00 00        	movq	0xb682(%rip), %rbx      # 0x140010758
+1400050cf: 48 8b 1d 22 b7 00 00        	movq	0xb722(%rip), %rbx      # 0x1400107f8
 1400050d6: 48 89 f8                    	movq	%rdi, %rax
 1400050d9: 48 29 d8                    	subq	%rbx, %rax
 1400050dc: 48 83 f8 0c                 	cmpq	$0xc, %rax
 1400050e0: 7c 2c                       	jl	0x14000510e <.text+0x410e>
-1400050e2: 48 8b 1d 6f b6 00 00        	movq	0xb66f(%rip), %rbx      # 0x140010758
+1400050e2: 48 8b 1d 0f b7 00 00        	movq	0xb70f(%rip), %rbx      # 0x1400107f8
 1400050e9: 83 3b 00                    	cmpl	$0x0, (%rbx)
 1400050ec: 75 2f                       	jne	0x14000511d <.text+0x411d>
-1400050ee: 48 8b 1d 63 b6 00 00        	movq	0xb663(%rip), %rbx      # 0x140010758
+1400050ee: 48 8b 1d 03 b7 00 00        	movq	0xb703(%rip), %rbx      # 0x1400107f8
 1400050f5: 83 7b 04 00                 	cmpl	$0x0, 0x4(%rbx)
 1400050f9: 75 22                       	jne	0x14000511d <.text+0x411d>
-1400050fb: 48 8b 05 56 b6 00 00        	movq	0xb656(%rip), %rax      # 0x140010758
+1400050fb: 48 8b 05 f6 b6 00 00        	movq	0xb6f6(%rip), %rax      # 0x1400107f8
 140005102: 48 8d 58 0c                 	leaq	0xc(%rax), %rbx
 140005106: 83 78 08 00                 	cmpl	$0x0, 0x8(%rax)
 14000510a: 48 0f 45 d8                 	cmovneq	%rax, %rbx
@@ -4531,7 +4531,7 @@ Disassembly of section .text:
 140005111: 75 0a                       	jne	0x14000511d <.text+0x411d>
 140005113: 83 7b 04 00                 	cmpl	$0x0, 0x4(%rbx)
 140005117: 0f 84 d3 00 00 00           	je	0x1400051f0 <.text+0x41f0>
-14000511d: 48 3b 1d 2c b6 00 00        	cmpq	0xb62c(%rip), %rbx      # 0x140010750
+14000511d: 48 3b 1d cc b6 00 00        	cmpq	0xb6cc(%rip), %rbx      # 0x1400107f0
 140005124: 73 48                       	jae	0x14000516e <.text+0x416e>
 140005126: 4c 8b 35 db 9e 00 00        	movq	0x9edb(%rip), %r14      # 0x14000f008
 14000512d: 48 8d 75 fc                 	leaq	-0x4(%rbp), %rsi
@@ -4556,7 +4556,7 @@ Disassembly of section .text:
 14000517d: 48 8b 15 8c e0 00 00        	movq	0xe08c(%rip), %rdx      # 0x140013210
 140005184: 31 db                       	xorl	%ebx, %ebx
 140005186: 48 89 ee                    	movq	%rbp, %rsi
-140005189: 4c 8b 35 70 c2 00 00        	movq	0xc270(%rip), %r14      # 0x140011400
+140005189: 4c 8b 35 10 c3 00 00        	movq	0xc310(%rip), %r14      # 0x1400114a0
 140005190: eb 1d                       	jmp	0x1400051af <.text+0x41af>
 140005192: 66 66 66 66 66 2e 0f 1f 84 00 00 00 00 00   	nopw	%cs:(%rax,%rax)
 1400051a0: 48 ff c3                    	incq	%rbx
@@ -4590,11 +4590,11 @@ Disassembly of section .text:
 1400051f3: 83 fa 01                    	cmpl	$0x1, %edx
 1400051f6: 0f 85 45 01 00 00           	jne	0x140005341 <.text+0x4341>
 1400051fc: 48 83 c3 0c                 	addq	$0xc, %rbx
-140005200: 48 3b 1d 49 b5 00 00        	cmpq	0xb549(%rip), %rbx      # 0x140010750
+140005200: 48 3b 1d e9 b5 00 00        	cmpq	0xb5e9(%rip), %rbx      # 0x1400107f0
 140005207: 0f 83 61 ff ff ff           	jae	0x14000516e <.text+0x416e>
 14000520d: 4c 8b 35 f4 9d 00 00        	movq	0x9df4(%rip), %r14      # 0x14000f008
-140005214: 4c 8d 3d bd b3 00 00        	leaq	0xb3bd(%rip), %r15      # 0x1400105d8
-14000521b: 4c 8d 25 0e b5 00 00        	leaq	0xb50e(%rip), %r12      # 0x140010730
+140005214: 4c 8d 3d 5d b4 00 00        	leaq	0xb45d(%rip), %r15      # 0x140010678
+14000521b: 4c 8d 25 ae b5 00 00        	leaq	0xb5ae(%rip), %r12      # 0x1400107d0
 140005222: 48 89 ee                    	movq	%rbp, %rsi
 140005225: 49 bd 00 00 00 00 ff ff ff ff       	movabsq	$-0x100000000, %r13 # imm = 0xFFFFFFFF00000000
 14000522f: eb 37                       	jmp	0x140005268 <.text+0x4268>
@@ -4660,15 +4660,15 @@ Disassembly of section .text:
 14000530b: 0f 8d 2f ff ff ff           	jge	0x140005240 <.text+0x4240>
 140005311: 48 83 ec 30                 	subq	$0x30, %rsp
 140005315: 4c 89 54 24 20              	movq	%r10, 0x20(%rsp)
-14000531a: 48 8d 0d 23 b3 00 00        	leaq	0xb323(%rip), %rcx      # 0x140010644
+14000531a: 48 8d 0d c3 b3 00 00        	leaq	0xb3c3(%rip), %rcx      # 0x1400106e4
 140005321: 49 89 c0                    	movq	%rax, %r8
 140005324: e8 d7 01 00 00              	callq	0x140005500 <.text+0x4500>
 140005329: 48 c7 45 00 00 00 00 00     	movq	$0x0, (%rbp)
 140005331: 48 83 ec 20                 	subq	$0x20, %rsp
-140005335: 48 8d 0d de b2 00 00        	leaq	0xb2de(%rip), %rcx      # 0x14001061a
+140005335: 48 8d 0d 7e b3 00 00        	leaq	0xb37e(%rip), %rcx      # 0x1400106ba
 14000533c: e8 bf 01 00 00              	callq	0x140005500 <.text+0x4500>
 140005341: 48 83 ec 20                 	subq	$0x20, %rsp
-140005345: 48 8d 0d 9c b2 00 00        	leaq	0xb29c(%rip), %rcx      # 0x1400105e8
+140005345: 48 8d 0d 3c b3 00 00        	leaq	0xb33c(%rip), %rcx      # 0x140010688
 14000534c: e8 af 01 00 00              	callq	0x140005500 <.text+0x4500>
 140005351: cc                          	int3
 140005352: 66 66 66 66 66 2e 0f 1f 84 00 00 00 00 00   	nopw	%cs:(%rax,%rax)
@@ -4721,7 +4721,7 @@ Disassembly of section .text:
 140005413: 4a 89 4c 20 18              	movq	%rcx, 0x18(%rax,%r12)
 140005418: 48 8d 54 24 28              	leaq	0x28(%rsp), %rdx
 14000541d: 41 b8 30 00 00 00           	movl	$0x30, %r8d
-140005423: ff 15 df bf 00 00           	callq	*0xbfdf(%rip)           # 0x140011408
+140005423: ff 15 7f c0 00 00           	callq	*0xc07f(%rip)           # 0x1400114a8
 140005429: 48 85 c0                    	testq	%rax, %rax
 14000542c: 0f 84 92 00 00 00           	je	0x1400054c4 <.text+0x44c4>
 140005432: 8b 44 24 4c                 	movl	0x4c(%rsp), %eax
@@ -4747,7 +4747,7 @@ Disassembly of section .text:
 140005479: 4a 89 4c d0 08              	movq	%rcx, 0x8(%rax,%r10,8)
 14000547e: 48 8b 54 24 40              	movq	0x40(%rsp), %rdx
 140005483: 4a 89 54 d0 10              	movq	%rdx, 0x10(%rax,%r10,8)
-140005488: ff 15 72 bf 00 00           	callq	*0xbf72(%rip)           # 0x140011400
+140005488: ff 15 12 c0 00 00           	callq	*0xc012(%rip)           # 0x1400114a0
 14000548e: 85 c0                       	testl	%eax, %eax
 140005490: 74 52                       	je	0x1400054e4 <.text+0x44e4>
 140005492: ff 05 80 dd 00 00           	incl	0xdd80(%rip)            # 0x140013218
@@ -4764,17 +4764,17 @@ Disassembly of section .text:
 1400054b0: 41 5e                       	popq	%r14
 1400054b2: 41 5f                       	popq	%r15
 1400054b4: c3                          	retq
-1400054b5: 48 8d 0d db b1 00 00        	leaq	0xb1db(%rip), %rcx      # 0x140010697
+1400054b5: 48 8d 0d 7b b2 00 00        	leaq	0xb27b(%rip), %rcx      # 0x140010737
 1400054bc: 48 89 f2                    	movq	%rsi, %rdx
 1400054bf: e8 3c 00 00 00              	callq	0x140005500 <.text+0x4500>
 1400054c4: 41 8b 56 08                 	movl	0x8(%r14), %edx
 1400054c8: 48 8b 05 41 dd 00 00        	movq	0xdd41(%rip), %rax      # 0x140013210
 1400054cf: 4b 8d 0c bf                 	leaq	(%r15,%r15,4), %rcx
 1400054d3: 4c 8b 44 c8 18              	movq	0x18(%rax,%rcx,8), %r8
-1400054d8: 48 8d 0d d8 b1 00 00        	leaq	0xb1d8(%rip), %rcx      # 0x1400106b7
+1400054d8: 48 8d 0d 78 b2 00 00        	leaq	0xb278(%rip), %rcx      # 0x140010757
 1400054df: e8 1c 00 00 00              	callq	0x140005500 <.text+0x4500>
-1400054e4: ff 15 e6 be 00 00           	callq	*0xbee6(%rip)           # 0x1400113d0
-1400054ea: 48 8d 0d f7 b1 00 00        	leaq	0xb1f7(%rip), %rcx      # 0x1400106e8
+1400054e4: ff 15 86 bf 00 00           	callq	*0xbf86(%rip)           # 0x140011470
+1400054ea: 48 8d 0d 97 b2 00 00        	leaq	0xb297(%rip), %rcx      # 0x140010788
 1400054f1: 89 c2                       	movl	%eax, %edx
 1400054f3: e8 08 00 00 00              	callq	0x140005500 <.text+0x4500>
 1400054f8: cc                          	int3
@@ -4789,7 +4789,7 @@ Disassembly of section .text:
 14000551c: 48 89 44 24 28              	movq	%rax, 0x28(%rsp)
 140005521: b9 02 00 00 00              	movl	$0x2, %ecx
 140005526: e8 05 88 00 00              	callq	0x14000dd30 <.text+0xcd30>
-14000552b: 48 8d 15 dd b1 00 00        	leaq	0xb1dd(%rip), %rdx      # 0x14001070f
+14000552b: 48 8d 15 7d b2 00 00        	leaq	0xb27d(%rip), %rdx      # 0x1400107af
 140005532: 48 89 c1                    	movq	%rax, %rcx
 140005535: e8 46 02 00 00              	callq	0x140005780 <.text+0x4780>
 14000553a: b9 02 00 00 00              	movl	$0x2, %ecx
@@ -4855,7 +4855,7 @@ Disassembly of section .text:
 1400055ba: e8 41 0b 00 00              	callq	0x140006100 <.text+0x5100>
 1400055bf: 89 c1                       	movl	%eax, %ecx
 1400055c1: 83 e1 07                    	andl	$0x7, %ecx
-1400055c4: 48 8d 15 b5 b1 00 00        	leaq	0xb1b5(%rip), %rdx      # 0x140010780
+1400055c4: 48 8d 15 55 b2 00 00        	leaq	0xb255(%rip), %rdx      # 0x140010820
 1400055cb: 48 63 0c 8a                 	movslq	(%rdx,%rcx,4), %rcx
 1400055cf: 48 01 d1                    	addq	%rdx, %rcx
 1400055d2: ff e1                       	jmpq	*%rcx
@@ -4889,13 +4889,13 @@ Disassembly of section .text:
 140005635: a8 08                       	testb	$0x8, %al
 140005637: 75 0e                       	jne	0x140005647 <.text+0x4647>
 140005639: eb 14                       	jmp	0x14000564f <.text+0x464f>
-14000563b: f3 0f 7e 05 25 b1 00 00     	movq	0xb125(%rip), %xmm0     # 0x140010768
+14000563b: f3 0f 7e 05 c5 b1 00 00     	movq	0xb1c5(%rip), %xmm0     # 0x140010808
 140005643: a8 08                       	testb	$0x8, %al
 140005645: 74 08                       	je	0x14000564f <.text+0x464f>
-140005647: 66 0f eb 05 21 b1 00 00     	por	0xb121(%rip), %xmm0     # 0x140010770
+140005647: 66 0f eb 05 c1 b1 00 00     	por	0xb1c1(%rip), %xmm0     # 0x140010810
 14000564f: 48 83 c4 38                 	addq	$0x38, %rsp
 140005653: c3                          	retq
-140005654: f3 0f 7e 05 04 b1 00 00     	movq	0xb104(%rip), %xmm0     # 0x140010760
+140005654: f3 0f 7e 05 a4 b1 00 00     	movq	0xb1a4(%rip), %xmm0     # 0x140010800
 14000565c: a8 08                       	testb	$0x8, %al
 14000565e: 75 e7                       	jne	0x140005647 <.text+0x4647>
 140005660: eb ed                       	jmp	0x14000564f <.text+0x464f>
@@ -4931,12 +4931,12 @@ Disassembly of section .text:
 14000569f: 89 c1                       	movl	%eax, %ecx
 1400056a1: ba 00 40 00 00              	movl	$0x4000, %edx           # imm = 0x4000
 1400056a6: e8 55 88 00 00              	callq	0x14000df00 <.text+0xcf00>
-1400056ab: 48 8b 05 ee b0 00 00        	movq	0xb0ee(%rip), %rax      # 0x1400107a0
+1400056ab: 48 8b 05 8e b1 00 00        	movq	0xb18e(%rip), %rax      # 0x140010840
 1400056b2: 48 8b 00                    	movq	(%rax), %rax
 1400056b5: 48 89 d9                    	movq	%rbx, %rcx
 1400056b8: 48 89 fa                    	movq	%rdi, %rdx
 1400056bb: 41 89 f0                    	movl	%esi, %r8d
-1400056be: ff 15 bc b7 00 00           	callq	*0xb7bc(%rip)           # 0x140010e80
+1400056be: ff 15 5c b8 00 00           	callq	*0xb85c(%rip)           # 0x140010f20
 1400056c4: cc                          	int3
 1400056c5: cc                          	int3
 1400056c6: cc                          	int3
@@ -4993,7 +4993,7 @@ Disassembly of section .text:
 14000573d: cc                          	int3
 14000573e: cc                          	int3
 14000573f: cc                          	int3
-140005740: 48 8b 05 61 b0 00 00        	movq	0xb061(%rip), %rax      # 0x1400107a8
+140005740: 48 8b 05 01 b1 00 00        	movq	0xb101(%rip), %rax      # 0x140010848
 140005747: 48 8b 00                    	movq	(%rax), %rax
 14000574a: c3                          	retq
 14000574b: cc                          	int3
@@ -5006,7 +5006,7 @@ Disassembly of section .text:
 140005755: 89 ce                       	movl	%ecx, %esi
 140005757: b9 02 00 00 00              	movl	$0x2, %ecx
 14000575c: e8 cf 85 00 00              	callq	0x14000dd30 <.text+0xcd30>
-140005761: 48 8d 15 48 b0 00 00        	leaq	0xb048(%rip), %rdx      # 0x1400107b0
+140005761: 48 8d 15 e8 b0 00 00        	leaq	0xb0e8(%rip), %rdx      # 0x140010850
 140005768: 48 89 c1                    	movq	%rax, %rcx
 14000576b: 41 89 f0                    	movl	%esi, %r8d
 14000576e: e8 0d 00 00 00              	callq	0x140005780 <.text+0x4780>
@@ -5098,12 +5098,12 @@ Disassembly of section .text:
 140005861: 48 8d 3d c0 d9 00 00        	leaq	0xd9c0(%rip), %rdi      # 0x140013228
 140005868: 48 89 f9                    	movq	%rdi, %rcx
 14000586b: 48 89 c3                    	movq	%rax, %rbx
-14000586e: ff 15 54 bb 00 00           	callq	*0xbb54(%rip)           # 0x1400113c8
+14000586e: ff 15 f4 bb 00 00           	callq	*0xbbf4(%rip)           # 0x140011468
 140005874: 48 8b 05 d5 d9 00 00        	movq	0xd9d5(%rip), %rax      # 0x140013250
 14000587b: 48 89 43 10                 	movq	%rax, 0x10(%rbx)
 14000587f: 48 89 1d ca d9 00 00        	movq	%rbx, 0xd9ca(%rip)      # 0x140013250
 140005886: 48 89 f9                    	movq	%rdi, %rcx
-140005889: ff 15 51 bb 00 00           	callq	*0xbb51(%rip)           # 0x1400113e0
+140005889: ff 15 f1 bb 00 00           	callq	*0xbbf1(%rip)           # 0x140011480
 14000588f: eb 05                       	jmp	0x140005896 <.text+0x4896>
 140005891: be ff ff ff ff              	movl	$0xffffffff, %esi       # imm = 0xFFFFFFFF
 140005896: 89 f0                       	movl	%esi, %eax
@@ -5118,7 +5118,7 @@ Disassembly of section .text:
 1400058ac: 74 71                       	je	0x14000591f <.text+0x491f>
 1400058ae: 89 ce                       	movl	%ecx, %esi
 1400058b0: 48 8d 0d 71 d9 00 00        	leaq	0xd971(%rip), %rcx      # 0x140013228
-1400058b7: ff 15 0b bb 00 00           	callq	*0xbb0b(%rip)           # 0x1400113c8
+1400058b7: ff 15 ab bb 00 00           	callq	*0xbbab(%rip)           # 0x140011468
 1400058bd: 48 8b 0d 8c d9 00 00        	movq	0xd98c(%rip), %rcx      # 0x140013250
 1400058c4: 48 85 c9                    	testq	%rcx, %rcx
 1400058c7: 74 49                       	je	0x140005912 <.text+0x4912>
@@ -5145,7 +5145,7 @@ Disassembly of section .text:
 140005906: 48 89 15 43 d9 00 00        	movq	%rdx, 0xd943(%rip)      # 0x140013250
 14000590d: e8 fe 84 00 00              	callq	0x14000de10 <.text+0xce10>
 140005912: 48 8d 0d 0f d9 00 00        	leaq	0xd90f(%rip), %rcx      # 0x140013228
-140005919: ff 15 c1 ba 00 00           	callq	*0xbac1(%rip)           # 0x1400113e0
+140005919: ff 15 61 bb 00 00           	callq	*0xbb61(%rip)           # 0x140011480
 14000591f: 31 c0                       	xorl	%eax, %eax
 140005921: 48 83 c4 20                 	addq	$0x20, %rsp
 140005925: 5e                          	popq	%rsi
@@ -5159,19 +5159,19 @@ Disassembly of section .text:
 140005939: 83 fa 03                    	cmpl	$0x3, %edx
 14000593c: 0f 87 71 01 00 00           	ja	0x140005ab3 <.text+0x4ab3>
 140005942: 89 d0                       	movl	%edx, %eax
-140005944: 48 8d 0d 79 ae 00 00        	leaq	0xae79(%rip), %rcx      # 0x1400107c4
+140005944: 48 8d 0d 19 af 00 00        	leaq	0xaf19(%rip), %rcx      # 0x140010864
 14000594b: 48 63 04 81                 	movslq	(%rcx,%rax,4), %rax
 14000594f: 48 01 c8                    	addq	%rcx, %rax
 140005952: ff e0                       	jmpq	*%rax
 140005954: 83 3d c5 d8 00 00 00        	cmpl	$0x0, 0xd8c5(%rip)      # 0x140013220
 14000595b: 0f 84 08 01 00 00           	je	0x140005a69 <.text+0x4a69>
 140005961: 48 8d 0d c0 d8 00 00        	leaq	0xd8c0(%rip), %rcx      # 0x140013228
-140005968: ff 15 5a ba 00 00           	callq	*0xba5a(%rip)           # 0x1400113c8
+140005968: ff 15 fa ba 00 00           	callq	*0xbafa(%rip)           # 0x140011468
 14000596e: 48 8b 3d db d8 00 00        	movq	0xd8db(%rip), %rdi      # 0x140013250
 140005975: 48 85 ff                    	testq	%rdi, %rdi
 140005978: 0f 84 de 00 00 00           	je	0x140005a5c <.text+0x4a5c>
-14000597e: 48 8b 1d 73 ba 00 00        	movq	0xba73(%rip), %rbx      # 0x1400113f8
-140005985: 4c 8b 35 44 ba 00 00        	movq	0xba44(%rip), %r14      # 0x1400113d0
+14000597e: 48 8b 1d 13 bb 00 00        	movq	0xbb13(%rip), %rbx      # 0x140011498
+140005985: 4c 8b 35 e4 ba 00 00        	movq	0xbae4(%rip), %r14      # 0x140011470
 14000598c: eb 0f                       	jmp	0x14000599d <.text+0x499d>
 14000598e: 66 90                       	nop
 140005990: 48 8b 7f 10                 	movq	0x10(%rdi), %rdi
@@ -5187,19 +5187,19 @@ Disassembly of section .text:
 1400059ae: 74 e0                       	je	0x140005990 <.text+0x4990>
 1400059b0: 48 8b 47 08                 	movq	0x8(%rdi), %rax
 1400059b4: 48 89 f1                    	movq	%rsi, %rcx
-1400059b7: ff 15 c3 b4 00 00           	callq	*0xb4c3(%rip)           # 0x140010e80
+1400059b7: ff 15 63 b5 00 00           	callq	*0xb563(%rip)           # 0x140010f20
 1400059bd: eb d1                       	jmp	0x140005990 <.text+0x4990>
 1400059bf: e8 0c f6 ff ff              	callq	0x140004fd0 <.text+0x3fd0>
 1400059c4: e9 ea 00 00 00              	jmp	0x140005ab3 <.text+0x4ab3>
 1400059c9: 83 3d 50 d8 00 00 00        	cmpl	$0x0, 0xd850(%rip)      # 0x140013220
 1400059d0: 0f 84 dd 00 00 00           	je	0x140005ab3 <.text+0x4ab3>
 1400059d6: 48 8d 0d 4b d8 00 00        	leaq	0xd84b(%rip), %rcx      # 0x140013228
-1400059dd: ff 15 e5 b9 00 00           	callq	*0xb9e5(%rip)           # 0x1400113c8
+1400059dd: ff 15 85 ba 00 00           	callq	*0xba85(%rip)           # 0x140011468
 1400059e3: 48 8b 3d 66 d8 00 00        	movq	0xd866(%rip), %rdi      # 0x140013250
 1400059ea: 48 85 ff                    	testq	%rdi, %rdi
 1400059ed: 74 5e                       	je	0x140005a4d <.text+0x4a4d>
-1400059ef: 48 8b 1d 02 ba 00 00        	movq	0xba02(%rip), %rbx      # 0x1400113f8
-1400059f6: 4c 8b 35 d3 b9 00 00        	movq	0xb9d3(%rip), %r14      # 0x1400113d0
+1400059ef: 48 8b 1d a2 ba 00 00        	movq	0xbaa2(%rip), %rbx      # 0x140011498
+1400059f6: 4c 8b 35 73 ba 00 00        	movq	0xba73(%rip), %r14      # 0x140011470
 1400059fd: eb 0a                       	jmp	0x140005a09 <.text+0x4a09>
 1400059ff: 90                          	nop
 140005a00: 48 8b 7f 10                 	movq	0x10(%rdi), %rdi
@@ -5215,19 +5215,19 @@ Disassembly of section .text:
 140005a1a: 74 e4                       	je	0x140005a00 <.text+0x4a00>
 140005a1c: 48 8b 47 08                 	movq	0x8(%rdi), %rax
 140005a20: 48 89 f1                    	movq	%rsi, %rcx
-140005a23: ff 15 57 b4 00 00           	callq	*0xb457(%rip)           # 0x140010e80
+140005a23: ff 15 f7 b4 00 00           	callq	*0xb4f7(%rip)           # 0x140010f20
 140005a29: eb d5                       	jmp	0x140005a00 <.text+0x4a00>
 140005a2b: 83 3d ee d7 00 00 00        	cmpl	$0x0, 0xd7ee(%rip)      # 0x140013220
 140005a32: 75 0d                       	jne	0x140005a41 <.text+0x4a41>
 140005a34: 48 8d 0d ed d7 00 00        	leaq	0xd7ed(%rip), %rcx      # 0x140013228
-140005a3b: ff 15 97 b9 00 00           	callq	*0xb997(%rip)           # 0x1400113d8
+140005a3b: ff 15 37 ba 00 00           	callq	*0xba37(%rip)           # 0x140011478
 140005a41: c7 05 d5 d7 00 00 01 00 00 00       	movl	$0x1, 0xd7d5(%rip) # 0x140013220
 140005a4b: eb 66                       	jmp	0x140005ab3 <.text+0x4ab3>
 140005a4d: 48 8d 0d d4 d7 00 00        	leaq	0xd7d4(%rip), %rcx      # 0x140013228
-140005a54: ff 15 86 b9 00 00           	callq	*0xb986(%rip)           # 0x1400113e0
+140005a54: ff 15 26 ba 00 00           	callq	*0xba26(%rip)           # 0x140011480
 140005a5a: eb 57                       	jmp	0x140005ab3 <.text+0x4ab3>
 140005a5c: 48 8d 0d c5 d7 00 00        	leaq	0xd7c5(%rip), %rcx      # 0x140013228
-140005a63: ff 15 77 b9 00 00           	callq	*0xb977(%rip)           # 0x1400113e0
+140005a63: ff 15 17 ba 00 00           	callq	*0xba17(%rip)           # 0x140011480
 140005a69: 8b 05 b1 d7 00 00           	movl	0xd7b1(%rip), %eax      # 0x140013220
 140005a6f: 83 f8 01                    	cmpl	$0x1, %eax
 140005a72: 75 3f                       	jne	0x140005ab3 <.text+0x4ab3>
@@ -5242,7 +5242,7 @@ Disassembly of section .text:
 140005a91: 48 c7 05 b4 d7 00 00 00 00 00 00    	movq	$0x0, 0xd7b4(%rip) # 0x140013250
 140005a9c: c7 05 7a d7 00 00 00 00 00 00       	movl	$0x0, 0xd77a(%rip) # 0x140013220
 140005aa6: 48 8d 0d 7b d7 00 00        	leaq	0xd77b(%rip), %rcx      # 0x140013228
-140005aad: ff 15 0d b9 00 00           	callq	*0xb90d(%rip)           # 0x1400113c0
+140005aad: ff 15 ad b9 00 00           	callq	*0xb9ad(%rip)           # 0x140011460
 140005ab3: b8 01 00 00 00              	movl	$0x1, %eax
 140005ab8: 48 83 c4 28                 	addq	$0x28, %rsp
 140005abc: 5b                          	popq	%rbx
@@ -6134,7 +6134,7 @@ Disassembly of section .text:
 14000671b: c7 44 24 44 01 00 00 00     	movl	$0x1, 0x44(%rsp)
 140006723: 41 8b 47 0c                 	movl	0xc(%r15), %eax
 140006727: 83 e0 03                    	andl	$0x3, %eax
-14000672a: 48 8d 0d ef a0 00 00        	leaq	0xa0ef(%rip), %rcx      # 0x140010820
+14000672a: 48 8d 0d 8f a1 00 00        	leaq	0xa18f(%rip), %rcx      # 0x1400108c0
 140006731: 48 63 04 81                 	movslq	(%rcx,%rax,4), %rax
 140006735: 48 01 c8                    	addq	%rcx, %rax
 140006738: ff e0                       	jmpq	*%rax
@@ -6153,17 +6153,17 @@ Disassembly of section .text:
 140006777: 41 83 c0 b7                 	addl	$-0x49, %r8d
 14000677b: 41 83 f8 25                 	cmpl	$0x25, %r8d
 14000677f: 0f 87 4d 0c 00 00           	ja	0x1400073d2 <.text+0x63d2>
-140006785: 48 8d 05 b4 a0 00 00        	leaq	0xa0b4(%rip), %rax      # 0x140010840
+140006785: 48 8d 05 54 a1 00 00        	leaq	0xa154(%rip), %rax      # 0x1400108e0
 14000678c: 4a 63 0c 80                 	movslq	(%rax,%r8,4), %rcx
 140006790: 48 01 c1                    	addq	%rax, %rcx
 140006793: ff e1                       	jmpq	*%rcx
-140006795: 48 8d 15 3c a1 00 00        	leaq	0xa13c(%rip), %rdx      # 0x1400108d8
+140006795: 48 8d 15 dc a1 00 00        	leaq	0xa1dc(%rip), %rdx      # 0x140010978
 14000679c: 48 8d 4c 24 58              	leaq	0x58(%rsp), %rcx
 1400067a1: e8 ea 56 00 00              	callq	0x14000be90 <.text+0xae90>
 1400067a6: 85 c0                       	testl	%eax, %eax
 1400067a8: 0f 84 24 0c 00 00           	je	0x1400073d2 <.text+0x63d2>
 1400067ae: 48 ff 4c 24 58              	decq	0x58(%rsp)
-1400067b3: 48 8d 15 21 a1 00 00        	leaq	0xa121(%rip), %rdx      # 0x1400108db
+1400067b3: 48 8d 15 c1 a1 00 00        	leaq	0xa1c1(%rip), %rdx      # 0x14001097b
 1400067ba: 48 8d 4c 24 58              	leaq	0x58(%rsp), %rcx
 1400067bf: e8 cc 56 00 00              	callq	0x14000be90 <.text+0xae90>
 1400067c4: 85 c0                       	testl	%eax, %eax
@@ -6192,7 +6192,7 @@ Disassembly of section .text:
 140006827: 83 f9 0a                    	cmpl	$0xa, %ecx
 14000682a: 7c 20                       	jl	0x14000684c <.text+0x584c>
 14000682c: 89 d8                       	movl	%ebx, %eax
-14000682e: 48 8b 0d 23 a1 00 00        	movq	0xa123(%rip), %rcx      # 0x140010958
+14000682e: 48 8b 0d c3 a1 00 00        	movq	0xa1c3(%rip), %rcx      # 0x1400109f8
 140006835: 89 d2                       	movl	%edx, %edx
 140006837: f2 48 0f 2a ca              	cvtsi2sd	%rdx, %xmm1
 14000683c: f2 0f 59 44 c1 b8           	mulsd	-0x48(%rcx,%rax,8), %xmm0
@@ -6214,7 +6214,7 @@ Disassembly of section .text:
 140006892: 41 83 fb 16                 	cmpl	$0x16, %r11d
 140006896: 0f 87 cc 00 00 00           	ja	0x140006968 <.text+0x5968>
 14000689c: 44 89 d8                    	movl	%r11d, %eax
-14000689f: 4c 8d 0d 4a a0 00 00        	leaq	0xa04a(%rip), %r9       # 0x1400108f0
+14000689f: 4c 8d 0d ea a0 00 00        	leaq	0xa0ea(%rip), %r9       # 0x140010990
 1400068a6: 81 cf 00 00 10 00           	orl	$0x100000, %edi         # imm = 0x100000
 1400068ac: 45 31 c0                    	xorl	%r8d, %r8d
 1400068af: 85 c9                       	testl	%ecx, %ecx
@@ -6228,7 +6228,7 @@ Disassembly of section .text:
 1400068cb: 31 c9                       	xorl	%ecx, %ecx
 1400068cd: 41 83 f8 36                 	cmpl	$0x36, %r8d
 1400068d1: 0f 9c c1                    	setl	%cl
-1400068d4: 4c 8b 05 7d a0 00 00        	movq	0xa07d(%rip), %r8       # 0x140010958
+1400068d4: 4c 8b 05 1d a1 00 00        	movq	0xa11d(%rip), %r8       # 0x1400109f8
 1400068db: f2 41 0f 59 04 c0           	mulsd	(%r8,%rax,8), %xmm0
 1400068e1: 66 0f 28 f0                 	movapd	%xmm0, %xmm6
 1400068e5: f2 0f 11 44 24 68           	movsd	%xmm0, 0x68(%rsp)
@@ -6258,7 +6258,7 @@ Disassembly of section .text:
 140006950: 72 2e                       	jb	0x140006980 <.text+0x5980>
 140006952: 44 89 d8                    	movl	%r11d, %eax
 140006955: f7 d8                       	negl	%eax
-140006957: 48 8b 0d fa 9f 00 00        	movq	0x9ffa(%rip), %rcx      # 0x140010958
+140006957: 48 8b 0d 9a a0 00 00        	movq	0xa09a(%rip), %rcx      # 0x1400109f8
 14000695e: f2 0f 5e 04 c1              	divsd	(%rcx,%rax,8), %xmm0
 140006963: e9 9e 0a 00 00              	jmp	0x140007406 <.text+0x6406>
 140006968: b8 25 00 00 00              	movl	$0x25, %eax
@@ -6276,7 +6276,7 @@ Disassembly of section .text:
 140006999: 83 e0 0f                    	andl	$0xf, %eax
 14000699c: 74 1d                       	je	0x1400069bb <.text+0x59bb>
 14000699e: 89 c0                       	movl	%eax, %eax
-1400069a0: 48 8b 15 b1 9f 00 00        	movq	0x9fb1(%rip), %rdx      # 0x140010958
+1400069a0: 48 8b 15 51 a0 00 00        	movq	0xa051(%rip), %rdx      # 0x1400109f8
 1400069a7: f2 0f 59 04 c2              	mulsd	(%rdx,%rax,8), %xmm0
 1400069ac: f2 0f 11 44 24 68           	movsd	%xmm0, 0x68(%rsp)
 1400069b2: 66 48 0f 7e c7              	movq	%xmm0, %rdi
@@ -6289,7 +6289,7 @@ Disassembly of section .text:
 1400069cb: ba 01 fc ff ff              	movl	$0xfffffc01, %edx       # imm = 0xFFFFFC01
 1400069d0: 81 f9 00 01 00 00           	cmpl	$0x100, %ecx            # imm = 0x100
 1400069d6: 72 62                       	jb	0x140006a3a <.text+0x5a3a>
-1400069d8: 48 8b 0d 71 9f 00 00        	movq	0x9f71(%rip), %rcx      # 0x140010950
+1400069d8: 48 8b 0d 11 a0 00 00        	movq	0xa011(%rip), %rcx      # 0x1400109f0
 1400069df: f2 0f 10 41 20              	movsd	0x20(%rcx), %xmm0
 1400069e4: 31 d2                       	xorl	%edx, %edx
 1400069e6: 66 2e 0f 1f 84 00 00 00 00 00       	nopw	%cs:(%rax,%rax)
@@ -6320,7 +6320,7 @@ Disassembly of section .text:
 140006a57: f2 0f 10 44 24 68           	movsd	0x68(%rsp), %xmm0
 140006a5d: 85 c0                       	testl	%eax, %eax
 140006a5f: 0f 84 0a 01 00 00           	je	0x140006b6f <.text+0x5b6f>
-140006a65: 48 8b 0d e4 9e 00 00        	movq	0x9ee4(%rip), %rcx      # 0x140010950
+140006a65: 48 8b 0d 84 9f 00 00        	movq	0x9f84(%rip), %rcx      # 0x1400109f0
 140006a6c: eb 10                       	jmp	0x140006a7e <.text+0x5a7e>
 140006a6e: 66 90                       	nop
 140006a70: d1 e8                       	shrl	%eax
@@ -6339,7 +6339,7 @@ Disassembly of section .text:
 140006a96: 83 e0 0f                    	andl	$0xf, %eax
 140006a99: 74 1d                       	je	0x140006ab8 <.text+0x5ab8>
 140006a9b: 89 c0                       	movl	%eax, %eax
-140006a9d: 48 8b 15 b4 9e 00 00        	movq	0x9eb4(%rip), %rdx      # 0x140010958
+140006a9d: 48 8b 15 54 9f 00 00        	movq	0x9f54(%rip), %rdx      # 0x1400109f8
 140006aa4: f2 0f 5e 04 c2              	divsd	(%rdx,%rax,8), %xmm0
 140006aa9: f2 0f 11 44 24 68           	movsd	%xmm0, 0x68(%rsp)
 140006aaf: 66 48 0f 7e c7              	movq	%xmm0, %rdi
@@ -6351,7 +6351,7 @@ Disassembly of section .text:
 140006ac6: ba 01 fc ff ff              	movl	$0xfffffc01, %edx       # imm = 0xFFFFFC01
 140006acb: 81 f9 00 01 00 00           	cmpl	$0x100, %ecx            # imm = 0x100
 140006ad1: 72 58                       	jb	0x140006b2b <.text+0x5b2b>
-140006ad3: 48 8b 0d 86 9e 00 00        	movq	0x9e86(%rip), %rcx      # 0x140010960
+140006ad3: 48 8b 0d 26 9f 00 00        	movq	0x9f26(%rip), %rcx      # 0x140010a00
 140006ada: f2 0f 10 41 20              	movsd	0x20(%rcx), %xmm0
 140006adf: 31 d2                       	xorl	%edx, %edx
 140006ae1: 89 f9                       	movl	%edi, %ecx
@@ -6381,7 +6381,7 @@ Disassembly of section .text:
 140006b48: f2 0f 10 44 24 68           	movsd	0x68(%rsp), %xmm0
 140006b4e: 85 c0                       	testl	%eax, %eax
 140006b50: 74 1d                       	je	0x140006b6f <.text+0x5b6f>
-140006b52: 48 8b 0d 07 9e 00 00        	movq	0x9e07(%rip), %rcx      # 0x140010960
+140006b52: 48 8b 0d a7 9e 00 00        	movq	0x9ea7(%rip), %rcx      # 0x140010a00
 140006b59: eb 0a                       	jmp	0x140006b65 <.text+0x5b65>
 140006b5b: d1 e8                       	shrl	%eax
 140006b5d: 48 83 c1 08                 	addq	$0x8, %rcx
@@ -6466,13 +6466,13 @@ Disassembly of section .text:
 140006cb2: 8b 84 24 cc 00 00 00        	movl	0xcc(%rsp), %eax
 140006cb9: 83 e0 01                    	andl	$0x1, %eax
 140006cbc: 89 84 24 d8 00 00 00        	movl	%eax, 0xd8(%rsp)
-140006cc3: f2 44 0f 10 05 2c 9b 00 00  	movsd	0x9b2c(%rip), %xmm8     # 0x1400107f8
-140006ccc: f2 44 0f 10 0d 2b 9b 00 00  	movsd	0x9b2b(%rip), %xmm9     # 0x140010800
-140006cd5: f2 44 0f 10 15 2a 9b 00 00  	movsd	0x9b2a(%rip), %xmm10    # 0x140010808
-140006cde: 66 44 0f 28 1d 29 9b 00 00  	movapd	0x9b29(%rip), %xmm11    # 0x140010810
-140006ce7: f2 44 0f 10 25 f0 9a 00 00  	movsd	0x9af0(%rip), %xmm12    # 0x1400107e0
-140006cf0: f2 44 0f 10 2d ef 9a 00 00  	movsd	0x9aef(%rip), %xmm13    # 0x1400107e8
-140006cf9: f2 44 0f 10 35 ee 9a 00 00  	movsd	0x9aee(%rip), %xmm14    # 0x1400107f0
+140006cc3: f2 44 0f 10 05 cc 9b 00 00  	movsd	0x9bcc(%rip), %xmm8     # 0x140010898
+140006ccc: f2 44 0f 10 0d cb 9b 00 00  	movsd	0x9bcb(%rip), %xmm9     # 0x1400108a0
+140006cd5: f2 44 0f 10 15 ca 9b 00 00  	movsd	0x9bca(%rip), %xmm10    # 0x1400108a8
+140006cde: 66 44 0f 28 1d c9 9b 00 00  	movapd	0x9bc9(%rip), %xmm11    # 0x1400108b0
+140006ce7: f2 44 0f 10 25 90 9b 00 00  	movsd	0x9b90(%rip), %xmm12    # 0x140010880
+140006cf0: f2 44 0f 10 2d 8f 9b 00 00  	movsd	0x9b8f(%rip), %xmm13    # 0x140010888
+140006cf9: f2 44 0f 10 35 8e 9b 00 00  	movsd	0x9b8e(%rip), %xmm14    # 0x140010890
 140006d02: 66 45 0f 57 ff              	xorpd	%xmm15, %xmm15
 140006d07: 31 ff                       	xorl	%edi, %edi
 140006d09: 89 94 24 e0 00 00 00        	movl	%edx, 0xe0(%rsp)
@@ -6872,7 +6872,7 @@ Disassembly of section .text:
 140007377: 89 ea                       	movl	%ebp, %edx
 140007379: e8 12 4d 00 00              	callq	0x14000c090 <.text+0xb090>
 14000737e: e9 c6 02 00 00              	jmp	0x140007649 <.text+0x6649>
-140007383: 48 8d 15 57 95 00 00        	leaq	0x9557(%rip), %rdx      # 0x1400108e1
+140007383: 48 8d 15 f7 95 00 00        	leaq	0x95f7(%rip), %rdx      # 0x140010981
 14000738a: 48 8d 4c 24 58              	leaq	0x58(%rsp), %rcx
 14000738f: e8 fc 4a 00 00              	callq	0x14000be90 <.text+0xae90>
 140007394: 85 c0                       	testl	%eax, %eax
@@ -6898,7 +6898,7 @@ Disassembly of section .text:
 1400073e9: 29 c8                       	subl	%ecx, %eax
 1400073eb: 44 89 d9                    	movl	%r11d, %ecx
 1400073ee: 29 c1                       	subl	%eax, %ecx
-1400073f0: 4c 8b 05 61 95 00 00        	movq	0x9561(%rip), %r8       # 0x140010958
+1400073f0: 4c 8b 05 01 96 00 00        	movq	0x9601(%rip), %r8       # 0x1400109f8
 1400073f7: f2 41 0f 59 04 c0           	mulsd	(%r8,%rax,8), %xmm0
 1400073fd: 48 63 c1                    	movslq	%ecx, %rax
 140007400: f2 41 0f 59 04 c0           	mulsd	(%r8,%rax,8), %xmm0
@@ -7135,7 +7135,7 @@ Disassembly of section .text:
 14000783a: c7 00 22 00 00 00           	movl	$0x22, (%rax)
 140007840: 41 8b 47 0c                 	movl	0xc(%r15), %eax
 140007844: 83 e0 03                    	andl	$0x3, %eax
-140007847: 48 8d 0d e2 8f 00 00        	leaq	0x8fe2(%rip), %rcx      # 0x140010830
+140007847: 48 8d 0d 82 90 00 00        	leaq	0x9082(%rip), %rcx      # 0x1400108d0
 14000784e: 48 63 04 81                 	movslq	(%rcx,%rax,4), %rax
 140007852: 48 01 c8                    	addq	%rcx, %rax
 140007855: 48 8b ac 24 b0 00 00 00     	movq	0xb0(%rsp), %rbp
@@ -7599,14 +7599,14 @@ Disassembly of section .text:
 140007ee2: 81 e6 00 60 00 00           	andl	$0x6000, %esi           # imm = 0x6000
 140007ee8: 89 74 24 38                 	movl	%esi, 0x38(%rsp)
 140007eec: 48 c7 44 24 3c ff ff ff ff  	movq	$-0x1, 0x3c(%rsp)
-140007ef5: 66 0f 6e 05 83 8a 00 00     	movd	0x8a83(%rip), %xmm0     # 0x140010980
+140007ef5: 66 0f 6e 05 23 8b 00 00     	movd	0x8b23(%rip), %xmm0     # 0x140010a20
 140007efd: f3 0f 7f 44 24 44           	movdqu	%xmm0, 0x44(%rsp)
 140007f03: c7 44 24 54 00 00 00 00     	movl	$0x0, 0x54(%rsp)
 140007f0b: 89 6c 24 58                 	movl	%ebp, 0x58(%rsp)
 140007f0f: c7 44 24 5c ff ff ff ff     	movl	$0xffffffff, 0x5c(%rsp) # imm = 0xFFFFFFFF
 140007f17: 8d 86 00 02 00 00           	leal	0x200(%rsi), %eax
 140007f1d: 89 44 24 7c                 	movl	%eax, 0x7c(%rsp)
-140007f21: 4c 8d 35 5c 8a 00 00        	leaq	0x8a5c(%rip), %r14      # 0x140010984
+140007f21: 4c 8d 35 fc 8a 00 00        	leaq	0x8afc(%rip), %r14      # 0x140010a24
 140007f28: eb 12                       	jmp	0x140007f3c <.text+0x6f3c>
 140007f2a: 66 0f 1f 44 00 00           	nopw	(%rax,%rax)
 140007f30: 0f be c8                    	movsbl	%al, %ecx
@@ -7834,7 +7834,7 @@ Disassembly of section .text:
 1400082c7: 41 83 fc 01                 	cmpl	$0x1, %r12d
 1400082cb: 0f 84 66 05 00 00           	je	0x140008837 <.text+0x7837>
 1400082d1: ba 06 00 00 00              	movl	$0x6, %edx
-1400082d6: 48 8d 0d 53 88 00 00        	leaq	0x8853(%rip), %rcx      # 0x140010b30
+1400082d6: 48 8d 0d f3 88 00 00        	leaq	0x88f3(%rip), %rcx      # 0x140010bd0
 1400082dd: 48 85 c0                    	testq	%rax, %rax
 1400082e0: 74 11                       	je	0x1400082f3 <.text+0x72f3>
 1400082e2: 4c 8b 40 08                 	movq	0x8(%rax), %r8
@@ -7988,7 +7988,7 @@ Disassembly of section .text:
 14000854a: 89 f9                       	movl	%edi, %ecx
 14000854c: e8 ff 57 00 00              	callq	0x14000dd50 <.text+0xcd50>
 140008551: 48 85 c0                    	testq	%rax, %rax
-140008554: 48 8d 1d e3 85 00 00        	leaq	0x85e3(%rip), %rbx      # 0x140010b3e
+140008554: 48 8d 1d 83 86 00 00        	leaq	0x8683(%rip), %rbx      # 0x140010bde
 14000855b: 48 0f 45 d8                 	cmovneq	%rax, %rbx
 14000855f: 48 63 54 24 40              	movslq	0x40(%rsp), %rdx
 140008564: 48 89 d9                    	movq	%rbx, %rcx
@@ -8019,7 +8019,7 @@ Disassembly of section .text:
 1400085d6: 41 ff cc                    	decl	%r12d
 1400085d9: 41 83 fc 04                 	cmpl	$0x4, %r12d
 1400085dd: 77 10                       	ja	0x1400085ef <.text+0x75ef>
-1400085df: 48 8d 0d 0a 85 00 00        	leaq	0x850a(%rip), %rcx      # 0x140010af0
+1400085df: 48 8d 0d aa 85 00 00        	leaq	0x85aa(%rip), %rcx      # 0x140010b90
 1400085e6: 4a 63 14 a1                 	movslq	(%rcx,%r12,4), %rdx
 1400085ea: 48 01 ca                    	addq	%rcx, %rdx
 1400085ed: ff e2                       	jmpq	*%rdx
@@ -8058,7 +8058,7 @@ Disassembly of section .text:
 140008666: 0f 85 52 01 00 00           	jne	0x1400087be <.text+0x77be>
 14000866c: 49 8b 07                    	movq	(%r15), %rax
 14000866f: 48 85 c0                    	testq	%rax, %rax
-140008672: 48 8d 1d b7 84 00 00        	leaq	0x84b7(%rip), %rbx      # 0x140010b30
+140008672: 48 8d 1d 57 85 00 00        	leaq	0x8557(%rip), %rbx      # 0x140010bd0
 140008679: 48 0f 45 d8                 	cmovneq	%rax, %rbx
 14000867d: 85 d2                       	testl	%edx, %edx
 14000867f: 0f 88 cc 00 00 00           	js	0x140008751 <.text+0x7751>
@@ -8139,7 +8139,7 @@ Disassembly of section .text:
 1400087b9: e9 76 02 00 00              	jmp	0x140008a34 <.text+0x7a34>
 1400087be: 49 8b 07                    	movq	(%r15), %rax
 1400087c1: 48 85 c0                    	testq	%rax, %rax
-1400087c4: 48 8d 1d 73 83 00 00        	leaq	0x8373(%rip), %rbx      # 0x140010b3e
+1400087c4: 48 8d 1d 13 84 00 00        	leaq	0x8413(%rip), %rbx      # 0x140010bde
 1400087cb: 48 0f 45 d8                 	cmovneq	%rax, %rbx
 1400087cf: 48 89 d9                    	movq	%rbx, %rcx
 1400087d2: 85 d2                       	testl	%edx, %edx
@@ -8166,7 +8166,7 @@ Disassembly of section .text:
 14000882f: 48 89 eb                    	movq	%rbp, %rbx
 140008832: e9 05 f7 ff ff              	jmp	0x140007f3c <.text+0x6f3c>
 140008837: ba 06 00 00 00              	movl	$0x6, %edx
-14000883c: 48 8d 0d fb 82 00 00        	leaq	0x82fb(%rip), %rcx      # 0x140010b3e
+14000883c: 48 8d 0d 9b 83 00 00        	leaq	0x839b(%rip), %rcx      # 0x140010bde
 140008843: 48 85 c0                    	testq	%rax, %rax
 140008846: 74 0f                       	je	0x140008857 <.text+0x7857>
 140008848: 4c 8b 40 08                 	movq	0x8(%rax), %r8
@@ -8581,7 +8581,7 @@ Disassembly of section .text:
 140008df4: 29 d0                       	subl	%edx, %eax
 140008df6: 49 8d 1c 12                 	leaq	(%r10,%rdx), %rbx
 140008dfa: 45 31 c0                    	xorl	%r8d, %r8d
-140008dfd: 0f 28 05 0c 7d 00 00        	movaps	0x7d0c(%rip), %xmm0     # 0x140010b10
+140008dfd: 0f 28 05 ac 7d 00 00        	movaps	0x7dac(%rip), %xmm0     # 0x140010bb0
 140008e04: 66 66 66 2e 0f 1f 84 00 00 00 00 00 	nopw	%cs:(%rax,%rax)
 140008e10: 43 0f 11 04 02              	movups	%xmm0, (%r10,%r8)
 140008e15: 43 0f 11 44 02 10           	movups	%xmm0, 0x10(%r10,%r8)
@@ -8873,7 +8873,7 @@ Disassembly of section .text:
 1400091ca: 44 29 da                    	subl	%r11d, %edx
 1400091cd: 4b 8d 04 19                 	leaq	(%r9,%r11), %rax
 1400091d1: 31 db                       	xorl	%ebx, %ebx
-1400091d3: 0f 28 05 46 79 00 00        	movaps	0x7946(%rip), %xmm0     # 0x140010b20
+1400091d3: 0f 28 05 e6 79 00 00        	movaps	0x79e6(%rip), %xmm0     # 0x140010bc0
 1400091da: 66 0f 1f 44 00 00           	nopw	(%rax,%rax)
 1400091e0: 41 0f 11 04 19              	movups	%xmm0, (%r9,%rbx)
 1400091e5: 41 0f 11 44 19 10           	movups	%xmm0, 0x10(%r9,%rbx)
@@ -9025,7 +9025,7 @@ Disassembly of section .text:
 1400093b2: 44 29 c9                    	subl	%r9d, %ecx
 1400093b5: 4e 8d 34 08                 	leaq	(%rax,%r9), %r14
 1400093b9: 45 31 d2                    	xorl	%r10d, %r10d
-1400093bc: 0f 28 05 5d 77 00 00        	movaps	0x775d(%rip), %xmm0     # 0x140010b20
+1400093bc: 0f 28 05 fd 77 00 00        	movaps	0x77fd(%rip), %xmm0     # 0x140010bc0
 1400093c3: 66 66 66 66 2e 0f 1f 84 00 00 00 00 00      	nopw	%cs:(%rax,%rax)
 1400093d0: 42 0f 11 04 10              	movups	%xmm0, (%rax,%r10)
 1400093d5: 42 0f 11 44 10 10           	movups	%xmm0, 0x10(%rax,%r10)
@@ -10433,7 +10433,7 @@ Disassembly of section .text:
 14000a67d: 75 13                       	jne	0x14000a692 <.text+0x9692>
 14000a67f: 48 8d 0d 4a 95 00 00        	leaq	0x954a(%rip), %rcx      # 0x140013bd0
 14000a686: 48 89 c6                    	movq	%rax, %rsi
-14000a689: ff 15 51 6d 00 00           	callq	*0x6d51(%rip)           # 0x1400113e0
+14000a689: ff 15 f1 6d 00 00           	callq	*0x6df1(%rip)           # 0x140011480
 14000a68f: 48 89 f0                    	movq	%rsi, %rax
 14000a692: 48 c7 40 10 00 00 00 00     	movq	$0x0, 0x10(%rax)
 14000a69a: 48 83 c4 28                 	addq	$0x28, %rsp
@@ -10457,14 +10457,14 @@ Disassembly of section .text:
 14000a6d7: 85 c0                       	testl	%eax, %eax
 14000a6d9: 75 2f                       	jne	0x14000a70a <.text+0x970a>
 14000a6db: 48 8d 0d ee 94 00 00        	leaq	0x94ee(%rip), %rcx      # 0x140013bd0
-14000a6e2: 48 8b 3d ef 6c 00 00        	movq	0x6cef(%rip), %rdi      # 0x1400113d8
+14000a6e2: 48 8b 3d 8f 6d 00 00        	movq	0x6d8f(%rip), %rdi      # 0x140011478
 14000a6e9: ff d7                       	callq	*%rdi
 14000a6eb: 48 8d 0d 06 95 00 00        	leaq	0x9506(%rip), %rcx      # 0x140013bf8
 14000a6f2: ff d7                       	callq	*%rdi
 14000a6f4: 48 8d 0d 75 0d 00 00        	leaq	0xd75(%rip), %rcx       # 0x14000b470 <.text+0xa470>
 14000a6fb: e8 f0 6c ff ff              	callq	0x1400013f0 <.text+0x3f0>
 14000a700: c7 05 be 94 00 00 02 00 00 00       	movl	$0x2, 0x94be(%rip) # 0x140013bc8
-14000a70a: 48 8b 3d df 6c 00 00        	movq	0x6cdf(%rip), %rdi      # 0x1400113f0
+14000a70a: 48 8b 3d 7f 6d 00 00        	movq	0x6d7f(%rip), %rdi      # 0x140011490
 14000a711: 66 66 66 66 66 66 2e 0f 1f 84 00 00 00 00 00	nopw	%cs:(%rax,%rax)
 14000a720: 8b 05 a2 94 00 00           	movl	0x94a2(%rip), %eax      # 0x140013bc8
 14000a726: 83 f8 01                    	cmpl	$0x1, %eax
@@ -10481,7 +10481,7 @@ Disassembly of section .text:
 14000a74a: 48 83 c4 28                 	addq	$0x28, %rsp
 14000a74e: 5f                          	popq	%rdi
 14000a74f: 5e                          	popq	%rsi
-14000a750: 48 ff 25 71 6c 00 00        	jmpq	*0x6c71(%rip)           # 0x1400113c8
+14000a750: 48 ff 25 11 6d 00 00        	jmpq	*0x6d11(%rip)           # 0x140011468
 14000a757: 48 83 c4 28                 	addq	$0x28, %rsp
 14000a75b: 5f                          	popq	%rdi
 14000a75c: 5e                          	popq	%rsi
@@ -10509,7 +10509,7 @@ Disassembly of section .text:
 14000a7a3: 48 8d 0d 26 94 00 00        	leaq	0x9426(%rip), %rcx      # 0x140013bd0
 14000a7aa: 48 83 c4 20                 	addq	$0x20, %rsp
 14000a7ae: 5e                          	popq	%rsi
-14000a7af: 48 ff 25 2a 6c 00 00        	jmpq	*0x6c2a(%rip)           # 0x1400113e0
+14000a7af: 48 ff 25 ca 6c 00 00        	jmpq	*0x6cca(%rip)           # 0x140011480
 14000a7b6: 48 83 c4 20                 	addq	$0x20, %rsp
 14000a7ba: 5e                          	popq	%rsi
 14000a7bb: c3                          	retq
@@ -10604,7 +10604,7 @@ Disassembly of section .text:
 14000a8f0: 83 3d d1 92 00 00 02        	cmpl	$0x2, 0x92d1(%rip)      # 0x140013bc8
 14000a8f7: 75 0d                       	jne	0x14000a906 <.text+0x9906>
 14000a8f9: 48 8d 0d d0 92 00 00        	leaq	0x92d0(%rip), %rcx      # 0x140013bd0
-14000a900: ff 15 da 6a 00 00           	callq	*0x6ada(%rip)           # 0x1400113e0
+14000a900: ff 15 7a 6b 00 00           	callq	*0x6b7a(%rip)           # 0x140011480
 14000a906: 8d 43 01                    	leal	0x1(%rbx), %eax
 14000a909: 44 89 74 9f 18              	movl	%r14d, 0x18(%rdi,%rbx,4)
 14000a90e: 89 47 14                    	movl	%eax, 0x14(%rdi)
@@ -10631,7 +10631,7 @@ Disassembly of section .text:
 14000a955: 83 3d 6c 92 00 00 02        	cmpl	$0x2, 0x926c(%rip)      # 0x140013bc8
 14000a95c: 75 0d                       	jne	0x14000a96b <.text+0x996b>
 14000a95e: 48 8d 0d 6b 92 00 00        	leaq	0x926b(%rip), %rcx      # 0x140013bd0
-14000a965: ff 15 75 6a 00 00           	callq	*0x6a75(%rip)           # 0x1400113e0
+14000a965: ff 15 15 6b 00 00           	callq	*0x6b15(%rip)           # 0x140011480
 14000a96b: 48 b8 00 00 00 00 01 00 00 00       	movabsq	$0x100000000, %rax # imm = 0x100000000
 14000a975: 48 89 47 10                 	movq	%rax, 0x10(%rdi)
 14000a979: 89 77 18                    	movl	%esi, 0x18(%rdi)
@@ -10792,7 +10792,7 @@ Disassembly of section .text:
 14000ab86: 83 e0 03                    	andl	$0x3, %eax
 14000ab89: 74 24                       	je	0x14000abaf <.text+0x9baf>
 14000ab8b: 89 c0                       	movl	%eax, %eax
-14000ab8d: 48 8d 0d bc 5f 00 00        	leaq	0x5fbc(%rip), %rcx      # 0x140010b50
+14000ab8d: 48 8d 0d 5c 60 00 00        	leaq	0x605c(%rip), %rcx      # 0x140010bf0
 14000ab94: 8b 54 81 fc                 	movl	-0x4(%rcx,%rax,4), %edx
 14000ab98: 48 89 f9                    	movq	%rdi, %rcx
 14000ab9b: 45 31 c0                    	xorl	%r8d, %r8d
@@ -10821,7 +10821,7 @@ Disassembly of section .text:
 14000ac06: 75 13                       	jne	0x14000ac1b <.text+0x9c1b>
 14000ac08: 48 8d 0d c1 8f 00 00        	leaq	0x8fc1(%rip), %rcx      # 0x140013bd0
 14000ac0f: 48 89 c3                    	movq	%rax, %rbx
-14000ac12: ff 15 c8 67 00 00           	callq	*0x67c8(%rip)           # 0x1400113e0
+14000ac12: ff 15 68 68 00 00           	callq	*0x6868(%rip)           # 0x140011480
 14000ac18: 48 89 d8                    	movq	%rbx, %rax
 14000ac1b: 48 b9 00 00 00 00 01 00 00 00       	movabsq	$0x100000000, %rcx # imm = 0x100000000
 14000ac25: 48 89 48 10                 	movq	%rcx, 0x10(%rax)
@@ -10832,11 +10832,11 @@ Disassembly of section .text:
 14000ac45: 75 13                       	jne	0x14000ac5a <.text+0x9c5a>
 14000ac47: 48 8d 0d aa 8f 00 00        	leaq	0x8faa(%rip), %rcx      # 0x140013bf8
 14000ac4e: 48 89 c3                    	movq	%rax, %rbx
-14000ac51: ff 15 89 67 00 00           	callq	*0x6789(%rip)           # 0x1400113e0
+14000ac51: ff 15 29 68 00 00           	callq	*0x6829(%rip)           # 0x140011480
 14000ac57: 48 89 d8                    	movq	%rbx, %rax
 14000ac5a: 4c 8d 25 0f 86 00 00        	leaq	0x860f(%rip), %r12      # 0x140013270
 14000ac61: 48 8d 1d 68 8f 00 00        	leaq	0x8f68(%rip), %rbx      # 0x140013bd0
-14000ac68: 4c 8b 2d 71 67 00 00        	movq	0x6771(%rip), %r13      # 0x1400113e0
+14000ac68: 4c 8b 2d 11 68 00 00        	movq	0x6811(%rip), %r13      # 0x140011480
 14000ac6f: eb 2e                       	jmp	0x14000ac9f <.text+0x9c9f>
 14000ac71: 66 66 66 66 66 66 2e 0f 1f 84 00 00 00 00 00	nopw	%cs:(%rax,%rax)
 14000ac80: b9 01 00 00 00              	movl	$0x1, %ecx
@@ -11056,7 +11056,7 @@ Disassembly of section .text:
 14000af82: 83 3d 3f 8c 00 00 02        	cmpl	$0x2, 0x8c3f(%rip)      # 0x140013bc8
 14000af89: 75 0d                       	jne	0x14000af98 <.text+0x9f98>
 14000af8b: 48 8d 0d 3e 8c 00 00        	leaq	0x8c3e(%rip), %rcx      # 0x140013bd0
-14000af92: ff 15 48 64 00 00           	callq	*0x6448(%rip)           # 0x1400113e0
+14000af92: ff 15 e8 64 00 00           	callq	*0x64e8(%rip)           # 0x140011480
 14000af98: 48 89 f8                    	movq	%rdi, %rax
 14000af9b: 48 83 c4 20                 	addq	$0x20, %rsp
 14000af9f: 5b                          	popq	%rbx
@@ -11117,7 +11117,7 @@ Disassembly of section .text:
 14000b076: 75 13                       	jne	0x14000b08b <.text+0xa08b>
 14000b078: 48 8d 0d 51 8b 00 00        	leaq	0x8b51(%rip), %rcx      # 0x140013bd0
 14000b07f: 48 89 c7                    	movq	%rax, %rdi
-14000b082: ff 15 58 63 00 00           	callq	*0x6358(%rip)           # 0x1400113e0
+14000b082: ff 15 f8 63 00 00           	callq	*0x63f8(%rip)           # 0x140011480
 14000b088: 48 89 f8                    	movq	%rdi, %rax
 14000b08b: 48 89 70 10                 	movq	%rsi, 0x10(%rax)
 14000b08f: c7 40 18 00 00 00 00        	movl	$0x0, 0x18(%rax)
@@ -11295,7 +11295,7 @@ Disassembly of section .text:
 14000b2f7: 83 3d ca 88 00 00 02        	cmpl	$0x2, 0x88ca(%rip)      # 0x140013bc8
 14000b2fe: 75 0d                       	jne	0x14000b30d <.text+0xa30d>
 14000b300: 48 8d 0d c9 88 00 00        	leaq	0x88c9(%rip), %rcx      # 0x140013bd0
-14000b307: ff 15 d3 60 00 00           	callq	*0x60d3(%rip)           # 0x1400113e0
+14000b307: ff 15 73 61 00 00           	callq	*0x6173(%rip)           # 0x140011480
 14000b30d: c7 43 10 00 00 00 00        	movl	$0x0, 0x10(%rbx)
 14000b314: 66 48 0f 7e f2              	movq	%xmm6, %rdx
 14000b319: 48 89 d1                    	movq	%rdx, %rcx
@@ -11398,7 +11398,7 @@ Disassembly of section .text:
 14000b480: 83 f8 02                    	cmpl	$0x2, %eax
 14000b483: 75 22                       	jne	0x14000b4a7 <.text+0xa4a7>
 14000b485: 48 8d 0d 44 87 00 00        	leaq	0x8744(%rip), %rcx      # 0x140013bd0
-14000b48c: 48 8b 35 2d 5f 00 00        	movq	0x5f2d(%rip), %rsi      # 0x1400113c0
+14000b48c: 48 8b 35 cd 5f 00 00        	movq	0x5fcd(%rip), %rsi      # 0x140011460
 14000b493: ff d6                       	callq	*%rsi
 14000b495: 48 8d 0d 5c 87 00 00        	leaq	0x875c(%rip), %rcx      # 0x140013bf8
 14000b49c: 48 89 f0                    	movq	%rsi, %rax
@@ -11436,7 +11436,7 @@ Disassembly of section .text:
 14000b4f9: ff c1                       	incl	%ecx
 14000b4fb: 48 83 f8 30                 	cmpq	$0x30, %rax
 14000b4ff: 74 ef                       	je	0x14000b4f0 <.text+0xa4f0>
-14000b501: 48 8b 2d 70 57 00 00        	movq	0x5770(%rip), %rbp      # 0x140010c78
+14000b501: 48 8b 2d 10 58 00 00        	movq	0x5810(%rip), %rbp      # 0x140010d18
 14000b508: 80 7c 05 00 00              	cmpb	$0x0, (%rbp,%rax)
 14000b50d: 0f 84 7e 00 00 00           	je	0x14000b591 <.text+0xa591>
 14000b513: 31 f6                       	xorl	%esi, %esi
@@ -12572,7 +12572,7 @@ Disassembly of section .text:
 14000c4b5: 4d 89 e0                    	movq	%r12, %r8
 14000c4b8: 48 89 cf                    	movq	%rcx, %rdi
 14000c4bb: 49 ff c4                    	incq	%r12
-14000c4be: 48 8b 0d b3 47 00 00        	movq	0x47b3(%rip), %rcx      # 0x140010c78
+14000c4be: 48 8b 0d 53 48 00 00        	movq	0x4853(%rip), %rcx      # 0x140010d18
 14000c4c5: 42 0f b6 0c 11              	movzbl	(%rcx,%r10), %ecx
 14000c4ca: 85 c9                       	testl	%ecx, %ecx
 14000c4cc: 75 62                       	jne	0x14000c530 <.text+0xb530>
@@ -13008,7 +13008,7 @@ Disassembly of section .text:
 14000caae: 83 e0 07                    	andl	$0x7, %eax
 14000cab1: 83 f8 04                    	cmpl	$0x4, %eax
 14000cab4: 0f 87 d2 02 00 00           	ja	0x14000cd8c <.text+0xbd8c>
-14000caba: 4c 8d 15 3f 42 00 00        	leaq	0x423f(%rip), %r10      # 0x140010d00
+14000caba: 4c 8d 15 df 42 00 00        	leaq	0x42df(%rip), %r10      # 0x140010da0
 14000cac1: 49 63 04 82                 	movslq	(%r10,%rax,4), %rax
 14000cac5: 4c 01 d0                    	addq	%r10, %rax
 14000cac8: ff e0                       	jmpq	*%rax
@@ -13093,12 +13093,12 @@ Disassembly of section .text:
 14000cbff: 48 ba 00 00 00 00 00 00 f0 3f       	movabsq	$0x3ff0000000000000, %rdx # imm = 0x3FF0000000000000
 14000cc09: 4c 09 c2                    	orq	%r8, %rdx
 14000cc0c: 66 48 0f 6e ca              	movq	%rdx, %xmm1
-14000cc11: f2 0f 58 0d 67 40 00 00     	addsd	0x4067(%rip), %xmm1     # 0x140010c80
-14000cc19: f2 0f 59 0d 67 40 00 00     	mulsd	0x4067(%rip), %xmm1     # 0x140010c88
-14000cc21: f2 0f 58 0d 67 40 00 00     	addsd	0x4067(%rip), %xmm1     # 0x140010c90
+14000cc11: f2 0f 58 0d 07 41 00 00     	addsd	0x4107(%rip), %xmm1     # 0x140010d20
+14000cc19: f2 0f 59 0d 07 41 00 00     	mulsd	0x4107(%rip), %xmm1     # 0x140010d28
+14000cc21: f2 0f 58 0d 07 41 00 00     	addsd	0x4107(%rip), %xmm1     # 0x140010d30
 14000cc29: 0f 57 c0                    	xorps	%xmm0, %xmm0
 14000cc2c: f2 41 0f 2a c1              	cvtsi2sd	%r9d, %xmm0
-14000cc31: f2 0f 59 05 5f 40 00 00     	mulsd	0x405f(%rip), %xmm0     # 0x140010c98
+14000cc31: f2 0f 59 05 ff 40 00 00     	mulsd	0x40ff(%rip), %xmm0     # 0x140010d38
 14000cc39: f2 0f 58 c1                 	addsd	%xmm1, %xmm0
 14000cc3d: 41 b8 01 00 00 00           	movl	$0x1, %r8d
 14000cc43: 41 29 c0                    	subl	%eax, %r8d
@@ -13109,7 +13109,7 @@ Disassembly of section .text:
 14000cc5b: 41 81 c0 cb fb ff ff        	addl	$0xfffffbcb, %r8d       # imm = 0xFFFFFBCB
 14000cc62: 0f 57 c9                    	xorps	%xmm1, %xmm1
 14000cc65: f2 41 0f 2a c8              	cvtsi2sd	%r8d, %xmm1
-14000cc6a: f2 0f 59 0d 2e 40 00 00     	mulsd	0x402e(%rip), %xmm1     # 0x140010ca0
+14000cc6a: f2 0f 59 0d ce 40 00 00     	mulsd	0x40ce(%rip), %xmm1     # 0x140010d40
 14000cc72: f2 0f 58 c1                 	addsd	%xmm1, %xmm0
 14000cc76: f2 44 0f 2c c0              	cvttsd2si	%xmm0, %r8d
 14000cc7b: 66 0f e6 c8                 	cvttpd2dq	%xmm0, %xmm1
@@ -13135,7 +13135,7 @@ Disassembly of section .text:
 14000ccce: 4c 89 8c 24 98 00 00 00     	movq	%r9, 0x98(%rsp)
 14000ccd6: 77 1d                       	ja	0x14000ccf5 <.text+0xbcf5>
 14000ccd8: 44 89 c9                    	movl	%r9d, %ecx
-14000ccdb: 48 8b 15 76 3c 00 00        	movq	0x3c76(%rip), %rdx      # 0x140010958
+14000ccdb: 48 8b 15 16 3d 00 00        	movq	0x3d16(%rip), %rdx      # 0x1400109f8
 14000cce2: f2 0f 10 04 ca              	movsd	(%rdx,%rcx,8), %xmm0
 14000cce7: 66 0f 2e c6                 	ucomisd	%xmm6, %xmm0
 14000cceb: 0f 86 f7 00 00 00           	jbe	0x14000cde8 <.text+0xbde8>
@@ -13164,17 +13164,17 @@ Disassembly of section .text:
 14000cd3f: 0f 42 d1                    	cmovbl	%ecx, %edx
 14000cd42: 40 08 c5                    	orb	%al, %bpl
 14000cd45: c7 44 24 38 01 00 00 00     	movl	$0x1, 0x38(%rsp)
-14000cd4d: 48 8d 05 c0 3f 00 00        	leaq	0x3fc0(%rip), %rax      # 0x140010d14
+14000cd4d: 48 8d 05 60 40 00 00        	leaq	0x4060(%rip), %rax      # 0x140010db4
 14000cd54: 48 89 54 24 70              	movq	%rdx, 0x70(%rsp)
 14000cd59: 48 63 0c 90                 	movslq	(%rax,%rdx,4), %rcx
 14000cd5d: 48 01 c1                    	addq	%rax, %rcx
 14000cd60: ff e1                       	jmpq	*%rcx
 14000cd62: c7 03 00 80 ff ff           	movl	$0xffff8000, (%rbx)     # imm = 0xFFFF8000
-14000cd68: 48 8d 0d c6 3f 00 00        	leaq	0x3fc6(%rip), %rcx      # 0x140010d35
+14000cd68: 48 8d 0d 66 40 00 00        	leaq	0x4066(%rip), %rcx      # 0x140010dd5
 14000cd6f: 41 b8 03 00 00 00           	movl	$0x3, %r8d
 14000cd75: eb 51                       	jmp	0x14000cdc8 <.text+0xbdc8>
 14000cd77: c7 03 00 80 ff ff           	movl	$0xffff8000, (%rbx)     # imm = 0xFFFF8000
-14000cd7d: 48 8d 0d a8 3f 00 00        	leaq	0x3fa8(%rip), %rcx      # 0x140010d2c
+14000cd7d: 48 8d 0d 48 40 00 00        	leaq	0x4048(%rip), %rcx      # 0x140010dcc
 14000cd84: 41 b8 08 00 00 00           	movl	$0x8, %r8d
 14000cd8a: eb 3c                       	jmp	0x14000cdc8 <.text+0xbdc8>
 14000cd8c: 45 31 e4                    	xorl	%r12d, %r12d
@@ -13187,7 +13187,7 @@ Disassembly of section .text:
 14000cda8: e8 b3 d9 ff ff              	callq	0x14000a760 <.text+0x9760>
 14000cdad: 48 8b 94 24 a0 00 00 00     	movq	0xa0(%rsp), %rdx
 14000cdb5: c7 03 01 00 00 00           	movl	$0x1, (%rbx)
-14000cdbb: 48 8d 0d 77 3f 00 00        	leaq	0x3f77(%rip), %rcx      # 0x140010d39
+14000cdbb: 48 8d 0d 17 40 00 00        	leaq	0x4017(%rip), %rcx      # 0x140010dd9
 14000cdc2: 41 b8 01 00 00 00           	movl	$0x1, %r8d
 14000cdc8: 0f 28 b4 24 c0 00 00 00     	movaps	0xc0(%rsp), %xmm6
 14000cdd0: 48 81 c4 d8 00 00 00        	addq	$0xd8, %rsp
@@ -13220,7 +13220,7 @@ Disassembly of section .text:
 14000ce20: 0f 42 d1                    	cmovbl	%ecx, %edx
 14000ce23: 40 08 c5                    	orb	%al, %bpl
 14000ce26: c7 44 24 38 01 00 00 00     	movl	$0x1, 0x38(%rsp)
-14000ce2e: 48 8d 05 df 3e 00 00        	leaq	0x3edf(%rip), %rax      # 0x140010d14
+14000ce2e: 48 8d 05 7f 3f 00 00        	leaq	0x3f7f(%rip), %rax      # 0x140010db4
 14000ce35: 48 89 54 24 70              	movq	%rdx, 0x70(%rsp)
 14000ce3a: 48 63 0c 90                 	movslq	(%rax,%rdx,4), %rcx
 14000ce3e: 48 01 c1                    	addq	%rax, %rcx
@@ -13230,7 +13230,7 @@ Disassembly of section .text:
 14000ce4d: 44 89 44 24 3c              	movl	%r8d, 0x3c(%rsp)
 14000ce52: 0f 57 c0                    	xorps	%xmm0, %xmm0
 14000ce55: f2 41 0f 2a c5              	cvtsi2sd	%r13d, %xmm0
-14000ce5a: f2 0f 59 05 8e 3e 00 00     	mulsd	0x3e8e(%rip), %xmm0     # 0x140010cf0
+14000ce5a: f2 0f 59 05 2e 3f 00 00     	mulsd	0x3f2e(%rip), %xmm0     # 0x140010d90
 14000ce62: f2 0f 2c c8                 	cvttsd2si	%xmm0, %ecx
 14000ce66: 83 c1 03                    	addl	$0x3, %ecx
 14000ce69: 89 4c 24 24                 	movl	%ecx, 0x24(%rsp)
@@ -13302,10 +13302,10 @@ Disassembly of section .text:
 14000cf94: 0f 85 14 02 00 00           	jne	0x14000d1ae <.text+0xc1ae>
 14000cf9a: 31 c0                       	xorl	%eax, %eax
 14000cf9c: c7 44 24 24 00 00 00 00     	movl	$0x0, 0x24(%rsp)
-14000cfa4: f2 0f 10 0d fc 3c 00 00     	movsd	0x3cfc(%rip), %xmm1     # 0x140010ca8
+14000cfa4: f2 0f 10 0d 9c 3d 00 00     	movsd	0x3d9c(%rip), %xmm1     # 0x140010d48
 14000cfac: 83 bc 24 98 00 00 00 17     	cmpl	$0x17, 0x98(%rsp)
 14000cfb4: 72 44                       	jb	0x14000cffa <.text+0xbffa>
-14000cfb6: f2 0f 10 05 f2 3c 00 00     	movsd	0x3cf2(%rip), %xmm0     # 0x140010cb0
+14000cfb6: f2 0f 10 05 92 3d 00 00     	movsd	0x3d92(%rip), %xmm0     # 0x140010d50
 14000cfbe: 66 0f 2e c6                 	ucomisd	%xmm6, %xmm0
 14000cfc2: 76 36                       	jbe	0x14000cffa <.text+0xbffa>
 14000cfc4: 48 8b 54 24 60              	movq	0x60(%rsp), %rdx
@@ -13316,15 +13316,15 @@ Disassembly of section .text:
 14000cfd3: 8b 4c 24 4c                 	movl	0x4c(%rsp), %ecx
 14000cfd7: 85 c9                       	testl	%ecx, %ecx
 14000cfd9: 0f 8e ab 01 00 00           	jle	0x14000d18a <.text+0xc18a>
-14000cfdf: f2 0f 10 05 d1 3c 00 00     	movsd	0x3cd1(%rip), %xmm0     # 0x140010cb8
+14000cfdf: f2 0f 10 05 71 3d 00 00     	movsd	0x3d71(%rip), %xmm0     # 0x140010d58
 14000cfe7: f2 0f 59 c6                 	mulsd	%xmm6, %xmm0
-14000cfeb: f2 0f 10 0d cd 3c 00 00     	movsd	0x3ccd(%rip), %xmm1     # 0x140010cc0
+14000cfeb: f2 0f 10 0d 6d 3d 00 00     	movsd	0x3d6d(%rip), %xmm1     # 0x140010d60
 14000cff3: b8 ff ff ff ff              	movl	$0xffffffff, %eax       # imm = 0xFFFFFFFF
 14000cff8: eb 09                       	jmp	0x14000d003 <.text+0xc003>
 14000cffa: 48 8b 4c 24 60              	movq	0x60(%rsp), %rcx
 14000cfff: 66 0f 28 c6                 	movapd	%xmm6, %xmm0
 14000d003: f2 0f 59 c8                 	mulsd	%xmm0, %xmm1
-14000d007: f2 0f 58 0d b9 3c 00 00     	addsd	0x3cb9(%rip), %xmm1     # 0x140010cc8
+14000d007: f2 0f 58 0d 59 3d 00 00     	addsd	0x3d59(%rip), %xmm1     # 0x140010d68
 14000d00f: 66 48 0f 7e ca              	movq	%xmm1, %rdx
 14000d014: 49 b8 00 00 00 00 00 00 c0 fc       	movabsq	$-0x340000000000000, %r8 # imm = 0xFCC0000000000000
 14000d01e: 49 01 d0                    	addq	%rdx, %r8
@@ -13332,13 +13332,13 @@ Disassembly of section .text:
 14000d026: 85 c9                       	testl	%ecx, %ecx
 14000d028: 0f 84 b2 00 00 00           	je	0x14000d0e0 <.text+0xc0e0>
 14000d02e: 41 89 c8                    	movl	%ecx, %r8d
-14000d031: 4c 8b 0d 20 39 00 00        	movq	0x3920(%rip), %r9       # 0x140010958
+14000d031: 4c 8b 0d c0 39 00 00        	movq	0x39c0(%rip), %r9       # 0x1400109f8
 14000d038: f2 0f 2c d0                 	cvttsd2si	%xmm0, %edx
 14000d03c: f2 43 0f 10 4c c1 f8        	movsd	-0x8(%r9,%r8,8), %xmm1
 14000d043: f2 0f 2a e2                 	cvtsi2sd	%edx, %xmm4
 14000d047: 83 7c 24 38 00              	cmpl	$0x0, 0x38(%rsp)
 14000d04c: 0f 84 b2 00 00 00           	je	0x14000d104 <.text+0xc104>
-14000d052: f2 0f 10 15 76 3c 00 00     	movsd	0x3c76(%rip), %xmm2     # 0x140010cd0
+14000d052: f2 0f 10 15 16 3d 00 00     	movsd	0x3d16(%rip), %xmm2     # 0x140010d70
 14000d05a: f2 0f 5e d1                 	divsd	%xmm1, %xmm2
 14000d05e: f2 0f 5c d3                 	subsd	%xmm3, %xmm2
 14000d062: f2 0f 5c c4                 	subsd	%xmm4, %xmm0
@@ -13349,8 +13349,8 @@ Disassembly of section .text:
 14000d074: 41 88 10                    	movb	%dl, (%r8)
 14000d077: 66 0f 2e d0                 	ucomisd	%xmm0, %xmm2
 14000d07b: 0f 87 a1 08 00 00           	ja	0x14000d922 <.text+0xc922>
-14000d081: f2 0f 10 0d 27 3c 00 00     	movsd	0x3c27(%rip), %xmm1     # 0x140010cb0
-14000d089: f2 0f 10 1d 27 3c 00 00     	movsd	0x3c27(%rip), %xmm3     # 0x140010cb8
+14000d081: f2 0f 10 0d c7 3c 00 00     	movsd	0x3cc7(%rip), %xmm1     # 0x140010d50
+14000d089: f2 0f 10 1d c7 3c 00 00     	movsd	0x3cc7(%rip), %xmm3     # 0x140010d58
 14000d091: 66 0f 28 e1                 	movapd	%xmm1, %xmm4
 14000d095: f2 0f 5c e0                 	subsd	%xmm0, %xmm4
 14000d099: 66 0f 2e d4                 	ucomisd	%xmm4, %xmm2
@@ -13372,7 +13372,7 @@ Disassembly of section .text:
 14000d0d5: 66 0f 2e d0                 	ucomisd	%xmm0, %xmm2
 14000d0d9: 76 b6                       	jbe	0x14000d091 <.text+0xc091>
 14000d0db: e9 42 08 00 00              	jmp	0x14000d922 <.text+0xc922>
-14000d0e0: f2 0f 58 05 f0 3b 00 00     	addsd	0x3bf0(%rip), %xmm0     # 0x140010cd8
+14000d0e0: f2 0f 58 05 90 3c 00 00     	addsd	0x3c90(%rip), %xmm0     # 0x140010d78
 14000d0e8: 45 31 d2                    	xorl	%r10d, %r10d
 14000d0eb: 66 0f 2e c3                 	ucomisd	%xmm3, %xmm0
 14000d0ef: 0f 86 9a 00 00 00           	jbe	0x14000d18f <.text+0xc18f>
@@ -13393,7 +13393,7 @@ Disassembly of section .text:
 14000d129: 8b 54 24 24                 	movl	0x24(%rsp), %edx
 14000d12d: 39 ca                       	cmpl	%ecx, %edx
 14000d12f: 0f 85 85 07 00 00           	jne	0x14000d8ba <.text+0xc8ba>
-14000d135: f2 0f 10 15 93 3b 00 00     	movsd	0x3b93(%rip), %xmm2     # 0x140010cd0
+14000d135: f2 0f 10 15 33 3c 00 00     	movsd	0x3c33(%rip), %xmm2     # 0x140010d70
 14000d13d: f2 0f 58 d1                 	addsd	%xmm1, %xmm2
 14000d141: 66 0f 2e c2                 	ucomisd	%xmm2, %xmm0
 14000d145: 0f 86 b9 07 00 00           	jbe	0x14000d904 <.text+0xc904>
@@ -13415,7 +13415,7 @@ Disassembly of section .text:
 14000d185: e9 1e 07 00 00              	jmp	0x14000d8a8 <.text+0xc8a8>
 14000d18a: 45 31 d2                    	xorl	%r10d, %r10d
 14000d18d: eb 1d                       	jmp	0x14000d1ac <.text+0xc1ac>
-14000d18f: 66 0f 57 1d 49 3b 00 00     	xorpd	0x3b49(%rip), %xmm3     # 0x140010ce0
+14000d18f: 66 0f 57 1d e9 3b 00 00     	xorpd	0x3be9(%rip), %xmm3     # 0x140010d80
 14000d197: 66 0f 2e d8                 	ucomisd	%xmm0, %xmm3
 14000d19b: 76 0f                       	jbe	0x14000d1ac <.text+0xc1ac>
 14000d19d: 31 ed                       	xorl	%ebp, %ebp
@@ -13476,7 +13476,7 @@ Disassembly of section .text:
 14000d276: 41 89 ef                    	movl	%ebp, %r15d
 14000d279: e9 5c 01 00 00              	jmp	0x14000d3da <.text+0xc3da>
 14000d27e: 49 63 c7                    	movslq	%r15d, %rax
-14000d281: 48 8b 0d d0 36 00 00        	movq	0x36d0(%rip), %rcx      # 0x140010958
+14000d281: 48 8b 0d 70 37 00 00        	movq	0x3770(%rip), %rcx      # 0x1400109f8
 14000d288: f2 0f 10 04 c1              	movsd	(%rcx,%rax,8), %xmm0
 14000d28d: 83 bc 24 80 00 00 00 00     	cmpl	$0x0, 0x80(%rsp)
 14000d295: 48 8b 54 24 60              	movq	0x60(%rsp), %rdx
@@ -13487,7 +13487,7 @@ Disassembly of section .text:
 14000d2a2: 85 d2                       	testl	%edx, %edx
 14000d2a4: 4c 8b 64 24 40              	movq	0x40(%rsp), %r12
 14000d2a9: 0f 88 9b 06 00 00           	js	0x14000d94a <.text+0xc94a>
-14000d2af: f2 0f 59 05 41 3a 00 00     	mulsd	0x3a41(%rip), %xmm0     # 0x140010cf8
+14000d2af: f2 0f 59 05 e1 3a 00 00     	mulsd	0x3ae1(%rip), %xmm0     # 0x140010d98
 14000d2b7: 66 0f 2e c6                 	ucomisd	%xmm6, %xmm0
 14000d2bb: 41 be 00 00 00 00           	movl	$0x0, %r14d
 14000d2c1: 41 ba 00 00 00 00           	movl	$0x0, %r10d
@@ -13527,7 +13527,7 @@ Disassembly of section .text:
 14000d357: 8b 4c 24 24                 	movl	0x24(%rsp), %ecx
 14000d35b: 39 d1                       	cmpl	%edx, %ecx
 14000d35d: 74 4e                       	je	0x14000d3ad <.text+0xc3ad>
-14000d35f: f2 0f 10 0d 51 39 00 00     	movsd	0x3951(%rip), %xmm1     # 0x140010cb8
+14000d35f: f2 0f 10 0d f1 39 00 00     	movsd	0x39f1(%rip), %xmm1     # 0x140010d58
 14000d367: 66 0f 57 d2                 	xorpd	%xmm2, %xmm2
 14000d36b: ff c1                       	incl	%ecx
 14000d36d: 89 4c 24 24                 	movl	%ecx, 0x24(%rsp)
@@ -13884,7 +13884,7 @@ Disassembly of section .text:
 14000d8ad: bb 20 00 00 00              	movl	$0x20, %ebx
 14000d8b2: 48 89 c6                    	movq	%rax, %rsi
 14000d8b5: e9 06 04 00 00              	jmp	0x14000dcc0 <.text+0xccc0>
-14000d8ba: f2 0f 10 15 f6 33 00 00     	movsd	0x33f6(%rip), %xmm2     # 0x140010cb8
+14000d8ba: f2 0f 10 15 96 34 00 00     	movsd	0x3496(%rip), %xmm2     # 0x140010d58
 14000d8c2: eb 20                       	jmp	0x14000d8e4 <.text+0xc8e4>
 14000d8c4: 66 66 66 2e 0f 1f 84 00 00 00 00 00 	nopw	%cs:(%rax,%rax)
 14000d8d0: 80 c2 30                    	addb	$0x30, %dl
@@ -13903,7 +13903,7 @@ Disassembly of section .text:
 14000d8fa: f3 0f e6 db                 	cvtdq2pd	%xmm3, %xmm3
 14000d8fe: f2 0f 5c c3                 	subsd	%xmm3, %xmm0
 14000d902: eb cc                       	jmp	0x14000d8d0 <.text+0xc8d0>
-14000d904: f2 0f 10 15 c4 33 00 00     	movsd	0x33c4(%rip), %xmm2     # 0x140010cd0
+14000d904: f2 0f 10 15 64 34 00 00     	movsd	0x3464(%rip), %xmm2     # 0x140010d70
 14000d90c: f2 0f 5c d1                 	subsd	%xmm1, %xmm2
 14000d910: c7 44 24 38 00 00 00 00     	movl	$0x0, 0x38(%rsp)
 14000d918: 66 0f 2e d0                 	ucomisd	%xmm0, %xmm2
@@ -14181,7 +14181,7 @@ Disassembly of section .text:
 14000dd2d: cc                          	int3
 14000dd2e: cc                          	int3
 14000dd2f: cc                          	int3
-14000dd30: ff 25 d2 34 00 00           	jmpq	*0x34d2(%rip)           # 0x140011208
+14000dd30: ff 25 72 35 00 00           	jmpq	*0x3572(%rip)           # 0x1400112a8
 14000dd36: cc                          	int3
 14000dd37: cc                          	int3
 14000dd38: cc                          	int3
@@ -14192,7 +14192,7 @@ Disassembly of section .text:
 14000dd3d: cc                          	int3
 14000dd3e: cc                          	int3
 14000dd3f: cc                          	int3
-14000dd40: ff 25 42 35 00 00           	jmpq	*0x3542(%rip)           # 0x140011288
+14000dd40: ff 25 e2 35 00 00           	jmpq	*0x35e2(%rip)           # 0x140011328
 14000dd46: cc                          	int3
 14000dd47: cc                          	int3
 14000dd48: cc                          	int3
@@ -14203,7 +14203,7 @@ Disassembly of section .text:
 14000dd4d: cc                          	int3
 14000dd4e: cc                          	int3
 14000dd4f: cc                          	int3
-14000dd50: ff 25 82 35 00 00           	jmpq	*0x3582(%rip)           # 0x1400112d8
+14000dd50: ff 25 22 36 00 00           	jmpq	*0x3622(%rip)           # 0x140011378
 14000dd56: cc                          	int3
 14000dd57: cc                          	int3
 14000dd58: cc                          	int3
@@ -14214,7 +14214,7 @@ Disassembly of section .text:
 14000dd5d: cc                          	int3
 14000dd5e: cc                          	int3
 14000dd5f: cc                          	int3
-14000dd60: ff 25 aa 34 00 00           	jmpq	*0x34aa(%rip)           # 0x140011210
+14000dd60: ff 25 4a 35 00 00           	jmpq	*0x354a(%rip)           # 0x1400112b0
 14000dd66: cc                          	int3
 14000dd67: cc                          	int3
 14000dd68: cc                          	int3
@@ -14225,7 +14225,7 @@ Disassembly of section .text:
 14000dd6d: cc                          	int3
 14000dd6e: cc                          	int3
 14000dd6f: cc                          	int3
-14000dd70: ff 25 a2 34 00 00           	jmpq	*0x34a2(%rip)           # 0x140011218
+14000dd70: ff 25 42 35 00 00           	jmpq	*0x3542(%rip)           # 0x1400112b8
 14000dd76: cc                          	int3
 14000dd77: cc                          	int3
 14000dd78: cc                          	int3
@@ -14236,7 +14236,7 @@ Disassembly of section .text:
 14000dd7d: cc                          	int3
 14000dd7e: cc                          	int3
 14000dd7f: cc                          	int3
-14000dd80: ff 25 ea 34 00 00           	jmpq	*0x34ea(%rip)           # 0x140011270
+14000dd80: ff 25 8a 35 00 00           	jmpq	*0x358a(%rip)           # 0x140011310
 14000dd86: cc                          	int3
 14000dd87: cc                          	int3
 14000dd88: cc                          	int3
@@ -14247,7 +14247,7 @@ Disassembly of section .text:
 14000dd8d: cc                          	int3
 14000dd8e: cc                          	int3
 14000dd8f: cc                          	int3
-14000dd90: ff 25 a2 35 00 00           	jmpq	*0x35a2(%rip)           # 0x140011338
+14000dd90: ff 25 42 36 00 00           	jmpq	*0x3642(%rip)           # 0x1400113d8
 14000dd96: cc                          	int3
 14000dd97: cc                          	int3
 14000dd98: cc                          	int3
@@ -14258,7 +14258,7 @@ Disassembly of section .text:
 14000dd9d: cc                          	int3
 14000dd9e: cc                          	int3
 14000dd9f: cc                          	int3
-14000dda0: ff 25 da 34 00 00           	jmpq	*0x34da(%rip)           # 0x140011280
+14000dda0: ff 25 7a 35 00 00           	jmpq	*0x357a(%rip)           # 0x140011320
 14000dda6: cc                          	int3
 14000dda7: cc                          	int3
 14000dda8: cc                          	int3
@@ -14269,7 +14269,7 @@ Disassembly of section .text:
 14000ddad: cc                          	int3
 14000ddae: cc                          	int3
 14000ddaf: cc                          	int3
-14000ddb0: ff 25 ea 34 00 00           	jmpq	*0x34ea(%rip)           # 0x1400112a0
+14000ddb0: ff 25 8a 35 00 00           	jmpq	*0x358a(%rip)           # 0x140011340
 14000ddb6: cc                          	int3
 14000ddb7: cc                          	int3
 14000ddb8: cc                          	int3
@@ -14280,7 +14280,7 @@ Disassembly of section .text:
 14000ddbd: cc                          	int3
 14000ddbe: cc                          	int3
 14000ddbf: cc                          	int3
-14000ddc0: ff 25 e2 34 00 00           	jmpq	*0x34e2(%rip)           # 0x1400112a8
+14000ddc0: ff 25 82 35 00 00           	jmpq	*0x3582(%rip)           # 0x140011348
 14000ddc6: cc                          	int3
 14000ddc7: cc                          	int3
 14000ddc8: cc                          	int3
@@ -14291,7 +14291,7 @@ Disassembly of section .text:
 14000ddcd: cc                          	int3
 14000ddce: cc                          	int3
 14000ddcf: cc                          	int3
-14000ddd0: ff 25 ea 34 00 00           	jmpq	*0x34ea(%rip)           # 0x1400112c0
+14000ddd0: ff 25 8a 35 00 00           	jmpq	*0x358a(%rip)           # 0x140011360
 14000ddd6: cc                          	int3
 14000ddd7: cc                          	int3
 14000ddd8: cc                          	int3
@@ -14302,7 +14302,7 @@ Disassembly of section .text:
 14000dddd: cc                          	int3
 14000ddde: cc                          	int3
 14000dddf: cc                          	int3
-14000dde0: ff 25 e2 34 00 00           	jmpq	*0x34e2(%rip)           # 0x1400112c8
+14000dde0: ff 25 82 35 00 00           	jmpq	*0x3582(%rip)           # 0x140011368
 14000dde6: cc                          	int3
 14000dde7: cc                          	int3
 14000dde8: cc                          	int3
@@ -14313,7 +14313,7 @@ Disassembly of section .text:
 14000dded: cc                          	int3
 14000ddee: cc                          	int3
 14000ddef: cc                          	int3
-14000ddf0: ff 25 da 34 00 00           	jmpq	*0x34da(%rip)           # 0x1400112d0
+14000ddf0: ff 25 7a 35 00 00           	jmpq	*0x357a(%rip)           # 0x140011370
 14000ddf6: cc                          	int3
 14000ddf7: cc                          	int3
 14000ddf8: cc                          	int3
@@ -14324,7 +14324,7 @@ Disassembly of section .text:
 14000ddfd: cc                          	int3
 14000ddfe: cc                          	int3
 14000ddff: cc                          	int3
-14000de00: ff 25 32 34 00 00           	jmpq	*0x3432(%rip)           # 0x140011238
+14000de00: ff 25 d2 34 00 00           	jmpq	*0x34d2(%rip)           # 0x1400112d8
 14000de06: cc                          	int3
 14000de07: cc                          	int3
 14000de08: cc                          	int3
@@ -14335,7 +14335,7 @@ Disassembly of section .text:
 14000de0d: cc                          	int3
 14000de0e: cc                          	int3
 14000de0f: cc                          	int3
-14000de10: ff 25 4a 35 00 00           	jmpq	*0x354a(%rip)           # 0x140011360
+14000de10: ff 25 ea 35 00 00           	jmpq	*0x35ea(%rip)           # 0x140011400
 14000de16: cc                          	int3
 14000de17: cc                          	int3
 14000de18: cc                          	int3
@@ -14346,7 +14346,7 @@ Disassembly of section .text:
 14000de1d: cc                          	int3
 14000de1e: cc                          	int3
 14000de1f: cc                          	int3
-14000de20: ff 25 42 35 00 00           	jmpq	*0x3542(%rip)           # 0x140011368
+14000de20: ff 25 e2 35 00 00           	jmpq	*0x35e2(%rip)           # 0x140011408
 14000de26: cc                          	int3
 14000de27: cc                          	int3
 14000de28: cc                          	int3
@@ -14357,7 +14357,7 @@ Disassembly of section .text:
 14000de2d: cc                          	int3
 14000de2e: cc                          	int3
 14000de2f: cc                          	int3
-14000de30: ff 25 42 35 00 00           	jmpq	*0x3542(%rip)           # 0x140011378
+14000de30: ff 25 e2 35 00 00           	jmpq	*0x35e2(%rip)           # 0x140011418
 14000de36: cc                          	int3
 14000de37: cc                          	int3
 14000de38: cc                          	int3
@@ -14368,7 +14368,7 @@ Disassembly of section .text:
 14000de3d: cc                          	int3
 14000de3e: cc                          	int3
 14000de3f: cc                          	int3
-14000de40: ff 25 3a 35 00 00           	jmpq	*0x353a(%rip)           # 0x140011380
+14000de40: ff 25 da 35 00 00           	jmpq	*0x35da(%rip)           # 0x140011420
 14000de46: cc                          	int3
 14000de47: cc                          	int3
 14000de48: cc                          	int3
@@ -14379,7 +14379,7 @@ Disassembly of section .text:
 14000de4d: cc                          	int3
 14000de4e: cc                          	int3
 14000de4f: cc                          	int3
-14000de50: ff 25 9a 34 00 00           	jmpq	*0x349a(%rip)           # 0x1400112f0
+14000de50: ff 25 3a 35 00 00           	jmpq	*0x353a(%rip)           # 0x140011390
 14000de56: cc                          	int3
 14000de57: cc                          	int3
 14000de58: cc                          	int3
@@ -14390,7 +14390,7 @@ Disassembly of section .text:
 14000de5d: cc                          	int3
 14000de5e: cc                          	int3
 14000de5f: cc                          	int3
-14000de60: ff 25 e2 33 00 00           	jmpq	*0x33e2(%rip)           # 0x140011248
+14000de60: ff 25 82 34 00 00           	jmpq	*0x3482(%rip)           # 0x1400112e8
 14000de66: cc                          	int3
 14000de67: cc                          	int3
 14000de68: cc                          	int3
@@ -14401,7 +14401,7 @@ Disassembly of section .text:
 14000de6d: cc                          	int3
 14000de6e: cc                          	int3
 14000de6f: cc                          	int3
-14000de70: ff 25 12 35 00 00           	jmpq	*0x3512(%rip)           # 0x140011388
+14000de70: ff 25 b2 35 00 00           	jmpq	*0x35b2(%rip)           # 0x140011428
 14000de76: cc                          	int3
 14000de77: cc                          	int3
 14000de78: cc                          	int3
@@ -14412,7 +14412,7 @@ Disassembly of section .text:
 14000de7d: cc                          	int3
 14000de7e: cc                          	int3
 14000de7f: cc                          	int3
-14000de80: ff 25 72 34 00 00           	jmpq	*0x3472(%rip)           # 0x1400112f8
+14000de80: ff 25 12 35 00 00           	jmpq	*0x3512(%rip)           # 0x140011398
 14000de86: cc                          	int3
 14000de87: cc                          	int3
 14000de88: cc                          	int3
@@ -14423,7 +14423,7 @@ Disassembly of section .text:
 14000de8d: cc                          	int3
 14000de8e: cc                          	int3
 14000de8f: cc                          	int3
-14000de90: ff 25 6a 34 00 00           	jmpq	*0x346a(%rip)           # 0x140011300
+14000de90: ff 25 0a 35 00 00           	jmpq	*0x350a(%rip)           # 0x1400113a0
 14000de96: cc                          	int3
 14000de97: cc                          	int3
 14000de98: cc                          	int3
@@ -14434,7 +14434,7 @@ Disassembly of section .text:
 14000de9d: cc                          	int3
 14000de9e: cc                          	int3
 14000de9f: cc                          	int3
-14000dea0: ff 25 6a 34 00 00           	jmpq	*0x346a(%rip)           # 0x140011310
+14000dea0: ff 25 0a 35 00 00           	jmpq	*0x350a(%rip)           # 0x1400113b0
 14000dea6: cc                          	int3
 14000dea7: cc                          	int3
 14000dea8: cc                          	int3
@@ -14445,7 +14445,7 @@ Disassembly of section .text:
 14000dead: cc                          	int3
 14000deae: cc                          	int3
 14000deaf: cc                          	int3
-14000deb0: ff 25 62 34 00 00           	jmpq	*0x3462(%rip)           # 0x140011318
+14000deb0: ff 25 02 35 00 00           	jmpq	*0x3502(%rip)           # 0x1400113b8
 14000deb6: cc                          	int3
 14000deb7: cc                          	int3
 14000deb8: cc                          	int3
@@ -14456,7 +14456,7 @@ Disassembly of section .text:
 14000debd: cc                          	int3
 14000debe: cc                          	int3
 14000debf: cc                          	int3
-14000dec0: ff 25 ca 34 00 00           	jmpq	*0x34ca(%rip)           # 0x140011390
+14000dec0: ff 25 6a 35 00 00           	jmpq	*0x356a(%rip)           # 0x140011430
 14000dec6: cc                          	int3
 14000dec7: cc                          	int3
 14000dec8: cc                          	int3
@@ -14467,7 +14467,7 @@ Disassembly of section .text:
 14000decd: cc                          	int3
 14000dece: cc                          	int3
 14000decf: cc                          	int3
-14000ded0: ff 25 d2 34 00 00           	jmpq	*0x34d2(%rip)           # 0x1400113a8
+14000ded0: ff 25 72 35 00 00           	jmpq	*0x3572(%rip)           # 0x140011448
 14000ded6: cc                          	int3
 14000ded7: cc                          	int3
 14000ded8: cc                          	int3
@@ -14478,7 +14478,7 @@ Disassembly of section .text:
 14000dedd: cc                          	int3
 14000dede: cc                          	int3
 14000dedf: cc                          	int3
-14000dee0: ff 25 aa 33 00 00           	jmpq	*0x33aa(%rip)           # 0x140011290
+14000dee0: ff 25 4a 34 00 00           	jmpq	*0x344a(%rip)           # 0x140011330
 14000dee6: cc                          	int3
 14000dee7: cc                          	int3
 14000dee8: cc                          	int3
@@ -14489,7 +14489,7 @@ Disassembly of section .text:
 14000deed: cc                          	int3
 14000deee: cc                          	int3
 14000deef: cc                          	int3
-14000def0: ff 25 22 35 00 00           	jmpq	*0x3522(%rip)           # 0x140011418
+14000def0: ff 25 c2 35 00 00           	jmpq	*0x35c2(%rip)           # 0x1400114b8
 14000def6: cc                          	int3
 14000def7: cc                          	int3
 14000def8: cc                          	int3
@@ -14500,7 +14500,7 @@ Disassembly of section .text:
 14000defd: cc                          	int3
 14000defe: cc                          	int3
 14000deff: cc                          	int3
-14000df00: ff 25 2a 33 00 00           	jmpq	*0x332a(%rip)           # 0x140011230
+14000df00: ff 25 ca 33 00 00           	jmpq	*0x33ca(%rip)           # 0x1400112d0
 14000df06: cc                          	int3
 14000df07: cc                          	int3
 14000df08: cc                          	int3
@@ -14511,7 +14511,7 @@ Disassembly of section .text:
 14000df0d: cc                          	int3
 14000df0e: cc                          	int3
 14000df0f: cc                          	int3
-14000df10: ff 25 82 33 00 00           	jmpq	*0x3382(%rip)           # 0x140011298
+14000df10: ff 25 22 34 00 00           	jmpq	*0x3422(%rip)           # 0x140011338
 14000df16: cc                          	int3
 14000df17: cc                          	int3
 14000df18: cc                          	int3
@@ -14522,7 +14522,7 @@ Disassembly of section .text:
 14000df1d: cc                          	int3
 14000df1e: cc                          	int3
 14000df1f: cc                          	int3
-14000df20: ff 25 52 33 00 00           	jmpq	*0x3352(%rip)           # 0x140011278
+14000df20: ff 25 f2 33 00 00           	jmpq	*0x33f2(%rip)           # 0x140011318
 14000df26: cc                          	int3
 14000df27: cc                          	int3
 14000df28: cc                          	int3
@@ -14533,7 +14533,7 @@ Disassembly of section .text:
 14000df2d: cc                          	int3
 14000df2e: cc                          	int3
 14000df2f: cc                          	int3
-14000df30: ff 25 2a 33 00 00           	jmpq	*0x332a(%rip)           # 0x140011260
+14000df30: ff 25 ca 33 00 00           	jmpq	*0x33ca(%rip)           # 0x140011300
 14000df36: cc                          	int3
 14000df37: cc                          	int3
 14000df38: cc                          	int3
@@ -14544,7 +14544,7 @@ Disassembly of section .text:
 14000df3d: cc                          	int3
 14000df3e: cc                          	int3
 14000df3f: cc                          	int3
-14000df40: ff 25 22 33 00 00           	jmpq	*0x3322(%rip)           # 0x140011268
+14000df40: ff 25 c2 33 00 00           	jmpq	*0x33c2(%rip)           # 0x140011308
 14000df46: cc                          	int3
 14000df47: cc                          	int3
 14000df48: cc                          	int3
@@ -14555,7 +14555,7 @@ Disassembly of section .text:
 14000df4d: cc                          	int3
 14000df4e: cc                          	int3
 14000df4f: cc                          	int3
-14000df50: ff 25 d2 34 00 00           	jmpq	*0x34d2(%rip)           # 0x140011428
+14000df50: ff 25 72 35 00 00           	jmpq	*0x3572(%rip)           # 0x1400114c8
 14000df56: cc                          	int3
 14000df57: cc                          	int3
 14000df58: cc                          	int3
@@ -14566,7 +14566,7 @@ Disassembly of section .text:
 14000df5d: cc                          	int3
 14000df5e: cc                          	int3
 14000df5f: cc                          	int3
-14000df60: ff 25 ea 33 00 00           	jmpq	*0x33ea(%rip)           # 0x140011350
+14000df60: ff 25 8a 34 00 00           	jmpq	*0x348a(%rip)           # 0x1400113f0
 14000df66: cc                          	int3
 14000df67: cc                          	int3
 14000df68: cc                          	int3
@@ -14577,7 +14577,7 @@ Disassembly of section .text:
 14000df6d: cc                          	int3
 14000df6e: cc                          	int3
 14000df6f: cc                          	int3
-14000df70: ff 25 42 33 00 00           	jmpq	*0x3342(%rip)           # 0x1400112b8
+14000df70: ff 25 e2 33 00 00           	jmpq	*0x33e2(%rip)           # 0x140011358
 14000df76: cc                          	int3
 14000df77: cc                          	int3
 14000df78: cc                          	int3
@@ -14588,7 +14588,7 @@ Disassembly of section .text:
 14000df7d: cc                          	int3
 14000df7e: cc                          	int3
 14000df7f: cc                          	int3
-14000df80: ff 25 9a 32 00 00           	jmpq	*0x329a(%rip)           # 0x140011220
+14000df80: ff 25 3a 33 00 00           	jmpq	*0x333a(%rip)           # 0x1400112c0
 14000df86: cc                          	int3
 14000df87: cc                          	int3
 14000df88: cc                          	int3
@@ -14599,7 +14599,7 @@ Disassembly of section .text:
 14000df8d: cc                          	int3
 14000df8e: cc                          	int3
 14000df8f: cc                          	int3
-14000df90: ff 25 c2 33 00 00           	jmpq	*0x33c2(%rip)           # 0x140011358
+14000df90: ff 25 62 34 00 00           	jmpq	*0x3462(%rip)           # 0x1400113f8
 14000df96: cc                          	int3
 14000df97: cc                          	int3
 14000df98: cc                          	int3
@@ -14610,7 +14610,7 @@ Disassembly of section .text:
 14000df9d: cc                          	int3
 14000df9e: cc                          	int3
 14000df9f: cc                          	int3
-14000dfa0: ff 25 0a 33 00 00           	jmpq	*0x330a(%rip)           # 0x1400112b0
+14000dfa0: ff 25 aa 33 00 00           	jmpq	*0x33aa(%rip)           # 0x140011350
 14000dfa6: cc                          	int3
 14000dfa7: cc                          	int3
 14000dfa8: cc                          	int3
@@ -14621,7 +14621,7 @@ Disassembly of section .text:
 14000dfad: cc                          	int3
 14000dfae: cc                          	int3
 14000dfaf: cc                          	int3
-14000dfb0: ff 25 52 33 00 00           	jmpq	*0x3352(%rip)           # 0x140011308
+14000dfb0: ff 25 f2 33 00 00           	jmpq	*0x33f2(%rip)           # 0x1400113a8
 14000dfb6: cc                          	int3
 14000dfb7: cc                          	int3
 14000dfb8: cc                          	int3
@@ -14632,7 +14632,7 @@ Disassembly of section .text:
 14000dfbd: cc                          	int3
 14000dfbe: cc                          	int3
 14000dfbf: cc                          	int3
-14000dfc0: ff 25 7a 33 00 00           	jmpq	*0x337a(%rip)           # 0x140011340
+14000dfc0: ff 25 1a 34 00 00           	jmpq	*0x341a(%rip)           # 0x1400113e0
 14000dfc6: cc                          	int3
 14000dfc7: cc                          	int3
 14000dfc8: cc                          	int3
@@ -14643,7 +14643,7 @@ Disassembly of section .text:
 14000dfcd: cc                          	int3
 14000dfce: cc                          	int3
 14000dfcf: cc                          	int3
-14000dfd0: ff 25 52 32 00 00           	jmpq	*0x3252(%rip)           # 0x140011228
+14000dfd0: ff 25 f2 32 00 00           	jmpq	*0x32f2(%rip)           # 0x1400112c8
 14000dfd6: cc                          	int3
 14000dfd7: cc                          	int3
 14000dfd8: cc                          	int3
@@ -14654,7 +14654,7 @@ Disassembly of section .text:
 14000dfdd: cc                          	int3
 14000dfde: cc                          	int3
 14000dfdf: cc                          	int3
-14000dfe0: ff 25 5a 32 00 00           	jmpq	*0x325a(%rip)           # 0x140011240
+14000dfe0: ff 25 fa 32 00 00           	jmpq	*0x32fa(%rip)           # 0x1400112e0
 14000dfe6: cc                          	int3
 14000dfe7: cc                          	int3
 14000dfe8: cc                          	int3
@@ -14665,7 +14665,7 @@ Disassembly of section .text:
 14000dfed: cc                          	int3
 14000dfee: cc                          	int3
 14000dfef: cc                          	int3
-14000dff0: ff 25 aa 33 00 00           	jmpq	*0x33aa(%rip)           # 0x1400113a0
+14000dff0: ff 25 4a 34 00 00           	jmpq	*0x344a(%rip)           # 0x140011440
 14000dff6: cc                          	int3
 14000dff7: cc                          	int3
 14000dff8: cc                          	int3
@@ -14676,7 +14676,7 @@ Disassembly of section .text:
 14000dffd: cc                          	int3
 14000dffe: cc                          	int3
 14000dfff: cc                          	int3
-14000e000: ff 25 22 33 00 00           	jmpq	*0x3322(%rip)           # 0x140011328
+14000e000: ff 25 c2 33 00 00           	jmpq	*0x33c2(%rip)           # 0x1400113c8
 14000e006: cc                          	int3
 14000e007: cc                          	int3
 14000e008: cc                          	int3
@@ -14687,7 +14687,7 @@ Disassembly of section .text:
 14000e00d: cc                          	int3
 14000e00e: cc                          	int3
 14000e00f: cc                          	int3
-14000e010: ff 25 0a 33 00 00           	jmpq	*0x330a(%rip)           # 0x140011320
+14000e010: ff 25 aa 33 00 00           	jmpq	*0x33aa(%rip)           # 0x1400113c0
 14000e016: cc                          	int3
 14000e017: cc                          	int3
 14000e018: cc                          	int3
@@ -14698,4 +14698,4 @@ Disassembly of section .text:
 14000e01d: cc                          	int3
 14000e01e: cc                          	int3
 14000e01f: cc                          	int3
-14000e020: ff 25 8a 33 00 00           	jmpq	*0x338a(%rip)           # 0x1400113b0
+14000e020: ff 25 2a 34 00 00           	jmpq	*0x342a(%rip)           # 0x140011450

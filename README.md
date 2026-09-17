@@ -1,8 +1,8 @@
-# ChatGPT Binary Decompilation Accuracy Experiment
+# Binary Decompilation Dataset Preparation
 
 [English](README.md) | [简体中文](README.zh-CN.md) | [Research notes / 实验研究记录](https://app.notion.com/p/3c5ba3506c39812a9cb3f371f9c76ef1)
 
-A reproducible, multi-sample framework for measuring how accurately ChatGPT reconstructs C source code from optimized and stripped x86-64 Windows PE binaries. The experiment records recovered C produced with web search available and with search blocked, recompiles it without modification, and compares its observable behavior against the original challenge binary.
+A reproducible project for preparing and validating binary-to-C decompilation datasets. It builds optimized and stripped challenge binaries from curated C programs, preserves source/binary/test provenance, and provides deterministic behavioral tests for evaluating recovered C.
 
 The current benchmark contains three samples with different levels of public source prior: the well-known CHStone ADPCM benchmark, the less common but searchable Chal chess engine, and an original synthetic ticket-portal program with no corresponding public source. This makes it possible to study the relationship between source availability and exact recovery instead of merely checking whether generated code compiles or approximates the original functionality.
 
@@ -14,11 +14,27 @@ Accuracy is determined only by compilation, linking, and deterministic behaviora
 
 | Sample | Challenge binary | Original source | Deterministic tests |
 |---|---|---|---|
-| `adpcm` | `bin\challenge\sample_001.exe` | `source\original\adpcm.c` | Embedded CHStone vectors |
-| `chal` | `bin\challenge\sample_002.exe` | `source\original\chal.c` | Four fixed FEN + depth perft cases |
-| `portal` | `bin\challenge\sample_003.exe` | `source\original\ticket_portal.c` | Six fixed queries covering filtering, authorization, aggregation, detail output, and validation |
+| `adpcm` | `bin\challenge\sample_001.exe` | `source\development\original\adpcm.c` | Embedded CHStone vectors |
+| `chal` | `bin\challenge\sample_002.exe` | `source\development\original\chal.c` | Four fixed FEN + depth perft cases |
+| `portal` | `bin\challenge\sample_003.exe` | `source\development\original\ticket_portal.c` | Six fixed queries covering filtering, authorization, aggregation, detail output, and validation |
 
 Neutral challenge filenames avoid revealing the algorithm or application name to the model under evaluation.
+
+## Dataset separation
+
+An additional five-program **Linux x86-64 ELF** corpus (`head`, `cut`, `cal`,
+`du`, `split`) is documented in [Unix tools corpus](source/test/unix_tools/README.md).
+Its source, binary, assembly, and external tests have a separate
+`unix_tools_manifest.json`; the frozen Windows corpus counts below are unchanged.
+
+The source tree keeps model-development inputs separate from held-out evaluation inputs:
+
+- `source\development\original\`: 3 baseline programs used while developing the workflow.
+- `source\development\{common,uncommon,generated}\`: 15 additional development programs.
+- `source\test\{common,uncommon,generated}\`: 30 held-out test programs.
+- `source\recovered\`: reconstructed outputs; this directory is not part of either input set.
+
+The development set therefore contains 18 programs and the test set contains 30. Their machine-readable definitions are `development_corpus_definitions.json` and `test_corpus_definitions.json`; `corpus_manifest.json` records the set membership of every corpus sample.
 
 ## Evaluation model
 

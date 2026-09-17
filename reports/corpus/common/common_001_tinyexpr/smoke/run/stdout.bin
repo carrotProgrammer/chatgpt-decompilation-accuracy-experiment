@@ -12,5 +12,5 @@
 	Logic         pass:130   fail: 0      0ms
 	Depth         pass: 8   fail: 0      0ms
 	Number        pass:5008   fail: 0      2ms
-	Locale        pass: 7   fail: 0      9ms
+	Locale        pass: 7   fail: 0     10ms
 ALL TESTS PASSED (10091/10091)

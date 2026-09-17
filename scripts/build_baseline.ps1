@@ -152,7 +152,7 @@ Machine-readable details and raw stdout/stderr are stored under this directory.
         $sampleManifest['origin'] = [ordered]@{
             type = 'synthetic'
             description = $config.SyntheticDescription
-            source_path = 'source/original/ticket_portal.c'
+            source_path = 'source/development/original/ticket_portal.c'
         }
     } else {
         $commit = (& git -c 'safe.directory=*' -C $config.UpstreamDirectory rev-parse HEAD 2>&1 | Out-String).Trim()
@@ -168,7 +168,7 @@ Machine-readable details and raw stdout/stderr are stored under this directory.
 $allPassed = (@($manifestSamples.GetEnumerator() | Where-Object { -not $_.Value.baseline_passed }).Count -eq 0)
 $manifest = [ordered]@{
     schema_version = 2
-    experiment = 'Multi-sample decompilation challenge'
+    experiment = 'Binary decompilation dataset preparation'
     generated_utc = [DateTimeOffset]::UtcNow.ToString('o')
     toolchain = [ordered]@{
         distribution = 'llvm-mingw 20260616 UCRT x86_64'

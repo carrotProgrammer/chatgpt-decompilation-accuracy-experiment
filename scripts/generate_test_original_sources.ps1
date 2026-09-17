@@ -3,7 +3,7 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
-$outputDirectory = Join-Path $RepositoryRoot 'source\generated'
+$outputDirectory = Join-Path $RepositoryRoot 'source\test\generated'
 New-Item -ItemType Directory -Force -Path $outputDirectory | Out-Null
 
 $specs = @(
@@ -25,7 +25,7 @@ function Get-Preamble($spec) {
  * Original deterministic test program written for this experiment.
  * Domain: $($spec.Title).
  * The checked-in workload table is generated reproducibly by
- * scripts/generate_original_round2.ps1.
+ * scripts/generate_test_original_sources.ps1.
  */
 #include <stdio.h>
 #include <stdlib.h>
