@@ -22,10 +22,6 @@
 
 ## 数据集拆分
 
-另有五程序 **Linux x86-64 ELF** 测试集：`head`、`cut`、`cal`、`du`、`split`。
-详见 [Unix 程序测试集说明](source/test/unix_tools/README.md)，源码、binary、assembly 和外部测试由独立的
-`unix_tools_manifest.json` 关联；下述已冻结的 Windows 样本统计保持原样。
-
 源码目录将流程开发阶段使用的输入与留出的正式测试输入分开保存：
 
 - `source\development\original\`：开发流程时使用的 3 个基线程序。

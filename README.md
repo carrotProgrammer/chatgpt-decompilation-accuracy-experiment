@@ -22,11 +22,6 @@ Neutral challenge filenames avoid revealing the algorithm or application name to
 
 ## Dataset separation
 
-An additional five-program **Linux x86-64 ELF** corpus (`head`, `cut`, `cal`,
-`du`, `split`) is documented in [Unix tools corpus](source/test/unix_tools/README.md).
-Its source, binary, assembly, and external tests have a separate
-`unix_tools_manifest.json`; the frozen Windows corpus counts below are unchanged.
-
 The source tree keeps model-development inputs separate from held-out evaluation inputs:
 
 - `source\development\original\`: 3 baseline programs used while developing the workflow.
